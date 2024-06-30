@@ -18,6 +18,7 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.4.4",
     "nodemailer": "^6.9.14",
+    "pug": "^3.0.3",
     "slug": "^9.1.0",
     "validator": "^13.12.0"
   },

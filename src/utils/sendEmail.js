@@ -2,18 +2,30 @@ import nodemailer from 'nodemailer'
 
 const sendEmail = async (mailOptions) => {
 
-
-    const transporter = nodemailer.createTransport({
-        host:process.env.MAIL_TRAP_HOSTNAME,
-        port: process.env.MAIL_TRAP_PORT,
-        auth: {
-            user: process.env.MAIL_TRAP_USERNAME,
-            pass: process.env.MAIL_TRAP_PASSWORD
-        }
-    });
+    let transporter;
+    if(process.env.NODE_ENV === 'Development'){
+        transporter =  nodemailer.createTransport({
+            host:process.env.MAIL_TRAP_HOSTNAME,
+            port: process.env.MAIL_TRAP_PORT,
+            auth: {
+                user: process.env.MAIL_TRAP_USERNAME,
+                pass: process.env.MAIL_TRAP_PASSWORD
+            }
+        });
+    } 
+    else {
+        transporter = nodemailer.createTransport({
+            host: process.env.SENDGRID_SERVERNAME,
+            port: process.env.SENDGRID_PORT,
+            auth:{
+                user: process.env.SENDGRID_USERNAME,
+                pass: process.env.SENDGRID_PASSWORD
+            }
+        })
+    }
 
     const options = {
-        from :process.env.MAIL_TRAP_FROM,
+        from :process.env.NODE_ENV === 'Development'? process.env.MAIL_TRAP_FROM : process.env.SENDGRID_FROM,
         to: mailOptions.to,
         subject: mailOptions.subject,
         text: mailOptions.text

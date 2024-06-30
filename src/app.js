@@ -9,7 +9,6 @@ const app = express();
 
 
 // global Middleware 
-
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(cors());
@@ -31,6 +30,7 @@ import globalErrorHandler from './middlewares/globalerrorHandler.js';
 
 
 // App Routes
+
 
 app.use('/api/v1', userRouter)
 app.use('/api/v1/categories', categoryRouter);
