@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 import app from '../app.js'
 const dbConnection = ()=>{
 
-    mongoose.connect(process.env.DB_LOCAL);
+    mongoose.connect(process.env.DB_ATLAS);
 
     mongoose.connection.on('connected', ()=>{
         console.log(`Database Connection Successfully`);
