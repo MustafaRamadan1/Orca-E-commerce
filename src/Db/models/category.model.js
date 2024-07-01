@@ -14,13 +14,31 @@ const categorySchema = new mongoose.Schema({
     },
     slug:{
         type:String,
-        required:[true, 'slug is Required'],
         unique: true
     }
 },{
     timestamps: true
 });
 
+
+categorySchema.pre('save', function(next){
+
+    if(this.isNew || this.isModified('name')){
+        this.slug =  slug(this.name, "_");
+    }
+    return next();
+});
+
+categorySchema.pre('findOneAndUpdate', function(next){
+
+    const update = this.getUpdate();
+
+    if(update.name){
+        this.slug =  slug(update.name, "_");
+    }
+
+    return next();
+})
 
 categorySchema.methods.toJSON = function (){
 

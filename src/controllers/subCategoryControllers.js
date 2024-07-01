@@ -1,8 +1,7 @@
 import AppError from "../utils/AppError.js";
 import { catchAsync } from "../utils/catchAsync.js";
-import SubCategory from "../Db/models/sub-Category.js";
+import SubCategory from "../Db/models/sub-Category.model.js";
 import slug from "slug";
-import subCategory from "../Db/models/sub-Category.js";
 
 
 export const createSubCategory = catchAsync(async (req, res ,next)=>{
@@ -12,7 +11,7 @@ export const createSubCategory = catchAsync(async (req, res ,next)=>{
         return next(new AppError(`Please Provide Required Fields`, 404));
 
     const newSubCategory = await subCategory.create({
-        name, description, slug: slug(name, '_'), category
+        name, description, category
     });
 
 

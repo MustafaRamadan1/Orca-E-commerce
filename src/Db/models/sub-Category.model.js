@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-
+import slug from "slug";
 const subCategorySchema = new mongoose.Schema({
     name:{
         type: String,
@@ -14,7 +14,6 @@ const subCategorySchema = new mongoose.Schema({
     },
     slug:{
         type:String,
-        required:[true, 'slug is Required'],
         unique: true
     },
     category:{
@@ -26,6 +25,21 @@ const subCategorySchema = new mongoose.Schema({
     timestamps: true
 });
 
+subCategorySchema.pre('save', function(next){
+
+    if(this.isNew || this.isModified('name')){
+
+        this.slug = slug(this.slug, '_')
+    }
+});
+
+subCategorySchema.pre('findOneAndUpdate', function (next) {
+    const update = this.getUpdate();
+    if (update.name) {
+      update.slug = slug(update.name, '_');
+    }
+    next();
+  });
 
 subCategorySchema.methods.toJSON = function (){
 

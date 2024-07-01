@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-
+import slug from 'slug'
 const productSchema = new mongoose.Schema({
     name:{
         type:String,
@@ -14,8 +14,7 @@ const productSchema = new mongoose.Schema({
     },
     slug:{
         type: String,
-        required: [true, 'Product must has a slug'],
-        unique: true
+        
     },
     price: {
         type: Number, 
@@ -24,14 +23,75 @@ const productSchema = new mongoose.Schema({
     },
     category:{
         type: mongoose.Types.ObjectId,
-        ref: 'Category'
+        ref: 'Category',
+        required:[true, 'Product must belong to a category']
     },
     subCategory:{
         type: mongoose.Types.ObjectId,
         ref: 'SubCategory'
-    }
+    },
+    quantity:{
+        type: Number,
+        default: 0,
+        min: [0, 'Quantity can not be negative']
+    },
+    discount:{
+        type:Number,
+        default: 0.0,
+    },
+    images: [String],
+    size:{
+        type: String,
+        required: [true, 'size is Required'],
+    },
+    colors:[String]
+
 },{
-    timestamps: true
+    timestamps: true,
+    toJSON:{
+        virtuals: true
+    },
+    toObject:{
+        virtuals: true
+    },
+    id: false
 });
+
+
+productSchema.index({name: 1, size: 1}, {unique: true});
+productSchema.virtual('productSalePrice').get(function (){
+    return this.price - (this.price  * this.discount )
+})
+
+productSchema.pre('save', function(next){
+
+    if(this.isNew || this.isModified('name')){
+        this.slug =  slug(this.name, "_");
+    }
+    return next();
+});
+
+productSchema.pre('findOneAndUpdate', function(next){
+
+    const update = this.getUpdate();
+
+    if(update.name){
+        this.slug =  slug(update.name, "_");
+    }
+
+    return next();
+})
+
+
+
+productSchema.methods.toJSON = function () {
+
+    const product = this;
+    const productObject = product.toObject();
+    delete productObject.__v;
+    delete productObject.createdAt;
+    delete productObject.updatedAt; 
+    return productObject;
+}
 
 export default mongoose.model('Product', productSchema);

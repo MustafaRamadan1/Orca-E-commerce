@@ -20,6 +20,7 @@ export const signUp = catchAsync(async (req, res, next) => {
 
   if (!newUser) return next(new AppError(`Couldn't create new User`, 400));
 
+
   const token = signToken({ id: newUser._id });
 
   res.status(200).json({
