@@ -6,7 +6,7 @@ import User from '../Db/models/user.model.js';
 
 const authentication = catchAsync(async (req, res ,next)=>{
     let token = '';
-    if(req.headers.authorization && req.headers.authorization.startsWith('bearer')){
+    if(req.headers.authorization && req.headers.authorization.startsWith('Bearer')){
 
         token = req.headers.authorization.split(' ')[1];
     };

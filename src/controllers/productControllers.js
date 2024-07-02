@@ -1,10 +1,28 @@
+import fs from "fs";
 import AppError from "../utils/AppError.js";
 import Product from "../Db/models/product.model.js";
 import { catchAsync } from "../utils/catchAsync.js";
+import {
+  cloudinaryUploadImg,
+  cloudinaryDeleteImg,
+} from "../utils/cloudinary.js";
+import { deletePhotoFromServer, uploadToCloudinary } from "../utils/uploadImgHelperFunc.js";
+
+
+
 
 export const createProduct = catchAsync(async (req, res, next) => {
-  const { name, description, price, category, quantity, size, discount } =
-    req.body;
+  const {
+    name,
+    description,
+    price,
+    category,
+    quantity,
+    size,
+    discount,
+    colors,
+    subCategory,
+  } = req.body;
 
   if (
     !name ||
@@ -14,9 +32,17 @@ export const createProduct = catchAsync(async (req, res, next) => {
     !quantity ||
     !size ||
     !discount
-  )
+  ) {
+    for (let file of req.images) {
+      await deletePhotoFromServer(file);
+    }
     return next(new AppError(`Please Provide Required Fields`, 404));
+  }
 
+  const images = await uploadToCloudinary(req.images);
+  for (let file of req.images) {
+    await deletePhotoFromServer(file);
+  }
   const newProduct = await Product.create({
     name,
     description,
@@ -25,10 +51,17 @@ export const createProduct = catchAsync(async (req, res, next) => {
     quantity,
     size,
     discount,
+    colors,
+    images,
+    subCategory,
   });
 
-  if (!newProduct)
+  if (!newProduct) {
+    for (let img of cloudinaryImgUrl) {
+      await cloudinaryDeleteImg(img.id);
+    }
     return next(new AppError(`Couldn't Create new Product`, 400));
+  }
 
   res.status(201).json({
     status: "success",
@@ -114,8 +147,7 @@ export const getProduct = catchAsync(async (req, res, next) => {
     },
   ]);
 
-  if(!products.length) return next(new AppError(`No Product Found`, 404));
-
+  if (!products.length) return next(new AppError(`No Product Found`, 404));
 
   res.status(200).json({
     status: "success",
@@ -124,47 +156,97 @@ export const getProduct = catchAsync(async (req, res, next) => {
 });
 
 export const getAllProducts = catchAsync(async (req, res, next) => {
+  let products = Product.find();
 
-    let products =  Product.find();
+  // filtering
 
-    
-    // filtering 
-    
-    const queryString  = {...req.query};
-    const excludeFields = ['page', 'sort', 'limit', 'fields'];
-    
-    excludeFields.forEach((field) => delete queryString[field]);
-    
-    products = products.find(queryString);
-    
-    // sort 
-    
-    if(req.query.sort){
-        const sortBy = req.query.sort.split(',').join(' ');
-        products = products.sort(sortBy);
-    }
-    else{
-        products = products.sort('-createdAt');
-    }
+  const queryString = { ...req.query };
+  const excludeFields = ["page", "sort", "limit", "fields"];
 
-    // pagination 
-    
-    const page = req.query.page * 1 || 1;
-    const limit  = req.query.limit * 1 || 2;
-    const skip = (page - 1) * limit;
+  excludeFields.forEach((field) => delete queryString[field]);
 
-    const documentCounts = await Product.countDocuments();
+  products = products.find(queryString);
 
-    if(documentCounts < skip) return next(new AppError(`No Products Available in that page`, 404));
-    
-    products = products.skip(skip).limit(limit);
+  // sort
 
-    products = await products;
-    
-    if(!products) return next(new AppError(`No Products in DB`,404));
-    
-    res.status(200).json({
+  if (req.query.sort) {
+    const sortBy = req.query.sort.split(",").join(" ");
+    products = products.sort(sortBy);
+  } else {
+    products = products.sort("-createdAt");
+  }
+
+  // pagination
+
+  const page = req.query.page * 1 || 1;
+  const limit = req.query.limit * 1 || 2;
+  const skip = (page - 1) * limit;
+
+  const documentCounts = await Product.countDocuments();
+
+  if (documentCounts < skip)
+    return next(new AppError(`No Products Available in that page`, 404));
+
+  products = products.skip(skip).limit(limit);
+
+  products = await products;
+
+  if (!products) return next(new AppError(`No Products in DB`, 404));
+
+  res.status(200).json({
     status: "success",
+    result: products.length,
     data: products,
+  });
+});
+
+export const updateProduct = catchAsync(async (req, res, next) => {
+  const { id } = req.params;
+
+  const updatedProduct = await Product.findByIdAndUpdate(id, req.body, {
+    new: true,
+    runValidators: true,
+  });
+
+  if (!updatedProduct)
+    return next(
+      new AppError(
+        `Couldn't Update the Product , No Product with this Id `,
+        404
+      )
+    );
+
+  res.status(200).json({
+    status: "success",
+    message: "Updated Successfully",
+    data: updatedProduct,
+  });
+});
+
+export const deleteProduct = catchAsync(async (req, res, next) => {
+  const { id } = req.params;
+
+  const product = await Product.findById(id);
+  if(!product) return next(new AppError(`No Product with this id`, 404));
+
+  const imgsId = product.images.map((img)=> img.id);
+
+  for(let id of imgsId){
+
+    await cloudinaryDeleteImg(id);
+  }
+  const deletedProduct = await Product.findByIdAndDelete(id);
+
+  if (!deletedProduct)
+    return next(
+      new AppError(
+        `Couldn't Delete the Product , No Product with this Id `,
+        404
+      )
+    );
+
+  res.status(204).json({
+    status: "success",
+    message: "Deleted Successfully",
   });
 });

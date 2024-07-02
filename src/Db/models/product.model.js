@@ -39,7 +39,7 @@ const productSchema = new mongoose.Schema({
         type:Number,
         default: 0.0,
     },
-    images: [String],
+    images: [Object],
     size:{
         type: String,
         required: [true, 'size is Required'],

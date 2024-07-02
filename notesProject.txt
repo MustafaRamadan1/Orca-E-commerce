@@ -1,0 +1,6 @@
+colors = [{
+    value, label, color
+}]
+
+sizes : {value , label , color};
+
