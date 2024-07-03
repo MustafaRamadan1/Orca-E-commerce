@@ -27,16 +27,21 @@ export const createCategory = catchAsync(async (req, res, next) => {
 
 export const getAllCategories = catchAsync(async (req, res, next) => {
 
-  if(!req.query.letter) return next(new AppError(` Please Provide Letter`,400));
-  
-  const regex = new RegExp(req.query.letter, 'i');
+  let query = {};
+  if(req.query.letter) {
 
-  const allCategories = await Category.find({name: regex});
+    const regex = new RegExp(req.query.letter, 'i');
+
+    query.name = regex;
+  }
+
+  const allCategories = await Category.find(query);
 
   if (!allCategories) return next(new AppError(`No Category in the DB`, 404));
 
   res.status(200).json({
     status: "success",
+    length: allCategories.length,
     data: allCategories,
   });
 });
