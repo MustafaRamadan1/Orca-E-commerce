@@ -32,7 +32,17 @@ export const getAllSubCategories =  catchAsync(async (req, res ,next)=>{
 
   excludeFields.forEach((field) => delete queryString[field]);
 
-  allSubCategories = allSubCategories.find(queryString);
+  
+  const {letters} = req.query;
+  
+  if(letters) {
+      let query = {};
+    const regex = new RegExp(letters.split('').map(letters => `(?=.*${letters})`).join(''), 'i');
+
+    query.name = regex;
+   
+    allSubCategories = allSubCategories.find(query);
+  }
   // sort
 
   if (req.query.sort) {
@@ -52,6 +62,7 @@ export const getAllSubCategories =  catchAsync(async (req, res ,next)=>{
 
     res.status(200).json({
         status:'success',
+        length: allSubCategories.length,
         data: allSubCategories
     })
 });

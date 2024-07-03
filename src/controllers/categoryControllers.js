@@ -27,10 +27,13 @@ export const createCategory = catchAsync(async (req, res, next) => {
 
 export const getAllCategories = catchAsync(async (req, res, next) => {
 
+  const {letters} = req.query;
   let query = {};
-  if(req.query.letter) {
 
-    const regex = new RegExp(req.query.letter, 'i');
+
+  if(letters) {
+    console.log(letters)
+    const regex = new RegExp(letters.split('').map(letters => `(?=.*${letters})`).join(''), 'i');
 
     query.name = regex;
   }
