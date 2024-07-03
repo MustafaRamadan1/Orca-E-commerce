@@ -2,6 +2,7 @@ import slug from "slug";
 import { catchAsync } from "../utils/catchAsync.js";
 import AppError from "../utils/AppError.js";
 import Category from "../Db/models/category.model.js";
+import { filterObject } from "../utils/helperFunc.js";
 
 // create category , get all categories , get one cateogry , update one , delete one
 
@@ -27,19 +28,30 @@ export const createCategory = catchAsync(async (req, res, next) => {
 
 export const getAllCategories = catchAsync(async (req, res, next) => {
 
-  const {letters} = req.query;
-  let query = {};
+  let allCategories =  Category.find();
 
+  // filter 
+    const excludeFields = ['page','limit', 'sort'];
 
-  if(letters) {
-    console.log(letters)
-    const regex = new RegExp(letters.split('').map(letters => `(?=.*${letters})`).join(''), 'i');
+    const queryString = {...req.query};
 
-    query.name = regex;
-  }
+    excludeFields.forEach((field)=> delete queryString[field]);
 
-  const allCategories = await Category.find(query);
+    allCategories = allCategories.find(queryString);
 
+    // sort 
+
+    if(req.query.sort){
+      const sortBy = req.query.sort.split(',').join(' ');
+
+      allCategories = allCategories.sort(sortBy)
+    }
+    else{
+      allCategories = allCategories.sort('-createdAt')
+    }
+
+      allCategories = await allCategories;
+      
   if (!allCategories) return next(new AppError(`No Category in the DB`, 404));
 
   res.status(200).json({
@@ -94,3 +106,33 @@ export const deleteCategory = catchAsync(async (req, res ,next)=>{
         message: 'Category Deleted Successfully'
     })
 })
+
+
+
+export const getFilteredCategories = catchAsync(async (req, res, next) => {
+
+  const {letters} = req.query;
+  let query = {};
+
+  let allCategories;
+  if(letters) {
+    
+    const regex = new RegExp(letters.split('').map(letters => `(?=.*${letters})`).join(''), 'i');
+
+    query.name = regex;
+
+     allCategories = await Category.find(query);
+  }
+  else{
+    allCategories = [];
+  }
+
+
+  if (!allCategories) return next(new AppError(`No Category in the DB`, 404));
+
+  res.status(200).json({
+    status: "success",
+    length: allCategories.length,
+    data: allCategories,
+  });
+});

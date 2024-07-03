@@ -4,3 +4,15 @@ export const signToken = (payload)=>{
         expiresIn: process.env.EXPIRES_IN
     })
 };
+
+export const filterObject = (object, ...allowedFields)=>{
+
+    const obj = {};
+
+    allowedFields.forEach((field)=>{
+
+        if(object[field]) return obj[field] = object[field]
+    });
+
+    return obj;
+}
