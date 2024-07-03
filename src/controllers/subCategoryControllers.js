@@ -42,6 +42,9 @@ export const getAllSubCategories =  catchAsync(async (req, res ,next)=>{
     query.name = regex;
    
     allSubCategories = allSubCategories.find(query);
+  }else{
+    allSubCategories = allSubCategories.find(queryString);
+
   }
   // sort
 
