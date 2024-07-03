@@ -29,8 +29,10 @@ subCategorySchema.pre('save', function(next){
 
     if(this.isNew || this.isModified('name')){
 
-        this.slug = slug(this.slug, '_')
+        this.slug = slug(this.name, '_')
     }
+
+    next();
 });
 
 subCategorySchema.pre('findOneAndUpdate', function (next) {

@@ -36,7 +36,7 @@ export const createProduct = catchAsync(async (req, res, next) => {
     for (let file of req.images) {
       await deletePhotoFromServer(file);
     }
-    return next(new AppError(`Please Provide Required Fields`, 404));
+    return next(new AppError(`Please Provide Required Fields`, 400));
   }
 
   const images = await uploadToCloudinary(req.images);

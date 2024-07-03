@@ -1,14 +1,12 @@
 import AppError from "../utils/AppError.js";
 import { catchAsync } from "../utils/catchAsync.js";
-import SubCategory from "../Db/models/sub-Category.model.js";
-import slug from "slug";
-
+import subCategory from '../Db/models/sub-Category.model.js'
 
 export const createSubCategory = catchAsync(async (req, res ,next)=>{
     const {name, description, category} = req.body;
 
     if(!name || !description || !category) 
-        return next(new AppError(`Please Provide Required Fields`, 404));
+        return next(new AppError(`Please Provide Required Fields`, 400));
 
     const newSubCategory = await subCategory.create({
         name, description, category
@@ -24,8 +22,28 @@ export const createSubCategory = catchAsync(async (req, res ,next)=>{
 });
 
 export const getAllSubCategories =  catchAsync(async (req, res ,next)=>{
+   
+    let allSubCategories = subCategory.find();
 
-    const allSubCategories = await SubCategory.find().populate({
+  // filtering
+
+  const queryString = { ...req.query };
+  const excludeFields = ["page", "sort", "limit", "fields"];
+
+  excludeFields.forEach((field) => delete queryString[field]);
+
+  allSubCategories = allSubCategories.find(queryString);
+  // sort
+
+  if (req.query.sort) {
+    const sortBy = req.query.sort.split(",").join(" ");
+    allSubCategories = allSubCategories.sort(sortBy);
+  } else {
+    allSubCategories = allSubCategories.sort("-createdAt");
+  }
+
+ 
+     allSubCategories = await allSubCategories.populate({
         path: 'category',
         select: '-__v -updatedAt -createdAt'
     });

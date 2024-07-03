@@ -4,3 +4,8 @@ colors = [{
 
 sizes : {value , label , color};
 
+
+handle get all products , get product depend on the size  
+
+otp 
+payment  

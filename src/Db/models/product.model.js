@@ -26,10 +26,10 @@ const productSchema = new mongoose.Schema({
         ref: 'Category',
         required:[true, 'Product must belong to a category']
     },
-    subCategory:{
+    subCategory:[{
         type: mongoose.Types.ObjectId,
         ref: 'SubCategory'
-    },
+    }],
     quantity:{
         type: Number,
         default: 0,
@@ -41,10 +41,15 @@ const productSchema = new mongoose.Schema({
     },
     images: [Object],
     size:{
-        type: String,
-        required: [true, 'size is Required'],
+        value: { type: String, required: [true, 'Size value is required'] },
+        label: { type: String, required: [true, 'Size label is required'] },
+        color: { type: String, required:[true,'size Color is required'] }
     },
-    colors:[String]
+    colors:[{
+        value: { type: String, required: [true, 'Color value is required'] },
+        label: { type: String, required: [true, 'Color label is required'] },
+        color: { type: String, required: [true, 'Color is required'] }
+    }]
 
 },{
     timestamps: true,
