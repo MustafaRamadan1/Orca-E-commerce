@@ -10,7 +10,9 @@ const __dirname = dirname(__filename);
 
 const resizeProductImg = catchAsync(async (req, res ,next)=>{
 
-    if(!req.files) return next(new AppError(`No Images uploaded , Please Provide Images`, 400));
+    console.log(req.files)
+    if(!req.files || req.files.length === 0) return next(new AppError(`No Images uploaded , Please Provide Images`, 400));
+
     const images = [];
  
     for(let i =0;i<req.files.length;i++){

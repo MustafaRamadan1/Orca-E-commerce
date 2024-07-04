@@ -10,7 +10,8 @@ const router = Router();
 router.post('/', isAuth, Authorization('admin'),uploadImages.array('images',3),  resizeProductImg, createProduct);
 router.get('/:slug', getProduct)
 router.get('/', getAllProducts)
-router.put('/:id',isAuth, Authorization('admin'), updateProduct);
-router.delete('/:id', deleteProduct)
+// router.put('/:id',isAuth, Authorization('admin'), updateProduct);
+router.delete('/:id', deleteProduct);
+router.put('/:id',isAuth, Authorization('admin'), uploadImages.array('images',3),  resizeProductImg, updateProduct);
 
 export default router;

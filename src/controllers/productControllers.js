@@ -12,6 +12,7 @@ import { deletePhotoFromServer, uploadToCloudinary } from "../utils/uploadImgHel
 
 
 export const createProduct = catchAsync(async (req, res, next) => {
+  console.log(req.body);
   const {
     name,
     description,
@@ -39,25 +40,38 @@ export const createProduct = catchAsync(async (req, res, next) => {
     return next(new AppError(`Please Provide Required Fields`, 400));
   }
 
-  const images = await uploadToCloudinary(req.images);
-  for (let file of req.images) {
-    await deletePhotoFromServer(file);
+  const product = await Product.findOne({ name });
+  let images = [];
+  if(product){
+
+    for (let file of req.images) {
+      await deletePhotoFromServer(file);
+    }
+    images = product.images;
   }
+  else{
+
+    images = await uploadToCloudinary(req.images);
+   for (let file of req.images) {
+     await deletePhotoFromServer(file);
+   }
+  }
+
   const newProduct = await Product.create({
     name,
     description,
-    price,
+    price: Number(JSON.parse(price)),
     category,
-    quantity,
-    size,
-    discount,
-    colors,
+    quantity : Number(JSON.parse(quantity)),
+    size: JSON.parse(size),
+    discount: Number(JSON.parse(discount)),
+    colors: colors.map((item)=> JSON.parse(item)),
     images,
     subCategory,
   });
 
   if (!newProduct) {
-    for (let img of cloudinaryImgUrl) {
+    for (let img of images) {
       await cloudinaryDeleteImg(img.id);
     }
     return next(new AppError(`Couldn't Create new Product`, 400));
@@ -202,8 +216,36 @@ export const getAllProducts = catchAsync(async (req, res, next) => {
 
 export const updateProduct = catchAsync(async (req, res, next) => {
   const { id } = req.params;
+  // find Product  
 
-  const updatedProduct = await Product.findByIdAndUpdate(id, req.body, {
+  const product =  await Product.findById(id);
+
+  if(!product){
+    for (let image of req.images){
+      await deletePhotoFromServer(image);
+    }
+    return next(new AppError(`No Product with this id`, 404));
+  }
+
+  let cloudinaryImages = [];
+  
+  cloudinaryImages = await uploadToCloudinary(req.images);
+  
+
+  if(product.images.length > 0){
+    
+    for(let image of product.images){
+
+      await cloudinaryDeleteImg(image.id);
+    }
+  }
+
+
+
+  const updatedProduct = await Product.findByIdAndUpdate(id, {
+    ...req.body,
+    images: cloudinaryImages
+  }, {
     new: true,
     runValidators: true,
   });
