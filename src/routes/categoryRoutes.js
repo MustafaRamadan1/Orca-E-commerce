@@ -1,11 +1,12 @@
 import { Router } from "express";
 import { createCategory, deleteCategory, getAllCategories, getCategory, getFilteredCategories, updateCategory } from "../controllers/categoryControllers.js";
 import isAuth from '../middlewares/authentication.js';
+import authorization from '../middlewares/Authorization.js'
 import validation from '../middlewares/validation.js';
 import Schema from '../validation/index.js'
 const router = Router();
 
-
+router.use(isAuth, authorization('admin'));
 router.post('/', validation(Schema.categorySchema.createCategory), createCategory);
 router.get('/filtered', getFilteredCategories)
 router.get('/',getAllCategories);
