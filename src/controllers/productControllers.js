@@ -83,80 +83,65 @@ export const createProduct = catchAsync(async (req, res, next) => {
 export const getProduct = catchAsync(async (req, res, next) => {
   const { slug } = req.params;
   const products = await Product.aggregate([
-    { $match: { slug } },
-    // Lookup to fetch category and subcategory details
     {
-      $lookup: {
-        from: "categories",
-        localField: "category",
-        foreignField: "_id",
-        as: "category",
-      },
+      $match: { slug: slug }
     },
-    {
-      $lookup: {
-        from: "subcategories",
-        localField: "subCategory",
-        foreignField: "_id",
-        as: "subcategory",
-      },
-    },
-    // Unwind sizes array to work with each size individually
-    { $unwind: "$size" },
-    // Group by slug and size to calculate quantity and price details
     {
       $group: {
-        _id: { slug: "$slug", size: "$size" },
-        productId: { $first: "$_id" },
+        _id: "$size.value",
         name: { $first: "$name" },
         description: { $first: "$description" },
-        slug: { $first: "$slug" },
-        category: { $first: "$category" },
-        subcategory: { $first: "$subcategory" },
-        quantity: { $sum: "$quantity" },
         price: { $first: "$price" },
+        category: { $first: "$category" },
+        subCategory: { $first: "$subCategory" },
+        quantity: { $sum: "$quantity" },
         discount: { $first: "$discount" },
-        productSalePrice: {
-          $first: {
-            $round: [
-              {
-                $subtract: [
-                  "$price",
-                  { $multiply: ["$price", { $divide: ["$discount", 100] }] },
-                ],
-              },
-              2,
-            ],
-          },
-        },
-      },
+        colors: { $first: "$colors" },
+        saleProduct: { 
+          $first: { 
+            $subtract: ["$price", { $divide: [{ $multiply: ["$price", "$discount"] }, 100] }] 
+          } 
+        }
+      }
     },
-    // Group again by slug to calculate total quantity across all sizes
     {
       $group: {
-        _id: "$_id.slug",
-        productId: { $first: "$productId" },
-        name: { $first: "$name" },
-        description: { $first: "$description" },
-        slug: { $first: "$_id.slug" },
-        category: { $first: "$category" },
-        subcategory: { $first: "$subcategory" },
-        sizes: {
-          $push: {
-            size: "$_id.size",
-            quantity: "$quantity",
-            price: "$price",
-            discount: "$discount",
-            productSalePrice: "$productSalePrice",
-          },
-        },
+        _id: null,
         totalQuantity: { $sum: "$quantity" },
-      },
+        products: {
+          $push: {
+            size: "$_id",
+            name: "$name",
+            description: "$description",
+            price: "$price",
+            category: "$category",
+            subCategory: "$subCategory",
+            quantity: "$quantity",
+            discount: "$discount",
+            colors: "$colors",
+            saleProduct: "$saleProduct"
+          }
+        }
+      }
     },
     {
-      $project: { _id: 0 },
+      $lookup: {
+        from: 'products',
+        localField: 'products.name',
+        foreignField: 'name',
+        as: 'allProducts'
+      }
     },
-  ]);
+    {
+      $project: {
+        _id: 0,
+        totalQuantity: 1,
+        images: { $arrayElemAt: ["$allProducts.images", 0] },
+        products: 1
+      }
+    }
+]);
+
 
   if (!products.length) return next(new AppError(`No Product Found`, 404));
 
@@ -200,7 +185,7 @@ export const getAllProducts = catchAsync(async (req, res, next) => {
 
   products = products.skip(skip).limit(limit);
 
-  products = await products;
+  products = await products.populate('category').populate('subCategory')
 
   if (!products) return next(new AppError(`No Products in DB`, 404));
 
@@ -232,7 +217,7 @@ export const updateProduct = catchAsync(async (req, res, next) => {
   }
  
     for (let image of product.images) {
-      await cloudinaryDeleteImg(image.id);
+      await cloudinaryDeleteImg(image.id);  
     }
   
 
@@ -289,3 +274,39 @@ export const deleteProduct = catchAsync(async (req, res, next) => {
     message: "Deleted Successfully",
   });
 });
+
+
+export const filterProducts = catchAsync(async (req, res,next)=>{
+
+
+  let allProducts = [];
+  const {letters} = req.query;
+
+  let query ={};
+
+ if(letters){
+  const regex = new RegExp(
+    letters
+      .split("")
+      .map((letters) => `(?=.*${letters})`)
+      .join(""),
+    "i"
+  );
+
+  query.name = regex;
+
+
+  allProducts =  await Product.find(query);
+  console.log(allProducts)
+
+ }else{
+  allProducts = [];
+ }
+
+ console.log(allProducts)
+ res.status(200).json({
+  status: 'success',
+  length: allProducts.length,
+  data: allProducts
+ })
+})
