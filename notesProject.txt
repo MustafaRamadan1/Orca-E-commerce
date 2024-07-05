@@ -10,7 +10,8 @@ _______________________
 
 validation layer
  ** Auth Routes Validation Done  " SignUp, Login, ResetPassword , ForgetPassword"
- ** category Routes "Create" the naem can has number or just letters" 
+ ** category Routes "Create" the naem can has number or just letters"   finish category routes validation  
+ 
 
  logger , 
 

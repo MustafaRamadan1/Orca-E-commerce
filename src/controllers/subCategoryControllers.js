@@ -86,7 +86,10 @@ export const updateSubCategory = catchAsync(async (req, res, next) => {
   const updatedSubCategory = await subCategory.findByIdAndUpdate(id, req.body, {
     new: true,
     runValidators: true,
-  }).populate("category");
+  }).populate({
+    path: "category",
+    select : '-createdAt -updatedAt -__v'
+  });
 
   if (!updatedSubCategory)
     return next(

@@ -9,9 +9,9 @@ const router = Router();
 router.post('/', validation(Schema.categorySchema.createCategory), createCategory);
 router.get('/filtered', getFilteredCategories)
 router.get('/',getAllCategories);
-router.get('/:id', getCategory);
-router.put('/:id', updateCategory);
-router.delete('/:id', deleteCategory);
+router.get('/:id', validation(Schema.categorySchema.getCategory),getCategory);
+router.put('/:id', validation(Schema.categorySchema.updateCategory),updateCategory);
+router.delete('/:id', validation(Schema.categorySchema.deleteCategory), deleteCategory);
 
 
 export default router;

@@ -227,12 +227,14 @@ export const updateProduct = catchAsync(async (req, res, next) => {
   let cloudinaryImages = [];
 
   cloudinaryImages = await uploadToCloudinary(req.images);
-
-  if (product.images.length > 0) {
+  for (let image of req.images) {
+    await deletePhotoFromServer(image);
+  }
+ 
     for (let image of product.images) {
       await cloudinaryDeleteImg(image.id);
     }
-  }
+  
 
   const updatedProduct = await Product.findByIdAndUpdate(
     id,

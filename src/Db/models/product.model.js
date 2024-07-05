@@ -81,7 +81,7 @@ productSchema.pre('findOneAndUpdate', function(next){
     const update = this.getUpdate();
 
     if(update.name){
-        this.slug =  slug(update.name, "_");
+        update.slug =  slug(update.name, "_");
     }
 
     return next();

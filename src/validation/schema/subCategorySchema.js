@@ -3,14 +3,14 @@ import JoiObjectId from 'joi-objectid';
 
 Joi.objectId = JoiObjectId(Joi);
 
- const createCategory = {
+ const createSubCategory = {
 
     body: Joi.object({
         name: Joi.string().required().min(3).messages({
             'any.required': 'Name is Required' ,
             'string.base': 'Name must be a string',
             'string.empty': 'Name not allowed to be empty',
-            'string.min': 'Name must be at least 3 characters',
+            'string.min': 'N0ame must be at least 3 characters',
          
         }),
 
@@ -18,12 +18,18 @@ Joi.objectId = JoiObjectId(Joi);
             'any.required': 'Description is Required',
             'string.base': 'Description must be a string',
             'string.empty': 'Description not allowed to be empty'
+        }),
+        category: Joi.objectId().required().messages({
+            'string.base': 'Category ID must be a string',
+            'string.empty': 'Category ID can not be Empty',
+            'any.required': 'Category ID is required',
+            'string.pattern.name': 'Category ID must be a valid MongoDB ObjectId'
         })
     })
 };
 
 
-const getCategory = {
+const getSubCategory = {
     params: Joi.object({
         id: Joi.objectId().required().messages({
             'string.base': 'ID must be a string',
@@ -35,7 +41,7 @@ const getCategory = {
 }
 
 
-const updateCategory = {
+const updateSubCategory = {
     params: Joi.object({
         id: Joi.objectId().required().messages({
             'string.base': 'ID must be a string',
@@ -54,12 +60,18 @@ const updateCategory = {
         description: Joi.string().messages({
             'string.base': 'Description must be a string',
             'string.empty': 'Description not allowed to be empty'
+        }),
+        category: Joi.objectId().messages({
+            'string.base': 'ID must be a string',
+            'string.empty': 'ID is required',
+            'any.required': 'ID is required',
+            'string.pattern.name': 'ID must be a valid MongoDB ObjectId'
         })
     })
 }
 
 
-const deleteCategory ={
+const deleteSubCategory ={
     params: Joi.object({
         id: Joi.objectId().required().messages({
             'string.base': 'ID must be a string',
@@ -71,4 +83,4 @@ const deleteCategory ={
 }
 
 
-export default {createCategory, deleteCategory, updateCategory , getCategory}
+export default {createSubCategory, deleteSubCategory, updateSubCategory , getSubCategory}

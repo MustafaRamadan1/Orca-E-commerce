@@ -83,6 +83,7 @@ export const updateCategory = catchAsync(async (req, res, next) => {
 
     const updatedCategory = await Category.findByIdAndUpdate(id, req.body, {new: true, runValidators: true});
 
+    console.log(updatedCategory)
     if(!updatedCategory) return next(new AppError(`Couldn't Update the Category , No Category with this Id `, 404));
 
     res.status(200).json({
