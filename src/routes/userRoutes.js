@@ -8,9 +8,9 @@ const router = Router();
 
 
 router.post('/auth/signup',validation(Schema.authSchema.signUp) ,signUp);
-router.post('/auth/login', login);
-router.post('/auth/forgetPassword', forgetPassword);
-router.patch('/auth/resetPassword/:token', resetPassword)
+router.post('/auth/login', validation(Schema.authSchema.login), login);
+router.post('/auth/forgetPassword', validation(Schema.authSchema.forgetPassword), forgetPassword);
+router.patch('/auth/resetPassword/:token', validation(Schema.authSchema.resetPassword), resetPassword)
 
 
 

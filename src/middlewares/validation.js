@@ -12,12 +12,14 @@ const validation = schema=> (req, res ,next)=>{
             const {error} = schema[part].validate(req[part]);
 
             if(error){
+                console.log(error);
                errorMessages.push(errorFormat(error, part));
             }
         }
     })
 
     if(errorMessages.length > 0){
+        console.log(JSON.parse(errorMessages.join(' , ')))
         return next(new AppError(errorMessages.join(' , '), 400));
     }
     else{
@@ -27,7 +29,9 @@ const validation = schema=> (req, res ,next)=>{
 
 
 function errorFormat(error, part){
-
-    return `${part}Error: ${error.details[0].message}`
+    
+    const object = {type: part, error:error.details[0].message};
+    // return `${part}Error : ${error.details[0].message}`
+    return JSON.stringify(object)
 }
 export default validation;

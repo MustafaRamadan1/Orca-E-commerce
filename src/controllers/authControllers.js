@@ -80,7 +80,7 @@ export const forgetPassword = catchAsync(async (req, res , next)=>{
           to: user.email,
           subject : 'Forget Your Password , Please Check Email to reset it again',
           text : `If you forget your Password Please click on the link below\n
-          ${req.protocol}://${req.get('host')}/auth/resetPassword/${token}`
+          ${req.protocol}://${req.get('host')}/api/v1/auth/resetPassword/${token}`
          });
 
          res.status(200).json({

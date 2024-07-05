@@ -60,10 +60,10 @@ const forgetPassword = {
 const resetPassword = {
     body: Joi.object({
         newPassword: Joi.string().min(8).required().messages({
-            'any.required': 'Password is Required',
-            'string.base': 'Password must be a string',
-            'string.min': 'Password must be at least 8 characters',
-            'string.empty': 'Password not allowed to be empty'
+            'any.required': 'NewPassword Field  is Required',
+            'string.base': 'newPassword Field must be a string',
+            'string.min': 'NewPassword Field must be at least 8 characters',
+            'string.empty': 'newPassword Field not allowed to be empty'
         })
     }),
 
