@@ -65,7 +65,7 @@ const productSchema = new mongoose.Schema({
 
 productSchema.index({name: 1, size: 1}, {unique: true});
 productSchema.virtual('productSalePrice').get(function (){
-    return this.price - (this.price  * this.discount )
+    return this.price - (this.price  * (this.discount / 100) ) 
 })
 
 productSchema.pre('save', function(next){
