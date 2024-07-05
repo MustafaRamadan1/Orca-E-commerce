@@ -2,6 +2,7 @@ import slug from "slug";
 import { catchAsync } from "../utils/catchAsync.js";
 import AppError from "../utils/AppError.js";
 import Category from "../Db/models/category.model.js";
+import subCategory from '../Db/models/sub-Category.model.js'
 import { filterObject } from "../utils/helperFunc.js";
 
 // create category , get all categories , get one cateogry , update one , delete one
@@ -97,6 +98,8 @@ export const deleteCategory = catchAsync(async (req, res ,next)=>{
 
     const {id} = req.params;
 
+    const deleteSubCategories = await subCategory.deleteMany({category: id});
+    
     const deletedCategory = await Category.findByIdAndDelete(id);
 
     if(!deletedCategory) return next(new AppError('No Category with this Id', 404));

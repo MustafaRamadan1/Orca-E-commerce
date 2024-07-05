@@ -274,3 +274,39 @@ export const deleteProduct = catchAsync(async (req, res, next) => {
     message: "Deleted Successfully",
   });
 });
+
+
+export const filterProducts = catchAsync(async (req, res,next)=>{
+
+
+  let allProducts = [];
+  const {letters} = req.query;
+
+  let query ={};
+
+ if(letters){
+  const regex = new RegExp(
+    letters
+      .split("")
+      .map((letters) => `(?=.*${letters})`)
+      .join(""),
+    "i"
+  );
+
+  query.name = regex;
+
+
+  allProducts =  await Product.find(query);
+  console.log(allProducts)
+
+ }else{
+  allProducts = [];
+ }
+
+ console.log(allProducts)
+ res.status(200).json({
+  status: 'success',
+  length: allProducts.length,
+  data: allProducts
+ })
+})
