@@ -5,9 +5,18 @@ colors = [{
 sizes : {value , label , color};
  
  done i have to test only  
- 
+ Done
+_______________________
 
-handle get all products , get product depend on the size  
+validation layer , logger , 
+
+handle get all products Done  , get product depend on the size  
 
 otp 
 payment  
+
+
+name , description , slug , category , subCategory 
+depend on size value 
+quantity , discount , price, colors , productSalePrice calc  
+total quantity

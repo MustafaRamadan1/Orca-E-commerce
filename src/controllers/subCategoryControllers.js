@@ -61,17 +61,17 @@ export const getAllSubCategories = catchAsync(async (req, res, next) => {
 export const getSubCategory = catchAsync(async (req, res, next) => {
   const { id } = req.params;
 
-  const subCategory = await SubCategory.findById(id).populate({
+  const currentSubCategory = await subCategory.findById(id).populate({
     path: "category",
     select: "-__v -updatedAt -createdAt",
   });
 
-  if (!subCategory)
+  if (!currentSubCategory)
     return next(new AppError(`No SubCategory with this ID`, 404));
 
   res.status(200).json({
     status: "success",
-    data: subCategory,
+    data: currentSubCategory,
   });
 });
 
@@ -83,7 +83,7 @@ export const updateSubCategory = catchAsync(async (req, res, next) => {
 
   const { id } = req.params;
 
-  const updatedSubCategory = await SubCategory.findByIdAndUpdate(id, req.body, {
+  const updatedSubCategory = await subCategory.findByIdAndUpdate(id, req.body, {
     new: true,
     runValidators: true,
   }).populate("category");
