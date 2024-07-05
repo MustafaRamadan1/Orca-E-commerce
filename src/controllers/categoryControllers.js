@@ -98,7 +98,7 @@ export const deleteCategory = catchAsync(async (req, res ,next)=>{
 
     const {id} = req.params;
 
-    const deleteSubCategories = await subCategory.deleteMany({category: id});
+     await subCategory.deleteMany({category: id});
     
     const deletedCategory = await Category.findByIdAndDelete(id);
 
