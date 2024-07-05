@@ -54,6 +54,7 @@ export const createProduct = catchAsync(async (req, res, next) => {
     }
   }
 
+  
   const newProduct = await Product.create({
     name,
     description,
