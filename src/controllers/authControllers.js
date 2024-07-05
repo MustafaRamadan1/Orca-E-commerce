@@ -9,8 +9,8 @@ import sendEmail from "../utils/sendEmail.js";
 export const signUp = catchAsync(async (req, res, next) => {
   const { name, email, password } = req.body;
 
-  if (!email || !name || !password)
-    return next(new AppError(`Please Provide Required Fields`, 404));
+  // if (!email || !name || !password)
+  //   return next(new AppError(`Please Provide Required Fields`, 404));
 
   const newUser = await User.create({
     name,
@@ -33,10 +33,10 @@ export const signUp = catchAsync(async (req, res, next) => {
 export const login = catchAsync(async (req, res, next) => {
   const { email, password } = req.body;
 
-  if (!email || !password)
-    return next(
-      new AppError("Please Provide Required Fields : Email and Password", 404)
-    );
+  // if (!email || !password)
+  //   return next(
+  //     new AppError("Please Provide Required Fields : Email and Password", 404)
+  //   );
 
   const user = await User.findOne({ email });
 
@@ -67,7 +67,7 @@ export const getAllUsers = catchAsync(async (req, res, next) => {
 export const forgetPassword = catchAsync(async (req, res , next)=>{
 
           const {email} = req.body;
-          if(!email) return next(new AppError(`Please Provide Email`, 404));
+          // if(!email) return next(new AppError(`Please Provide Email`, 404));
 
           const user = await User.findOne({email});
           if(!user) return next(new AppError(`No User with This Email`, 404));
@@ -95,8 +95,8 @@ export const resetPassword = catchAsync(async (req, res , next)=>{
   const {token} = req.params; 
   const {newPassword} = req.body;
   
-  if (!token || !newPassword)
-    return next(new AppError(`Please provide a token and a new password`, 400));
+  // if (!token || !newPassword)
+  //   return next(new AppError(`Please provide a token and a new password`, 400));
 
   const hashedToken = crypto.createHash('sha256').update(token).digest('hex');
 

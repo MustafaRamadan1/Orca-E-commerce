@@ -9,12 +9,11 @@ import { filterObject } from "../utils/helperFunc.js";
 export const createCategory = catchAsync(async (req, res, next) => {
   const { name, description } = req.body;
 
-  if(!name || !description) return next(new AppError(`Please Provide Required Fields`, 404));
+  // if(!name || !description) return next(new AppError(`Please Provide Required Fields`, 404));
   
   const newCategory = await Category.create({
     name,
     description,
-    slug: slug(name, "_"),
   });
 
   if (!newCategory)

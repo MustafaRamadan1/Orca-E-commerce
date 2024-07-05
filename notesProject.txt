@@ -8,7 +8,11 @@ sizes : {value , label , color};
  Done
 _______________________
 
-validation layer , logger , 
+validation layer
+ ** Auth Routes Validation Done  " SignUp, Login, ResetPassword , ForgetPassword"
+ ** category Routes "Create" the naem can has number or just letters" 
+
+ logger , 
 
 handle get all products Done  , get product depend on the size  
 
