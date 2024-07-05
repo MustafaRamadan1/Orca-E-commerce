@@ -3,6 +3,7 @@ import { catchAsync } from "../utils/catchAsync.js";
 import AppError from "../utils/AppError.js";
 import Category from "../Db/models/category.model.js";
 import subCategory from '../Db/models/sub-Category.model.js'
+import Product from '../Db/models/product.model.js'
 import { filterObject } from "../utils/helperFunc.js";
 
 // create category , get all categories , get one cateogry , update one , delete one
@@ -99,6 +100,8 @@ export const deleteCategory = catchAsync(async (req, res ,next)=>{
     const {id} = req.params;
 
      await subCategory.deleteMany({category: id});
+     await  Product.deleteMany({category:id});
+
     
     const deletedCategory = await Category.findByIdAndDelete(id);
 
