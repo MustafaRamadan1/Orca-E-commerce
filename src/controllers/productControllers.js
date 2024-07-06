@@ -199,8 +199,9 @@ export const getAllProducts = catchAsync(async (req, res, next) => {
 
 export const updateProduct = catchAsync(async (req, res, next) => {
   const { id } = req.params;
+  
   // find Product
-
+  const bodyImages = req.body.images? JSON.parse(req.body.images): undefined;
   const product = await Product.findById(id);
 
   if (!product) {
@@ -211,15 +212,31 @@ export const updateProduct = catchAsync(async (req, res, next) => {
   }
 
   let cloudinaryImages = [];
+  const uploadedCloudImages =  await uploadToCloudinary(req.images);
+  
 
-  cloudinaryImages = await uploadToCloudinary(req.images);
+  cloudinaryImages.push(...uploadedCloudImages);
+
+  if(bodyImages) cloudinaryImages.push(...bodyImages)
+
+  
   for (let image of req.images) {
     await deletePhotoFromServer(image);
   }
- 
+  
+  if(bodyImages){
+    const requestImageId = bodyImages.map((image)=> image.id);
+    const differenceImages = product.images.filter((image)=> !requestImageId.includes(image.id));
+
+    for (let image of differenceImages) {
+      await cloudinaryDeleteImg(image.id);  
+    }
+  }
+  else{
     for (let image of product.images) {
       await cloudinaryDeleteImg(image.id);  
     }
+  }
   
 
   const updatedProduct = await Product.findByIdAndUpdate(
@@ -248,6 +265,8 @@ export const updateProduct = catchAsync(async (req, res, next) => {
     data: updatedProduct,
   });
 });
+
+
 
 export const deleteProduct = catchAsync(async (req, res, next) => {
   const { id } = req.params;
