@@ -12,6 +12,8 @@ import {
 } from "../utils/uploadImgHelperFunc.js";
 
 export const createProduct = catchAsync(async (req, res, next) => {
+  const bodyImages = req.body.images? JSON.parse(req.body.images): [];
+
   console.log(req.body);
   const {
     name,
@@ -43,11 +45,35 @@ export const createProduct = catchAsync(async (req, res, next) => {
   const product = await Product.findOne({ name });
   let images = [];
   if (product) {
-    const uploadedImages = await uploadToCloudinary(req.images);
-    for (let file of req.images) {
-      await deletePhotoFromServer(file);
+    if(req.images.length === 3){
+
+      const uploadedImages = await uploadToCloudinary(req.images);
+      for (let file of req.images) {
+        await deletePhotoFromServer(file);
+      };
+
+      for(let image of product.images){
+        await cloudinaryDeleteImg(image.id)
+      }
+
+      images.push(...uploadedImages)
     }
-    images = [...product.images,...uploadedImages ];
+    else if (bodyImages.length === 3){
+      images.push(...bodyImages)
+    } 
+    else {
+      const imagesId = bodyImages.map((image)=> image.id);
+      const differenceImg = product.images.filter((image)=> !imagesId.includes(image.id));
+      const uploadedImages = await uploadToCloudinary(req.images);
+      for (let file of req.images) {
+        await deletePhotoFromServer(file);
+      };
+      images.push(...uploadedImages);
+      images.push(...bodyImages);
+      for (let image of differenceImg) {
+        await cloudinaryDeleteImg(image.id);
+      };
+    }
   } else {
     images = await uploadToCloudinary(req.images);
     for (let file of req.images) {
@@ -202,7 +228,7 @@ export const updateProduct = catchAsync(async (req, res, next) => {
   const { id } = req.params;
   
   // find Product
-  const bodyImages = req.body.images? JSON.parse(req.body.images): undefined;
+  const bodyImages = req.body.images? JSON.parse(req.body.images): [];
   const product = await Product.findById(id);
 
   if (!product) {
@@ -213,31 +239,60 @@ export const updateProduct = catchAsync(async (req, res, next) => {
   }
 
   let cloudinaryImages = [];
-  const uploadedCloudImages =  await uploadToCloudinary(req.images);
   
+  // if(bodyImages.length === 3){
+  //   cloudinaryImages.push(...bodyImages)
+  // }
+  // else 
+  if(req.images.length === 3){
 
-  cloudinaryImages.push(...uploadedCloudImages);
-
-  if(bodyImages) cloudinaryImages.push(...bodyImages)
-
-  
-  for (let image of req.images) {
-    await deletePhotoFromServer(image);
-  }
-  
-  if(bodyImages){
-    const requestImageId = bodyImages.map((image)=> image.id);
-    const differenceImages = product.images.filter((image)=> !requestImageId.includes(image.id));
-
-    for (let image of differenceImages) {
-      await cloudinaryDeleteImg(image.id);  
-    }
-  }
-  else{
+    const uploadedCloudImages =  await uploadToCloudinary(req.images);
+    cloudinaryImages.push(...uploadedCloudImages);
     for (let image of product.images) {
       await cloudinaryDeleteImg(image.id);  
     }
+
+    for(let image of req.images){
+      await deletePhotoFromServer(image);
+    }
+  } 
+  else{
+    const uploadedCloudImages =  await uploadToCloudinary(req.images);
+    cloudinaryImages.push(...uploadedCloudImages);
+    cloudinaryImages.push(...bodyImages);
+    const imagesId = bodyImages.map((image)=>image.id);
+    const differentImages = product.images.filter((image)=> !imagesId.includes(image.id))
+    for (let image of differentImages) {
+      await cloudinaryDeleteImg(image.id);  
+    }
+
+    for(let image of req.images){
+      await deletePhotoFromServer(image);
+    }
   }
+  
+
+
+  // if(bodyImages) cloudinaryImages.push(...bodyImages)
+
+  
+  // for (let image of req.images) {
+  //   await deletePhotoFromServer(image);
+  // }
+  
+  // if(bodyImages){
+  //   const requestImageId = bodyImages.map((image)=> image.id);
+  //   const differenceImages = product.images.filter((image)=> !requestImageId.includes(image.id));
+
+  //   for (let image of differenceImages) {
+  //     await cloudinaryDeleteImg(image.id);  
+  //   }
+  // }
+  // else{
+  //   for (let image of product.images) {
+  //     await cloudinaryDeleteImg(image.id);  
+  //   }
+  // }
   
 
   const updatedProduct = await Product.findByIdAndUpdate(
