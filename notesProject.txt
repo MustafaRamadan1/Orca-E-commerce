@@ -11,8 +11,7 @@ _______________________
 validation layer
  ** Auth Routes Validation Done  " SignUp, Login, ResetPassword , ForgetPassword"
  ** category Routes "Create" the naem can has number or just letters"   finish category routes validation  
- 
-
+ ** update prodcuct , can 3 files uploads or array of objects of cloudinary images and files  
  logger , 
 
 handle get all products Done  , get product depend on the size  
