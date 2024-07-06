@@ -43,10 +43,11 @@ export const createProduct = catchAsync(async (req, res, next) => {
   const product = await Product.findOne({ name });
   let images = [];
   if (product) {
+    const uploadedImages = await uploadToCloudinary(req.images);
     for (let file of req.images) {
       await deletePhotoFromServer(file);
     }
-    images = product.images;
+    images = [...product.images,...uploadedImages ];
   } else {
     images = await uploadToCloudinary(req.images);
     for (let file of req.images) {
