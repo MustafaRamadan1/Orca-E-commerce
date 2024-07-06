@@ -9,7 +9,12 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const resizeProductImg = catchAsync(async (req, res ,next)=>{
-    console.log(req.params, req.method, req.files)
+    
+    if(req.body.images && req.files.length ===0){
+        req.images = [];
+        return next();
+    }
+
     if(req.params.id && req.method === 'PUT' && req.files.length === 0) {
 
         req.images = [];
@@ -18,7 +23,7 @@ const resizeProductImg = catchAsync(async (req, res ,next)=>{
     else if (!req.files || req.files.length === 0) return next(new AppError(`No Images uploaded , Please Provide Images`, 400));
 
     const images = [];
- 
+console.log(req.files.length);
     for(let i =0;i<req.files.length;i++){
 
         const filepath = `${__dirname}/../uploads/products/${uuid()}.jpg`

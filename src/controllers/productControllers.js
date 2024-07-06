@@ -46,7 +46,6 @@ export const createProduct = catchAsync(async (req, res, next) => {
   let images = [];
   if (product) {
     if(req.images.length === 3){
-
       const uploadedImages = await uploadToCloudinary(req.images);
       for (let file of req.images) {
         await deletePhotoFromServer(file);
@@ -61,12 +60,14 @@ export const createProduct = catchAsync(async (req, res, next) => {
       await Product.findOneAndUpdate({name},{images})
     }
     else if (bodyImages.length === 3){
+
       images.push(...bodyImages)
     } 
     else {
       const imagesId = bodyImages.map((image)=> image.id);
       const differenceImg = product.images.filter((image)=> !imagesId.includes(image.id));
       const uploadedImages = await uploadToCloudinary(req.images);
+    
       for (let file of req.images) {
         await deletePhotoFromServer(file);
       };
