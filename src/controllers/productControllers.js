@@ -56,7 +56,9 @@ export const createProduct = catchAsync(async (req, res, next) => {
         await cloudinaryDeleteImg(image.id)
       }
 
-      images.push(...uploadedImages)
+      images.push(...uploadedImages);
+
+      await Product.findOneAndUpdate({name},{images})
     }
     else if (bodyImages.length === 3){
       images.push(...bodyImages)
@@ -70,6 +72,7 @@ export const createProduct = catchAsync(async (req, res, next) => {
       };
       images.push(...uploadedImages);
       images.push(...bodyImages);
+      await Product.findOneAndUpdate({name},{images})
       for (let image of differenceImg) {
         await cloudinaryDeleteImg(image.id);
       };
