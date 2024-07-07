@@ -24,6 +24,7 @@ import userRouter from "./routes/userRoutes.js";
 import categoryRouter from "./routes/categoryRoutes.js";
 import subCategoryRouter from "./routes/subCategoryRoutes.js";
 import productRouter from "./routes/productRoutes.js";
+import cartRouter from "./routes/cartRoutes.js";
 import AppError from "./utils/AppError.js";
 import globalErrorHandler from "./middlewares/globalerrorHandler.js";
 
@@ -33,6 +34,7 @@ app.use("/api/v1", userRouter);
 app.use("/api/v1/categories", categoryRouter);
 app.use("/api/v1/subCategories", subCategoryRouter);
 app.use("/api/v1/products", productRouter);
+app.use("/api/v1/carts", cartRouter);
 
 //  not found route for non exist routes
 

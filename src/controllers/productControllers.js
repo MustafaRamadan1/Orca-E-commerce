@@ -12,16 +12,18 @@ import {
 } from "../utils/uploadImgHelperFunc.js";
 
 export const createProduct = catchAsync(async (req, res, next) => {
-  let bodyImages;
+  let bodyImages = [];
 
-  if (req.body.images.constructor.name === "Array") {
-    bodyImages = req.body.images
-      ? req.body.images.map((image) => {
-          return JSON.parse(image);
-        })
-      : [];
-  } else if (JSON.parse(req.body.images).constructor.name === "Object") {
-    bodyImages = [JSON.parse(req.body.images)];
+  if (req.body.images) {
+    if (req.body.images.constructor.name === "Array") {
+      bodyImages = req.body.images
+        ? req.body.images.map((image) => {
+            return JSON.parse(image);
+          })
+        : [];
+    } else if (JSON.parse(req.body.images).constructor.name === "Object") {
+      bodyImages = [JSON.parse(req.body.images)];
+    }
   }
 
   console.log(req.body);
@@ -121,10 +123,13 @@ export const createProduct = catchAsync(async (req, res, next) => {
 });
 
 export const getProduct = catchAsync(async (req, res, next) => {
-  const { slug } = req.params;
+  
+  const { params } = req.params;
+  console.log(`inside the aggregation `)
+  console.log(params)
   const products = await Product.aggregate([
     {
-      $match: { slug: slug },
+      $match: { slug: params },
     },
     {
       $group: {
@@ -185,6 +190,7 @@ export const getProduct = catchAsync(async (req, res, next) => {
     },
   ]);
 
+  console.log(products)
   if (!products.length) return next(new AppError(`No Product Found`, 404));
 
   res.status(200).json({
@@ -396,5 +402,29 @@ export const filterProducts = catchAsync(async (req, res, next) => {
     status: "success",
     length: allProducts.length,
     data: allProducts,
+  });
+});
+
+export const getProductById = catchAsync(async (req, res, next) => {
+  const { params } = req.params;
+
+ 
+console.log(params)
+  const currentProduct = await Product.findById(params)
+    .populate({
+      path: "category",
+      select: "-__v -updatedAt -createdAt",
+    })
+    .populate({
+      path: "subCategory",
+      select: "-__v -updatedAt -createdAt",
+    });
+
+  if (!currentProduct)
+    return next(new AppError(`No Product with this ID`, 404));
+
+  res.status(200).json({
+    status: "success",
+    data: currentProduct,
   });
 });
