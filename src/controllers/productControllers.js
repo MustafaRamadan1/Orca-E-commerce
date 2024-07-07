@@ -123,10 +123,13 @@ export const createProduct = catchAsync(async (req, res, next) => {
 });
 
 export const getProduct = catchAsync(async (req, res, next) => {
-  const { slug } = req.params;
+  
+  const { params } = req.params;
+  console.log(`inside the aggregation `)
+  console.log(params)
   const products = await Product.aggregate([
     {
-      $match: { slug: slug },
+      $match: { slug: params },
     },
     {
       $group: {
@@ -187,6 +190,7 @@ export const getProduct = catchAsync(async (req, res, next) => {
     },
   ]);
 
+  console.log(products)
   if (!products.length) return next(new AppError(`No Product Found`, 404));
 
   res.status(200).json({
@@ -402,11 +406,11 @@ export const filterProducts = catchAsync(async (req, res, next) => {
 });
 
 export const getProductById = catchAsync(async (req, res, next) => {
-  const { id } = req.params;
+  const { params } = req.params;
 
-  console.log(id);
-
-  const currentProduct = await Product.findById(id)
+ 
+console.log(params)
+  const currentProduct = await Product.findById(params)
     .populate({
       path: "category",
       select: "-__v -updatedAt -createdAt",

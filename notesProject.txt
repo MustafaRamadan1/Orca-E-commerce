@@ -12,12 +12,24 @@ validation layer
  ** Auth Routes Validation Done  " SignUp, Login, ResetPassword , ForgetPassword"
  ** category Routes "Create" the naem can has number or just letters"   finish category routes validation  
  ** update prodcuct , can 3 files uploads or array of objects of cloudinary images and files  
- logger , 
+ logger Done , 
 
-handle get all products Done  , get product depend on the size  
+handle get all products Done  , get product depend on the size  === > Done  
 
 otp 
-payment  
+payment  ===> Working on it  
+
+Cart ===> id , userId, total amount
+Cart Items ===> id , cartId , quantity 
+order ==> user id , cartitemsID, totalAmout , status 
+User  ===> inside cart model 
+
+
+_______________________
+in user model we make vpopulate to the cart for that user id 
+in cart model we make vPopulate to the cartItems to get all cartItems for that cart  
+
+
 
 
 name , description , slug , category , subCategory 

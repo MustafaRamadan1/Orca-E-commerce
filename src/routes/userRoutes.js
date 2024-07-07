@@ -11,7 +11,7 @@ router.post('/auth/signup',validation(Schema.authSchema.signUp) ,signUp);
 router.post('/auth/login', validation(Schema.authSchema.login), login);
 router.post('/auth/forgetPassword', validation(Schema.authSchema.forgetPassword), forgetPassword);
 router.patch('/auth/resetPassword/:token', validation(Schema.authSchema.resetPassword), resetPassword)
-
+router.get('/users', getAllUsers)
 
 
 
