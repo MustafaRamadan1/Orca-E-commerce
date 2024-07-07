@@ -400,3 +400,27 @@ export const filterProducts = catchAsync(async (req, res, next) => {
     data: allProducts,
   });
 });
+
+export const getProductById = catchAsync(async (req, res, next) => {
+  const { id } = req.params;
+
+  console.log(id);
+
+  const currentProduct = await Product.findById(id)
+    .populate({
+      path: "category",
+      select: "-__v -updatedAt -createdAt",
+    })
+    .populate({
+      path: "subCategory",
+      select: "-__v -updatedAt -createdAt",
+    });
+
+  if (!currentProduct)
+    return next(new AppError(`No Product with this ID`, 404));
+
+  res.status(200).json({
+    status: "success",
+    data: currentProduct,
+  });
+});
