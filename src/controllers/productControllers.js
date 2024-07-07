@@ -12,16 +12,18 @@ import {
 } from "../utils/uploadImgHelperFunc.js";
 
 export const createProduct = catchAsync(async (req, res, next) => {
-  let bodyImages;
+  let bodyImages = [];
 
-  if (req.body.images.constructor.name === "Array") {
-    bodyImages = req.body.images
-      ? req.body.images.map((image) => {
-          return JSON.parse(image);
-        })
-      : [];
-  } else if (JSON.parse(req.body.images).constructor.name === "Object") {
-    bodyImages = [JSON.parse(req.body.images)];
+  if (req.body.images) {
+    if (req.body.images.constructor.name === "Array") {
+      bodyImages = req.body.images
+        ? req.body.images.map((image) => {
+            return JSON.parse(image);
+          })
+        : [];
+    } else if (JSON.parse(req.body.images).constructor.name === "Object") {
+      bodyImages = [JSON.parse(req.body.images)];
+    }
   }
 
   console.log(req.body);
