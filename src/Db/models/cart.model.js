@@ -11,15 +11,31 @@ const cartSchema = new mongoose.Schema({
         type: Number,
         default: 0
     }
+},{
+    id:false,
+    timestamps: true,
+    toObject:{
+        virtuals:true
+    },
+    toJSON:{
+        virtuals:true
+    }
 });
 
 cartSchema.index({user:1, id:1}, {unique: true});
+
+cartSchema.virtual('items',{
+    ref:'CartItem',
+    localField:'_id',
+    foreignField:'cart'
+});
 
 cartSchema.methods.toJSON = function (){
 
     const cart = this;
     const cartObject = cart.toObject();
-
+    delete cartObject.createdAt;
+    delete cartObject.updatedAt;
     delete cartObject.__v;
 
     return cartObject;
