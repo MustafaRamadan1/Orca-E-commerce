@@ -8,8 +8,21 @@ const cartSchema = new mongoose.Schema({
         required: [true, 'Cart Must belongs to a User']
     },
     totalPrice:{
-        type: Number
+        type: Number,
+        default: 0
     }
 });
+
+cartSchema.index({user:1, id:1}, {unique: true});
+
+cartSchema.methods.toJSON = function (){
+
+    const cart = this;
+    const cartObject = cart.toObject();
+
+    delete cartObject.__v;
+
+    return cartObject;
+}
 
 export default mongoose.model('Cart', cartSchema);

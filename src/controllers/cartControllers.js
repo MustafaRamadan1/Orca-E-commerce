@@ -17,3 +17,21 @@ export const createCart = catchAsync(async  (req, res ,next)=>{
 });
 
 
+export const getAllCarts = catchAsync(async (req, res ,next)=>{
+
+
+    const allCarts = await Cart.find().populate({
+        path: 'user',
+        select: '-__v -password -createdAt -updatedAt -passwordChangedAt'
+    })
+
+
+    if(!allCarts) return next(new AppError(`No Carts Found`, 404));
+
+    res.status(200).json({
+        status: 'success',
+        data: allCarts
+    })
+})
+
+
