@@ -40,7 +40,13 @@ const userSchema = new mongoose.Schema({
     passwordResetExpires:Date
 
 },{
-    timestamps: true
+    timestamps: true,
+    toObject:{
+        virtuals:true
+    },
+    toJSON:{
+        virtuals:true
+    }
 });
 
 

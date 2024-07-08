@@ -123,10 +123,9 @@ export const createProduct = catchAsync(async (req, res, next) => {
 });
 
 export const getProduct = catchAsync(async (req, res, next) => {
-  
   const { params } = req.params;
-  console.log(`inside the aggregation `)
-  console.log(params)
+  console.log(`inside the aggregation `);
+  console.log(params);
   const products = await Product.aggregate([
     {
       $match: { slug: params },
@@ -190,7 +189,7 @@ export const getProduct = catchAsync(async (req, res, next) => {
     },
   ]);
 
-  console.log(products)
+  console.log(products);
   if (!products.length) return next(new AppError(`No Product Found`, 404));
 
   res.status(200).json({
@@ -247,19 +246,30 @@ export const getAllProducts = catchAsync(async (req, res, next) => {
 export const updateProduct = catchAsync(async (req, res, next) => {
   const { id } = req.params;
 
-  // find Product
-  let bodyImages;
+  console.log(id, req.body);
 
-  if (req.body.images.constructor.name === "Array") {
-    bodyImages = req.body.images
-      ? req.body.images.map((image) => {
-          return JSON.parse(image);
-        })
-      : [];
-  } else if (JSON.parse(req.body.images).constructor.name === "Object") {
-    bodyImages = [JSON.parse(req.body.images)];
+  if (req.body.colors) {
+    req.body.colors = JSON.parse(req.body.colors);
   }
 
+  if (req.body.size) {
+    req.body.size = JSON.parse(req.body.size);
+  }
+
+  // find Product
+  let bodyImages = [];
+
+  if (req.body.images) {
+    if (req.body.images.constructor.name === "Array") {
+      bodyImages = req.body.images
+        ? req.body.images.map((image) => {
+            return JSON.parse(image);
+          })
+        : [];
+    } else if (JSON.parse(req.body.images).constructor.name === "Object") {
+      bodyImages = [JSON.parse(req.body.images)];
+    }
+  }
   const product = await Product.findById(id);
 
   if (!product) {
@@ -342,6 +352,11 @@ export const updateProduct = catchAsync(async (req, res, next) => {
       )
     );
 
+  await Product.updateMany(
+    { slug: updatedProduct.slug },
+    { images: cloudinaryImages }
+  );
+
   res.status(200).json({
     status: "success",
     message: "Updated Successfully",
@@ -408,8 +423,7 @@ export const filterProducts = catchAsync(async (req, res, next) => {
 export const getProductById = catchAsync(async (req, res, next) => {
   const { params } = req.params;
 
- 
-console.log(params)
+  console.log(params);
   const currentProduct = await Product.findById(params)
     .populate({
       path: "category",

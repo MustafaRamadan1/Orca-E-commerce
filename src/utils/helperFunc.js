@@ -16,3 +16,10 @@ export const filterObject = (object, ...allowedFields)=>{
 
     return obj;
 }
+
+
+
+export const countCartTotalPrice = (cartItemsArray) =>{
+
+    return cartItemsArray.reduce((total, item)=> total + (item.quantity * item.product.price),0);
+}
