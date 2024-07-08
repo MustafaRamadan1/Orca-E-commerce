@@ -83,13 +83,15 @@ export const updateSubCategory = catchAsync(async (req, res, next) => {
 
   const { id } = req.params;
 
-  const updatedSubCategory = await subCategory.findByIdAndUpdate(id, req.body, {
-    new: true,
-    runValidators: true,
-  }).populate({
-    path: "category",
-    select : '-createdAt -updatedAt -__v'
-  });
+  const updatedSubCategory = await subCategory
+    .findByIdAndUpdate(id, req.body, {
+      new: true,
+      runValidators: true,
+    })
+    .populate({
+      path: "category",
+      select: "-createdAt -updatedAt -__v",
+    });
 
   if (!updatedSubCategory)
     return next(
@@ -121,13 +123,11 @@ export const deleteSubCategory = catchAsync(async (req, res, next) => {
 });
 
 export const getFilteredSubCategories = catchAsync(async (req, res, next) => {
-  
   const { letters } = req.query;
 
   let allSubCategories;
 
   if (letters) {
-
     let query = {};
     const regex = new RegExp(
       letters
@@ -139,8 +139,11 @@ export const getFilteredSubCategories = catchAsync(async (req, res, next) => {
 
     query.name = regex;
 
+    if (req.query.category) {
+      query.category = req.query.category;
+    }
+
     allSubCategories = await subCategory.find(query);
-    
   } else {
     allSubCategories = [];
   }

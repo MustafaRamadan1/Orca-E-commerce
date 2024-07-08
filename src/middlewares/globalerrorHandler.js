@@ -1,4 +1,4 @@
-import slug from 'slug'
+import slug from "slug";
 import AppError from "../utils/AppError.js";
 const castId = (err) => {
   return new AppError(` Invalid ID, ${err.value} is not a valid ID`, 404);
@@ -26,10 +26,13 @@ const validationError = (err) => {
 
 const productionHandler = (err, res) => {
   if (err.isOperational) {
-    console.log(err.message.toUpperCase())
+    console.log(err.message.toUpperCase());
     res.status(err.statusCode).json({
       status: err.status,
-      message: slug(err.message.toUpperCase(), {lower: false,replacement:'_'}),
+      message: slug(err.message.toUpperCase(), {
+        lower: false,
+        replacement: "_",
+      }),
     });
   } else {
     res.status(500).json({
@@ -52,14 +55,15 @@ const globalErrorHandler = (error, req, res, next) => {
   } else {
     let err = { ...error };
 
-    
     err.message = error.message;
     if (error.name === "CastError") err = castId(err);
     if (error.code === 11000) err = duplicateKeyHandler(err);
     if (error.name === "ValidationError") err = validationError(err);
-    if(error.name === 'JsonWebTokenError') err = new AppError(`Invalid Token, Please login Again `, 401);
-    if(error.name === 'TokenExpiredError') err = new AppError(`Token Expired, Please login Again`, 401);
-    if(error.message = 'Unexpected field') err = new AppError(`You try to Upload more files, Please Upload Only 3 Files`,400)
+    if (error.name === "JsonWebTokenError")
+      err = new AppError(`Invalid Token, Please login Again `, 401);
+    if (error.name === "TokenExpiredError")
+      err = new AppError(`Token Expired, Please login Again`, 401);
+    // if(error.message = 'Unexpected field') err = new AppError(`You try to Upload more files, Please Upload Only 3 Files`,400)
     productionHandler(err, res);
   }
 };
