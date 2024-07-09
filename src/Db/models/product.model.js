@@ -48,7 +48,8 @@ const productSchema = new mongoose.Schema({
     colors:[{
         value: { type: String, required: [true, 'Color value is required'] },
         label: { type: String, required: [true, 'Color label is required'] },
-        color: { type: String, required: [true, 'Color is required'] }
+        color: { type: String, required: [true, 'Color is required'] },
+        quantity:{type: Number, required:[true, 'Color quantity is required']}
     }]
 
 },{

@@ -76,7 +76,7 @@ router.post('/pay',async (req, res ,next)=>{
                 }
             });
 
-           const response = await  getPaymentKeyCreditCard(updatedCart.user,totalPrice,items,process.env.PAYMOB_WALLET_INTEGERATION);
+           const response = await  getPaymentKeyCreditCard(updatedCart.user,totalPrice,items,process.env.PAYMOB_CARD_INTEGRATION);
             
     
             res.status(200).json({

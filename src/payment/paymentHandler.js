@@ -68,7 +68,7 @@ export const generatePaymentKey = async (token, orderId, user, amount, integrati
       }
     );
 
-    return response.data.token;
+    return response.data.token; 
   } catch (err) {
 
     console.log(err)
