@@ -81,7 +81,7 @@ export const deleteCartItem = catchAsync(async (req, res, next) => {
 
 
     const deletedCartItem = await CartItem.findByIdAndDelete(id);
-
+    
     if(!deletedCartItem)    return next(new AppError(`No Cart Item With this id`, 404));
 
     const cart = await Cart.findById(deletedCartItem.cart).populate({
@@ -89,6 +89,7 @@ export const deleteCartItem = catchAsync(async (req, res, next) => {
         populate:'product'
     })
     
+    console.log(cart)
     const totalPrice = countCartTotalPrice(cart.items);
   
     await Cart.findByIdAndUpdate(deletedCartItem.cart, {totalPrice: totalPrice},{runValidators:true, new:true});
