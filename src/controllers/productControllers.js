@@ -391,11 +391,7 @@ export const updateProduct = catchAsync(async (req, res, next) => {
   delete req.body.name;
   delete req.body.images;
 
-  // console.log(reg.body.size);
-
-  // console.log(cloudinaryImages);
-
-  // console.log(reg.body.colors);
+  
 
   const updatedProductById = await Product.findByIdAndUpdate(
     id,
