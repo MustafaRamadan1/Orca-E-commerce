@@ -14,15 +14,17 @@ import {
 export const createProduct = catchAsync(async (req, res, next) => {
   let bodyImages = [];
 
-  if (req.body.images) {
-    if (req.body.images.constructor.name === "Array") {
-      bodyImages = req.body.images
-        ? req.body.images.map((image) => {
-            return JSON.parse(image);
+  let bodyColors = [];
+
+  if (req.body.colors) {
+    if (req.body.colors.constructor.name === "Array") {
+      bodyColors = req.body.colors
+        ? req.body.colors.map((color) => {
+            return JSON.parse(color);
           })
         : [];
-    } else if (JSON.parse(req.body.images).constructor.name === "Object") {
-      bodyImages = [JSON.parse(req.body.images)];
+    } else if (JSON.parse(req.body.colors).constructor.name === "Object") {
+      bodyColors = [JSON.parse(req.body.colors)];
     }
   }
 
@@ -96,6 +98,8 @@ export const createProduct = catchAsync(async (req, res, next) => {
     }
   }
 
+  console.log(req.body);
+
   const newProduct = await Product.create({
     name,
     description,
@@ -104,7 +108,7 @@ export const createProduct = catchAsync(async (req, res, next) => {
     quantity: Number(JSON.parse(quantity)),
     size: JSON.parse(size),
     discount: Number(JSON.parse(discount)),
-    colors: JSON.parse(colors),
+    colors: bodyColors,
     images,
     subCategory,
   });

@@ -1,6 +1,4 @@
 import mongoose from 'mongoose';
-import Cart from './cart.model.js';
-import {countCartTotalPrice} from '../../utils/helperFunc.js'
 const cartItemSchema = new mongoose.Schema({
 
     product:{
@@ -18,6 +16,8 @@ const cartItemSchema = new mongoose.Schema({
         type: Number,
         required:[true, 'Cart Item Must has a quantity']
     }
+},{
+    timestamps:true,
 });
 
 

@@ -1,7 +1,8 @@
 import crypto from 'crypto'
 import mongoose from "mongoose";
 import validator from "validator";
-import bcrypt from 'bcrypt'
+import bcrypt from 'bcrypt';
+import Cart from './cart.model.js'
 //  name , email, password, role , photo 
 const userSchema = new mongoose.Schema({
 
@@ -75,6 +76,16 @@ userSchema.pre('save', function (next){
     return next();
 
 })
+
+userSchema.post('save', async function(doc, next){
+
+    const cart = await Cart.create({user:doc._id});
+    next();
+
+});
+
+
+
 
 
 userSchema.methods.CheckPassword = async function(inputPassword){
