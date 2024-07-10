@@ -96,6 +96,8 @@ export const createProduct = catchAsync(async (req, res, next) => {
     }
   }
 
+  console.log(req.body);
+
   const newProduct = await Product.create({
     name,
     description,
@@ -104,7 +106,7 @@ export const createProduct = catchAsync(async (req, res, next) => {
     quantity: Number(JSON.parse(quantity)),
     size: JSON.parse(size),
     discount: Number(JSON.parse(discount)),
-    colors: JSON.parse(colors),
+    colors: colors.map((color) => JSON.parse(color)),
     images,
     subCategory,
   });
