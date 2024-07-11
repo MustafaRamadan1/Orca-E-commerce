@@ -146,7 +146,7 @@ export const getProduct = catchAsync(async (req, res, next) => {
         discount: { $first: "$discount" },
         colors: { $first: "$colors" },
         productId: { $first: "$_id" },
-        salePrice: {
+        saleProduct: {
           $first: {
             $subtract: [
               "$price",
@@ -172,7 +172,7 @@ export const getProduct = catchAsync(async (req, res, next) => {
             discount: "$discount",
             colors: "$colors",
             productId: "$productId",
-            salePrice: "$salePrice",
+            saleProduct: "$saleProduct",
           },
         },
       },
@@ -349,8 +349,6 @@ export const updateProduct = catchAsync(async (req, res, next) => {
 
   delete req.body.name;
   delete req.body.images;
-
-  
 
   const updatedProductById = await Product.findByIdAndUpdate(
     id,
