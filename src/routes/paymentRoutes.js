@@ -113,4 +113,11 @@ router.post(
   })
 );
 
+
+router.post('/webHook', (req, res , next)=>{
+
+    console.log(req.body, req.params, req.query);
+
+    res.status(200).send(`<h1>Welcome to the webhook</h1>`)
+})
 export default router;
