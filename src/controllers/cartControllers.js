@@ -3,7 +3,6 @@ import { catchAsync } from "../utils/catchAsync.js";
 import Cart from "../Db/models/cart.model.js";
 import CartItem from "../Db/models/cartItem.model.js";
 
-
 export const createCart = catchAsync(async (req, res, next) => {
   const { user } = req.body;
 
@@ -18,14 +17,15 @@ export const createCart = catchAsync(async (req, res, next) => {
 });
 
 export const getAllCarts = catchAsync(async (req, res, next) => {
-  const allCarts = await Cart.find().populate({
-    path: "user",
-    select: "-__v -password -createdAt -updatedAt -passwordChangedAt",
-  })
-  .populate({
-    path: "items",
-    populate: "product",
-  });
+  const allCarts = await Cart.find()
+    .populate({
+      path: "user",
+      select: "-__v -password -createdAt -updatedAt -passwordChangedAt",
+    })
+    .populate({
+      path: "items",
+      populate: "product",
+    });
 
   if (!allCarts) return next(new AppError(`No Carts Found`, 404));
 
@@ -45,7 +45,7 @@ export const getCartByUserId = catchAsync(async (req, res, next) => {
     })
     .populate({
       path: "items",
-      select: '-__v',
+      select: "-__v",
       populate: "product",
     });
 
@@ -64,9 +64,8 @@ export const deleteCart = catchAsync(async (req, res, next) => {
 
   if (!deletedCart) return next(new AppError(`No Cart With this id`, 400));
 
+  await CartItem.deleteMany({ cart: id });
 
-  await CartItem.deleteMany({cart:id});
-  
   res.status(204).json({
     status: "success",
     message: "Cart Deleted Successfully",
