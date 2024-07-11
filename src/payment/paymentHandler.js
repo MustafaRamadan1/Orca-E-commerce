@@ -97,3 +97,47 @@ export const getPaymentKeyCreditCard = async  (user, amount, items,integration_i
     }
 }
 
+
+
+
+export const createPaymentLinkMultiMethods =  async (amount, integration_ids, items,user)=>{
+
+  const billing_data= {
+    apartment: user.apartment || 'NA',
+    first_name: user.name.split(' ')[0] || 'NA',
+    last_name: user.name.split(' ')[1] || 'NA',
+    street: user.street || 'NA',
+    building: user.building || 'NA',
+    phone_number: user.phoneNumber || '+201125773493',
+    city: user.city || 'NA',
+    country: user.country || 'EG',
+    email: user.email || 'NA',
+    floor: user.floor || 'NA',
+    state: user.state || 'NA'
+  }
+  const data = {
+    amount : amount * 100,
+    currency:'EGP',
+    payment_methods: integration_ids,
+    items,
+    billing_data,
+    customer:{
+      first_name: user.name.split(' ')[0],
+      last_name: user.name.split(' ')[1],
+      email: user.email,
+      extras: {
+          re: "22"
+      }
+    }
+  }
+
+
+  const response  = await  axios.post('https://accept.paymob.com/v1/intention/',data,{
+    headers:{
+      "Content-Type": "application/json",
+      "Authorization": `Token ${process.env.PAYMOB_SECERT_KEY}`
+    }
+  });
+
+  return response;
+}

@@ -19,7 +19,26 @@ export const filterObject = (object, ...allowedFields)=>{
 
 
 
+// payment helper function 
+
 export const countCartTotalPrice = (cartItemsArray) =>{
 
     return cartItemsArray.reduce((total, item)=> total + (item.quantity * item.product.price),0);
+}
+
+
+export const formatItemsForPayment = (cartItem)=>{
+
+    return cartItem.map((item)=>{
+        return { product_id: item.product._id,
+        name: item.product.name,
+        description: item.product.description,
+        amount: item.product.price * 100,
+        quantity: item.quantity,
+      }
+    })
+}
+
+export const generatePaymentLink = (payload) =>{
+    return `https://accept.paymob.com/unifiedcheckout/?publicKey=${process.env.PAYMOB_PUBLIC_KEY}&clientSecret=${payload}`;
 }

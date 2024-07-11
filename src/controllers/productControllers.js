@@ -145,7 +145,8 @@ export const getProduct = catchAsync(async (req, res, next) => {
         quantity: { $sum: "$quantity" },
         discount: { $first: "$discount" },
         colors: { $first: "$colors" },
-        saleProduct: {
+        productId: { $first: "$_id" },
+        productSalePrice: {
           $first: {
             $subtract: [
               "$price",
@@ -170,7 +171,8 @@ export const getProduct = catchAsync(async (req, res, next) => {
             quantity: "$quantity",
             discount: "$discount",
             colors: "$colors",
-            saleProduct: "$saleProduct",
+            productId: "$productId",
+            productSalePrice: "$productSalePrice",
           },
         },
       },
@@ -336,7 +338,21 @@ export const updateProduct = catchAsync(async (req, res, next) => {
   //   }
   // }
 
-  const updatedProduct = await Product.findByIdAndUpdate(
+  console.log(product.slug);
+
+  const updatedProductBySlug = await Product.updateMany(
+    {
+      slug: product.slug,
+    },
+    { name, images: cloudinaryImages }
+  );
+
+  delete req.body.name;
+  delete req.body.images;
+
+  
+
+  const updatedProductById = await Product.findByIdAndUpdate(
     id,
     {
       ...req.body,
