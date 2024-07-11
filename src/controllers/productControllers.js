@@ -155,7 +155,8 @@ export const getProduct = catchAsync(async (req, res, next) => {
         quantity: { $sum: "$quantity" },
         discount: { $first: "$discount" },
         colors: { $first: "$colors" },
-        saleProduct: {
+        productId: { $first: "$_id" },
+        productSalePrice: {
           $first: {
             $subtract: [
               "$price",
@@ -180,7 +181,8 @@ export const getProduct = catchAsync(async (req, res, next) => {
             quantity: "$quantity",
             discount: "$discount",
             colors: "$colors",
-            saleProduct: "$saleProduct",
+            productId: "$productId",
+            productSalePrice: "$productSalePrice",
           },
         },
       },
