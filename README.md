@@ -35,31 +35,31 @@
 
     Create .env file in the root folder and put varible for that 
 
-PORT
-DB_LOCAL
-DB_ATLAS
-NODE_ENV
-SECERT_KEY
-EXPIRES_IN
-MAIL_TRAP_HOSTNAME
-MAIL_TRAP_PORT
-MAIL_TRAP_USERNAME
-MAIL_TRAP_PASSWORD
-MAIL_TRAP_FROM
-SENDGRID_USERNAME
-SENDGRID_PASSWORD
-SENDGRID_SERVERNAME
-SENDGRID_PORT
-SENDGRID_FROM
-CLOUDINARY_CLOUD_NAME
-CLOUDINARY_API_KEY
-CLOUDINARY_API_SECRET
-PAYMOB_API_KEY
-PAYMOB_SECERT_KEY
-PAYMOB_PUBLIC_KEY
-PAYMOB_IFRAME_ID
-PAYMOB_CARD_INTEGRATION
-PAYMOB_WALLET_INTEGRATION
+## PORT
+## DB_LOCAL
+## DB_ATLAS
+## NODE_ENV
+## SECERT_KEY
+## EXPIRES_IN
+## MAIL_TRAP_HOSTNAME
+## MAIL_TRAP_PORT
+## MAIL_TRAP_USERNAME
+## MAIL_TRAP_PASSWORD
+## MAIL_TRAP_FROM
+## SENDGRID_USERNAME
+## SENDGRID_PASSWORD
+## SENDGRID_SERVERNAME
+## SENDGRID_PORT
+## SENDGRID_FROM
+## CLOUDINARY_CLOUD_NAME
+## CLOUDINARY_API_KEY
+## CLOUDINARY_API_SECRET
+## PAYMOB_API_KEY
+## PAYMOB_SECERT_KEY
+## PAYMOB_PUBLIC_KEY
+## PAYMOB_IFRAME_ID
+## PAYMOB_CARD_INTEGRATION
+## PAYMOB_WALLET_INTEGRATION
 
 
 
@@ -70,14 +70,40 @@ PAYMOB_WALLET_INTEGRATION
 
 ## API Routes
 
+## Authentication: 
+    /api/v1/auth/login
+    /api/v1/auth/signup
+    /api/v1/auth/forgotpassword
+    /api/v1/auth/resetpassword
 
-Authentication: /api/v1/auth/login, /api/v1/auth/signup, /api/v1/auth/forgotpassword, /api/v1/auth/resetpassword
-Categories: /api/v1/categories, /api/v1/categories/:id, /api/v1/categories/filter/:letter, /api/v1/categories/:id
-Subcategories: /api/v1/subCategories, /api/v1/subCategories/:id, /api/v1/subCategories/filter/:letter, /api/v1/subCategories/:id
-Products: /api/v1/products (not detailed)
-Carts: /api/v1/carts, /api/v1/carts/:id, /api/v1/carts/:cartId/cartItems, /api/v1/carts/:cartId/cartItems/:id
-Cart Items: /api/v1/cartItems, /api/v1/cartItems/:id
-Payment: /api/v1/payment/checkout
+
+## Categories: 
+     /api/v1/categories
+     /api/v1/categories/:id
+     /api/v1/categories/filter/:letter
+     /api/v1/categories/:id
+
+## subCategories: 
+     /api/v1/subCategories
+     /api/v1/subCategories/:id,
+     /api/v1/subCategories/filter/:letter,
+
+## Products: 
+     /api/v1/products
+     /api/v1/products/:id
+
+## Carts
+    /api/v1/carts
+    /api/v1/carts/:id,
+    /api/v1/carts/users/:id
+
+## CartItems
+    /api/v1/cartItems
+    /api/v1/cartItems/:id,
+    /api/v1/cartItems/cart/:id
+
+## Payment
+    /api/v1/payment/checkout
 
 
 
