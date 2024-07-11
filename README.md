@@ -1,4 +1,4 @@
-# E-commerce Project README
+# E-commerce Project 
 
 ## Overview
  Backend for an e-commerce platform built with Node.js, Express.js and MongoDB, focusing on user authentication, category management, product handling, shopping carts, and payment processing using Paymob.
