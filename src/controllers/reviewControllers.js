@@ -3,6 +3,7 @@ import { catchAsync } from "../utils/catchAsync.js";
 import Review from "../Db/models/review.model.js";
 import Product from "../Db/models/product.model.js";
 import mongoose from "mongoose";
+import ApiFeature from '../utils/ApiFeature.js';
 
 const updateProductRating = async (productId) => {
   try {
@@ -26,12 +27,22 @@ const updateProductRating = async (productId) => {
       }
     ]);
 
-    const { ratingAverage, ratingQuantity } = updatedRating[0];
-   return await Product.findByIdAndUpdate(
-      productId,
-      { ratingAverage, ratingQuantity },
-      { new: true, runValidators: true }
-    );
+    if(updatedRating.length > 0){
+        const { ratingAverage, ratingQuantity } = updatedRating[0];
+        await Product.findByIdAndUpdate(
+          productId,
+          { ratingAverage, ratingQuantity },
+          { new: true, runValidators: true }
+        );
+
+    }else{
+        await Product.findByIdAndUpdate(
+            productId,
+            { ratingAverage:0, ratingQuantity:0 },
+            { new: true, runValidators: true }
+          );
+  
+    }
   } catch (error) {
     console.log(error);
   }
@@ -57,11 +68,15 @@ export const createReview = catchAsync(async (req, res, next) => {
 
 export const getAllReviews = catchAsync(async (req, res ,next)=>{
 
-    const allReviews = await Review.find().populate({
-        path:'user',
-        select:'-__v -createdAt -updatedAt'
-    })
+    const totalDocumentsCount  = await Review.countDocuments();
 
+    const apiFeature = new ApiFeature(Review.find(),req.query);
+
+    const allReviews = await apiFeature.filter().sort().limitFields().pagination(totalDocumentsCount).query
+    .populate({
+        path:'user',
+        select:' -__v -createdAt -updatedAt'
+    })
     if(!allReviews) return next(new AppError(`Couldn't Find Reviews`, 400));
 
     res.status(200).json({
