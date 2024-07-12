@@ -27,12 +27,5 @@ const reviewSchema = new mongoose.Schema({
 
 
 reviewSchema.index({user:1, product:1},{unique:true});
-reviewSchema.pre('find',function(next){
 
-    this.populate({
-        path:'user',
-        select:'-__v -createdAt -updatedAt'
-    })
-    next();
-})
 export default mongoose.model('Review', reviewSchema);
