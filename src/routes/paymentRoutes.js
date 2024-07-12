@@ -119,6 +119,13 @@ router.post('/webHook', (req, res , next)=>{
 
     console.log(req.body, req.params, req.query);
 
+    console.log(req.body.obj.payment_key_claims.next_payment_intention);
+
+    // transaction id , success boolean true if transaction success , integration_id  the payment method  
+    console.log(req.body.obj.order.shipping_data);
+    console.log(req.body.obj.order.items);
+    console.log(req.body.obj.payment_key_claims.billing_data);
+    console.log(req.body.obj.payment_key_claims.next_payment_intention)
     res.status(200).send(`<h1>Welcome to the webhook</h1>`)
 })
 export default router;
