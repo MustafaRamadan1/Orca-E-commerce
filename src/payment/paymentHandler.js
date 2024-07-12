@@ -126,7 +126,8 @@ export const createPaymentLinkMultiMethods =  async (amount, integration_ids, it
       last_name: user.name.split(' ')[1],
       email: user.email,
       extras: {
-          re: "22"
+          re: "22",
+          userId: user._id.toString()
       }
     }
   }
