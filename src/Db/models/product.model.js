@@ -50,7 +50,20 @@ const productSchema = new mongoose.Schema({
         label: { type: String, required: [true, 'Color label is required'] },
         color: { type: String, required: [true, 'Color is required'] },
         quantity:{type: Number, required:[true, 'Color quantity is required']}
-    }]
+    }],
+    
+    ratingAverage:{
+        type:Number,
+        default: 1,
+        min:[1, 'Rating must be at least 1'],
+        max:[5, 'Rating must be max 5']
+    },
+
+    ratingQuantity:{
+        type:Number,
+        default: 0
+    }
+
 
 },{
     timestamps: true,

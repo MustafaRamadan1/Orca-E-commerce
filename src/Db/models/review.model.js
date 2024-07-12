@@ -4,7 +4,8 @@ const reviewSchema = new mongoose.Schema({
 
     title:{
         type:String,
-        required:[true, 'Review Must has a title']
+        required:[true, 'Review Must has a title'],
+        minLength:[3, 'Title must be at least 3 character']
     },
     user:{
         type: mongoose.Schema.ObjectId,

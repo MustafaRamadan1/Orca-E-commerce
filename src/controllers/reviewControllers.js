@@ -1,53 +1,69 @@
-import AppError from '../utils/AppError.js';
-import {catchAsync} from '../utils/catchAsync.js';
-import Review from '../Db/models/review.model.js';
-import mongoose from 'mongoose';
+import AppError from "../utils/AppError.js";
+import { catchAsync } from "../utils/catchAsync.js";
+import Review from "../Db/models/review.model.js";
+import Product from "../Db/models/product.model.js";
+import mongoose from "mongoose";
 
-
-const updateProductWithRating = async (productId)=>{
-
-    const reviews = await Review.aggregate([
-        {
-            $match: {product: new mongoose.Types.ObjectId(productId)}
-        },{
-            $group: {
-                _id:'product',
-                ratingAverage: {$avg: '$ratings'},
-                ratingQuantity : {$sum: 1}
-            }
+const updateProductRating = async (productId) => {
+  try {
+    const updatedRating = await Review.aggregate([
+      {
+        $match: { product: new mongoose.Types.ObjectId(productId) },
+      },
+      {
+        $group: {
+          _id: "product",
+          ratingAverage: { $avg: "$ratings" },
+          ratingQuantity: { $sum: 1 },
+        },
+      },
+      {
+        $project: {
+          _id: 1,
+          ratingAverage: { $round: ["$ratingAverage", 3] },
+          ratingQuantity: 1
         }
+      }
     ]);
 
-    return reviews;
-}
+    const { ratingAverage, ratingQuantity } = updatedRating[0];
+   return await Product.findByIdAndUpdate(
+      productId,
+      { ratingAverage, ratingQuantity },
+      { new: true, runValidators: true }
+    );
+  } catch (error) {
+    console.log(error);
+  }
+};
 
+export const createReview = catchAsync(async (req, res, next) => {
+  const { title, user, product, ratings } = req.body;
 
-export const createReview =  catchAsync(async (req, res ,next)=>{
+  if (!title || !user || !product || !ratings)
+    return next(new AppError(`Please Provide Required Fields`, 400));
 
-    const {title, user, product, ratings} = req.body;
+  const newReview = await Review.create({ title, user, product, ratings });
 
-    if(!title || !user || !product || !ratings) return next(new AppError(`Please Provide Required Fields`, 400));
+  if (!newReview) return next(new AppError(` Couldn't Create New Review`, 400));
 
+ await updateProductRating(product)
 
-    const newReview = await Review.create({title, user, product, ratings});
+  res.status(201).json({
+    status: "success",
+    data: newReview,
+  });
+});
 
-    if(!newReview) return next( new AppError(` Couldn't Create New Review`, 400));
+export const getAllReviews = catchAsync(async (req, res ,next)=>{
 
-    res.status(201).json({
-        status:'success',
-        data: newReview
-    })
+    const allReviews = await Review.find();
 
-})
+    if(!allReviews) return next(new AppError(`Couldn't Find Reviews`, 400));
 
-export const getStuff = catchAsync(async (req, res, next)=>{
-
-    const {product} = req.params;
-
-    const data =  await updateProductWithRating(product);
-    console.log(data)
     res.status(200).json({
+
         status:'success',
-        data
+        data:allReviews
     })
 })
