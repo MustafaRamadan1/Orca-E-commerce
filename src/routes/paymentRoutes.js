@@ -104,7 +104,8 @@ router.post(
       formattedItems,
       cart.user
     );
-
+    console.log(`Response is next`);
+    console.log(repsonse)
     const url = generatePaymentLink(response.data.client_secret);
     res.status(200).json({
       status: "success",
