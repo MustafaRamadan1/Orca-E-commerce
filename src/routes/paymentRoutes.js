@@ -105,7 +105,7 @@ router.post(
       cart.user
     );
     console.log(`Response is next`);
-    console.log(response)
+    console.log(response.data.id);
     const url = generatePaymentLink(response.data.client_secret);
     res.status(200).json({
       status: "success",
