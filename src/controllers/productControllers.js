@@ -12,6 +12,8 @@ import {
 } from "../utils/uploadImgHelperFunc.js";
 
 export const createProduct = catchAsync(async (req, res, next) => {
+  let bodyImages = [];
+
   let bodyColors = [];
 
   if (req.body.colors) {
@@ -23,20 +25,6 @@ export const createProduct = catchAsync(async (req, res, next) => {
         : [];
     } else if (JSON.parse(req.body.colors).constructor.name === "Object") {
       bodyColors = [JSON.parse(req.body.colors)];
-    }
-  }
-
-  let bodyImages = [];
-
-  if (req.body.images) {
-    if (req.body.images.constructor.name === "Array") {
-      bodyImages = req.body.images
-        ? req.body.images.map((img) => {
-            return JSON.parse(img);
-          })
-        : [];
-    } else if (JSON.parse(req.body.images).constructor.name === "Object") {
-      bodyImages = [JSON.parse(req.body.images)];
     }
   }
 
@@ -110,6 +98,8 @@ export const createProduct = catchAsync(async (req, res, next) => {
     }
   }
 
+  console.log(req.body);
+
   const newProduct = await Product.create({
     name,
     description,
@@ -155,6 +145,7 @@ export const getProduct = catchAsync(async (req, res, next) => {
         quantity: { $sum: "$quantity" },
         discount: { $first: "$discount" },
         colors: { $first: "$colors" },
+        productId: { $first: "$_id" },
         saleProduct: {
           $first: {
             $subtract: [
@@ -180,6 +171,7 @@ export const getProduct = catchAsync(async (req, res, next) => {
             quantity: "$quantity",
             discount: "$discount",
             colors: "$colors",
+            productId: "$productId",
             saleProduct: "$saleProduct",
           },
         },
@@ -260,63 +252,30 @@ export const getAllProducts = catchAsync(async (req, res, next) => {
 export const updateProduct = catchAsync(async (req, res, next) => {
   const { id } = req.params;
 
-  const { name } = req.body;
+  console.log(id, req.body);
 
-  function formatData(data) {
-    let bodyData = [];
+  if (req.body.colors) {
+    req.body.colors = JSON.parse(req.body.colors);
+  }
 
-    if (data.constructor.name === "Array") {
-      bodyData = data
-        ? data.map((image) => {
+  if (req.body.size) {
+    req.body.size = JSON.parse(req.body.size);
+  }
+
+  // find Product
+  let bodyImages = [];
+
+  if (req.body.images) {
+    if (req.body.images.constructor.name === "Array") {
+      bodyImages = req.body.images
+        ? req.body.images.map((image) => {
             return JSON.parse(image);
           })
         : [];
-    } else if (JSON.parse(data).constructor.name === "Object") {
-      bodyData = [JSON.parse(data)];
+    } else if (JSON.parse(req.body.images).constructor.name === "Object") {
+      bodyImages = [JSON.parse(req.body.images)];
     }
-
-    return bodyData;
   }
-
-  let bodyImages = [];
-
-  let bodyColors = [];
-
-  if (req.body.images) {
-    bodyImages = formatData(req.body.images);
-  }
-
-  if (req.body.colors) {
-    bodyColors = formatData(req.body.colors);
-  }
-
-  req.body.size = JSON.parse(req.body.size);
-  req.body.quantity = +req.body.quantity[0];
-
-  // req.body.colors = formatData(req.body.colors);
-  // if (req.body.colors) {
-  //   req.body.colors = JSON.parse(req.body.colors);
-  // }
-
-  // if (req.body.size) {
-  //   req.body.size = JSON.parse(req.body.size);
-  // }
-
-  // // find Product
-  // let bodyImages = [];
-
-  // if (req.body.images) {
-  //   if (req.body.images.constructor.name === "Array") {
-  //     bodyImages = req.body.images
-  //       ? req.body.images.map((image) => {
-  //           return JSON.parse(image);
-  //         })
-  //       : [];
-  //   } else if (JSON.parse(req.body.images).constructor.name === "Object") {
-  //     bodyImages = [JSON.parse(req.body.images)];
-  //   }
-  // }
-
   const product = await Product.findById(id);
 
   if (!product) {
@@ -391,26 +350,19 @@ export const updateProduct = catchAsync(async (req, res, next) => {
   delete req.body.name;
   delete req.body.images;
 
-  // console.log(reg.body.size);
-
-  // console.log(cloudinaryImages);
-
-  // console.log(reg.body.colors);
-
   const updatedProductById = await Product.findByIdAndUpdate(
     id,
     {
       ...req.body,
-      colors: bodyColors,
-      size: req.body.size,
+      images: cloudinaryImages,
     },
     {
       new: true,
-      runValidators: false,
+      runValidators: true,
     }
   );
 
-  if (!updatedProductById)
+  if (!updatedProduct)
     return next(
       new AppError(
         `Couldn't Update the Product , No Product with this Id `,
@@ -418,10 +370,15 @@ export const updateProduct = catchAsync(async (req, res, next) => {
       )
     );
 
+  await Product.updateMany(
+    { slug: updatedProduct.slug },
+    { images: cloudinaryImages }
+  );
+
   res.status(200).json({
     status: "success",
     message: "Updated Successfully",
-    data: updatedProductById,
+    data: updatedProduct,
   });
 });
 

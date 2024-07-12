@@ -9,7 +9,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const resizeProductImg = catchAsync(async (req, res, next) => {
-  console.log(req.files);
+  console.log("body", req.body);
+
   if (req.body.images && req.files.length === 0) {
     req.images = [];
     return next();
