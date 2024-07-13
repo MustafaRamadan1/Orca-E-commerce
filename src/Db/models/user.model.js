@@ -86,9 +86,17 @@ userSchema.pre('save', function (next){
 
 userSchema.post('save', async function(doc, next){
 
-    const cart = await Cart.create({user:doc._id});
-    next();
+   
+    const cart = await Cart.findOne({user: doc._id});
 
+    if(cart){
+       return next();
+    }
+    else{
+        await Cart.create({user: doc._id});
+    }
+
+    next();
 });
 
 
