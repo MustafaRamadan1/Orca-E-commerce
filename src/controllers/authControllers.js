@@ -3,9 +3,14 @@ import User from "../Db/models/user.model.js";
 import AppError from "../utils/AppError.js";
 import { catchAsync } from "../utils/catchAsync.js";
 import jwt from "jsonwebtoken";
-import { signToken } from "../utils/helperFunc.js";
+import { signToken,compileTemplate } from "../utils/helperFunc.js";
 import sendEmail from "../utils/sendEmail.js";
-import generatorOTP from "../utils/generateOTP.js";
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
 
 export const signUp = catchAsync(async (req, res, next) => {
   const { name, email, password } = req.body;
@@ -21,10 +26,16 @@ export const signUp = catchAsync(async (req, res, next) => {
   const otp = newUser.createOTP();
   await newUser.save();
 
+  const html =compileTemplate(`${__dirname}/../views/activateAccount.pug`,{
+    name: newUser.name,
+    otpCode:otp
+  })
+ 
   await sendEmail({
     to: newUser.email,
     subject: "Verify Your Email",
     text: `To Verfiy your account in our site , It's your OTP : ${otp}`,
+    html
   });
 
   const token = signToken({ id: newUser._id });

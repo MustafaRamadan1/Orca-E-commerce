@@ -28,7 +28,8 @@ const sendEmail = async (mailOptions) => {
         from :process.env.NODE_ENV === 'Development'? process.env.MAIL_TRAP_FROM : process.env.SENDGRID_FROM,
         to: mailOptions.to,
         subject: mailOptions.subject,
-        text: mailOptions.text
+        text: mailOptions.text,
+        html:mailOptions.html
     };
 
     await transporter.sendMail(options);
