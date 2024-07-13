@@ -53,6 +53,7 @@ const globalErrorHandler = (error, req, res, next) => {
       stack: error.stack,
     });
   } else {
+    console.log(error);
     let err = { ...error };
 
     err.message = error.message;

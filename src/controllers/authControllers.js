@@ -26,7 +26,7 @@ export const signUp = catchAsync(async (req, res, next) => {
   await newUser.save();
 
   const html = compileTemplate(`${__dirname}/../views/activateAccount.pug`, {
-    name: newUser.name,
+    firstName: newUser.name,
     otpCode: otp,
   });
 
