@@ -57,7 +57,7 @@ export const login = catchAsync(async (req, res, next) => {
   if (!(await user.CheckPassword(password)))
     return next(new AppError(`Invalid email or password`, 404));
 
-  if(!user.isActive) return next(new AppError(` Please Activate your Account`, 401));
+  // if(!user.isActive) return next(new AppError(` Please Activate your Account`, 401));
 
   const token = signToken({ id: user._id });
 
@@ -156,3 +156,23 @@ export const activateUser = catchAsync(async (req, res, next) => {
     message: "User Activated Successfully",
   });
 });
+
+
+export const updateUserPassword = catchAsync(async (req, res,next)=>{
+
+  const {oldPassword, newPassword} = req.body;
+
+  const user = await User.findById(req.user._id);
+
+  if(!user) return next( new AppError(` User Not Found`, 404));
+
+  if(!await user.CheckPassword(oldPassword)) return next(new AppError(` Invalid Password`, 400));
+
+  user.password = newPassword;
+  await user.save();
+
+  res.status(200).json({
+    status:'success',
+    message:'Password Changed Successfully'
+  })
+})

@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { getAllUsers, login, signUp, forgetPassword, resetPassword, activateUser } from "../controllers/authControllers.js";
+import { getAllUsers, login, signUp, forgetPassword, resetPassword, activateUser, updateUserPassword } from "../controllers/authControllers.js";
 import isAuth from '../middlewares/authentication.js';
 import Authorization from '../middlewares/Authorization.js';
 import validation from '../middlewares/validation.js';
@@ -13,6 +13,7 @@ router.post('/auth/forgetPassword', validation(Schema.authSchema.forgetPassword)
 router.patch('/auth/resetPassword/:token', validation(Schema.authSchema.resetPassword), resetPassword)
 router.get('/users', isAuth, Authorization('admin') ,getAllUsers)
 router.patch('/auth/Activate', activateUser);
+router.patch('/updatePassword', isAuth, Authorization('user'),updateUserPassword);
 
 
 export default router;
