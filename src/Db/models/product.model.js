@@ -33,7 +33,8 @@ const productSchema = new mongoose.Schema({
     quantity:{
         type: Number,
         default: 0,
-        min: [0, 'Quantity can not be negative']
+        min: [1, 'Quantity can not be negative'],
+        
     },
     discount:{
         type:Number,

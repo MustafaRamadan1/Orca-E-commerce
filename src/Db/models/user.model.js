@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import validator from "validator";
 import bcrypt from 'bcrypt';
 import Cart from './cart.model.js'
+import generatorOTP from '../../utils/generateOTP.js';
 //  name , email, password, role , photo 
 const userSchema = new mongoose.Schema({
 
@@ -38,7 +39,13 @@ const userSchema = new mongoose.Schema({
 
     passwordChangedAt: Date,
     passwordResetToken:String,
-    passwordResetExpires:Date
+    passwordResetExpires:Date,
+    otpCode:String,
+    otpExpired:Date,
+    isActive:{
+           type:Boolean,
+           default:false 
+    }
 
 },{
     timestamps: true,
@@ -117,6 +124,14 @@ userSchema.methods.createResetPasswordToken = function(){
     return token;
 }
 
+
+
+userSchema.methods.createOTP = function(){
+    const otp = generatorOTP()
+    this.otpCode =  crypto.createHash('sha256').update(otp.toString()).digest('hex');
+    this.otpExpired = Date.now() + 60 * 60 * 1000;
+    return otp;
+};
 userSchema.methods.toJSON= function(){
 
     const user = this;
