@@ -3,14 +3,13 @@ import User from "../Db/models/user.model.js";
 import AppError from "../utils/AppError.js";
 import { catchAsync } from "../utils/catchAsync.js";
 import jwt from "jsonwebtoken";
-import { signToken,compileTemplate } from "../utils/helperFunc.js";
+import { signToken, compileTemplate } from "../utils/helperFunc.js";
 import sendEmail from "../utils/sendEmail.js";
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
+import { fileURLToPath } from "url";
+import { dirname } from "path";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
-
 
 export const signUp = catchAsync(async (req, res, next) => {
   const { name, email, password } = req.body;
@@ -26,16 +25,16 @@ export const signUp = catchAsync(async (req, res, next) => {
   const otp = newUser.createOTP();
   await newUser.save();
 
-  const html =compileTemplate(`${__dirname}/../views/activateAccount.pug`,{
+  const html = compileTemplate(`${__dirname}/../views/activateAccount.pug`, {
     name: newUser.name,
-    otpCode:otp
-  })
- 
+    otpCode: otp,
+  });
+
   await sendEmail({
     to: newUser.email,
     subject: "Verify Your Email",
     text: `To Verfiy your account in our site , It's your OTP : ${otp}`,
-    html
+    html,
   });
 
   const token = signToken({ id: newUser._id });
@@ -56,8 +55,6 @@ export const login = catchAsync(async (req, res, next) => {
 
   if (!(await user.CheckPassword(password)))
     return next(new AppError(`Invalid email or password`, 404));
-
-  // if(!user.isActive) return next(new AppError(` Please Activate your Account`, 401));
 
   const token = signToken({ id: user._id });
 
@@ -157,22 +154,21 @@ export const activateUser = catchAsync(async (req, res, next) => {
   });
 });
 
-
-export const updateUserPassword = catchAsync(async (req, res,next)=>{
-
-  const {oldPassword, newPassword} = req.body;
+export const updateUserPassword = catchAsync(async (req, res, next) => {
+  const { oldPassword, newPassword } = req.body;
 
   const user = await User.findById(req.user._id);
 
-  if(!user) return next( new AppError(` User Not Found`, 404));
+  if (!user) return next(new AppError(` User Not Found`, 404));
 
-  if(!await user.CheckPassword(oldPassword)) return next(new AppError(` Invalid Password`, 400));
+  if (!(await user.CheckPassword(oldPassword)))
+    return next(new AppError(` Invalid Password`, 400));
 
   user.password = newPassword;
   await user.save();
 
   res.status(200).json({
-    status:'success',
-    message:'Password Changed Successfully'
-  })
-})
+    status: "success",
+    message: "Password Changed Successfully",
+  });
+});
