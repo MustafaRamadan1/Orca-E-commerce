@@ -57,6 +57,8 @@ export const login = catchAsync(async (req, res, next) => {
   if (!(await user.CheckPassword(password)))
     return next(new AppError(`Invalid email or password`, 404));
 
+  if(!user.isActive) return next(new AppError(` Please Activate your Account`, 401));
+
   const token = signToken({ id: user._id });
 
   res.status(200).json({
