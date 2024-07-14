@@ -76,7 +76,7 @@ router.post(
         cart:item.cart,
         product:item.product,
         quantity:item.quantity,
-        color:item.color
+        color:item.colorId
       }
     });
     const newCartItems = await CartItem.create(formattedCartItems);
@@ -106,6 +106,7 @@ router.post(
       })
       .populate("user");
 
+      
     const formattedItems = formatItemsForPayment(updatedCart.items);
 
     const response = await createPaymentLinkMultiMethods(
@@ -115,7 +116,7 @@ router.post(
         +process.env.PAYMOB_WALLET_INTEGRATION,
       ],
       formattedItems,
-      cart.user
+      req.body.billing_data
     );
 
     const paymentDoc = await Payment.create({intention_id:response.data.id, user:updatedCart.user._id,
