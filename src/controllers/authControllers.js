@@ -56,6 +56,9 @@ export const login = catchAsync(async (req, res, next) => {
   if (!(await user.CheckPassword(password)))
     return next(new AppError(`Invalid email or password`, 404));
 
+  if (!user.isActive)
+    return next(new AppError("Please Active your account", 401));
+
   const token = signToken({ id: user._id });
 
   res.status(200).json({
@@ -75,7 +78,7 @@ export const getAllUsers = catchAsync(async (req, res, next) => {
 });
 
 export const forgetPassword = catchAsync(async (req, res, next) => {
-  const { email } = req.body;
+  const { email, locale } = req.body;
   // if(!email) return next(new AppError(`Please Provide Email`, 404));
 
   const user = await User.findOne({ email });
@@ -89,9 +92,9 @@ export const forgetPassword = catchAsync(async (req, res, next) => {
     to: user.email,
     subject: "Forget Your Password , Please Check Email to reset it again",
     text: `If you forget your Password Please click on the link below\n
-          ${req.protocol}://${req.get(
-      "host"
-    )}/api/v1/auth/resetPassword/${token}`,
+          ${req.protocol}://${
+      req.get("host").split(":")[0]
+    }:3000/${locale}/user/resetPassword/${token}`,
   });
 
   res.status(200).json({
@@ -102,6 +105,7 @@ export const forgetPassword = catchAsync(async (req, res, next) => {
 
 export const resetPassword = catchAsync(async (req, res, next) => {
   const { token } = req.params;
+
   const { newPassword } = req.body;
 
   // if (!token || !newPassword)
@@ -150,7 +154,8 @@ export const activateUser = catchAsync(async (req, res, next) => {
 
   res.status(200).json({
     status: "success",
-    message: "User Activated Successfully",
+    // message: "User Activated Successfully",
+    data: user,
   });
 });
 
