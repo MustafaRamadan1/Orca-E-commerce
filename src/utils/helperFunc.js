@@ -32,17 +32,17 @@ export const filterObject = (object, ...allowedFields)=>{
 
 export const countCartTotalPrice = (cartItemsArray) =>{
 
-    return cartItemsArray.reduce((total, item)=> total + (item.quantity * item.product.price),0);
+    return cartItemsArray.reduce((total, item)=> total + (item.quantity * item.product.saleProduct),0);
 }
 
 
 export const formatItemsForPayment = (cartItem)=>{
 
     return cartItem.map((item)=>{
-        return { product_id: item.product._id,
+        return { 
         name: item.product.name,
         description: item.product.description,
-        amount: item.product.price * 100,
+        amount: item.product.saleProduct * 100,
         quantity: item.quantity,
       }
     })

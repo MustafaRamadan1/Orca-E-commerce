@@ -34,6 +34,14 @@ const productSchema = new mongoose.Schema({
         type: Number,
         default: 0,
         min: [1, 'Quantity can not be negative'],
+        validate:{
+            validator:function(value){
+                const colorsQuantity = this.colors.reduce((total,color)=> total + color.quantity, 0);
+
+                return value  === colorsQuantity;
+            },
+            message:'Quantity must be equal to sum of colors quantity'
+        }
         
     },
     discount:{
@@ -79,7 +87,7 @@ const productSchema = new mongoose.Schema({
 
 productSchema.index({ name: 1, 'size.value': 1 }, { unique: true });
 productSchema.index({name: 1, size: 1}, {unique: true});
-productSchema.virtual('productSalePrice').get(function (){
+productSchema.virtual('saleProduct').get(function (){
     return this.price - (this.price  * (this.discount / 100) ) 
 })
 

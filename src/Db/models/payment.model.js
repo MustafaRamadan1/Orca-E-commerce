@@ -1,4 +1,3 @@
-import { ref } from 'joi';
 import mongoose from 'mongoose';
 
 
@@ -14,15 +13,9 @@ const paymentSchema = new mongoose.Schema({
         required:[true, 'Payment must belong to a user']
     },
     cartItems:[{
-        product:{
-            type:mongoose.Types.ObjectId,
-            ref:'Product',
-            required:[true, 'Cart Item must has a product']
-        },
-        quantity:{
-            type:Number,
-            required:[true, 'Cart Item must has a quantity']
-        }
+        type:mongoose.Types.ObjectId,
+        ref:'CartItem',
+        required:[true,'Payment should has cart items']
     }],
     
 });
