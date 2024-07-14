@@ -70,7 +70,7 @@ router.post(
   "/checkout",
   catchAsync(async (req, res, next) => {
     const { cartItems } = req.body;
-    
+    console.log(cartItems);
     const formattedCartItems = cartItems.map((item)=>{
       return {
         cart:item.cart,
@@ -121,6 +121,7 @@ router.post(
       req.body.billing_data
     );
 
+    console.log(response.data)
     const paymentDoc = await Payment.create({intention_id:response.data.id, user:updatedCart.user._id,
       cartItems:updatedCart.items.map((item)=> item._id)
     });
