@@ -9,6 +9,7 @@ import {
   generatePaymentLink,
 } from "../utils/helperFunc.js";
 import { createPaymentLinkMultiMethods } from "../payment/paymentHandler.js";
+import Payment from '../Db/models/payment.model.js'
 const router = Router();
 
 
@@ -63,14 +64,26 @@ router.post("/pay", async (req, res, next) => {
   }
 });
 
+// put the isAuth middleware and it's allowed for users only  
+
 router.post(
   "/checkout",
   catchAsync(async (req, res, next) => {
     const { cartItems } = req.body;
+    console.log(cartItems);
+    const formattedCartItems = cartItems.map((item)=>{
+      return {
+        cart:item.cart,
+        product:item.product,
+        quantity:item.quantity,
+        color:item.colorId
+      }
+    });
 
-    const newCartItems = await CartItem.create(cartItems);
+    console.log(formattedCartItems)
+    const newCartItems = await CartItem.create(formattedCartItems);
 
-    if (!newCartItems)
+    if (newCartItems.length === 0)
       return next(new AppError(`Couldn't Create Cart Items`, 400));
 
     const cart = await Cart.findById(newCartItems[0].cart)
@@ -79,6 +92,8 @@ router.post(
         populate: "product",
       })
       .populate("user");
+
+      if(!cart) return next(new AppError(`No Cart with this ID`,400));
 
     const totalPrice = countCartTotalPrice(cart.items);
     
@@ -93,6 +108,7 @@ router.post(
       })
       .populate("user");
 
+      
     const formattedItems = formatItemsForPayment(updatedCart.items);
 
     const response = await createPaymentLinkMultiMethods(
@@ -102,22 +118,35 @@ router.post(
         +process.env.PAYMOB_WALLET_INTEGRATION,
       ],
       formattedItems,
-      cart.user
+      req.body.billing_data
     );
+
+    console.log(response.data)
+    const paymentDoc = await Payment.create({intention_id:response.data.id, user:updatedCart.user._id,
+      cartItems:updatedCart.items.map((item)=> item._id)
+    });
 
     const url = generatePaymentLink(response.data.client_secret);
     res.status(200).json({
       status: "success",
       url,
     });
-  })
-);
+}));
 
 
-router.post('/webHook', (req, res , next)=>{
+router.post('/webHook', async (req, res , next)=>{
 
     console.log(req.body, req.params, req.query);
 
+    console.log(req.body.obj.payment_key_claims.next_payment_intention);
+    const payment  = await Payment.findById(req.body.obj.payment_key_claims.next_payment_intention).populate('cartItems')
+    // transaction id , success boolean true if transaction success , integration_id  the payment method  
+    console.log(req.body.obj.order.shipping_data);
+    console.log(req.body.obj.order.items);
+    console.log(req.body.obj.payment_key_claims.billing_data);
+    console.log(req.body.obj.payment_key_claims.next_payment_intention);
+
+    console.log(payment)
     res.status(200).send(`<h1>Welcome to the webhook</h1>`)
 })
 export default router;

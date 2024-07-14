@@ -1,4 +1,13 @@
 import jwt  from 'jsonwebtoken'
+import pug  from 'pug';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+
+
 export const signToken = (payload)=>{
     return jwt.sign(payload, process.env.SECERT_KEY,{
         expiresIn: process.env.EXPIRES_IN
@@ -23,17 +32,17 @@ export const filterObject = (object, ...allowedFields)=>{
 
 export const countCartTotalPrice = (cartItemsArray) =>{
 
-    return cartItemsArray.reduce((total, item)=> total + (item.quantity * item.product.price),0);
+    return cartItemsArray.reduce((total, item)=> total + (item.quantity * item.product.saleProduct),0);
 }
 
 
 export const formatItemsForPayment = (cartItem)=>{
 
     return cartItem.map((item)=>{
-        return { product_id: item.product._id,
+        return { 
         name: item.product.name,
         description: item.product.description,
-        amount: item.product.price * 100,
+        amount: item.product.saleProduct * 100,
         quantity: item.quantity,
       }
     })
@@ -41,4 +50,13 @@ export const formatItemsForPayment = (cartItem)=>{
 
 export const generatePaymentLink = (payload) =>{
     return `https://accept.paymob.com/unifiedcheckout/?publicKey=${process.env.PAYMOB_PUBLIC_KEY}&clientSecret=${payload}`;
+}
+
+
+export const compileTemplate = (templatePath, data)=>{
+
+    const toHtml = pug.compileFile(`${templatePath}`);
+    const html = toHtml(data);
+
+    return  html;
 }

@@ -7,6 +7,17 @@ import { catchAsync } from "./utils/catchAsync.js";
 
 const app = express();
 
+import { fileURLToPath } from "url";
+import { dirname } from "path";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+// set Template Engine
+
+app.set("view engine", "pug");
+app.set("views", `${__dirname}/views`);
+
 // global Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -27,6 +38,7 @@ import productRouter from "./routes/productRoutes.js";
 import cartRouter from "./routes/cartRoutes.js";
 import cartItemsRouter from "./routes/cartItemRoutes.js";
 import paymentRouter from "./routes/paymentRoutes.js";
+import reviewRouter from "./routes/reviewRoutes.js";
 import AppError from "./utils/AppError.js";
 import globalErrorHandler from "./middlewares/globalerrorHandler.js";
 
@@ -39,6 +51,7 @@ app.use("/api/v1/products", productRouter);
 app.use("/api/v1/carts", cartRouter);
 app.use("/api/v1/cartItems", cartItemsRouter);
 app.use("/api/v1/payment", paymentRouter);
+app.use("/api/v1/reviews", reviewRouter);
 
 //  not found route for non exist routes
 

@@ -33,7 +33,16 @@ const productSchema = new mongoose.Schema({
     quantity:{
         type: Number,
         default: 0,
-        min: [0, 'Quantity can not be negative']
+        min: [1, 'Quantity can not be negative'],
+        validate:{
+            validator:function(value){
+                const colorsQuantity = this.colors.reduce((total,color)=> total + color.quantity, 0);
+
+                return value  === colorsQuantity;
+            },
+            message:'Quantity must be equal to sum of colors quantity'
+        }
+        
     },
     discount:{
         type:Number,
@@ -50,7 +59,20 @@ const productSchema = new mongoose.Schema({
         label: { type: String, required: [true, 'Color label is required'] },
         color: { type: String, required: [true, 'Color is required'] },
         quantity:{type: Number, required:[true, 'Color quantity is required']}
-    }]
+    }],
+    
+    ratingAverage:{
+        type:Number,
+        default: 1,
+        min:[1, 'Rating must be at least 1'],
+        max:[5, 'Rating must be max 5']
+    },
+
+    ratingQuantity:{
+        type:Number,
+        default: 0
+    }
+
 
 },{
     timestamps: true,
@@ -65,7 +87,7 @@ const productSchema = new mongoose.Schema({
 
 productSchema.index({ name: 1, 'size.value': 1 }, { unique: true });
 productSchema.index({name: 1, size: 1}, {unique: true});
-productSchema.virtual('productSalePrice').get(function (){
+productSchema.virtual('saleProduct').get(function (){
     return this.price - (this.price  * (this.discount / 100) ) 
 })
 

@@ -22,7 +22,7 @@ const cartSchema = new mongoose.Schema({
     }
 });
 
-cartSchema.index({user:1, id:1}, {unique: true});
+cartSchema.index({user:1}, {unique: true});
 
 cartSchema.virtual('items',{
     ref:'CartItem',

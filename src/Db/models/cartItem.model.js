@@ -15,6 +15,10 @@ const cartItemSchema = new mongoose.Schema({
     quantity:{
         type: Number,
         required:[true, 'Cart Item Must has a quantity']
+    },
+    color:{
+        type:String,
+        required:[true, `Color Id is Required for Cart Item`]
     }
 },{
     timestamps:true,

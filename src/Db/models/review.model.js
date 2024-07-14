@@ -4,7 +4,8 @@ const reviewSchema = new mongoose.Schema({
 
     title:{
         type:String,
-        required:[true, 'Review Must has a title']
+        required:[true, 'Review Must has a title'],
+        minLength:[3, 'Title must be at least 3 character']
     },
     user:{
         type: mongoose.Schema.ObjectId,
@@ -26,12 +27,5 @@ const reviewSchema = new mongoose.Schema({
 
 
 reviewSchema.index({user:1, product:1},{unique:true});
-reviewSchema.pre('find',function(next){
 
-    this.populate({
-        path:'user',
-        select:'-__v -createdAt -updatedAt'
-    })
-    next();
-})
 export default mongoose.model('Review', reviewSchema);

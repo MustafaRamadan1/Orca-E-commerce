@@ -33,7 +33,7 @@ router.get('/:name/:params', (req, res ,next)=>{
 
 // router.get("/:name/:slug", getProduct);
 // router.get("/:name/:id", getProductById);
-router.get("/filtered", isAuth, Authorization("admin"), filterProducts);
+router.get("/filtered", filterProducts);
 router.post(
   "/",
   isAuth,
