@@ -79,6 +79,8 @@ router.post(
         color:item.colorId
       }
     });
+
+    console.log(formattedCartItems)
     const newCartItems = await CartItem.create(formattedCartItems);
 
     if (newCartItems.length === 0)
