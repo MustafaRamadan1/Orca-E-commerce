@@ -14,8 +14,6 @@ class ApiFeature {
 
     excludedFields.forEach((el) => delete filterObject[el]);
 
-    console.log(this.queryString);
-
     if (filterObject.subCategory) {
       const subCategoriesIds = filterObject.subCategory.split(",");
       filterObject = {
@@ -26,12 +24,34 @@ class ApiFeature {
       delete filterObject.subCategory;
     }
 
+    if (filterObject.size) {
+      filterObject = { ...filterObject, ["size.value"]: filterObject.size };
+      delete filterObject.size;
+    } else {
+      delete filterObject.size;
+    }
+
+    if (filterObject.colors) {
+      const colorsArray = filterObject.colors.split(",");
+      filterObject = {
+        ...filterObject,
+        colors: {
+          $elemMatch: {
+            value: {
+              $in: colorsArray,
+            },
+          },
+        },
+      };
+    } else {
+      delete filterObject.colors;
+    }
+
     if (filterObject.min !== "undefined" && filterObject.max !== "undefined") {
       filterObject = {
         ...filterObject,
         price: { $gte: filterObject.min, $lte: filterObject.max },
       };
-
       delete filterObject.max;
 
       delete filterObject.min;
