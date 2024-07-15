@@ -1,4 +1,6 @@
 import { Router } from "express";
+import mongoose from "mongoose";
+import sha512 from 'js-sha512'
 import { catchAsync } from "../utils/catchAsync.js";
 import Cart from "../Db/models/cart.model.js";
 import AppError from "../utils/AppError.js";
@@ -9,9 +11,11 @@ import {
   generatePaymentLink,
 } from "../utils/helperFunc.js";
 import { createPaymentLinkMultiMethods } from "../payment/paymentHandler.js";
-import Payment from '../Db/models/payment.model.js'
+import Payment from "../Db/models/payment.model.js";
+import Order from "../Db/models/order.model.js";
+import Product from "../Db/models/product.model.js";
+import { formatBilling_Data } from "../utils/paymentHelperFunc.js";
 const router = Router();
-
 
 router.post("/pay", async (req, res, next) => {
   const { cartItems } = req.body;
@@ -64,23 +68,23 @@ router.post("/pay", async (req, res, next) => {
   }
 });
 
-// put the isAuth middleware and it's allowed for users only  
+// put the isAuth middleware and it's allowed for users only
 
 router.post(
   "/checkout",
   catchAsync(async (req, res, next) => {
     const { cartItems } = req.body;
     console.log(cartItems);
-    const formattedCartItems = cartItems.map((item)=>{
+    const formattedCartItems = cartItems.map((item) => {
       return {
-        cart:item.cart,
-        product:item.product,
-        quantity:item.quantity,
-        color:item.colorId
-      }
+        cart: item.cart,
+        product: item.product,
+        quantity: item.quantity,
+        color: item.colorId,
+      };
     });
 
-    console.log(formattedCartItems)
+    console.log(formattedCartItems);
     const newCartItems = await CartItem.create(formattedCartItems);
 
     if (newCartItems.length === 0)
@@ -93,10 +97,10 @@ router.post(
       })
       .populate("user");
 
-      if(!cart) return next(new AppError(`No Cart with this ID`,400));
+    if (!cart) return next(new AppError(`No Cart with this ID`, 400));
 
     const totalPrice = countCartTotalPrice(cart.items);
-    
+
     const updatedCart = await Cart.findByIdAndUpdate(
       cart._id,
       { totalPrice },
@@ -108,7 +112,6 @@ router.post(
       })
       .populate("user");
 
-      
     const formattedItems = formatItemsForPayment(updatedCart.items);
 
     const response = await createPaymentLinkMultiMethods(
@@ -121,9 +124,11 @@ router.post(
       req.body.billing_data
     );
 
-    console.log(response.data)
-    const paymentDoc = await Payment.create({intention_id:response.data.id, user:updatedCart.user._id,
-      cartItems:updatedCart.items.map((item)=> item._id)
+    console.log(response.data);
+    const paymentDoc = await Payment.create({
+      intention_id: response.data.id,
+      user: updatedCart.user._id,
+      cartItems: updatedCart.items.map((item) => item._id),
     });
 
     const url = generatePaymentLink(response.data.client_secret);
@@ -131,22 +136,132 @@ router.post(
       status: "success",
       url,
     });
-}));
+  })
+);
+
+router.post("/webHook", async (req, res, next) => {
+  
+  const {obj} = req.body;
+  const {hmac} = req.query;
+  
+  const payment_key_claims  = obj.payment_key_claims;
+  const billing_data = obj.payment_key_claims.billing_data
+
+  
+  const amount_cents = obj.amount_cents;
+  const created_at = obj.created_at;
+  const currency = obj.currency;
+  const error_occured = obj.error_occured;
+  const has_parent_transaction = obj.has_parent_transaction;
+  const id = obj.id;
+  const integration_id = obj.integration_id;
+  const is_3d_secure = obj.is_3d_secure;
+  const is_auth = obj.is_auth;
+  const is_capture = obj.is_capture;
+  const is_refunded = obj.is_refunded;
+  const is_standalone_payment = obj.is_standalone_payment;
+  const is_voided = obj.is_voided;
+  const order_id = obj.order.id;
+  const owner = obj.owner;
+  const pending = obj.pending;
+  const source_data_pan = obj.source_data.pan;
+  const source_data_sub_type = obj.source_data.sub_type;
+  const source_data_type = obj.source_data.type;
+  const success = obj.success;
+
+  const request_string =
+      amount_cents +
+      created_at +
+      currency +
+      error_occured +
+      has_parent_transaction +
+      id +
+      integration_id +
+      is_3d_secure +
+      is_auth +
+      is_capture +
+      is_refunded +
+      is_standalone_payment +
+      is_voided +
+      order_id +
+      owner +
+      pending +
+      source_data_pan +
+      source_data_sub_type +
+      source_data_type +
+      success;
+
+try{
+
+ 
+  const payment = await Payment.findOne({
+    intention_id: req.body.obj.payment_key_claims.next_payment_intention,
+  }).populate({
+    path: "cartItems",
+    populate: "product cart",
+  })
+
+  console.log(payment)
+  if(!payment) return next(new AppError(`No Payment with this Intention`,400));
+
+  const billingData=  formatBilling_Data(billing_data)
+  const newOrder = await Order.create({
+    transaction_id: obj.id,
+    user: payment.user,
+    orderPrice: obj.amount_cents / 100,
+    items: payment.cartItems.map((item) => {
+      return {
+        product: item.product._id,
+        price: item.product.saleProduct,
+        quantity: item.quantity,
+      };
+    }),
+    billingData,
+    paymentOrderId: obj.order.id,
+  });
+
+  if(!newOrder) return next(new AppError(`couldn't create new order`,400))
+
+    console.log(`we are in the webook`)
+  for (let item of payment.cartItems) {
+    const product = await Product.findById(item.product._id);
+    const colors = product.colors.map((color) =>
+      color.id === item.color
+        ? { ...color, quantity: color.quantity - item.quantity }
+        : color
+    );
+    const quantity = colors.reduce((total, color) => total + color.quantity, 0);
+    product.colors = colors;
+    product.quantity = quantity;
+    await product.save();
+  }
+  console.log(payment.cartItems)
+
+  await CartItem.deleteMany({cart:new mongoose.Types.ObjectId(payment.cartItems[0].cart._id)});
+  await Cart.findByIdAndUpdate(payment.cartItems[0].cart._id, {totalPrice:0});
 
 
-router.post('/webHook', async (req, res , next)=>{
+}
+catch(err){
 
-    console.log(req.body, req.params, req.query);
+  console.log(err);
 
-    console.log(req.body.obj.payment_key_claims.next_payment_intention);
-    const payment  = await Payment.findById(req.body.obj.payment_key_claims.next_payment_intention).populate('cartItems')
-    // transaction id , success boolean true if transaction success , integration_id  the payment method  
-    console.log(req.body.obj.order.shipping_data);
-    console.log(req.body.obj.order.items);
-    console.log(req.body.obj.payment_key_claims.billing_data);
-    console.log(req.body.obj.payment_key_claims.next_payment_intention);
+  return next(new AppError(err.message,400))
+}
+ 
+});
 
-    console.log(payment)
-    res.status(200).send(`<h1>Welcome to the webhook</h1>`)
+router.get('/acceptPayment',async (req,res )=>{
+  let success = req.query.success;
+
+  try {
+    if (success === "true") {
+      res.redirect("https://developers.paymob.com/egypt/checkout-api/integration-guide-and-api-reference/create-intention-payment-api");
+    } else {
+      res.redirect("https://arkan-ten.vercel.app/payment-failed");
+    }
+  } catch (error) {
+    next(createError(500, error.message));
+  }
 })
 export default router;

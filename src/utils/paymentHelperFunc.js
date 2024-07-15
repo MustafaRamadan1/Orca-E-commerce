@@ -55,3 +55,21 @@ export const createPaymentIntentMultiMethod = async (amount, integrationIds, ite
         console.log(error)
 }
 }
+
+
+
+
+
+export const formatBilling_Data = (data)=>{
+    return {
+      firstName: data.first_name,
+      lastName: data.last_name,
+      apartment:data.apartment,
+      street:data.street,
+      building:data.building,
+      city: data.city,
+      country: data.country,
+      floor:data.floor,
+      phoneNumber: data.phone_number,
+    }
+}
