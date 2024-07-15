@@ -13,10 +13,12 @@ class ApiFeature {
 
     excludedFields.forEach((el) => delete filterObject[el]);
 
-
     if(filterObject.max && filterObject.min){
-      filterObject = {price:{$gte:filterObject.min, $lte:filterObject.max}}
+      filterObject = {...filterObject, price:{$gte:filterObject.min, $lte:filterObject.max}};
+      delete filterObject.max;
+      delete filterObject.min;
     }
+    
     this.query = this.query.find(filterObject);
 
     return this;
