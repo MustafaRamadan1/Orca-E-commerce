@@ -6,6 +6,7 @@ import {
   getAllProducts,
   getProduct,
   getProductById,
+  getProductsColors,
   updateProduct,
 } from "../controllers/productControllers.js";
 import isAuth from "../middlewares/authentication.js";
@@ -54,4 +55,6 @@ router.put(
   updateProduct
 );
 
+
+router.get('/colors', getProductsColors)
 export default router;

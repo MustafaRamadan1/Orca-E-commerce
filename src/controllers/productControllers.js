@@ -432,3 +432,22 @@ export const getProductById = catchAsync(async (req, res, next) => {
     data: currentProduct,
   });
 });
+
+export const getProductsColors = catchAsync(async (req, res, next) => {
+  const allProducts = await Product.find({}, { colors: 1, _id: 0 });
+
+  const colors = [];
+
+  for (let product of allProducts) {
+    const productsColors = product.colors.map((color) => color.value);
+
+    colors.push(...productsColors);
+  }
+
+  const uniqueColors = new Set(colors);
+
+  res.status(200).json({
+    status: "success",
+    data: [...uniqueColors],
+  });
+});
