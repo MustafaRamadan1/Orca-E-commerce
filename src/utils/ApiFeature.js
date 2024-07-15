@@ -1,3 +1,4 @@
+import mongoose from "mongoose";
 import AppError from "./AppError.js";
 
 class ApiFeature {
@@ -13,12 +14,35 @@ class ApiFeature {
 
     excludedFields.forEach((el) => delete filterObject[el]);
 
-    if(filterObject.max && filterObject.min){
-      filterObject = {...filterObject, price:{$gte:filterObject.min, $lte:filterObject.max}};
+    console.log(this.queryString);
+
+    if (filterObject.subCategory) {
+      const subCategoriesIds = filterObject.subCategory.split(",");
+      filterObject = {
+        ...filterObject,
+        subCategory: { $in: subCategoriesIds },
+      };
+    } else {
+      delete filterObject.subCategory;
+    }
+
+    if (filterObject.min !== "undefined" && filterObject.max !== "undefined") {
+      filterObject = {
+        ...filterObject,
+        price: { $gte: filterObject.min, $lte: filterObject.max },
+      };
+
       delete filterObject.max;
+
+      delete filterObject.min;
+    } else {
+      delete filterObject.max;
+
       delete filterObject.min;
     }
-    
+
+    console.log(filterObject);
+
     this.query = this.query.find(filterObject);
 
     return this;

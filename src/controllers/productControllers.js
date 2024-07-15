@@ -205,12 +205,14 @@ export const getProduct = catchAsync(async (req, res, next) => {
 });
 
 export const getAllProducts = catchAsync(async (req, res, next) => {
- 
   const totalDocumentCount = await Product.countDocuments();
-  console.log(req.query)
-  const apiFeature = new ApiFeature(Product.find(), req.query).filter().sort().limitFields().pagination(totalDocumentCount);
 
- 
+  const apiFeature = new ApiFeature(Product.find(), req.query)
+    .filter()
+    .sort()
+    .limitFields()
+    .pagination(totalDocumentCount);
+
   const products = await apiFeature.query;
   res.status(200).json({
     status: "success",
