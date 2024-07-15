@@ -214,6 +214,7 @@ try{
         product: item.product._id,
         price: item.product.saleProduct,
         quantity: item.quantity,
+        color:item.product.colors.filter((color)=> color.id === item.color)[0]
       };
     }),
     billingData,

@@ -1,10 +1,17 @@
 import mongoose from "mongoose";
 
 
+const colorSchema = new mongoose.Schema({
+    value: { type: String, required: [true, 'Color value is required'] },
+    label: { type: String, required: [true, 'Color label is required'] },
+    color: { type: String, required: [true, 'Color is required'] },
+    quantity:{type: Number, required:[true, 'Color quantity is required']}
+})
 const cartItemSchema = new mongoose.Schema({
     product: { type: mongoose.Types.ObjectId, ref: 'Product', required: true },
     price: { type: Number, required: true },
-    quantity: { type: Number, required: true }
+    quantity: { type: Number, required: true },
+    color:colorSchema
   });
 
 const orderSchema = new mongoose.Schema({
