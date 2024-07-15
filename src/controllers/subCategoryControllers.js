@@ -157,3 +157,15 @@ export const getFilteredSubCategories = catchAsync(async (req, res, next) => {
     data: allSubCategories,
   });
 });
+
+export const getAllSubCategoriesIds = catchAsync(async (req, res, nex) => {
+  const allSubCategories = await subCategory.find();
+  if (!allSubCategories) {
+    return next(new AppError(`No subCategory in the DB`, 404));
+  }
+  res.status(200).json({
+    status: "success",
+    length: allSubCategories.length,
+    data: allSubCategories,
+  });
+});
