@@ -12,9 +12,11 @@ class ApiFeature {
 
     let filterObject = { ...this.queryString };
 
+    console.log(filterObject);
+
     excludedFields.forEach((el) => delete filterObject[el]);
 
-    if (filterObject.subCategory) {
+    if (filterObject.subCategory !== "undefined") {
       const subCategoriesIds = filterObject.subCategory.split(",");
       filterObject = {
         ...filterObject,
@@ -24,14 +26,14 @@ class ApiFeature {
       delete filterObject.subCategory;
     }
 
-    if (filterObject.size) {
+    if (filterObject.size !== "undefined") {
       filterObject = { ...filterObject, ["size.value"]: filterObject.size };
       delete filterObject.size;
     } else {
       delete filterObject.size;
     }
 
-    if (filterObject.colors) {
+    if (filterObject.colors !== "undefined") {
       const colorsArray = filterObject.colors.split(",");
       filterObject = {
         ...filterObject,
@@ -60,8 +62,6 @@ class ApiFeature {
 
       delete filterObject.min;
     }
-
-    console.log(filterObject);
 
     this.query = this.query.find(filterObject);
 
