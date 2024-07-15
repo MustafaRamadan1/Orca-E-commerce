@@ -15,6 +15,8 @@ import Payment from "../Db/models/payment.model.js";
 import Order from "../Db/models/order.model.js";
 import Product from "../Db/models/product.model.js";
 import { formatBilling_Data } from "../utils/paymentHelperFunc.js";
+import isAuth from '../middlewares/authentication.js';
+import restrictTo from '../middlewares/Authorization.js';
 const router = Router();
 
 router.post("/pay", async (req, res, next) => {
@@ -71,11 +73,12 @@ router.post("/pay", async (req, res, next) => {
 // put the isAuth middleware and it's allowed for users only
 
 router.post(
-  "/checkout",
+  "/checkout", isAuth,restrictTo('user'),
   catchAsync(async (req, res, next) => {
     const { cartItems } = req.body;
     console.log(cartItems);
     const formattedCartItems = cartItems.map((item) => {
+      
       return {
         cart: item.cart,
         product: item.product,
@@ -97,7 +100,14 @@ router.post(
       })
       .populate("user");
 
-    if (!cart) return next(new AppError(`No Cart with this ID`, 400));
+    if (!cart) {
+
+      await CartItem.deleteMany({cart:newCartItems[0].cart._id});
+      return next(new AppError(`No Cart with this ID`, 400))
+    };
+
+
+    
 
     const totalPrice = countCartTotalPrice(cart.items);
 

@@ -1,4 +1,4 @@
-import fs from "fs";
+import ApiFeature from "../utils/ApiFeature.js";
 import AppError from "../utils/AppError.js";
 import Product from "../Db/models/product.model.js";
 import { catchAsync } from "../utils/catchAsync.js";
@@ -205,43 +205,13 @@ export const getProduct = catchAsync(async (req, res, next) => {
 });
 
 export const getAllProducts = catchAsync(async (req, res, next) => {
-  let products = Product.find();
+ 
+  const totalDocumentCount = await Product.countDocuments();
+  console.log(req.query)
+  const apiFeature = new ApiFeature(Product.find(), req.query).filter().sort().limitFields().pagination(totalDocumentCount);
 
-  // filtering
-
-  const queryString = { ...req.query };
-  const excludeFields = ["page", "sort", "limit", "fields"];
-
-  excludeFields.forEach((field) => delete queryString[field]);
-
-  products = products.find(queryString);
-
-  // sort
-
-  if (req.query.sort) {
-    const sortBy = req.query.sort.split(",").join(" ");
-    products = products.sort(sortBy);
-  } else {
-    products = products.sort("-createdAt");
-  }
-
-  // pagination
-
-  const page = req.query.page * 1 || 1;
-  const limit = req.query.limit * 1 || 2;
-  const skip = (page - 1) * limit;
-
-  const documentCounts = await Product.countDocuments();
-
-  if (documentCounts < skip)
-    return next(new AppError(`No Products Available in that page`, 404));
-
-  products = products.skip(skip).limit(limit);
-
-  products = await products.populate("category").populate("subCategory");
-
-  if (!products) return next(new AppError(`No Products in DB`, 404));
-
+ 
+  const products = await apiFeature.query;
   res.status(200).json({
     status: "success",
     result: products.length,

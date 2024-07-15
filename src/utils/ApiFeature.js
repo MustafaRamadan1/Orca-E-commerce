@@ -9,10 +9,14 @@ class ApiFeature {
   filter() {
     const excludedFields = ["page", "sort", "limit", "fields"];
 
-    const filterObject = { ...this.queryString };
+    let filterObject = { ...this.queryString };
 
     excludedFields.forEach((el) => delete filterObject[el]);
 
+
+    if(filterObject.max && filterObject.min){
+      filterObject = {price:{$gte:filterObject.min, $lte:filterObject.max}}
+    }
     this.query = this.query.find(filterObject);
 
     return this;
