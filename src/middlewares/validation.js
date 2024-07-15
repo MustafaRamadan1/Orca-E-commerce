@@ -1,37 +1,35 @@
 import AppError from "../utils/AppError.js";
 
-const validation = schema=> (req, res ,next)=>{
+const validation = (schema) => (req, res, next) => {
+  const errorMessages = [];
 
-    const errorMessages = [];
+  const checkParts = ["body", "params", "query"];
 
-    const checkParts = ['body','params', 'query'];
+  checkParts.forEach((part) => {
+    if (schema[part]) {
+      if (part === "body") {
+        console.log(req.body);
+      }
+      const { error } = schema[part].validate(req[part]);
 
-    checkParts.forEach((part)=>{
-        if(schema[part]){
-
-            const {error} = schema[part].validate(req[part]);
-
-            if(error){
-                console.log(error);
-               errorMessages.push(errorFormat(error, part));
-            }
-        }
-    })
-
-    if(errorMessages.length > 0){
-        console.log(JSON.parse(errorMessages.join(' , ')))
-        return next(new AppError(errorMessages.join(' , '), 400));
+      if (error) {
+        console.log(error);
+        errorMessages.push(errorFormat(error, part));
+      }
     }
-    else{
-        return next();
-    }
+  });
+
+  if (errorMessages.length > 0) {
+    console.log(JSON.parse(errorMessages.join(" , ")));
+    return next(new AppError(errorMessages.join(" , "), 400));
+  } else {
+    return next();
+  }
 };
 
-
-function errorFormat(error, part){
-    
-    const object = {type: part, error:error.details[0].message};
-    // return `${part}Error : ${error.details[0].message}`
-    return JSON.stringify(object)
+function errorFormat(error, part) {
+  const object = { type: part, error: error.details[0].message };
+  // return `${part}Error : ${error.details[0].message}`
+  return JSON.stringify(object);
 }
 export default validation;
