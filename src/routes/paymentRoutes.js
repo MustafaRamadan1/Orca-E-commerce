@@ -1,3 +1,4 @@
+import crypto from 'crypto'
 import { Router } from "express";
 import mongoose from "mongoose";
 import sha512 from 'js-sha512'
@@ -164,8 +165,9 @@ router.post("/webHook", async (req, res, next) => {
   
   const {obj} = req.body;
   const {hmac} = req.query;
+
+  console.log(req.body, req.query);
   
-  const payment_key_claims  = obj.payment_key_claims;
   const billing_data = obj.payment_key_claims.billing_data
 
   
@@ -213,58 +215,67 @@ router.post("/webHook", async (req, res, next) => {
       success;
 
 try{
+  const hash = crypto.createHmac('sha512', process.env.HMAC)
+  .update(request_string)
+  .digest('hex');
 
- 
-  const payment = await Payment.findOne({
-    intention_id: req.body.obj.payment_key_claims.next_payment_intention,
-  }).populate({
-    path: "cartItems",
-    populate: "product cart",
-  })
-
-  console.log(payment)
-  // return and log the error  that 
-  if(!payment) return next(new AppError(`No Payment with this Intention`,400));
-
-  const billingData=  formatBilling_Data(billing_data)
-  const newOrder = await Order.create({
-    transaction_id: obj.id,
-    user: payment.user,
-    orderPrice: obj.amount_cents / 100,
-    items: payment.cartItems.map((item) => {
-      return {
-        product: item.product._id,
-        price: item.product.saleProduct,
-        quantity: item.quantity,
-        color:item.product.colors.filter((color)=> color.id === item.color)[0]
-      };
-    }),
-    billingData,
-    paymentOrderId: obj.order.id,
-  });
-
-  // log the error and return  
-  if(!newOrder) return next(new AppError(`couldn't create new order`,400))
-
-    console.log(`we are in the webook`)
-  for (let item of payment.cartItems) {
-    const product = await Product.findById(item.product._id);
-    const colors = product.colors.map((color) =>
-      color.id === item.color
-        ? { ...color, quantity: color.quantity - item.quantity }
-        : color
-    );
-    const quantity = colors.reduce((total, color) => total + color.quantity, 0);
-    product.colors = colors;
-    product.quantity = quantity;
-    await product.save();
+  console.log(hash, req.query.hmac)
+  if(hmac === hash && success === true){
+    console.log(`in the condition`)
+    const payment = await Payment.findOne({
+      intention_id: req.body.obj.payment_key_claims.next_payment_intention,
+    }).populate({
+      path: "cartItems",
+      populate: "product cart",
+    })
+  
+    console.log(payment)
+    // return and log the error  that 
+    if(!payment) return next(new AppError(`No Payment with this Intention`,400));
+  
+    const billingData=  formatBilling_Data(billing_data)
+    const newOrder = await Order.create({
+      transaction_id: obj.id,
+      user: payment.user,
+      orderPrice: obj.amount_cents / 100,
+      items: payment.cartItems.map((item) => {
+        return {
+          product: item.product._id,
+          price: item.product.saleProduct,
+          quantity: item.quantity,
+          color:item.product.colors.filter((color)=> color.id === item.color)[0]
+        };
+      }),
+      billingData,
+      paymentOrderId: obj.order.id,
+    });
+  
+    // log the error and return  
+    if(!newOrder) return next(new AppError(`couldn't create new order`,400))
+  
+      console.log(`we are in the webook`)
+    for (let item of payment.cartItems) {
+      const product = await Product.findById(item.product._id);
+      const colors = product.colors.map((color) =>
+        color.id === item.color
+          ? { ...color, quantity: color.quantity - item.quantity }
+          : color
+      );
+      const quantity = colors.reduce((total, color) => total + color.quantity, 0);
+      product.colors = colors;
+      product.quantity = quantity;
+      await product.save();
+    }
+    console.log(payment.cartItems)
+  
+    await CartItem.deleteMany({cart:new mongoose.Types.ObjectId(payment.cartItems[0].cart._id)});
+    await Cart.findByIdAndUpdate(payment.cartItems[0].cart._id, {totalPrice:0});
+  
+  
   }
-  console.log(payment.cartItems)
 
-  await CartItem.deleteMany({cart:new mongoose.Types.ObjectId(payment.cartItems[0].cart._id)});
-  await Cart.findByIdAndUpdate(payment.cartItems[0].cart._id, {totalPrice:0});
-
-
+  console.log(`outside `)
+  
 }
 catch(err){
   // log the error 
