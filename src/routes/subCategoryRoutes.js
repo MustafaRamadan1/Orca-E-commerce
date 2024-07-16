@@ -16,7 +16,7 @@ import Authorization from "../middlewares/Authorization.js";
 // descruct the schema
 const router = Router();
 
-router.use(isAuth, Authorization("admin"));
+router.use(isAuth, Authorization("admin",'user'));
 router.post(
   "/",
   validation(subCategorySchema.createSubCategory),
