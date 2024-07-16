@@ -107,8 +107,16 @@ router.post(
     };
 
 
-    
+    for(let item of cart.items){
 
+      for(let color of item.product.colors){
+        if(color.id === item.color){
+          if(color.quantity < item.quantity){
+            return next(new AppError(`Your needed quantity more than the available `,400))
+          }
+        }
+      }
+    } 
     const totalPrice = countCartTotalPrice(cart.items);
 
     const updatedCart = await Cart.findByIdAndUpdate(

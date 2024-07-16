@@ -53,3 +53,36 @@ export const getOrder = catchAsync(async (req, res ,next)=>{
         data:order
     })
 });
+
+
+
+export const getUserOrders = catchAsync(async (req, res ,next)=>{
+
+    const {id} = req.params;
+
+    const userOrders = await Order.find({user:id});
+
+    if(!userOrders) return next(new AppError(`No Orders for that user`,400));
+
+    res.status(200).json({
+        status:'success',
+        data:userOrders
+    })
+});
+
+export const updateOrder = catchAsync(async (req, res, next)=>{
+
+    const {id} = req.params;
+
+    const {orderStatus} = req.body;
+
+
+    const updatedOrder = await Order.findByIdAndUpdate(id, {orderStatus},{new:true,runValidators:true});
+
+    if(!updatedOrder) return next( new AppError(`No order with this id`),400);
+
+    res.status(200).json({
+        status:'success',
+        data:updatedOrder
+    })
+})
