@@ -16,6 +16,10 @@ class ApiFeature {
 
     excludedFields.forEach((el) => delete filterObject[el]);
 
+    if (filterObject.category === "undefined") {
+      delete filterObject.category;
+    }
+
     if (filterObject.subCategory !== "undefined") {
       const subCategoriesIds = filterObject.subCategory.split(",");
       filterObject = {
