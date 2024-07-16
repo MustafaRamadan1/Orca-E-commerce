@@ -1,0 +1,557 @@
+[
+  {
+    "name": "Blue-Jeans 1",
+    "description": "Good Quality 1",
+    "price": 430,
+    "category": "66885ced811b33a15a63271d",
+    "subCategory": ["66885d2b811b33a15a63272b", "66885d59811b33a15a632737"],
+    "quantity": 60,
+    "discount": 0,
+    "images": [
+      {
+        "url": "http://res.cloudinary.com/dtvumfiux/image/upload/v1720649658/u6tkjxaxvukhoohoapov.jpg",
+        "id": "u6tkjxaxvukhoohoapov"
+      },
+      {
+        "url": "http://res.cloudinary.com/dtvumfiux/image/upload/v1720649658/qnbdmiqweatvkqck1y8k.jpg",
+        "id": "qnbdmiqweatvkqck1y8k"
+      },
+      {
+        "url": "http://res.cloudinary.com/dtvumfiux/image/upload/v1720649658/ash8uo1snq2l26styqwc.jpg",
+        "id": "ash8uo1snq2l26styqwc"
+      }
+    ],
+    "size": { "value": "XXL", "label": "XXL", "color": "#666666" },
+    "colors": [
+      {
+        "value": "Black",
+        "label": "Black",
+        "color": "#000000",
+        "quantity": 20
+      },
+      { "value": "Red", "label": "Red", "color": "#FF0000", "quantity": 20 },
+      { "value": "Green", "label": "Green", "color": "#00FF00", "quantity": 20 }
+    ]
+  },
+  {
+    "name": "Blue-Jeans 2",
+    "description": "Good Quality 2",
+    "price": 440,
+    "category": "66885ced811b33a15a63271d",
+    "subCategory": ["66885d2b811b33a15a63272b", "66885d59811b33a15a632737"],
+    "quantity": 60,
+    "discount": 5,
+    "images": [
+      {
+        "url": "http://res.cloudinary.com/dtvumfiux/image/upload/v1720649658/u6tkjxaxvukhoohoapov.jpg",
+        "id": "u6tkjxaxvukhoohoapov"
+      },
+      {
+        "url": "http://res.cloudinary.com/dtvumfiux/image/upload/v1720649658/qnbdmiqweatvkqck1y8k.jpg",
+        "id": "qnbdmiqweatvkqck1y8k"
+      },
+      {
+        "url": "http://res.cloudinary.com/dtvumfiux/image/upload/v1720649658/ash8uo1snq2l26styqwc.jpg",
+        "id": "ash8uo1snq2l26styqwc"
+      }
+    ],
+    "size": { "value": "XXL", "label": "XXL", "color": "#666666" },
+    "colors": [
+      { "value": "Blue", "label": "Blue", "color": "#0000FF", "quantity": 20 },
+      {
+        "value": "Yellow",
+        "label": "Yellow",
+        "color": "#FFFF00",
+        "quantity": 20
+      },
+      { "value": "Pink", "label": "Pink", "color": "#FFC0CB", "quantity": 20 }
+    ]
+  },
+  {
+    "name": "Blue-Jeans 3",
+    "description": "Good Quality 3",
+    "price": 450,
+    "category": "66885ced811b33a15a63271d",
+    "subCategory": ["66885d2b811b33a15a63272b", "66885d59811b33a15a632737"],
+    "quantity": 60,
+    "discount": 10,
+    "images": [
+      {
+        "url": "http://res.cloudinary.com/dtvumfiux/image/upload/v1720649658/u6tkjxaxvukhoohoapov.jpg",
+        "id": "u6tkjxaxvukhoohoapov"
+      },
+      {
+        "url": "http://res.cloudinary.com/dtvumfiux/image/upload/v1720649658/qnbdmiqweatvkqck1y8k.jpg",
+        "id": "qnbdmiqweatvkqck1y8k"
+      },
+      {
+        "url": "http://res.cloudinary.com/dtvumfiux/image/upload/v1720649658/ash8uo1snq2l26styqwc.jpg",
+        "id": "ash8uo1snq2l26styqwc"
+      }
+    ],
+    "size": { "value": "XXL", "label": "XXL", "color": "#666666" },
+    "colors": [
+      {
+        "value": "Orange",
+        "label": "Orange",
+        "color": "#FFA500",
+        "quantity": 20
+      },
+      {
+        "value": "Purple",
+        "label": "Purple",
+        "color": "#800080",
+        "quantity": 20
+      },
+      { "value": "Brown", "label": "Brown", "color": "#A52A2A", "quantity": 20 }
+    ]
+  },
+  {
+    "name": "Blue-Jeans 4",
+    "description": "Good Quality 4",
+    "price": 460,
+    "category": "66885ced811b33a15a63271d",
+    "subCategory": ["66885d2b811b33a15a63272b", "66885d59811b33a15a632737"],
+    "quantity": 60,
+    "discount": 15,
+    "images": [
+      {
+        "url": "http://res.cloudinary.com/dtvumfiux/image/upload/v1720649658/u6tkjxaxvukhoohoapov.jpg",
+        "id": "u6tkjxaxvukhoohoapov"
+      },
+      {
+        "url": "http://res.cloudinary.com/dtvumfiux/image/upload/v1720649658/qnbdmiqweatvkqck1y8k.jpg",
+        "id": "qnbdmiqweatvkqck1y8k"
+      },
+      {
+        "url": "http://res.cloudinary.com/dtvumfiux/image/upload/v1720649658/ash8uo1snq2l26styqwc.jpg",
+        "id": "ash8uo1snq2l26styqwc"
+      }
+    ],
+    "size": { "value": "XXL", "label": "XXL", "color": "#666666" },
+    "colors": [
+      { "value": "Grey", "label": "Grey", "color": "#808080", "quantity": 20 },
+      {
+        "value": "Magenta",
+        "label": "Magenta",
+        "color": "#FF00FF",
+        "quantity": 20
+      },
+      { "value": "Cyan", "label": "Cyan", "color": "#00FFFF", "quantity": 20 }
+    ]
+  },
+  {
+    "name": "Blue-Jeans 5",
+    "description": "Good Quality 5",
+    "price": 470,
+    "category": "66885ced811b33a15a63271d",
+    "subCategory": ["66885d2b811b33a15a63272b", "66885d59811b33a15a632737"],
+    "quantity": 60,
+    "discount": 20,
+    "images": [
+      {
+        "url": "http://res.cloudinary.com/dtvumfiux/image/upload/v1720649658/u6tkjxaxvukhoohoapov.jpg",
+        "id": "u6tkjxaxvukhoohoapov"
+      },
+      {
+        "url": "http://res.cloudinary.com/dtvumfiux/image/upload/v1720649658/qnbdmiqweatvkqck1y8k.jpg",
+        "id": "qnbdmiqweatvkqck1y8k"
+      },
+      {
+        "url": "http://res.cloudinary.com/dtvumfiux/image/upload/v1720649658/ash8uo1snq2l26styqwc.jpg",
+        "id": "ash8uo1snq2l26styqwc"
+      }
+    ],
+    "size": { "value": "XXL", "label": "XXL", "color": "#666666" },
+    "colors": [
+      { "value": "Teal", "label": "Teal", "color": "#008080", "quantity": 20 },
+      {
+        "value": "Lavender",
+        "label": "Lavender",
+        "color": "#E6E6FA",
+        "quantity": 20
+      },
+      {
+        "value": "Maroon",
+        "label": "Maroon",
+        "color": "#800000",
+        "quantity": 20
+      }
+    ]
+  },
+  {
+    "name": "Blue-Jeans 6",
+    "description": "Good Quality 6",
+    "price": 480,
+    "category": "66885ced811b33a15a63271d",
+    "subCategory": ["66885d2b811b33a15a63272b", "66885d59811b33a15a632737"],
+    "quantity": 60,
+    "discount": 25,
+    "images": [
+      {
+        "url": "http://res.cloudinary.com/dtvumfiux/image/upload/v1720649658/u6tkjxaxvukhoohoapov.jpg",
+        "id": "u6tkjxaxvukhoohoapov"
+      },
+      {
+        "url": "http://res.cloudinary.com/dtvumfiux/image/upload/v1720649658/qnbdmiqweatvkqck1y8k.jpg",
+        "id": "qnbdmiqweatvkqck1y8k"
+      },
+      {
+        "url": "http://res.cloudinary.com/dtvumfiux/image/upload/v1720649658/ash8uo1snq2l26styqwc.jpg",
+        "id": "ash8uo1snq2l26styqwc"
+      }
+    ],
+    "size": { "value": "XXL", "label": "XXL", "color": "#666666" },
+    "colors": [
+      {
+        "value": "Silver",
+        "label": "Silver",
+        "color": "#C0C0C0",
+        "quantity": 20
+      },
+      { "value": "Gold", "label": "Gold", "color": "#FFD700", "quantity": 20 },
+      { "value": "Lime", "label": "Lime", "color": "#00FF00", "quantity": 20 }
+    ]
+  },
+  {
+    "name": "Blue-Jeans 7",
+    "description": "Good Quality 7",
+    "price": 490,
+    "category": "66885ced811b33a15a63271d",
+    "subCategory": ["66885d2b811b33a15a63272b", "66885d59811b33a15a632737"],
+    "quantity": 60,
+    "discount": 30,
+    "images": [
+      {
+        "url": "http://res.cloudinary.com/dtvumfiux/image/upload/v1720649658/u6tkjxaxvukhoohoapov.jpg",
+        "id": "u6tkjxaxvukhoohoapov"
+      },
+      {
+        "url": "http://res.cloudinary.com/dtvumfiux/image/upload/v1720649658/qnbdmiqweatvkqck1y8k.jpg",
+        "id": "qnbdmiqweatvkqck1y8k"
+      },
+      {
+        "url": "http://res.cloudinary.com/dtvumfiux/image/upload/v1720649658/ash8uo1snq2l26styqwc.jpg",
+        "id": "ash8uo1snq2l26styqwc"
+      }
+    ],
+    "size": { "value": "XXL", "label": "XXL", "color": "#666666" },
+    "colors": [
+      { "value": "Navy", "label": "Navy", "color": "#000080", "quantity": 20 },
+      {
+        "value": "Coral",
+        "label": "Coral",
+        "color": "#FF7F50",
+        "quantity": 20
+      },
+      { "value": "Peach", "label": "Peach", "color": "#FFDAB9", "quantity": 20 }
+    ]
+  },
+  {
+    "name": "Blue-Jeans 8",
+    "description": "Good Quality 8",
+    "price": 500,
+    "category": "66885ced811b33a15a63271d",
+    "subCategory": ["66885d2b811b33a15a63272b", "66885d59811b33a15a632737"],
+    "quantity": 60,
+    "discount": 35,
+    "images": [
+      {
+        "url": "http://res.cloudinary.com/dtvumfiux/image/upload/v1720649658/u6tkjxaxvukhoohoapov.jpg",
+        "id": "u6tkjxaxvukhoohoapov"
+      },
+      {
+        "url": "http://res.cloudinary.com/dtvumfiux/image/upload/v1720649658/qnbdmiqweatvkqck1y8k.jpg",
+        "id": "qnbdmiqweatvkqck1y8k"
+      },
+      {
+        "url": "http://res.cloudinary.com/dtvumfiux/image/upload/v1720649658/ash8uo1snq2l26styqwc.jpg",
+        "id": "ash8uo1snq2l26styqwc"
+      }
+    ],
+    "size": { "value": "XXL", "label": "XXL", "color": "#666666" },
+    "colors": [
+      {
+        "value": "Olive",
+        "label": "Olive",
+        "color": "#808000",
+        "quantity": 20
+      },
+      { "value": "Mint", "label": "Mint", "color": "#98FF98", "quantity": 20 },
+      {
+        "value": "Turquoise",
+        "label": "Turquoise",
+        "color": "#40E0D0",
+        "quantity": 20
+      }
+    ]
+  },
+  {
+    "name": "Blue-Jeans 9",
+    "description": "Good Quality 9",
+    "price": 510,
+    "category": "66885ced811b33a15a63271d",
+    "subCategory": ["66885d2b811b33a15a63272b", "66885d59811b33a15a632737"],
+    "quantity": 60,
+    "discount": 40,
+    "images": [
+      {
+        "url": "http://res.cloudinary.com/dtvumfiux/image/upload/v1720649658/u6tkjxaxvukhoohoapov.jpg",
+        "id": "u6tkjxaxvukhoohoapov"
+      },
+      {
+        "url": "http://res.cloudinary.com/dtvumfiux/image/upload/v1720649658/qnbdmiqweatvkqck1y8k.jpg",
+        "id": "qnbdmiqweatvkqck1y8k"
+      },
+      {
+        "url": "http://res.cloudinary.com/dtvumfiux/image/upload/v1720649658/ash8uo1snq2l26styqwc.jpg",
+        "id": "ash8uo1snq2l26styqwc"
+      }
+    ],
+    "size": { "value": "XXL", "label": "XXL", "color": "#666666" },
+    "colors": [
+      {
+        "value": "Charcoal",
+        "label": "Charcoal",
+        "color": "#36454F",
+        "quantity": 20
+      },
+      {
+        "value": "Khaki",
+        "label": "Khaki",
+        "color": "#F0E68C",
+        "quantity": 20
+      },
+      { "value": "Ivory", "label": "Ivory", "color": "#FFFFF0", "quantity": 20 }
+    ]
+  },
+  {
+    "name": "Blue-Jeans 10",
+    "description": "Good Quality 10",
+    "price": 520,
+    "category": "66885ced811b33a15a63271d",
+    "subCategory": ["66885d2b811b33a15a63272b", "66885d59811b33a15a632737"],
+    "quantity": 60,
+    "discount": 45,
+    "images": [
+      {
+        "url": "http://res.cloudinary.com/dtvumfiux/image/upload/v1720649658/u6tkjxaxvukhoohoapov.jpg",
+        "id": "u6tkjxaxvukhoohoapov"
+      },
+      {
+        "url": "http://res.cloudinary.com/dtvumfiux/image/upload/v1720649658/qnbdmiqweatvkqck1y8k.jpg",
+        "id": "qnbdmiqweatvkqck1y8k"
+      },
+      {
+        "url": "http://res.cloudinary.com/dtvumfiux/image/upload/v1720649658/ash8uo1snq2l26styqwc.jpg",
+        "id": "ash8uo1snq2l26styqwc"
+      }
+    ],
+    "size": { "value": "MD", "label": "MD", "color": "#666666" },
+    "colors": [
+      {
+        "value": "Cream",
+        "label": "Cream",
+        "color": "#FFFDD0",
+        "quantity": 20
+      },
+      {
+        "value": "Beige",
+        "label": "Beige",
+        "color": "#F5F5DC",
+        "quantity": 20
+      },
+      {
+        "value": "Fuchsia",
+        "label": "Fuchsia",
+        "color": "#FF00FF",
+        "quantity": 20
+      }
+    ]
+  },
+  {
+    "name": "Blue-Jeans 11",
+    "description": "Good Quality 11",
+    "price": 530,
+    "category": "66885ced811b33a15a63271d",
+    "subCategory": ["66885d2b811b33a15a63272b", "66885d59811b33a15a632737"],
+    "quantity": 60,
+    "discount": 50,
+    "images": [
+      {
+        "url": "http://res.cloudinary.com/dtvumfiux/image/upload/v1720649658/u6tkjxaxvukhoohoapov.jpg",
+        "id": "u6tkjxaxvukhoohoapov"
+      },
+      {
+        "url": "http://res.cloudinary.com/dtvumfiux/image/upload/v1720649658/qnbdmiqweatvkqck1y8k.jpg",
+        "id": "qnbdmiqweatvkqck1y8k"
+      },
+      {
+        "url": "http://res.cloudinary.com/dtvumfiux/image/upload/v1720649658/ash8uo1snq2l26styqwc.jpg",
+        "id": "ash8uo1snq2l26styqwc"
+      }
+    ],
+    "size": { "value": "XS", "label": "XS", "color": "#666666" },
+    "colors": [
+      { "value": "Plum", "label": "Plum", "color": "#DDA0DD", "quantity": 20 },
+      {
+        "value": "Mauve",
+        "label": "Mauve",
+        "color": "#E0B0FF",
+        "quantity": 20
+      },
+      {
+        "value": "Indigo",
+        "label": "Indigo",
+        "color": "#4B0082",
+        "quantity": 20
+      }
+    ]
+  },
+  {
+    "name": "Blue-Jeans 12",
+    "description": "Good Quality 12",
+    "price": 540,
+    "category": "66885ced811b33a15a63271d",
+    "subCategory": ["66885d2b811b33a15a63272b", "66885d59811b33a15a632737"],
+    "quantity": 60,
+    "discount": 55,
+    "images": [
+      {
+        "url": "http://res.cloudinary.com/dtvumfiux/image/upload/v1720649658/u6tkjxaxvukhoohoapov.jpg",
+        "id": "u6tkjxaxvukhoohoapov"
+      },
+      {
+        "url": "http://res.cloudinary.com/dtvumfiux/image/upload/v1720649658/qnbdmiqweatvkqck1y8k.jpg",
+        "id": "qnbdmiqweatvkqck1y8k"
+      },
+      {
+        "url": "http://res.cloudinary.com/dtvumfiux/image/upload/v1720649658/ash8uo1snq2l26styqwc.jpg",
+        "id": "ash8uo1snq2l26styqwc"
+      }
+    ],
+    "size": { "value": "L", "label": "L", "color": "#666666" },
+    "colors": [
+      {
+        "value": "Periwinkle",
+        "label": "Periwinkle",
+        "color": "#CCCCFF",
+        "quantity": 20
+      },
+      {
+        "value": "Violet",
+        "label": "Violet",
+        "color": "#8F00FF",
+        "quantity": 20
+      },
+      { "value": "Slate", "label": "Slate", "color": "#708090", "quantity": 20 }
+    ]
+  },
+  {
+    "name": "Blue-Jeans 13",
+    "description": "Good Quality 13",
+    "price": 550,
+    "category": "66885ced811b33a15a63271d",
+    "subCategory": ["66885d2b811b33a15a63272b", "66885d59811b33a15a632737"],
+    "quantity": 60,
+    "discount": 60,
+    "images": [
+      {
+        "url": "http://res.cloudinary.com/dtvumfiux/image/upload/v1720649658/u6tkjxaxvukhoohoapov.jpg",
+        "id": "u6tkjxaxvukhoohoapov"
+      },
+      {
+        "url": "http://res.cloudinary.com/dtvumfiux/image/upload/v1720649658/qnbdmiqweatvkqck1y8k.jpg",
+        "id": "qnbdmiqweatvkqck1y8k"
+      },
+      {
+        "url": "http://res.cloudinary.com/dtvumfiux/image/upload/v1720649658/ash8uo1snq2l26styqwc.jpg",
+        "id": "ash8uo1snq2l26styqwc"
+      }
+    ],
+    "size": { "value": "XL", "label": "XL", "color": "#666666" },
+    "colors": [
+      { "value": "Tan", "label": "Tan", "color": "#D2B48C", "quantity": 20 },
+      {
+        "value": "Blush",
+        "label": "Blush",
+        "color": "#DE5D83",
+        "quantity": 20
+      },
+      { "value": "Moss", "label": "Moss", "color": "#8A9A5B", "quantity": 20 }
+    ]
+  },
+  {
+    "name": "Blue-Jeans 14",
+    "description": "Good Quality 14",
+    "price": 560,
+    "category": "66885ced811b33a15a63271d",
+    "subCategory": ["66885d2b811b33a15a63272b", "66885d59811b33a15a632737"],
+    "quantity": 60,
+    "discount": 65,
+    "images": [
+      {
+        "url": "http://res.cloudinary.com/dtvumfiux/image/upload/v1720649658/u6tkjxaxvukhoohoapov.jpg",
+        "id": "u6tkjxaxvukhoohoapov"
+      },
+      {
+        "url": "http://res.cloudinary.com/dtvumfiux/image/upload/v1720649658/qnbdmiqweatvkqck1y8k.jpg",
+        "id": "qnbdmiqweatvkqck1y8k"
+      },
+      {
+        "url": "http://res.cloudinary.com/dtvumfiux/image/upload/v1720649658/ash8uo1snq2l26styqwc.jpg",
+        "id": "ash8uo1snq2l26styqwc"
+      }
+    ],
+    "size": { "value": "XXL", "label": "XXL", "color": "#666666" },
+    "colors": [
+      { "value": "Rust", "label": "Rust", "color": "#B7410E", "quantity": 20 },
+      {
+        "value": "Ochre",
+        "label": "Ochre",
+        "color": "#CC7722",
+        "quantity": 20
+      },
+      {
+        "value": "Burgundy",
+        "label": "Burgundy",
+        "color": "#800020",
+        "quantity": 20
+      }
+    ]
+  },
+  {
+    "name": "Blue-Jeans 15",
+    "description": "Good Quality 15",
+    "price": 570,
+    "category": "66885ced811b33a15a63271d",
+    "subCategory": ["66885d2b811b33a15a63272b", "66885d59811b33a15a632737"],
+    "quantity": 60,
+    "discount": 70,
+    "images": [
+      {
+        "url": "http://res.cloudinary.com/dtvumfiux/image/upload/v1720649658/u6tkjxaxvukhoohoapov.jpg",
+        "id": "u6tkjxaxvukhoohoapov"
+      },
+      {
+        "url": "http://res.cloudinary.com/dtvumfiux/image/upload/v1720649658/qnbdmiqweatvkqck1y8k.jpg",
+        "id": "qnbdmiqweatvkqck1y8k"
+      },
+      {
+        "url": "http://res.cloudinary.com/dtvumfiux/image/upload/v1720649658/ash8uo1snq2l26styqwc.jpg",
+        "id": "ash8uo1snq2l26styqwc"
+      }
+    ],
+    "size": { "value": "SM", "label": "SM", "color": "#666666" },
+    "colors": [
+      { "value": "Sky", "label": "Sky", "color": "#87CEEB", "quantity": 20 },
+      { "value": "Mint", "label": "Mint", "color": "#98FF98", "quantity": 20 },
+      {
+        "value": "Cobalt",
+        "label": "Cobalt",
+        "color": "#0047AB",
+        "quantity": 20
+      }
+    ]
+  }
+]
