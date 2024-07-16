@@ -20,6 +20,8 @@ app.set('view engine', 'pug');
 app.set('views',`${__dirname}/views`);
 
 
+app.use(express.static(`${__dirname}/public`))
+
 // global Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
