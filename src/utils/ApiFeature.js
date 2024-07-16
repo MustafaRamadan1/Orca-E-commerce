@@ -98,7 +98,10 @@ class ApiFeature {
     const skip = (page - 1) * limit;
 
     if (skip >= totalDocumentCounts) {
-      throw new AppError(`No Documents in this page`, 404);
+      this.query = new Promise((resolve) => {
+        resolve([]);
+      });
+      // throw new AppError(`No Documents in this page`, 404);
     } else {
       this.query = this.query.skip(skip).limit(limit);
     }
