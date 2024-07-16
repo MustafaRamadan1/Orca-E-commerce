@@ -16,11 +16,11 @@ class ApiFeature {
 
     excludedFields.forEach((el) => delete filterObject[el]);
 
-    if (filterObject.category === "undefined") {
+    if (filterObject.category === undefined) {
       delete filterObject.category;
     }
 
-    if (filterObject.subCategory !== "undefined") {
+    if (filterObject.subCategory !== undefined) {
       const subCategoriesIds = filterObject.subCategory.split(",");
       filterObject = {
         ...filterObject,
@@ -30,14 +30,14 @@ class ApiFeature {
       delete filterObject.subCategory;
     }
 
-    if (filterObject.size !== "undefined") {
+    if (filterObject.size !== undefined) {
       filterObject = { ...filterObject, ["size.value"]: filterObject.size };
       delete filterObject.size;
     } else {
       delete filterObject.size;
     }
 
-    if (filterObject.colors !== "undefined") {
+    if (filterObject.colors !== undefined) {
       const colorsArray = filterObject.colors.split(",");
       filterObject = {
         ...filterObject,
@@ -53,7 +53,7 @@ class ApiFeature {
       delete filterObject.colors;
     }
 
-    if (filterObject.min !== "undefined" && filterObject.max !== "undefined") {
+    if (filterObject.min !== undefined && filterObject.max !== undefined) {
       filterObject = {
         ...filterObject,
         price: { $gte: filterObject.min, $lte: filterObject.max },
