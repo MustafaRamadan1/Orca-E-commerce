@@ -9,11 +9,11 @@ import {
   updateSubCategory,
 } from "../controllers/subCategoryControllers.js";
 import validation from "../middlewares/validation.js";
-import {subCategorySchema} from "../validation/index.js";
+import { subCategorySchema } from "../validation/index.js";
 import isAuth from "../middlewares/authentication.js";
 import Authorization from "../middlewares/Authorization.js";
 
-// descruct the schema 
+// descruct the schema
 const router = Router();
 
 router.use(isAuth, Authorization("admin"));

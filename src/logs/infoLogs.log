@@ -1630,6 +1630,7 @@ info   2024-07-15T22:43:30.902Z   Server Listening on PORT 8000
 info   2024-07-15T22:44:23.460Z   Database Connection Successfully
 info   2024-07-15T22:44:23.464Z   Server Listening on PORT 8000
 >>>>>>> 59f18512d0936c243d3b543aa6ccc0efb2b52b4e
+<<<<<<< HEAD
 info   2024-07-16T08:06:06.489Z   Database Connection Successfully
 info   2024-07-16T08:06:06.535Z   Server Listening on PORT 3000
 info   2024-07-16T08:10:00.749Z   Database Connection Successfully
@@ -1675,3 +1676,11 @@ info   2024-07-16T08:31:18.581Z   Database Connection Successfully
 info   2024-07-16T08:31:18.596Z   Server Listening on PORT 3000
 info   2024-07-16T08:31:29.278Z   Database Connection Successfully
 info   2024-07-16T08:31:29.290Z   Server Listening on PORT 3000
+=======
+info   2024-07-16T08:44:46.241Z   Database Connection Successfully
+info   2024-07-16T08:44:46.244Z   Server Listening on PORT 8000
+info   2024-07-16T08:44:46.266Z   Database Connection Successfully
+info   2024-07-16T08:49:43.292Z   Database Connection Successfully
+info   2024-07-16T08:49:43.338Z   Database Connection Successfully
+info   2024-07-16T08:49:43.305Z   Server Listening on PORT 8000
+>>>>>>> b937fdbbf4126d78a76f016b2dfaaace2823d53c
