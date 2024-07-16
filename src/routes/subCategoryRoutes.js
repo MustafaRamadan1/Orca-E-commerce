@@ -16,12 +16,6 @@ import Authorization from "../middlewares/Authorization.js";
 // descruct the schema
 const router = Router();
 
-router.use(isAuth, Authorization("admin"));
-router.post(
-  "/",
-  validation(subCategorySchema.createSubCategory),
-  createSubCategory
-);
 router.get("/", getAllSubCategories);
 router.get("/filtered", getFilteredSubCategories);
 router.get("/allIds", getAllSubCategoriesIds);
@@ -29,6 +23,13 @@ router.get(
   "/:id",
   validation(subCategorySchema.getSubCategory),
   getSubCategory
+);
+
+router.use(isAuth, Authorization("admin"));
+router.post(
+  "/",
+  validation(subCategorySchema.createSubCategory),
+  createSubCategory
 );
 router.put(
   "/:id",
