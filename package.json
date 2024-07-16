@@ -4,7 +4,11 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "start": "nodemon ./src/server.js"
+    "start": "node ./src/index.js"
+  },
+
+  "engines": {
+    "node": "20.14.0"
   },
   "author": "Mustafa Ramadan",
   "license": "ISC",

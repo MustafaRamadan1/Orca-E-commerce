@@ -112,6 +112,7 @@ router.post(
       for(let color of item.product.colors){
         if(color.id === item.color){
           if(color.quantity < item.quantity){
+            await CartItem.findByIdAndDelete(item._id)
             return next(new AppError(`Your needed quantity more than the available `,400))
           }
         }
