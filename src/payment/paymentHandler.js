@@ -1,5 +1,7 @@
 import axios from "axios";
 
+
+// log all paymob function logger error  
 export const paymobAuthentication = async () => {
   try {
     const response = await axios.post(

@@ -11,22 +11,21 @@ import {
 import isAuth from "../middlewares/authentication.js";
 import Authorization from "../middlewares/Authorization.js";
 import validation from "../middlewares/validation.js";
-import Schema from "../validation/index.js";
+import {authSchema} from "../validation/index.js";
 const router = Router();
 
-router.post("/auth/signup", validation(Schema.authSchema.signUp), signUp);
-router.post("/auth/login", validation(Schema.authSchema.login), login);
+router.post("/auth/signup", validation(authSchema.signUp), signUp);
+router.post("/auth/login", validation(authSchema.login), login);
 router.post(
   "/auth/forgetPassword",
-  validation(Schema.authSchema.forgetPassword),
+  validation(authSchema.forgetPassword),
   forgetPassword
 );
 router.patch(
   "/auth/resetPassword/:token",
-  validation(Schema.authSchema.resetPassword),
+  validation(authSchema.resetPassword),
   resetPassword
 );
-router.get("/users", isAuth, Authorization("admin"), getAllUsers);
 router.patch("/auth/Activate", activateUser);
 router.patch(
   "/auth/updatePassword",
@@ -35,4 +34,9 @@ router.patch(
   updateUserPassword
 );
 
+// add phoneNumber in user model
+//users
+router.get("/users", isAuth, Authorization("admin"), getAllUsers);
+// get user by id 
+//delete user 
 export default router;

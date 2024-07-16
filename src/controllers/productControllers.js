@@ -259,57 +259,6 @@ export const updateProduct = catchAsync(async (req, res, next) => {
 
   let cloudinaryImages = [];
 
-  // if(bodyImages.length === 3){
-  //   cloudinaryImages.push(...bodyImages)
-  // }
-  // else
-  if (req.images.length === 3) {
-    const uploadedCloudImages = await uploadToCloudinary(req.images);
-    cloudinaryImages.push(...uploadedCloudImages);
-    for (let image of product.images) {
-      await cloudinaryDeleteImg(image.id);
-    }
-
-    for (let image of req.images) {
-      await deletePhotoFromServer(image);
-    }
-  } else {
-    const uploadedCloudImages = await uploadToCloudinary(req.images);
-    cloudinaryImages.push(...uploadedCloudImages);
-    cloudinaryImages.push(...bodyImages);
-    const imagesId = bodyImages.map((image) => image.id);
-    const differentImages = product.images.filter(
-      (image) => !imagesId.includes(image.id)
-    );
-    for (let image of differentImages) {
-      await cloudinaryDeleteImg(image.id);
-    }
-
-    for (let image of req.images) {
-      await deletePhotoFromServer(image);
-    }
-  }
-
-  // if(bodyImages) cloudinaryImages.push(...bodyImages)
-
-  // for (let image of req.images) {
-  //   await deletePhotoFromServer(image);
-  // }
-
-  // if(bodyImages){
-  //   const requestImageId = bodyImages.map((image)=> image.id);
-  //   const differenceImages = product.images.filter((image)=> !requestImageId.includes(image.id));
-
-  //   for (let image of differenceImages) {
-  //     await cloudinaryDeleteImg(image.id);
-  //   }
-  // }
-  // else{
-  //   for (let image of product.images) {
-  //     await cloudinaryDeleteImg(image.id);
-  //   }
-  // }
-
   console.log(product.slug);
 
   const updatedProductBySlug = await Product.updateMany(

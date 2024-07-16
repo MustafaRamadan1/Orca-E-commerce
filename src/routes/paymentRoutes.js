@@ -124,6 +124,8 @@ router.post(
 
     const formattedItems = formatItemsForPayment(updatedCart.items);
 
+    // log the axios error  
+
     const response = await createPaymentLinkMultiMethods(
       updatedCart.totalPrice,
       [
@@ -212,6 +214,7 @@ try{
   })
 
   console.log(payment)
+  // return and log the error  that 
   if(!payment) return next(new AppError(`No Payment with this Intention`,400));
 
   const billingData=  formatBilling_Data(billing_data)
@@ -231,6 +234,7 @@ try{
     paymentOrderId: obj.order.id,
   });
 
+  // log the error and return  
   if(!newOrder) return next(new AppError(`couldn't create new order`,400))
 
     console.log(`we are in the webook`)
@@ -254,7 +258,7 @@ try{
 
 }
 catch(err){
-
+  // log the error 
   console.log(err);
 
   return next(new AppError(err.message,400))
