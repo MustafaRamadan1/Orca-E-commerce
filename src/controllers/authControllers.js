@@ -177,3 +177,24 @@ export const updateUserPassword = catchAsync(async (req, res, next) => {
     message: "Password Changed Successfully",
   });
 });
+
+
+export const getUserById = catchAsync(async (req, res, next) => {
+
+  const {id} = req.params;
+
+  const user = await User.findById(id).populate('cart');
+
+  if(!user) return next( new AppError(`No User with this id`, 404));
+
+  res.status(200).json({
+    status:'success',
+    data:user
+  });
+})
+
+
+export const deleteUser = catchAsync(async (req, res, next) => {
+
+  
+})

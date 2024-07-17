@@ -101,7 +101,6 @@ class ApiFeature {
       this.query = new Promise((resolve) => {
         resolve([]);
       });
-      // throw new AppError(`No Documents in this page`, 404);
     } else {
       this.query = this.query.skip(skip).limit(limit);
     }

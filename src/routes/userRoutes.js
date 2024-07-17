@@ -7,6 +7,8 @@ import {
   resetPassword,
   activateUser,
   updateUserPassword,
+  deleteUser,
+  getUserById,
 } from "../controllers/authControllers.js";
 import isAuth from "../middlewares/authentication.js";
 import Authorization from "../middlewares/Authorization.js";
@@ -37,6 +39,7 @@ router.patch(
 // add phoneNumber in user model
 //users
 router.get("/users", isAuth, Authorization("admin"), getAllUsers);
-// get user by id 
+router.get('/users/:id', isAuth,Authorization('admin'), getUserById);
+router.delete('/users/deleteUser', isAuth, Authorization('user'), deleteUser);
 //delete user 
 export default router;

@@ -78,7 +78,7 @@ router.post(
   restrictTo("user"),
   catchAsync(async (req, res, next) => {
     const { cartItems } = req.body;
-    console.log(cartItems);
+    
     const formattedCartItems = cartItems.map((item) => {
       return {
         cart: item.cart,
@@ -88,7 +88,7 @@ router.post(
       };
     });
 
-    console.log(formattedCartItems);
+   
     const newCartItems = await CartItem.create(formattedCartItems);
 
     if (newCartItems.length === 0)
@@ -108,7 +108,7 @@ router.post(
 
     for (let item of cart.items) {
       for (let color of item.product.colors) {
-        if (color.id === item.color) {
+        if (color._id === item.color) {
           if (color.quantity < item.quantity) {
             await CartItem.findByIdAndDelete(item._id);
             return next(
