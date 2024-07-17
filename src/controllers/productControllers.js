@@ -219,7 +219,7 @@ export const getAllProducts = catchAsync(async (req, res, next) => {
   res.status(200).json({
     status: "success",
     result: products.length,
-    pagesNumber: Math.ceil(products / limit),
+    pagesNumber: Math.ceil(products.length / limit),
     data: products,
   });
 });
