@@ -215,11 +215,15 @@ export const getAllProducts = catchAsync(async (req, res, next) => {
     .limitFields()
     .pagination(totalDocumentCount);
 
+  const pagesNumber = await new ApiFeature(Product.find(), req.query).filter()
+    .query;
+
   const products = await apiFeature.query;
+
   res.status(200).json({
     status: "success",
     result: products.length,
-    pagesNumber: Math.ceil(products.length / limit),
+    pagesNumber: Math.ceil(pagesNumber.length / limit),
     data: products,
   });
 });
