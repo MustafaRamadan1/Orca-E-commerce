@@ -207,6 +207,8 @@ export const getProduct = catchAsync(async (req, res, next) => {
 export const getAllProducts = catchAsync(async (req, res, next) => {
   const totalDocumentCount = await Product.countDocuments();
 
+  const limit = req.query.limit * 1 || 5;
+
   const apiFeature = new ApiFeature(Product.find(), req.query)
     .filter()
     .sort()
@@ -217,6 +219,7 @@ export const getAllProducts = catchAsync(async (req, res, next) => {
   res.status(200).json({
     status: "success",
     result: products.length,
+    pagesNumber: Math.ceil(totalDocumentCount / limit),
     data: products,
   });
 });
