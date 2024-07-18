@@ -18,6 +18,8 @@ const __dirname = dirname(__filename);
 app.set("view engine", "pug");
 app.set("views", `${__dirname}/views`);
 
+app.use(express.static(`${__dirname}/public`));
+
 // global Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -39,6 +41,7 @@ import cartRouter from "./routes/cartRoutes.js";
 import cartItemsRouter from "./routes/cartItemRoutes.js";
 import paymentRouter from "./routes/paymentRoutes.js";
 import reviewRouter from "./routes/reviewRoutes.js";
+import orderRouter from "./routes/orderRoutes.js";
 import AppError from "./utils/AppError.js";
 import globalErrorHandler from "./middlewares/globalerrorHandler.js";
 
@@ -52,6 +55,7 @@ app.use("/api/v1/carts", cartRouter);
 app.use("/api/v1/cartItems", cartItemsRouter);
 app.use("/api/v1/payment", paymentRouter);
 app.use("/api/v1/reviews", reviewRouter);
+app.use("/api/v1/orders", orderRouter);
 
 //  not found route for non exist routes
 

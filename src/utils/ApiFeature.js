@@ -1,3 +1,4 @@
+import mongoose from "mongoose";
 import AppError from "./AppError.js";
 
 class ApiFeature {
@@ -9,9 +10,62 @@ class ApiFeature {
   filter() {
     const excludedFields = ["page", "sort", "limit", "fields"];
 
-    const filterObject = { ...this.queryString };
+    let filterObject = { ...this.queryString };
+
+    console.log(filterObject);
 
     excludedFields.forEach((el) => delete filterObject[el]);
+
+    if (filterObject.category === "undefined") {
+      delete filterObject.category;
+    }
+
+    if (filterObject.subCategory !== "undefined") {
+      const subCategoriesIds = filterObject.subCategory.split(",");
+      filterObject = {
+        ...filterObject,
+        subCategory: { $in: subCategoriesIds },
+      };
+    } else {
+      delete filterObject.subCategory;
+    }
+
+    if (filterObject.size !== "undefined") {
+      filterObject = { ...filterObject, ["size.value"]: filterObject.size };
+      delete filterObject.size;
+    } else {
+      delete filterObject.size;
+    }
+
+    if (filterObject.colors !== "undefined") {
+      const colorsArray = filterObject.colors.split(",");
+      filterObject = {
+        ...filterObject,
+        colors: {
+          $elemMatch: {
+            value: {
+              $in: colorsArray,
+            },
+          },
+        },
+      };
+    } else {
+      delete filterObject.colors;
+    }
+
+    if (filterObject.min !== "undefined" && filterObject.max !== "undefined") {
+      filterObject = {
+        ...filterObject,
+        price: { $gte: filterObject.min, $lte: filterObject.max },
+      };
+      delete filterObject.max;
+
+      delete filterObject.min;
+    } else {
+      delete filterObject.max;
+
+      delete filterObject.min;
+    }
 
     this.query = this.query.find(filterObject);
 
@@ -44,7 +98,9 @@ class ApiFeature {
     const skip = (page - 1) * limit;
 
     if (skip >= totalDocumentCounts) {
-      throw new AppError(`No Documents in this page`, 404);
+      this.query = new Promise((resolve) => {
+        resolve([]);
+      });
     } else {
       this.query = this.query.skip(skip).limit(limit);
     }

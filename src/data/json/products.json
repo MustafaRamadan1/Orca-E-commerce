@@ -1,0 +1,210 @@
+[
+  {
+    "name": "Jeans",
+    "description": "Classic denim jeans for everyday wear",
+    "price": 59.99,
+    "category": "6696d2e5498de05bd22375b9",
+    "subCategory": ["6696d47c446ea620fd6f4775"],
+    "quantity": 100,
+    "discount": 0,
+    "images": [
+      {
+        "url": "http://res.cloudinary.com/dtvumfiux/image/upload/v1720649658/u6tkjxaxvukhoohoapov.jpg",
+        "id": "u6tkjxaxvukhoohoapov"
+      },
+      {
+        "url": "http://res.cloudinary.com/dtvumfiux/image/upload/v1720649658/qnbdmiqweatvkqck1y8k.jpg",
+        "id": "qnbdmiqweatvkqck1y8k"
+      },
+      {
+        "url": "http://res.cloudinary.com/dtvumfiux/image/upload/v1720649658/ash8uo1snq2l26styqwc.jpg",
+        "id": "ash8uo1snq2l26styqwc"
+      }
+    ],
+    "size": {
+      "value": "M",
+      "label": "Medium",
+      "color": "Blue"
+    },
+    "colors": [
+      {
+        "value": "#0000FF",
+        "label": "Blue",
+        "color": "Blue",
+        "quantity": 50
+      },
+      {
+        "value": "#808080",
+        "label": "Gray",
+        "color": "Gray",
+        "quantity": 50
+      }
+    ],
+    "ratingAverage": 1,
+    "ratingQuantity": 0
+  },
+  {
+    "name": "Sweatpants",
+    "description": "Comfortable sweatpants for lounging",
+    "price": 39.99,
+    "category": "6696d2e5498de05bd22375b9",
+    "subCategory": ["6696d47c446ea620fd6f4776"],
+    "quantity": 80,
+    "discount": 0,
+    "images": [
+      {
+        "url": "http://res.cloudinary.com/dtvumfiux/image/upload/v1720649658/u6tkjxaxvukhoohoapov.jpg",
+        "id": "u6tkjxaxvukhoohoapov"
+      },
+      {
+        "url": "http://res.cloudinary.com/dtvumfiux/image/upload/v1720649658/qnbdmiqweatvkqck1y8k.jpg",
+        "id": "qnbdmiqweatvkqck1y8k"
+      },
+      {
+        "url": "http://res.cloudinary.com/dtvumfiux/image/upload/v1720649658/ash8uo1snq2l26styqwc.jpg",
+        "id": "ash8uo1snq2l26styqwc"
+      }
+    ],
+    "size": {
+      "value": "L",
+      "label": "Large",
+      "color": "Gray"
+    },
+    "colors": [
+      {
+        "value": "#808080",
+        "label": "Gray",
+        "color": "Gray",
+        "quantity": 40
+      },
+      {
+        "value": "#000000",
+        "label": "Black",
+        "color": "Black",
+        "quantity": 40
+      }
+    ],
+    "ratingAverage": 1,
+    "ratingQuantity": 0
+  },
+  {
+    "name": "Dress Pants",
+    "description": "Formal dress pants for professional settings",
+    "price": 79.99,
+    "category": "6696d2e5498de05bd22375b9",
+    "subCategory": ["6696d47c446ea620fd6f4779"],
+    "quantity": 60,
+    "discount": 15,
+    "images": [
+      {
+        "url": "http://res.cloudinary.com/dtvumfiux/image/upload/v1720649658/u6tkjxaxvukhoohoapov.jpg",
+        "id": "u6tkjxaxvukhoohoapov"
+      },
+      {
+        "url": "http://res.cloudinary.com/dtvumfiux/image/upload/v1720649658/qnbdmiqweatvkqck1y8k.jpg",
+        "id": "qnbdmiqweatvkqck1y8k"
+      },
+      {
+        "url": "http://res.cloudinary.com/dtvumfiux/image/upload/v1720649658/ash8uo1snq2l26styqwc.jpg",
+        "id": "ash8uo1snq2l26styqwc"
+      }
+    ],
+    "size": {
+      "value": "XL",
+      "label": "Extra Large",
+      "color": "Black"
+    },
+    "colors": [
+      {
+        "value": "#000000",
+        "label": "Black",
+        "color": "Black",
+        "quantity": 60
+      }
+    ],
+    "ratingAverage": 1,
+    "ratingQuantity": 0
+  },
+  {
+    "name": "Denim Shorts",
+    "description": "Casual denim shorts for warm weather",
+    "price": 29.99,
+    "category": "6696d2e5498de05bd22375ba",
+    "subCategory": ["6696d47c446ea620fd6f477a"],
+    "quantity": 70,
+    "discount": 0,
+    "images": [
+      {
+        "url": "http://res.cloudinary.com/dtvumfiux/image/upload/v1720649658/u6tkjxaxvukhoohoapov.jpg",
+        "id": "u6tkjxaxvukhoohoapov"
+      },
+      {
+        "url": "http://res.cloudinary.com/dtvumfiux/image/upload/v1720649658/qnbdmiqweatvkqck1y8k.jpg",
+        "id": "qnbdmiqweatvkqck1y8k"
+      },
+      {
+        "url": "http://res.cloudinary.com/dtvumfiux/image/upload/v1720649658/ash8uo1snq2l26styqwc.jpg",
+        "id": "ash8uo1snq2l26styqwc"
+      }
+    ],
+    "size": {
+      "value": "M",
+      "label": "Medium",
+      "color": "Blue"
+    },
+    "colors": [
+      {
+        "value": "#0000FF",
+        "label": "Blue",
+        "color": "Blue",
+        "quantity": 35
+      },
+      {
+        "value": "#808080",
+        "label": "Gray",
+        "color": "Gray",
+        "quantity": 35
+      }
+    ],
+    "ratingAverage": 1,
+    "ratingQuantity": 0
+  },
+  {
+    "name": "Cargo Shorts",
+    "description": "Sturdy cargo shorts for outdoor activities",
+    "price": 34.99,
+    "category": "6696d2e5498de05bd22375ba",
+    "subCategory": ["6696d47c446ea620fd6f477b"],
+    "quantity": 55,
+    "discount": 0,
+    "images": [
+      {
+        "url": "http://res.cloudinary.com/dtvumfiux/image/upload/v1720649658/u6tkjxaxvukhoohoapov.jpg",
+        "id": "u6tkjxaxvukhoohoapov"
+      },
+      {
+        "url": "http://res.cloudinary.com/dtvumfiux/image/upload/v1720649658/qnbdmiqweatvkqck1y8k.jpg",
+        "id": "qnbdmiqweatvkqck1y8k"
+      },
+      {
+        "url": "http://res.cloudinary.com/dtvumfiux/image/upload/v1720649658/ash8uo1snq2l26styqwc.jpg",
+        "id": "ash8uo1snq2l26styqwc"
+      }
+    ],
+    "size": {
+      "value": "L",
+      "label": "Large",
+      "color": "Khaki"
+    },
+    "colors": [
+      {
+        "value": "#F0E68C",
+        "label": "Khaki",
+        "color": "Khaki",
+        "quantity": 55
+      }
+    ],
+    "ratingAverage": 1,
+    "ratingQuantity": 0
+  }
+]

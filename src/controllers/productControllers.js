@@ -1,4 +1,4 @@
-import fs from "fs";
+import ApiFeature from "../utils/ApiFeature.js";
 import AppError from "../utils/AppError.js";
 import Product from "../Db/models/product.model.js";
 import { catchAsync } from "../utils/catchAsync.js";
@@ -205,65 +205,47 @@ export const getProduct = catchAsync(async (req, res, next) => {
 });
 
 export const getAllProducts = catchAsync(async (req, res, next) => {
-  let products = Product.find();
+  const totalDocumentCount = await Product.countDocuments();
 
-  // filtering
+  const limit = req.query.limit * 1 || 5;
 
-  const queryString = { ...req.query };
-  const excludeFields = ["page", "sort", "limit", "fields"];
+  const apiFeature = new ApiFeature(Product.find(), req.query)
+    .filter()
+    .sort()
+    .limitFields()
+    .pagination(totalDocumentCount);
 
-  excludeFields.forEach((field) => delete queryString[field]);
+  const pagesNumber = await new ApiFeature(Product.find(), req.query).filter()
+    .query;
 
-  products = products.find(queryString);
-
-  // sort
-
-  if (req.query.sort) {
-    const sortBy = req.query.sort.split(",").join(" ");
-    products = products.sort(sortBy);
-  } else {
-    products = products.sort("-createdAt");
-  }
-
-  // pagination
-
-  const page = req.query.page * 1 || 1;
-  const limit = req.query.limit * 1 || 2;
-  const skip = (page - 1) * limit;
-
-  const documentCounts = await Product.countDocuments();
-
-  if (documentCounts < skip)
-    return next(new AppError(`No Products Available in that page`, 404));
-
-  products = products.skip(skip).limit(limit);
-
-  products = await products.populate("category").populate("subCategory");
-
-  if (!products) return next(new AppError(`No Products in DB`, 404));
+  const products = await apiFeature.query;
 
   res.status(200).json({
     status: "success",
     result: products.length,
+    pagesNumber: Math.ceil(pagesNumber.length / limit),
     data: products,
   });
 });
 
 export const updateProduct = catchAsync(async (req, res, next) => {
   const { id } = req.params;
-
-  console.log(id, req.body);
-
-  if (req.body.colors) {
-    req.body.colors = JSON.parse(req.body.colors);
-  }
-
-  if (req.body.size) {
-    req.body.size = JSON.parse(req.body.size);
-  }
-
-  // find Product
+  let images = [];
+  let bodyColors = [];
   let bodyImages = [];
+  if (req.body.colors) {
+    if (req.body.colors.constructor.name === "Array") {
+      bodyColors = req.body.colors
+        ? req.body.colors.map((color) => {
+            return JSON.parse(color);
+          })
+        : [];
+    } else if (JSON.parse(req.body.colors).constructor.name === "Object") {
+      bodyColors = [JSON.parse(req.body.colors)];
+    }
+
+    req.body.colors = bodyColors;
+  }
 
   if (req.body.images) {
     if (req.body.images.constructor.name === "Array") {
@@ -275,7 +257,17 @@ export const updateProduct = catchAsync(async (req, res, next) => {
     } else if (JSON.parse(req.body.images).constructor.name === "Object") {
       bodyImages = [JSON.parse(req.body.images)];
     }
+
+    console.log(`Body Images`);
+    console.log(bodyImages)
   }
+  
+  if (req.body.size) {
+    req.body.size = JSON.parse(req.body.size);
+  }
+
+  // find Product
+
   const product = await Product.findById(id);
 
   if (!product) {
@@ -285,66 +277,47 @@ export const updateProduct = catchAsync(async (req, res, next) => {
     return next(new AppError(`No Product with this id`, 404));
   }
 
-  let cloudinaryImages = [];
-
-  // if(bodyImages.length === 3){
-  //   cloudinaryImages.push(...bodyImages)
-  // }
-  // else
   if (req.images.length === 3) {
-    const uploadedCloudImages = await uploadToCloudinary(req.images);
-    cloudinaryImages.push(...uploadedCloudImages);
+    const uploadedImages = await uploadToCloudinary(req.images);
+    for (let file of req.images) {
+      await deletePhotoFromServer(file);
+    }
+
     for (let image of product.images) {
       await cloudinaryDeleteImg(image.id);
     }
 
-    for (let image of req.images) {
-      await deletePhotoFromServer(image);
-    }
+    images.push(...uploadedImages);
+
+    // await Product.findOneAndUpdate({ name:product.name }, { images });
+  } else if (bodyImages.length === 3) {
+    images.push(...bodyImages);
   } else {
-    const uploadedCloudImages = await uploadToCloudinary(req.images);
-    cloudinaryImages.push(...uploadedCloudImages);
-    cloudinaryImages.push(...bodyImages);
     const imagesId = bodyImages.map((image) => image.id);
-    const differentImages = product.images.filter(
+    const differenceImg = product.images.filter(
       (image) => !imagesId.includes(image.id)
     );
-    for (let image of differentImages) {
+    const uploadedImages = await uploadToCloudinary(req.images);
+
+    for (let file of req.images) {
+      await deletePhotoFromServer(file);
+    }
+    images.push(...uploadedImages);
+    images.push(...bodyImages);
+    // await Product.findOneAndUpdate({ name:product.name }, { images });
+    for (let image of differenceImg) {
       await cloudinaryDeleteImg(image.id);
     }
-
-    for (let image of req.images) {
-      await deletePhotoFromServer(image);
-    }
   }
+  console.log(req.body.images)
 
-  // if(bodyImages) cloudinaryImages.push(...bodyImages)
-
-  // for (let image of req.images) {
-  //   await deletePhotoFromServer(image);
-  // }
-
-  // if(bodyImages){
-  //   const requestImageId = bodyImages.map((image)=> image.id);
-  //   const differenceImages = product.images.filter((image)=> !requestImageId.includes(image.id));
-
-  //   for (let image of differenceImages) {
-  //     await cloudinaryDeleteImg(image.id);
-  //   }
-  // }
-  // else{
-  //   for (let image of product.images) {
-  //     await cloudinaryDeleteImg(image.id);
-  //   }
-  // }
-
-  console.log(product.slug);
+  console.log(images)
 
   const updatedProductBySlug = await Product.updateMany(
     {
       slug: product.slug,
     },
-    { name, images: cloudinaryImages }
+    { name:req.body.name || product.name, images }
   );
 
   delete req.body.name;
@@ -354,7 +327,7 @@ export const updateProduct = catchAsync(async (req, res, next) => {
     id,
     {
       ...req.body,
-      images: cloudinaryImages,
+      images,
     },
     {
       new: true,
@@ -362,7 +335,7 @@ export const updateProduct = catchAsync(async (req, res, next) => {
     }
   );
 
-  if (!updatedProduct)
+  if (!updatedProductById)
     return next(
       new AppError(
         `Couldn't Update the Product , No Product with this Id `,
@@ -371,14 +344,14 @@ export const updateProduct = catchAsync(async (req, res, next) => {
     );
 
   await Product.updateMany(
-    { slug: updatedProduct.slug },
-    { images: cloudinaryImages }
+    { slug: updatedProductById.slug },
+    { images }
   );
 
   res.status(200).json({
     status: "success",
     message: "Updated Successfully",
-    data: updatedProduct,
+    data: updatedProductById,
   });
 });
 
@@ -458,5 +431,24 @@ export const getProductById = catchAsync(async (req, res, next) => {
   res.status(200).json({
     status: "success",
     data: currentProduct,
+  });
+});
+
+export const getProductsColors = catchAsync(async (req, res, next) => {
+  const allProducts = await Product.find({}, { colors: 1, _id: 0 });
+
+  const colors = [];
+
+  for (let product of allProducts) {
+    const productsColors = product.colors.map((color) => color.value);
+
+    colors.push(...productsColors);
+  }
+
+  const uniqueColors = new Set(colors);
+
+  res.status(200).json({
+    status: "success",
+    data: [...uniqueColors],
   });
 });

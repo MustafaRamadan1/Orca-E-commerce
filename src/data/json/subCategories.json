@@ -1,0 +1,52 @@
+[
+    {
+        "name": "Jeans",
+        "description": "Comfortable denim jeans for all occasions.",
+        "category": "6696d2e5498de05bd22375b9"
+    },
+    {
+        "name": "Chinos",
+        "description": "Stylish chinos for a smart casual look.",
+        "category": "6696d2e5498de05bd22375b9"
+    },
+    {
+        "name": "Cargo Pants",
+        "description": "Utility cargo pants with multiple pockets.",
+        "category": "6696d2e5498de05bd22375b9"
+    },
+    {
+        "name": "Sweatpants",
+        "description": "Cozy sweatpants for workouts and lounging.",
+        "category": "6696d2e5498de05bd22375b9"
+    },
+    {
+        "name": "Dress Pants",
+        "description": "Elegant dress pants for formal occasions.",
+        "category": "6696d2e5498de05bd22375b9"
+    },
+    {
+        "name": "Denim Shorts",
+        "description": "Casual denim shorts for warm weather.",
+        "category": "6696d2e5498de05bd22375ba"
+    },
+    {
+        "name": "Cargo Shorts",
+        "description": "Durable cargo shorts with multiple pockets.",
+        "category": "6696d2e5498de05bd22375ba"
+    },
+    {
+        "name": "Running Shorts",
+        "description": "Lightweight running shorts for athletic activities.",
+        "category": "6696d2e5498de05bd22375ba"
+    },
+    {
+        "name": "Board Shorts",
+        "description": "Stylish board shorts for swimming and surfing.",
+        "category": "6696d2e5498de05bd22375ba"
+    },
+    {
+        "name": "Bermuda Shorts",
+        "description": "Knee-length Bermuda shorts for a casual look.",
+        "category": "6696d2e5498de05bd22375ba"
+    }
+]

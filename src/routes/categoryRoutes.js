@@ -10,26 +10,19 @@ import {
 import isAuth from "../middlewares/authentication.js";
 import authorization from "../middlewares/Authorization.js";
 import validation from "../middlewares/validation.js";
-import Schema from "../validation/index.js";
+import { categorySchema } from "../validation/index.js";
 const router = Router();
 
-router.use(isAuth, authorization("admin"));
-router.post(
-  "/",
-  validation(Schema.categorySchema.createCategory),
-  createCategory
-);
-router.get("/filtered", getFilteredCategories);
 router.get("/", getAllCategories);
-router.get("/:id", validation(Schema.categorySchema.getCategory), getCategory);
-router.put(
-  "/:id",
-  validation(Schema.categorySchema.updateCategory),
-  updateCategory
-);
+
+router.use(isAuth, authorization("admin"));
+router.post("/", validation(categorySchema.createCategory), createCategory);
+router.get("/filtered", getFilteredCategories);
+router.get("/:id", validation(categorySchema.getCategory), getCategory);
+router.put("/:id", validation(categorySchema.updateCategory), updateCategory);
 router.delete(
   "/:id",
-  validation(Schema.categorySchema.deleteCategory),
+  validation(categorySchema.deleteCategory),
   deleteCategory
 );
 

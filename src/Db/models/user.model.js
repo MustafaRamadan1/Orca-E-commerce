@@ -69,7 +69,6 @@ userSchema.pre("save", async function (next) {
     this.password = await bcrypt.hash(this.password, 10);
     return next();
   }
-
   return next();
 });
 
@@ -118,13 +117,15 @@ userSchema.methods.createResetPasswordToken = function () {
   return token;
 };
 
+
+// add expire time for otp in variable 
 userSchema.methods.createOTP = function () {
   const otp = generatorOTP();
   this.otpCode = crypto
     .createHash("sha256")
     .update(otp.toString())
     .digest("hex");
-  this.otpExpired = Date.now() + 60 * 60 * 1000;
+  this.otpExpired = Date.now() + 10 * 60 * 1000;
   return otp;
 };
 userSchema.methods.toJSON = function () {

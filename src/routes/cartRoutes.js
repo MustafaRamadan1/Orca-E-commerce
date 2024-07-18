@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { createCart, deleteCart, getAllCarts, getCart, getCartByUserId } from "../controllers/cartControllers.js";
 import validation from '../middlewares/validation.js';
-import Schema from '../validation/index.js';
+import {cartSchema} from '../validation/index.js';
 import isAuth from '../middlewares/authentication.js';
 import restrictTo from '../middlewares/Authorization.js'
 const router = Router();
