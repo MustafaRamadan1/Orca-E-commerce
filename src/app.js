@@ -43,7 +43,8 @@ import cartRouter from './routes/cartRoutes.js';
 import cartItemsRouter from './routes/cartItemRoutes.js';
 import paymentRouter from './routes/paymentRoutes.js';
 import reviewRouter from './routes/reviewRoutes.js';
-import orderRouter from './routes/orderRoutes.js'
+import orderRouter from './routes/orderRoutes.js';
+import FeedBackRouter from './routes/feedBackRoutes.js';
 import AppError from "./utils/AppError.js";
 import globalErrorHandler from "./middlewares/globalerrorHandler.js";
 
@@ -57,7 +58,8 @@ app.use('/api/v1/carts', cartRouter);
 app.use('/api/v1/cartItems', cartItemsRouter);
 app.use('/api/v1/payment',paymentRouter);
 app.use('/api/v1/reviews', reviewRouter);
-app.use('/api/v1/orders',orderRouter)
+app.use('/api/v1/orders',orderRouter);
+app.use('/api/v1/feedBacks',FeedBackRouter)
 
 
 //  not found route for non exist routes

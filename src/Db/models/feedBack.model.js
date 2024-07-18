@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
-import { validate } from 'uuid';
+
 import validator from 'validator';
-const contactUsSchema = new mongoose.Schema({
+const feedBackSchema = new mongoose.Schema({
 
     name:{
         type:String,
@@ -23,4 +23,14 @@ const contactUsSchema = new mongoose.Schema({
 });
 
 
-export default mongoose.model('ContactUs', contactUsSchema);
+feedBackSchema.methods.toJSON = function (){
+
+    const feedBack = this;
+    const feedBackObject = feedBack.toObject();
+    delete feedBackObject.__v;
+    return feedBackObject;
+     
+}
+
+
+export default mongoose.model('FeedBack', feedBackSchema);
