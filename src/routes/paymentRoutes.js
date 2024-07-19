@@ -299,7 +299,7 @@ router.get("/acceptPayment", async (req, res) => {
   try {
     if (success === "true") {
       res.redirect(
-        "https://developers.paymob.com/egypt/checkout-api/integration-guide-and-api-reference/create-intention-payment-api"
+        "http://localhost:3000/en/user/payment/status=success"
       );
     } else {
       res.redirect("https://arkan-ten.vercel.app/payment-failed");

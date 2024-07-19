@@ -10,4 +10,4 @@ router.get('/', getAllOrders);
 router.get('/:id',getOrder)
 router.get('/:id/user', getUserOrders);
 router.patch('/:id', updateOrder);
-export default router;
+export default router;  
