@@ -638,55 +638,6 @@ info   2024-07-13T22:55:10.768Z   Database Connection Successfully
 info   2024-07-13T22:55:10.772Z   Server Listening on PORT 8000
 info   2024-07-13T22:57:01.958Z   Database Connection Successfully
 info   2024-07-13T22:57:01.961Z   Server Listening on PORT 8000
-<<<<<<< HEAD
-info   2024-07-14T07:47:24.001Z   Database Connection Successfully
-info   2024-07-14T07:47:24.008Z   Server Listening on PORT 8000
-info   2024-07-14T10:08:21.871Z   Database Connection Successfully
-info   2024-07-14T10:08:21.875Z   Server Listening on PORT 8000
-info   2024-07-14T11:06:36.234Z   Database Connection Successfully
-info   2024-07-14T11:06:36.241Z   Server Listening on PORT 8000
-info   2024-07-14T12:01:47.673Z   DB DisConnected
-info   2024-07-14T14:05:40.454Z   Database Connection Successfully
-info   2024-07-14T14:05:40.456Z   Server Listening on PORT 8000
-info   2024-07-14T14:06:21.462Z   Database Connection Successfully
-info   2024-07-14T14:06:21.465Z   Server Listening on PORT 8000
-info   2024-07-14T14:20:00.340Z   Database Connection Successfully
-info   2024-07-14T14:20:00.342Z   Server Listening on PORT 8000
-info   2024-07-14T15:26:28.704Z   DB DisConnected
-info   2024-07-14T15:27:07.326Z   Database Connection Successfully
-info   2024-07-14T15:27:07.332Z   Server Listening on PORT 8000
-info   2024-07-14T15:35:37.649Z   Database Connection Successfully
-info   2024-07-14T15:35:37.653Z   Server Listening on PORT 8000
-info   2024-07-14T15:35:59.778Z   Database Connection Successfully
-info   2024-07-14T15:35:59.790Z   Server Listening on PORT 8000
-info   2024-07-14T16:39:49.572Z   Database Connection Successfully
-info   2024-07-14T16:39:49.580Z   Server Listening on PORT 8000
-info   2024-07-14T16:40:01.636Z   Database Connection Successfully
-info   2024-07-14T16:40:01.640Z   Server Listening on PORT 8000
-info   2024-07-14T16:43:04.642Z   Database Connection Successfully
-info   2024-07-14T16:43:04.646Z   Server Listening on PORT 8000
-info   2024-07-14T16:43:51.076Z   Database Connection Successfully
-info   2024-07-14T16:43:51.079Z   Server Listening on PORT 8000
-info   2024-07-14T16:45:45.495Z   Database Connection Successfully
-info   2024-07-14T16:45:45.498Z   Server Listening on PORT 8000
-info   2024-07-14T16:49:58.544Z   Database Connection Successfully
-info   2024-07-14T16:49:58.548Z   Server Listening on PORT 8000
-info   2024-07-14T16:50:23.325Z   Database Connection Successfully
-info   2024-07-14T16:50:23.331Z   Server Listening on PORT 8000
-info   2024-07-14T16:57:21.442Z   Database Connection Successfully
-info   2024-07-14T16:57:21.445Z   Server Listening on PORT 8000
-info   2024-07-14T16:58:14.176Z   Database Connection Successfully
-info   2024-07-14T16:58:14.181Z   Server Listening on PORT 8000
-info   2024-07-14T16:58:30.238Z   Database Connection Successfully
-info   2024-07-14T16:58:30.245Z   Server Listening on PORT 8000
-info   2024-07-14T17:01:06.546Z   Database Connection Successfully
-info   2024-07-14T17:01:06.549Z   Server Listening on PORT 8000
-info   2024-07-14T17:01:14.064Z   Database Connection Successfully
-info   2024-07-14T17:01:14.071Z   Server Listening on PORT 8000
-info   2024-07-14T17:01:24.135Z   Database Connection Successfully
-info   2024-07-14T17:01:24.140Z   Server Listening on PORT 8000
-info   2024-07-14T21:55:43.534Z   DB DisConnected
-=======
 info   2024-07-14T08:09:51.772Z   Database Connection Successfully
 info   2024-07-14T08:09:51.790Z   Server Listening on PORT 3000
 info   2024-07-14T08:12:30.437Z   Database Connection Successfully
@@ -822,391 +773,6 @@ info   2024-07-14T11:16:43.790Z   Database Connection Successfully
 info   2024-07-14T11:16:43.809Z   Server Listening on PORT 3000
 info   2024-07-14T11:26:52.137Z   Database Connection Successfully
 info   2024-07-14T11:26:52.143Z   Server Listening on PORT 3000
-<<<<<<< HEAD
-info   2024-07-14T14:59:24.626Z   Database Connection Successfully
-info   2024-07-14T14:59:24.636Z   Server Listening on PORT 3000
-info   2024-07-14T15:58:53.722Z   Database Connection Successfully
-info   2024-07-14T15:58:53.736Z   Server Listening on PORT 3000
-info   2024-07-14T15:59:44.275Z   Database Connection Successfully
-info   2024-07-14T15:59:46.053Z   Server Listening on PORT 3000
-info   2024-07-14T16:00:00.874Z   Database Connection Successfully
-info   2024-07-14T16:00:00.886Z   Server Listening on PORT 3000
-info   2024-07-14T16:01:54.432Z   Database Connection Successfully
-info   2024-07-14T16:01:54.439Z   Server Listening on PORT 3000
-info   2024-07-14T16:02:07.112Z   Database Connection Successfully
-info   2024-07-14T16:02:07.119Z   Server Listening on PORT 3000
-info   2024-07-14T16:02:18.562Z   Database Connection Successfully
-info   2024-07-14T16:02:18.571Z   Server Listening on PORT 3000
-info   2024-07-14T16:02:34.689Z   Database Connection Successfully
-info   2024-07-14T16:02:34.701Z   Server Listening on PORT 3000
-info   2024-07-14T16:02:40.546Z   Database Connection Successfully
-info   2024-07-14T16:02:40.553Z   Server Listening on PORT 3000
-info   2024-07-14T16:03:05.511Z   Database Connection Successfully
-info   2024-07-14T16:03:05.522Z   Server Listening on PORT 3000
-info   2024-07-14T16:03:13.104Z   Database Connection Successfully
-info   2024-07-14T16:03:13.112Z   Server Listening on PORT 3000
-info   2024-07-14T16:03:43.582Z   Database Connection Successfully
-info   2024-07-14T16:03:43.961Z   Server Listening on PORT 3000
-info   2024-07-14T16:05:48.342Z   Database Connection Successfully
-info   2024-07-14T16:05:48.349Z   Server Listening on PORT 3000
-info   2024-07-14T16:06:05.072Z   Database Connection Successfully
-info   2024-07-14T16:06:05.080Z   Server Listening on PORT 3000
-info   2024-07-14T16:06:14.536Z   Database Connection Successfully
-info   2024-07-14T16:06:14.547Z   Server Listening on PORT 3000
-info   2024-07-14T16:06:25.792Z   Database Connection Successfully
-info   2024-07-14T16:06:25.807Z   Server Listening on PORT 3000
-info   2024-07-14T18:10:52.851Z   Database Connection Successfully
-info   2024-07-14T18:10:52.858Z   Server Listening on PORT 3000
-info   2024-07-14T20:58:20.520Z   Database Connection Successfully
-info   2024-07-14T20:58:20.528Z   Server Listening on PORT 3000
-info   2024-07-14T20:59:30.677Z   Database Connection Successfully
-info   2024-07-14T20:59:30.692Z   Server Listening on PORT 3000
-info   2024-07-14T20:59:41.054Z   Database Connection Successfully
-info   2024-07-14T20:59:41.067Z   Server Listening on PORT 3000
-info   2024-07-14T21:00:05.743Z   Database Connection Successfully
-info   2024-07-14T21:00:05.773Z   Server Listening on PORT 3000
-info   2024-07-14T21:00:35.090Z   Database Connection Successfully
-info   2024-07-14T21:00:35.107Z   Server Listening on PORT 3000
-info   2024-07-14T21:01:05.062Z   Database Connection Successfully
-info   2024-07-14T21:01:05.067Z   Server Listening on PORT 3000
-info   2024-07-14T21:02:21.714Z   Database Connection Successfully
-info   2024-07-14T21:02:21.733Z   Server Listening on PORT 3000
-info   2024-07-14T21:16:01.160Z   Database Connection Successfully
-info   2024-07-14T21:16:01.167Z   Server Listening on PORT 3000
-info   2024-07-14T21:16:07.933Z   Database Connection Successfully
-info   2024-07-14T21:16:07.946Z   Server Listening on PORT 3000
-info   2024-07-14T21:16:19.028Z   Database Connection Successfully
-info   2024-07-14T21:16:19.046Z   Server Listening on PORT 3000
-info   2024-07-14T21:40:42.377Z   Database Connection Successfully
-info   2024-07-14T21:40:42.381Z   Server Listening on PORT 3000
-info   2024-07-14T21:42:23.293Z   Database Connection Successfully
-info   2024-07-14T21:42:23.530Z   Server Listening on PORT 3000
-info   2024-07-14T21:44:10.664Z   Database Connection Successfully
-info   2024-07-14T21:44:10.668Z   Server Listening on PORT 3000
-info   2024-07-14T21:45:04.834Z   Database Connection Successfully
-info   2024-07-14T21:45:08.807Z   Database Connection Successfully
-info   2024-07-14T21:45:08.826Z   Server Listening on PORT 3000
-info   2024-07-14T21:45:20.075Z   Database Connection Successfully
-info   2024-07-14T21:45:20.080Z   Server Listening on PORT 3000
-info   2024-07-14T21:45:29.124Z   Database Connection Successfully
-info   2024-07-14T21:45:29.135Z   Server Listening on PORT 3000
-info   2024-07-14T21:45:42.172Z   Database Connection Successfully
-info   2024-07-14T21:45:42.180Z   Server Listening on PORT 3000
-info   2024-07-14T21:46:28.719Z   Database Connection Successfully
-info   2024-07-14T21:46:28.723Z   Server Listening on PORT 3000
-info   2024-07-14T21:48:56.820Z   Database Connection Successfully
-info   2024-07-14T21:48:56.824Z   Server Listening on PORT 3000
-info   2024-07-14T21:49:10.397Z   Database Connection Successfully
-info   2024-07-14T21:49:10.403Z   Server Listening on PORT 3000
-info   2024-07-14T21:49:36.611Z   Database Connection Successfully
-info   2024-07-14T21:49:36.617Z   Server Listening on PORT 3000
-info   2024-07-14T21:49:42.419Z   Database Connection Successfully
-info   2024-07-14T21:49:42.423Z   Server Listening on PORT 3000
-info   2024-07-14T21:50:04.364Z   Database Connection Successfully
-info   2024-07-14T21:50:04.370Z   Server Listening on PORT 3000
-info   2024-07-14T21:50:22.547Z   Database Connection Successfully
-info   2024-07-14T21:50:22.554Z   Server Listening on PORT 3000
-info   2024-07-14T21:50:27.380Z   Database Connection Successfully
-info   2024-07-14T21:50:27.388Z   Server Listening on PORT 3000
-info   2024-07-14T21:55:10.746Z   Database Connection Successfully
-info   2024-07-14T21:55:10.749Z   Server Listening on PORT 3000
-info   2024-07-14T21:55:22.127Z   Database Connection Successfully
-info   2024-07-14T21:55:22.130Z   Server Listening on PORT 3000
-info   2024-07-14T21:56:03.628Z   Database Connection Successfully
-info   2024-07-14T21:56:03.632Z   Server Listening on PORT 3000
-info   2024-07-14T21:56:20.530Z   Database Connection Successfully
-info   2024-07-14T21:56:20.534Z   Server Listening on PORT 3000
-info   2024-07-14T21:56:34.155Z   Database Connection Successfully
-info   2024-07-14T21:56:34.160Z   Server Listening on PORT 3000
-info   2024-07-14T21:58:33.505Z   Database Connection Successfully
-info   2024-07-14T21:58:33.508Z   Server Listening on PORT 3000
-info   2024-07-14T21:58:46.009Z   Database Connection Successfully
-info   2024-07-14T21:58:46.013Z   Server Listening on PORT 3000
-info   2024-07-14T22:01:13.506Z   Database Connection Successfully
-info   2024-07-14T22:01:13.512Z   Server Listening on PORT 3000
-info   2024-07-14T22:01:34.663Z   Database Connection Successfully
-info   2024-07-14T22:01:34.670Z   Server Listening on PORT 3000
-info   2024-07-14T22:01:55.609Z   Database Connection Successfully
-info   2024-07-14T22:01:55.616Z   Server Listening on PORT 3000
-info   2024-07-14T22:02:19.818Z   Database Connection Successfully
-info   2024-07-14T22:02:19.840Z   Server Listening on PORT 3000
-info   2024-07-14T22:02:28.177Z   Database Connection Successfully
-info   2024-07-14T22:02:28.182Z   Server Listening on PORT 3000
-info   2024-07-14T22:02:52.060Z   Database Connection Successfully
-info   2024-07-14T22:02:52.064Z   Server Listening on PORT 3000
-info   2024-07-14T22:03:15.638Z   Database Connection Successfully
-info   2024-07-14T22:03:15.643Z   Server Listening on PORT 3000
-error   2024-07-14T22:08:16.223Z   TypeError
-info   2024-07-14T22:08:34.306Z   Database Connection Successfully
-info   2024-07-14T22:08:34.313Z   Server Listening on PORT 3000
-info   2024-07-14T22:10:01.161Z   Database Connection Successfully
-info   2024-07-14T22:10:01.593Z   Server Listening on PORT 3000
-error   2024-07-14T22:11:13.301Z   TypeError
-info   2024-07-14T22:11:37.035Z   Database Connection Successfully
-info   2024-07-14T22:11:37.039Z   Server Listening on PORT 3000
-error   2024-07-14T22:12:43.946Z   ValidationError
-info   2024-07-14T22:13:26.681Z   Database Connection Successfully
-info   2024-07-14T22:13:26.685Z   Server Listening on PORT 3000
-info   2024-07-14T22:14:06.428Z   Database Connection Successfully
-info   2024-07-14T22:14:06.432Z   Server Listening on PORT 3000
-error   2024-07-14T22:15:41.668Z   ValidationError
-info   2024-07-14T22:17:06.599Z   Database Connection Successfully
-info   2024-07-14T22:17:06.602Z   Server Listening on PORT 3000
-info   2024-07-14T22:17:30.952Z   Database Connection Successfully
-info   2024-07-14T22:17:30.957Z   Server Listening on PORT 3000
-info   2024-07-14T22:17:54.904Z   Database Connection Successfully
-info   2024-07-14T22:17:54.910Z   Server Listening on PORT 3000
-info   2024-07-14T22:18:03.629Z   Database Connection Successfully
-info   2024-07-14T22:18:03.633Z   Server Listening on PORT 3000
-error   2024-07-14T22:19:14.837Z   ValidationError
-info   2024-07-14T22:20:57.505Z   Database Connection Successfully
-info   2024-07-14T22:20:57.510Z   Server Listening on PORT 3000
-info   2024-07-14T22:21:28.029Z   Database Connection Successfully
-info   2024-07-14T22:21:28.036Z   Server Listening on PORT 3000
-error   2024-07-14T22:23:22.365Z   ValidationError
-info   2024-07-14T22:24:52.419Z   Database Connection Successfully
-info   2024-07-14T22:24:52.428Z   Server Listening on PORT 3000
-info   2024-07-14T22:24:56.281Z   Database Connection Successfully
-info   2024-07-14T22:24:56.287Z   Server Listening on PORT 3000
-info   2024-07-14T22:25:20.065Z   Database Connection Successfully
-info   2024-07-14T22:25:20.069Z   Server Listening on PORT 3000
-info   2024-07-14T22:25:30.509Z   Database Connection Successfully
-info   2024-07-14T22:25:30.518Z   Server Listening on PORT 3000
-error   2024-07-14T22:28:52.773Z   TypeError
-info   2024-07-14T22:30:09.499Z   Database Connection Successfully
-info   2024-07-14T22:30:09.512Z   Server Listening on PORT 3000
-error   2024-07-14T22:31:39.365Z   TypeError
-info   2024-07-15T02:57:01.686Z   Database Connection Successfully
-info   2024-07-15T02:57:01.975Z   Server Listening on PORT 3000
-info   2024-07-15T03:02:38.359Z   Database Connection Successfully
-info   2024-07-15T03:02:38.378Z   Server Listening on PORT 3000
-info   2024-07-15T03:03:38.629Z   Database Connection Successfully
-info   2024-07-15T03:03:38.637Z   Server Listening on PORT 3000
-info   2024-07-15T03:04:02.241Z   Database Connection Successfully
-info   2024-07-15T03:04:02.255Z   Server Listening on PORT 3000
-info   2024-07-15T03:04:53.313Z   Database Connection Successfully
-info   2024-07-15T03:04:53.323Z   Server Listening on PORT 3000
-info   2024-07-15T08:08:58.295Z   Database Connection Successfully
-info   2024-07-15T08:08:58.369Z   Server Listening on PORT 3000
-info   2024-07-15T08:12:41.347Z   Database Connection Successfully
-info   2024-07-15T08:12:41.351Z   Server Listening on PORT 3000
-info   2024-07-15T08:13:58.096Z   Database Connection Successfully
-info   2024-07-15T08:13:58.100Z   Server Listening on PORT 3000
-info   2024-07-15T08:14:22.351Z   Database Connection Successfully
-info   2024-07-15T08:14:22.355Z   Server Listening on PORT 3000
-info   2024-07-15T08:16:37.538Z   Database Connection Successfully
-info   2024-07-15T08:16:37.542Z   Server Listening on PORT 3000
-info   2024-07-15T08:16:40.848Z   Database Connection Successfully
-info   2024-07-15T08:16:40.852Z   Server Listening on PORT 3000
-info   2024-07-15T08:16:46.937Z   Database Connection Successfully
-info   2024-07-15T08:16:46.941Z   Server Listening on PORT 3000
-info   2024-07-15T08:16:54.112Z   Database Connection Successfully
-info   2024-07-15T08:16:54.118Z   Server Listening on PORT 3000
-info   2024-07-15T08:17:05.348Z   Database Connection Successfully
-info   2024-07-15T08:17:05.354Z   Server Listening on PORT 3000
-info   2024-07-15T08:17:18.047Z   Database Connection Successfully
-info   2024-07-15T08:17:18.053Z   Server Listening on PORT 3000
-info   2024-07-15T08:17:27.928Z   Database Connection Successfully
-info   2024-07-15T08:17:27.932Z   Server Listening on PORT 3000
-info   2024-07-15T08:17:43.871Z   Database Connection Successfully
-info   2024-07-15T08:17:43.875Z   Server Listening on PORT 3000
-info   2024-07-15T08:21:03.009Z   Database Connection Successfully
-info   2024-07-15T08:21:03.014Z   Server Listening on PORT 3000
-info   2024-07-15T08:21:10.123Z   Database Connection Successfully
-info   2024-07-15T08:21:10.129Z   Server Listening on PORT 3000
-info   2024-07-15T08:21:14.166Z   Database Connection Successfully
-info   2024-07-15T08:21:14.172Z   Server Listening on PORT 3000
-info   2024-07-15T08:21:27.744Z   Database Connection Successfully
-info   2024-07-15T08:21:27.748Z   Server Listening on PORT 3000
-info   2024-07-15T08:21:34.540Z   Database Connection Successfully
-info   2024-07-15T08:21:34.545Z   Server Listening on PORT 3000
-info   2024-07-15T08:21:42.833Z   Database Connection Successfully
-info   2024-07-15T08:21:42.839Z   Server Listening on PORT 3000
-info   2024-07-15T08:21:51.989Z   Database Connection Successfully
-info   2024-07-15T08:21:51.993Z   Server Listening on PORT 3000
-info   2024-07-15T08:22:01.961Z   Database Connection Successfully
-info   2024-07-15T08:22:01.967Z   Server Listening on PORT 3000
-info   2024-07-15T08:22:05.482Z   Database Connection Successfully
-info   2024-07-15T08:22:05.494Z   Server Listening on PORT 3000
-error   2024-07-15T08:31:34.243Z   ValidationError
-info   2024-07-15T08:37:14.362Z   Database Connection Successfully
-info   2024-07-15T08:37:14.487Z   Server Listening on PORT 3000
-info   2024-07-15T08:39:50.208Z   Database Connection Successfully
-info   2024-07-15T08:39:50.212Z   Server Listening on PORT 3000
-info   2024-07-15T08:39:55.597Z   Database Connection Successfully
-info   2024-07-15T08:39:55.607Z   Server Listening on PORT 3000
-info   2024-07-15T08:42:49.730Z   Database Connection Successfully
-info   2024-07-15T08:42:49.734Z   Server Listening on PORT 3000
-info   2024-07-15T08:42:53.715Z   Database Connection Successfully
-info   2024-07-15T08:42:53.720Z   Server Listening on PORT 3000
-info   2024-07-15T08:42:57.836Z   Database Connection Successfully
-info   2024-07-15T08:42:57.839Z   Server Listening on PORT 3000
-info   2024-07-15T08:43:47.700Z   Database Connection Successfully
-info   2024-07-15T08:43:47.704Z   Server Listening on PORT 3000
-info   2024-07-15T08:44:00.956Z   Database Connection Successfully
-info   2024-07-15T08:44:00.961Z   Server Listening on PORT 3000
-info   2024-07-15T08:44:16.840Z   Database Connection Successfully
-info   2024-07-15T08:44:16.848Z   Server Listening on PORT 3000
-info   2024-07-15T08:44:44.984Z   Database Connection Successfully
-info   2024-07-15T08:44:44.993Z   Server Listening on PORT 3000
-info   2024-07-15T08:45:19.447Z   Database Connection Successfully
-info   2024-07-15T08:45:19.452Z   Server Listening on PORT 3000
-info   2024-07-15T08:45:24.096Z   Database Connection Successfully
-info   2024-07-15T08:45:24.101Z   Server Listening on PORT 3000
-info   2024-07-15T08:46:05.721Z   Database Connection Successfully
-info   2024-07-15T08:46:05.728Z   Server Listening on PORT 3000
-info   2024-07-15T08:46:11.029Z   Database Connection Successfully
-info   2024-07-15T08:46:11.034Z   Server Listening on PORT 3000
-info   2024-07-15T08:46:16.815Z   Database Connection Successfully
-info   2024-07-15T08:46:16.821Z   Server Listening on PORT 3000
-info   2024-07-15T08:46:21.751Z   Database Connection Successfully
-info   2024-07-15T08:46:21.756Z   Server Listening on PORT 3000
-info   2024-07-15T08:46:26.549Z   Database Connection Successfully
-info   2024-07-15T08:46:26.555Z   Server Listening on PORT 3000
-info   2024-07-15T08:46:30.430Z   Database Connection Successfully
-info   2024-07-15T08:46:30.434Z   Server Listening on PORT 3000
-info   2024-07-15T08:46:37.195Z   Database Connection Successfully
-info   2024-07-15T08:46:37.200Z   Server Listening on PORT 3000
-info   2024-07-15T08:47:14.354Z   Database Connection Successfully
-info   2024-07-15T08:47:14.360Z   Server Listening on PORT 3000
-info   2024-07-15T08:47:20.857Z   Database Connection Successfully
-info   2024-07-15T08:47:20.869Z   Server Listening on PORT 3000
-info   2024-07-15T08:47:27.318Z   Database Connection Successfully
-info   2024-07-15T08:47:27.322Z   Server Listening on PORT 3000
-info   2024-07-15T08:47:41.644Z   Database Connection Successfully
-info   2024-07-15T08:47:41.650Z   Server Listening on PORT 3000
-info   2024-07-15T08:47:58.034Z   Database Connection Successfully
-info   2024-07-15T08:47:58.037Z   Server Listening on PORT 3000
-info   2024-07-15T08:48:15.715Z   Database Connection Successfully
-info   2024-07-15T08:48:15.718Z   Server Listening on PORT 3000
-info   2024-07-15T08:48:28.610Z   Database Connection Successfully
-info   2024-07-15T08:48:28.614Z   Server Listening on PORT 3000
-info   2024-07-15T08:48:37.707Z   Database Connection Successfully
-info   2024-07-15T08:48:37.712Z   Server Listening on PORT 3000
-info   2024-07-15T08:48:47.358Z   Database Connection Successfully
-info   2024-07-15T08:48:47.361Z   Server Listening on PORT 3000
-info   2024-07-15T08:48:52.047Z   Database Connection Successfully
-info   2024-07-15T08:48:52.050Z   Server Listening on PORT 3000
-info   2024-07-15T08:49:02.773Z   Database Connection Successfully
-info   2024-07-15T08:49:02.779Z   Server Listening on PORT 3000
-info   2024-07-15T08:49:17.064Z   Database Connection Successfully
-info   2024-07-15T08:49:17.069Z   Server Listening on PORT 3000
-info   2024-07-15T08:49:27.657Z   Database Connection Successfully
-info   2024-07-15T08:49:27.662Z   Server Listening on PORT 3000
-info   2024-07-15T08:49:42.361Z   Database Connection Successfully
-info   2024-07-15T08:49:42.367Z   Server Listening on PORT 3000
-info   2024-07-15T08:50:01.638Z   Database Connection Successfully
-info   2024-07-15T08:50:01.651Z   Server Listening on PORT 3000
-info   2024-07-15T08:50:30.225Z   Database Connection Successfully
-info   2024-07-15T08:50:30.228Z   Server Listening on PORT 3000
-info   2024-07-15T08:50:42.554Z   Database Connection Successfully
-info   2024-07-15T08:50:42.566Z   Server Listening on PORT 3000
-info   2024-07-15T08:51:02.831Z   Database Connection Successfully
-info   2024-07-15T08:51:02.834Z   Server Listening on PORT 3000
-info   2024-07-15T08:51:12.504Z   Database Connection Successfully
-info   2024-07-15T08:51:12.507Z   Server Listening on PORT 3000
-info   2024-07-15T08:51:21.688Z   Database Connection Successfully
-info   2024-07-15T08:51:21.691Z   Server Listening on PORT 3000
-info   2024-07-15T08:51:33.021Z   Database Connection Successfully
-info   2024-07-15T08:51:33.031Z   Server Listening on PORT 3000
-info   2024-07-15T08:53:49.956Z   Database Connection Successfully
-info   2024-07-15T08:53:49.960Z   Server Listening on PORT 3000
-info   2024-07-15T08:53:55.838Z   Database Connection Successfully
-info   2024-07-15T08:53:55.842Z   Server Listening on PORT 3000
-info   2024-07-15T08:56:47.663Z   Database Connection Successfully
-info   2024-07-15T08:56:47.667Z   Server Listening on PORT 3000
-info   2024-07-15T08:57:16.855Z   Database Connection Successfully
-info   2024-07-15T08:57:16.862Z   Server Listening on PORT 3000
-info   2024-07-15T08:57:25.180Z   Database Connection Successfully
-info   2024-07-15T08:57:25.184Z   Server Listening on PORT 3000
-info   2024-07-15T08:58:27.953Z   Database Connection Successfully
-info   2024-07-15T08:58:27.957Z   Server Listening on PORT 3000
-info   2024-07-15T08:58:52.569Z   Database Connection Successfully
-info   2024-07-15T08:58:52.579Z   Server Listening on PORT 3000
-info   2024-07-15T08:59:35.346Z   Database Connection Successfully
-info   2024-07-15T08:59:35.350Z   Server Listening on PORT 3000
-info   2024-07-15T09:01:16.957Z   Database Connection Successfully
-info   2024-07-15T09:01:16.960Z   Server Listening on PORT 3000
-info   2024-07-15T09:01:25.574Z   Database Connection Successfully
-info   2024-07-15T09:01:25.577Z   Server Listening on PORT 3000
-info   2024-07-15T09:02:10.337Z   Database Connection Successfully
-info   2024-07-15T09:02:10.342Z   Server Listening on PORT 3000
-info   2024-07-15T09:02:16.245Z   Database Connection Successfully
-info   2024-07-15T09:02:16.249Z   Server Listening on PORT 3000
-info   2024-07-15T09:02:25.359Z   Database Connection Successfully
-info   2024-07-15T09:02:25.362Z   Server Listening on PORT 3000
-info   2024-07-15T09:02:52.668Z   Database Connection Successfully
-info   2024-07-15T09:02:52.679Z   Server Listening on PORT 3000
-info   2024-07-15T09:03:05.568Z   Database Connection Successfully
-info   2024-07-15T09:03:05.571Z   Server Listening on PORT 3000
-info   2024-07-15T09:03:15.406Z   Database Connection Successfully
-info   2024-07-15T09:03:15.414Z   Server Listening on PORT 3000
-info   2024-07-15T09:03:46.684Z   Database Connection Successfully
-info   2024-07-15T09:03:46.694Z   Server Listening on PORT 3000
-info   2024-07-15T09:03:57.884Z   Database Connection Successfully
-info   2024-07-15T09:03:57.888Z   Server Listening on PORT 3000
-info   2024-07-15T09:04:08.490Z   Database Connection Successfully
-info   2024-07-15T09:04:08.499Z   Server Listening on PORT 3000
-info   2024-07-15T09:04:15.517Z   Database Connection Successfully
-info   2024-07-15T09:04:15.525Z   Server Listening on PORT 3000
-info   2024-07-15T09:04:25.805Z   Database Connection Successfully
-info   2024-07-15T09:04:25.808Z   Server Listening on PORT 3000
-info   2024-07-15T09:05:27.499Z   Database Connection Successfully
-info   2024-07-15T09:05:27.503Z   Server Listening on PORT 3000
-info   2024-07-15T09:05:31.688Z   Database Connection Successfully
-info   2024-07-15T09:05:31.692Z   Server Listening on PORT 3000
-info   2024-07-15T09:05:42.175Z   Database Connection Successfully
-info   2024-07-15T09:05:42.186Z   Server Listening on PORT 3000
-info   2024-07-15T09:30:50.874Z   Database Connection Successfully
-info   2024-07-15T09:30:50.889Z   Server Listening on PORT 3000
-info   2024-07-15T09:42:20.394Z   Database Connection Successfully
-info   2024-07-15T09:42:20.411Z   Server Listening on PORT 3000
-info   2024-07-15T09:45:22.209Z   Database Connection Successfully
-info   2024-07-15T09:45:22.218Z   Server Listening on PORT 3000
-info   2024-07-15T09:45:27.545Z   Database Connection Successfully
-info   2024-07-15T09:45:27.560Z   Server Listening on PORT 3000
-info   2024-07-15T09:45:36.362Z   Database Connection Successfully
-info   2024-07-15T09:45:36.376Z   Server Listening on PORT 3000
-info   2024-07-15T09:45:50.659Z   Database Connection Successfully
-info   2024-07-15T09:45:50.667Z   Server Listening on PORT 3000
-info   2024-07-15T09:48:47.321Z   Database Connection Successfully
-info   2024-07-15T09:48:47.339Z   Server Listening on PORT 3000
-info   2024-07-15T09:52:04.878Z   Database Connection Successfully
-info   2024-07-15T09:52:04.886Z   Server Listening on PORT 3000
-info   2024-07-15T09:52:16.181Z   Database Connection Successfully
-info   2024-07-15T09:52:16.189Z   Server Listening on PORT 3000
-info   2024-07-15T09:52:41.016Z   Database Connection Successfully
-info   2024-07-15T09:52:41.029Z   Server Listening on PORT 3000
-info   2024-07-15T09:54:40.388Z   Database Connection Successfully
-info   2024-07-15T09:54:40.400Z   Server Listening on PORT 3000
-info   2024-07-15T10:10:02.089Z   Database Connection Successfully
-info   2024-07-15T10:10:02.103Z   Server Listening on PORT 3000
-info   2024-07-15T10:12:47.076Z   Database Connection Successfully
-info   2024-07-15T10:12:47.085Z   Server Listening on PORT 3000
-info   2024-07-15T10:13:04.457Z   Database Connection Successfully
-info   2024-07-15T10:13:04.468Z   Server Listening on PORT 3000
-info   2024-07-15T10:13:54.295Z   Database Connection Successfully
-info   2024-07-15T10:13:54.303Z   Server Listening on PORT 3000
-info   2024-07-15T10:16:07.277Z   Database Connection Successfully
-info   2024-07-15T10:16:07.293Z   Server Listening on PORT 3000
-info   2024-07-15T10:16:22.098Z   Database Connection Successfully
-info   2024-07-15T10:16:22.107Z   Server Listening on PORT 3000
-info   2024-07-15T10:16:50.111Z   Database Connection Successfully
-info   2024-07-15T10:16:50.125Z   Server Listening on PORT 3000
-info   2024-07-15T10:18:20.345Z   Database Connection Successfully
-info   2024-07-15T10:18:20.363Z   Server Listening on PORT 3000
-info   2024-07-15T10:19:43.624Z   Database Connection Successfully
-info   2024-07-15T10:19:43.649Z   Server Listening on PORT 3000
-info   2024-07-15T10:22:00.956Z   Database Connection Successfully
-info   2024-07-15T10:22:00.976Z   Server Listening on PORT 3000
-info   2024-07-15T10:24:51.594Z   Database Connection Successfully
-info   2024-07-15T10:24:51.612Z   Server Listening on PORT 3000
-info   2024-07-15T10:33:53.038Z   Database Connection Successfully
-info   2024-07-15T10:33:53.045Z   Server Listening on PORT 3000
-info   2024-07-15T10:34:16.810Z   Database Connection Successfully
-info   2024-07-15T10:34:16.827Z   Server Listening on PORT 3000
-=======
->>>>>>> 5018d8be58fd6094e0347e62cdf775ed512370b9
 >>>>>>> a1507c7f30a9e6228945e76b7982d9fea5dec490
 info   2024-07-15T10:41:56.062Z   Database Connection Successfully
 info   2024-07-15T10:41:56.069Z   Server Listening on PORT 3000
@@ -1619,71 +1185,18 @@ info   2024-07-15T20:20:44.916Z   Database Connection Successfully
 info   2024-07-15T20:20:44.921Z   Server Listening on PORT 3000
 info   2024-07-15T20:20:55.279Z   Database Connection Successfully
 info   2024-07-15T20:20:55.285Z   Server Listening on PORT 3000
-<<<<<<< HEAD
-info   2024-07-15T22:10:14.646Z   Database Connection Successfully
-info   2024-07-15T22:10:14.659Z   Server Listening on PORT 3000
-=======
 info   2024-07-15T21:16:14.180Z   Database Connection Successfully
 info   2024-07-15T21:16:14.183Z   Server Listening on PORT 8000
 info   2024-07-15T22:43:30.899Z   Database Connection Successfully
 info   2024-07-15T22:43:30.902Z   Server Listening on PORT 8000
 info   2024-07-15T22:44:23.460Z   Database Connection Successfully
 info   2024-07-15T22:44:23.464Z   Server Listening on PORT 8000
->>>>>>> 59f18512d0936c243d3b543aa6ccc0efb2b52b4e
-<<<<<<< HEAD
-info   2024-07-16T08:06:06.489Z   Database Connection Successfully
-info   2024-07-16T08:06:06.535Z   Server Listening on PORT 3000
-info   2024-07-16T08:10:00.749Z   Database Connection Successfully
-info   2024-07-16T08:10:00.756Z   Server Listening on PORT 3000
-info   2024-07-16T08:10:24.678Z   Database Connection Successfully
-info   2024-07-16T08:10:24.694Z   Server Listening on PORT 3000
-info   2024-07-16T08:11:13.694Z   Database Connection Successfully
-info   2024-07-16T08:11:13.709Z   Server Listening on PORT 3000
-info   2024-07-16T08:11:36.703Z   Database Connection Successfully
-info   2024-07-16T08:11:41.197Z   Database Connection Successfully
-info   2024-07-16T08:11:41.203Z   Server Listening on PORT 3000
-info   2024-07-16T08:11:50.421Z   Database Connection Successfully
-info   2024-07-16T08:11:50.426Z   Server Listening on PORT 3000
-info   2024-07-16T08:11:56.479Z   Database Connection Successfully
-info   2024-07-16T08:11:56.486Z   Server Listening on PORT 3000
-info   2024-07-16T08:12:23.822Z   Database Connection Successfully
-info   2024-07-16T08:12:23.829Z   Server Listening on PORT 3000
-info   2024-07-16T08:12:33.881Z   Database Connection Successfully
-info   2024-07-16T08:12:33.934Z   Server Listening on PORT 3000
-info   2024-07-16T08:12:39.248Z   Database Connection Successfully
-info   2024-07-16T08:12:39.255Z   Server Listening on PORT 3000
-info   2024-07-16T08:12:45.999Z   Database Connection Successfully
-info   2024-07-16T08:12:46.006Z   Server Listening on PORT 3000
-info   2024-07-16T08:12:53.077Z   Database Connection Successfully
-info   2024-07-16T08:12:53.092Z   Server Listening on PORT 3000
-info   2024-07-16T08:13:27.316Z   Database Connection Successfully
-info   2024-07-16T08:13:27.332Z   Server Listening on PORT 3000
-info   2024-07-16T08:26:56.371Z   Database Connection Successfully
-info   2024-07-16T08:26:56.380Z   Server Listening on PORT 3000
-info   2024-07-16T08:27:16.517Z   Database Connection Successfully
-info   2024-07-16T08:27:16.532Z   Server Listening on PORT 3000
-info   2024-07-16T08:29:38.411Z   Database Connection Successfully
-info   2024-07-16T08:29:38.421Z   Server Listening on PORT 3000
-info   2024-07-16T08:29:47.394Z   Database Connection Successfully
-info   2024-07-16T08:29:47.399Z   Server Listening on PORT 3000
-info   2024-07-16T08:29:56.207Z   Database Connection Successfully
-info   2024-07-16T08:29:56.217Z   Server Listening on PORT 3000
-info   2024-07-16T08:30:52.601Z   Database Connection Successfully
-info   2024-07-16T08:30:52.608Z   Server Listening on PORT 3000
-info   2024-07-16T08:31:02.295Z   Database Connection Successfully
-info   2024-07-16T08:31:02.302Z   Server Listening on PORT 3000
-info   2024-07-16T08:31:18.581Z   Database Connection Successfully
-info   2024-07-16T08:31:18.596Z   Server Listening on PORT 3000
-info   2024-07-16T08:31:29.278Z   Database Connection Successfully
-info   2024-07-16T08:31:29.290Z   Server Listening on PORT 3000
-=======
 info   2024-07-16T08:44:46.241Z   Database Connection Successfully
 info   2024-07-16T08:44:46.244Z   Server Listening on PORT 8000
 info   2024-07-16T08:44:46.266Z   Database Connection Successfully
 info   2024-07-16T08:49:43.292Z   Database Connection Successfully
 info   2024-07-16T08:49:43.338Z   Database Connection Successfully
 info   2024-07-16T08:49:43.305Z   Server Listening on PORT 8000
->>>>>>> b937fdbbf4126d78a76f016b2dfaaace2823d53c
 info   2024-07-16T11:48:24.333Z   Database Connection Successfully
 info   2024-07-16T11:48:24.524Z   Server Listening on PORT 3000
 info   2024-07-16T12:53:35.565Z   Database Connection Successfully
@@ -1694,50 +1207,6 @@ info   2024-07-16T14:48:41.335Z   Database Connection Successfully
 info   2024-07-16T14:48:41.338Z   Server Listening on PORT 8000
 info   2024-07-16T15:19:18.361Z   Database Connection Successfully
 info   2024-07-16T15:19:18.364Z   Server Listening on PORT 8000
-<<<<<<< HEAD
-info   2024-07-16T15:19:36.725Z   Database Connection Successfully
-info   2024-07-16T15:19:36.728Z   Server Listening on PORT 8000
-info   2024-07-16T18:23:55.248Z   Database Connection Successfully
-info   2024-07-16T18:23:55.252Z   Server Listening on PORT 8000
-info   2024-07-16T18:24:42.606Z   Database Connection Successfully
-info   2024-07-16T18:24:42.610Z   Server Listening on PORT 8000
-info   2024-07-16T18:24:49.028Z   Database Connection Successfully
-info   2024-07-16T18:24:49.039Z   Server Listening on PORT 8000
-info   2024-07-16T18:27:09.304Z   Database Connection Successfully
-info   2024-07-16T18:27:09.307Z   Server Listening on PORT 8000
-info   2024-07-16T18:27:21.032Z   Database Connection Successfully
-info   2024-07-16T18:27:21.036Z   Server Listening on PORT 8000
-info   2024-07-16T18:27:27.855Z   Database Connection Successfully
-info   2024-07-16T18:27:27.860Z   Server Listening on PORT 8000
-info   2024-07-16T18:31:05.002Z   Database Connection Successfully
-info   2024-07-16T18:31:05.015Z   Server Listening on PORT 8000
-info   2024-07-16T18:31:21.842Z   Database Connection Successfully
-info   2024-07-16T18:31:21.849Z   Server Listening on PORT 8000
-info   2024-07-16T18:32:12.663Z   Database Connection Successfully
-info   2024-07-16T18:32:12.669Z   Server Listening on PORT 8000
-info   2024-07-16T18:32:31.157Z   Database Connection Successfully
-info   2024-07-16T18:32:31.162Z   Server Listening on PORT 8000
-info   2024-07-16T18:33:38.592Z   Database Connection Successfully
-info   2024-07-16T18:33:38.596Z   Server Listening on PORT 8000
-info   2024-07-16T18:40:26.626Z   Database Connection Successfully
-info   2024-07-16T18:40:26.633Z   Server Listening on PORT 8000
-info   2024-07-16T18:40:46.511Z   Database Connection Successfully
-info   2024-07-16T18:40:46.515Z   Server Listening on PORT 8000
-info   2024-07-16T18:41:03.617Z   Database Connection Successfully
-info   2024-07-16T18:41:03.623Z   Server Listening on PORT 8000
-info   2024-07-16T18:41:34.100Z   Database Connection Successfully
-info   2024-07-16T18:41:34.104Z   Server Listening on PORT 8000
-info   2024-07-16T18:42:17.636Z   Database Connection Successfully
-info   2024-07-16T18:42:17.640Z   Server Listening on PORT 8000
-info   2024-07-16T18:42:35.168Z   Database Connection Successfully
-info   2024-07-16T18:42:35.172Z   Server Listening on PORT 8000
-info   2024-07-16T18:42:50.979Z   Database Connection Successfully
-info   2024-07-16T18:42:50.984Z   Server Listening on PORT 8000
-info   2024-07-16T18:42:59.064Z   Database Connection Successfully
-info   2024-07-16T18:42:59.067Z   Server Listening on PORT 8000
-info   2024-07-16T18:43:40.938Z   Database Connection Successfully
-info   2024-07-16T18:43:40.943Z   Server Listening on PORT 8000
-=======
 info   2024-07-16T17:04:52.425Z   Database Connection Successfully
 info   2024-07-16T17:04:52.433Z   Server Listening on PORT 3000
 info   2024-07-16T17:45:37.705Z   Database Connection Successfully
@@ -1766,7 +1235,6 @@ info   2024-07-16T18:12:18.250Z   Database Connection Successfully
 info   2024-07-16T18:12:18.266Z   Server Listening on PORT 3000
 info   2024-07-16T18:15:02.055Z   Database Connection Successfully
 info   2024-07-16T18:15:02.064Z   Server Listening on PORT 3000
->>>>>>> c15cfeda04481f4b1a72b989f245b3ce800677c3
 info   2024-07-16T18:47:17.658Z   Database Connection Successfully
 info   2024-07-16T18:47:17.661Z   Server Listening on PORT 8000
 info   2024-07-17T09:17:14.297Z   Database Connection Successfully
@@ -1859,5 +1327,53 @@ info   2024-07-18T15:45:48.757Z   Database Connection Successfully
 info   2024-07-18T15:45:48.761Z   Server Listening on PORT 3000
 info   2024-07-18T15:45:53.909Z   Database Connection Successfully
 info   2024-07-18T15:45:53.913Z   Server Listening on PORT 3000
-info   2024-07-18T20:01:13.107Z   Database Connection Successfully
-info   2024-07-18T20:01:13.113Z   Server Listening on PORT 8000
+info   2024-07-18T19:52:26.229Z   Database Connection Successfully
+info   2024-07-18T19:52:26.244Z   Server Listening on PORT 3000
+info   2024-07-18T20:02:09.671Z   Database Connection Successfully
+info   2024-07-18T20:02:09.686Z   Server Listening on PORT 3000
+info   2024-07-18T20:07:27.631Z   Database Connection Successfully
+info   2024-07-18T20:07:27.635Z   Server Listening on PORT 3000
+info   2024-07-18T20:08:06.304Z   Database Connection Successfully
+info   2024-07-18T20:08:06.308Z   Server Listening on PORT 3000
+info   2024-07-18T20:08:20.844Z   Database Connection Successfully
+info   2024-07-18T20:08:20.848Z   Server Listening on PORT 3000
+info   2024-07-18T20:08:54.521Z   Database Connection Successfully
+info   2024-07-18T20:08:54.524Z   Server Listening on PORT 3000
+info   2024-07-18T20:09:21.228Z   Database Connection Successfully
+info   2024-07-18T20:09:21.243Z   Server Listening on PORT 3000
+info   2024-07-18T20:09:31.284Z   Database Connection Successfully
+info   2024-07-18T20:09:31.288Z   Server Listening on PORT 3000
+info   2024-07-18T20:09:51.154Z   Database Connection Successfully
+info   2024-07-18T20:09:51.159Z   Server Listening on PORT 3000
+info   2024-07-18T20:10:12.646Z   Database Connection Successfully
+info   2024-07-18T20:10:12.651Z   Server Listening on PORT 3000
+info   2024-07-18T20:10:22.599Z   Database Connection Successfully
+info   2024-07-18T20:10:22.602Z   Server Listening on PORT 3000
+info   2024-07-18T20:13:39.869Z   Database Connection Successfully
+info   2024-07-18T20:13:40.153Z   Server Listening on PORT 3000
+info   2024-07-18T20:14:15.285Z   Database Connection Successfully
+info   2024-07-18T20:14:15.289Z   Server Listening on PORT 3000
+info   2024-07-18T20:14:44.706Z   Database Connection Successfully
+info   2024-07-18T20:14:44.722Z   Server Listening on PORT 3000
+info   2024-07-18T20:25:53.080Z   Database Connection Successfully
+info   2024-07-18T20:25:53.084Z   Server Listening on PORT 3000
+info   2024-07-18T20:28:29.336Z   Database Connection Successfully
+info   2024-07-18T20:28:29.340Z   Server Listening on PORT 3000
+info   2024-07-18T20:28:42.546Z   Database Connection Successfully
+info   2024-07-18T20:28:42.551Z   Server Listening on PORT 3000
+info   2024-07-18T20:28:55.964Z   Database Connection Successfully
+info   2024-07-18T20:28:55.967Z   Server Listening on PORT 3000
+info   2024-07-18T20:29:01.562Z   Database Connection Successfully
+info   2024-07-18T20:29:01.566Z   Server Listening on PORT 3000
+info   2024-07-18T20:29:07.590Z   Database Connection Successfully
+info   2024-07-18T20:29:07.597Z   Server Listening on PORT 3000
+info   2024-07-18T20:30:07.281Z   Database Connection Successfully
+info   2024-07-18T20:30:07.286Z   Server Listening on PORT 3000
+info   2024-07-18T20:31:07.460Z   Database Connection Successfully
+info   2024-07-18T20:31:07.469Z   Server Listening on PORT 3000
+info   2024-07-18T20:32:12.379Z   Database Connection Successfully
+info   2024-07-18T20:32:12.384Z   Server Listening on PORT 3000
+info   2024-07-18T20:33:40.866Z   Database Connection Successfully
+info   2024-07-18T20:33:40.897Z   Server Listening on PORT 3000
+info   2024-07-18T20:37:42.979Z   Database Connection Successfully
+info   2024-07-18T20:37:42.990Z   Server Listening on PORT 3000
