@@ -233,6 +233,12 @@ export const updateProduct = catchAsync(async (req, res, next) => {
   let images = [];
   let bodyColors = [];
   let bodyImages = [];
+
+  console.log("BODY QUANTITY", req.body.quantity);
+  if (req.body.quantity) {
+    req.body.quantity = +req.body.quantity;
+  }
+
   if (req.body.colors) {
     if (req.body.colors.constructor.name === "Array") {
       bodyColors = req.body.colors
@@ -259,9 +265,9 @@ export const updateProduct = catchAsync(async (req, res, next) => {
     }
 
     console.log(`Body Images`);
-    console.log(bodyImages)
+    console.log(bodyImages);
   }
-  
+
   if (req.body.size) {
     req.body.size = JSON.parse(req.body.size);
   }
@@ -309,15 +315,15 @@ export const updateProduct = catchAsync(async (req, res, next) => {
       await cloudinaryDeleteImg(image.id);
     }
   }
-  console.log(req.body.images)
+  console.log(req.body.images);
 
-  console.log(images)
+  console.log(images);
 
   const updatedProductBySlug = await Product.updateMany(
     {
       slug: product.slug,
     },
-    { name:req.body.name || product.name, images }
+    { name: req.body.name || product.name, images }
   );
 
   delete req.body.name;
@@ -343,10 +349,7 @@ export const updateProduct = catchAsync(async (req, res, next) => {
       )
     );
 
-  await Product.updateMany(
-    { slug: updatedProductById.slug },
-    { images }
-  );
+  await Product.updateMany({ slug: updatedProductById.slug }, { images });
 
   res.status(200).json({
     status: "success",
