@@ -296,13 +296,14 @@ router.post("/webHook", async (req, res, next) => {
 router.get("/acceptPayment", async (req, res) => {
   let success = req.query.success;
 
+  console.log(req.body, req.query,req.params)
   try {
     if (success === "true") {
       res.redirect(
         "http://localhost:3000/en/user/payment/status=success"
       );
     } else {
-      res.redirect("https://arkan-ten.vercel.app/payment-failed");
+      res.redirect("http://localhost:3000/en/user/payment/status=failed");
     }
   } catch (error) {
     next(createError(500, error.message));

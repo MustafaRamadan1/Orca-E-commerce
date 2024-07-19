@@ -67,6 +67,8 @@ export const getUserOrders = catchAsync(async (req, res, next) => {
 export const updateOrder = catchAsync(async (req, res, next) => {
   const { id } = req.params;
 
+
+
   const { orderStatus } = req.body;
 
   const updatedOrder = await Order.findByIdAndUpdate(
