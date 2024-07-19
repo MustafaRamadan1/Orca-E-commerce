@@ -2,6 +2,10 @@ import morgan from "morgan";
 import express from "express";
 import cors from "cors";
 import rateLimit from "express-rate-limit";
+import helmet from "helmet";
+import mongoSanitize from 'express-mongo-sanitize';
+import cors from 'cors'
+import xss from 'xss-clean';
 import { catchAsync } from "./utils/catchAsync.js";
 // create Express App
 
@@ -20,13 +24,21 @@ app.set('view engine', 'pug');
 app.set('views',`${__dirname}/views`);
 
 
-app.use(express.static(`${__dirname}/public`))
+app.use(express.static(`${__dirname}/public`,{ maxAge: '1d' }))
 
 // global Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.use(morgan("dev"));
+app.use(mongoSanitize());
+app.use(helmet());
+app.use(xss());
+// app.use(cors({
+//   origin: "https://your-frontend-domain.com",
+//   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+//   allowedHeaders: ["Content-Type", "Authorization"]
+// }));
 // app.use(rateLimit({
 //     windowMs: 60*60*1000,
 //     max:100,
