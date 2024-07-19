@@ -21,6 +21,7 @@ const router = Router();
 
 router.post("/pay", async (req, res, next) => {
   const { cartItems } = req.body;
+
   // create cart items and then get the cart id and find by id
   try {
     const newCartItem = await CartItem.create(cartItems);
@@ -78,7 +79,7 @@ router.post(
   restrictTo("user"),
   catchAsync(async (req, res, next) => {
     const { cartItems } = req.body;
-    
+
     const formattedCartItems = cartItems.map((item) => {
       return {
         cart: item.cart,
@@ -88,7 +89,6 @@ router.post(
       };
     });
 
-   
     const newCartItems = await CartItem.create(formattedCartItems);
 
     if (newCartItems.length === 0)
@@ -101,6 +101,8 @@ router.post(
       })
       .populate("user");
 
+    console.log(cart.items[0].product.colors);
+
     if (!cart) {
       await CartItem.deleteMany({ cart: newCartItems[0].cart._id });
       return next(new AppError(`No Cart with this ID`, 400));
@@ -108,7 +110,7 @@ router.post(
 
     for (let item of cart.items) {
       for (let color of item.product.colors) {
-        if (color._id === item.color) {
+        if (color.id === item.color) {
           if (color.quantity < item.quantity) {
             await CartItem.findByIdAndDelete(item._id);
             return next(
@@ -119,6 +121,8 @@ router.post(
       }
     }
     const totalPrice = countCartTotalPrice(cart.items);
+
+    console.log("============================================");
 
     const updatedCart = await Cart.findByIdAndUpdate(
       cart._id,
@@ -145,7 +149,6 @@ router.post(
       req.body.billing_data
     );
 
-    console.log(response.data);
     const paymentDoc = await Payment.create({
       intention_id: response.data.id,
       user: updatedCart.user._id,

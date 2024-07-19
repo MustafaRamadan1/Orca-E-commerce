@@ -22,7 +22,6 @@ const authentication = catchAsync(async (req, res, next) => {
 
   if (!currentUser) return next(new AppError(`User no Longer Exist`, 404));
 
-
   // if(!currentUser.isActive) return next(new AppError(`Please Activate your Account`, 401));
   // under test
 
@@ -30,6 +29,7 @@ const authentication = catchAsync(async (req, res, next) => {
     return next(new AppError(`Password Changed , Please Login Again`, 401));
 
   req.user = currentUser;
+
   next();
 });
 
