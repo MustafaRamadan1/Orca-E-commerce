@@ -36,17 +36,6 @@ const productSchema = new mongoose.Schema(
       type: Number,
       default: 0,
       min: [1, "Quantity can not be negative"],
-      //   validate: {
-      //     validator: function (value) {
-      //       const colorsQuantity = JSON.parse(this.colors).reduce(
-      //         (total, color) => total + color.quantity,
-      //         0
-      //       );
-
-      //       return value === colorsQuantity;
-      //     },
-      //     message: "Quantity must be equal to sum of colors quantity",
-      //   },
     },
     discount: {
       type: Number,
@@ -99,31 +88,5 @@ productSchema.index({ name: 1, size: 1 }, { unique: true });
 productSchema.virtual("saleProduct").get(function () {
   return this.price - this.price * (this.discount / 100);
 });
-
-productSchema.pre("save", function (next) {
-  if (this.isNew || this.isModified("name")) {
-    this.slug = slug(this.name, "_");
-  }
-  return next();
-});
-
-productSchema.pre("findOneAndUpdate", function (next) {
-  const update = this.getUpdate();
-
-  if (update.name) {
-    update.slug = slug(update.name, "_");
-  }
-
-  return next();
-});
-
-productSchema.methods.toJSON = function () {
-  const product = this;
-  const productObject = product.toObject();
-  delete productObject.__v;
-  delete productObject.createdAt;
-  delete productObject.updatedAt;
-  return productObject;
-};
 
 export default mongoose.model("Product", productSchema);

@@ -56,6 +56,18 @@ export const createProduct = catchAsync(async (req, res, next) => {
     return next(new AppError(`Please Provide Required Fields`, 400));
   }
 
+  const colorsQuantity = bodyColors.reduce((total, cur) => {
+    return total + cur.quantity;
+  }, 0);
+
+  if (colorsQuantity !== req.body.quantity)
+    return next(
+      new AppError(
+        `colors total quantity not qual quantity please provide valide value `,
+        400
+      )
+    );
+
   const product = await Product.findOne({ name });
   let images = [];
   if (product) {
@@ -97,8 +109,6 @@ export const createProduct = catchAsync(async (req, res, next) => {
       await deletePhotoFromServer(file);
     }
   }
-
-  console.log(req.body);
 
   const newProduct = await Product.create({
     name,
@@ -263,14 +273,27 @@ export const updateProduct = catchAsync(async (req, res, next) => {
     } else if (JSON.parse(req.body.images).constructor.name === "Object") {
       bodyImages = [JSON.parse(req.body.images)];
     }
+  }
 
-    console.log(`Body Images`);
-    console.log(bodyImages);
+  if (req.body.quantity) {
+    req.body.quantity = req.body.quantity[req.body.quantity.length - 1];
   }
 
   if (req.body.size) {
     req.body.size = JSON.parse(req.body.size);
   }
+
+  const colorsQuantity = bodyColors.reduce((total, cur) => {
+    return total + cur.quantity;
+  }, 0);
+
+  if (colorsQuantity !== +req.body.quantity)
+    return next(
+      new AppError(
+        `colors total quantity not qual quantity please provide valide value `,
+        400
+      )
+    );
 
   // find Product
 
@@ -349,7 +372,10 @@ export const updateProduct = catchAsync(async (req, res, next) => {
       )
     );
 
-  await Product.updateMany({ slug: updatedProductById.slug }, { images });
+  // await Product.updateMany(
+  //   { slug: updatedProductById.slug },
+  //   { images }
+  // );
 
   res.status(200).json({
     status: "success",

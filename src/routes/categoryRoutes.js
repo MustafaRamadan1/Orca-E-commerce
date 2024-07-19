@@ -14,11 +14,11 @@ import { categorySchema } from "../validation/index.js";
 const router = Router();
 
 router.get("/", getAllCategories);
+router.get("/:id", validation(categorySchema.getCategory), getCategory);
 
 router.use(isAuth, authorization("admin"));
 router.post("/", validation(categorySchema.createCategory), createCategory);
 router.get("/filtered", getFilteredCategories);
-router.get("/:id", validation(categorySchema.getCategory), getCategory);
 router.put("/:id", validation(categorySchema.updateCategory), updateCategory);
 router.delete(
   "/:id",
