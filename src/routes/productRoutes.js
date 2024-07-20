@@ -16,22 +16,17 @@ import uploadImages from "../middlewares/uploadImages.js";
 import resizeProductImg from "../utils/resizeProductsImage.js";
 const router = Router();
 
-
-
-router.get('/:name/:params', (req, res ,next)=>{
-  const {name, params} = req.params;
-  if(name === 'slug'){
+router.get("/:name/:params", (req, res, next) => {
+  const { name, params } = req.params;
+  if (name === "slug") {
     req.params.slug = params;
 
     getProduct(req, res, next);
+  } else if (name === "id") {
+    req.params.id = params;
+    getProductById(req, res, next);
   }
-  else if(name === 'id') {
-    req.params.id = params; 
-    getProductById(req, res ,next)
-  }
-})
-
-
+});
 
 // router.get("/:name/:slug", getProduct);
 // router.get("/:name/:id", getProductById);
@@ -56,6 +51,11 @@ router.put(
   updateProduct
 );
 
-router.get('/allProductsAdmin', isAuth, Authorization('admin'), getAllProductsAdmin)
-router.get('/colors', getProductsColors)
+router.get(
+  "/allProductsAdmin",
+  isAuth,
+  Authorization("admin", "user"),
+  getAllProductsAdmin
+);
+router.get("/colors", getProductsColors);
 export default router;

@@ -476,21 +476,21 @@ export const getProductsColors = catchAsync(async (req, res, next) => {
   });
 });
 
-
 export const getAllProductsAdmin = catchAsync(async (req, res, next) => {
-
-
   const totalDocumentCount = await Product.countDocuments();
+
+  const limit = req.query.limit * 1 || 5;
 
   const apiFeature = new ApiFeature(Product.find(), req.query)
     .sort()
     .limitFields()
     .pagination(totalDocumentCount);
 
-  const allProducts = await apiFeature.query; 
+  const allProducts = await apiFeature.query;
   res.status(200).json({
     status: "success",
     result: allProducts.length,
+    numPages: Math.ceil(allProducts.length / limit),
     data: allProducts,
   });
-})
+});
