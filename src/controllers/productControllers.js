@@ -60,7 +60,7 @@ export const createProduct = catchAsync(async (req, res, next) => {
     return total + cur.quantity;
   }, 0);
 
-  if (colorsQuantity !== req.body.quantity)
+  if (+colorsQuantity !== +req.body.quantity)
     return next(
       new AppError(
         `colors total quantity not qual quantity please provide valide value `,
@@ -137,12 +137,11 @@ export const createProduct = catchAsync(async (req, res, next) => {
 });
 
 export const getProduct = catchAsync(async (req, res, next) => {
-  const { params } = req.params;
-  console.log(`inside the aggregation `);
-  console.log(params);
+  const { slug } = req.params;
+
   const products = await Product.aggregate([
     {
-      $match: { slug: params },
+      $match: { slug },
     },
     {
       $group: {
@@ -207,6 +206,8 @@ export const getProduct = catchAsync(async (req, res, next) => {
 
   console.log(products);
   if (!products.length) return next(new AppError(`No Product Found`, 404));
+
+  console.log(products);
 
   res.status(200).json({
     status: "success",
@@ -426,6 +427,8 @@ export const filterProducts = catchAsync(async (req, res, next) => {
   } else {
     allProducts = [];
   }
+
+  console.log(allProducts);
 
   res.status(200).json({
     status: "success",

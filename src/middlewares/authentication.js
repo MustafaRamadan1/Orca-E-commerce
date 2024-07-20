@@ -28,6 +28,10 @@ const authentication = catchAsync(async (req, res, next) => {
   if (currentUser.checkUpdatePasswordState(decode.iat))
     return next(new AppError(`Password Changed , Please Login Again`, 401));
 
+  if (!currentUser.isActive) {
+    return next(new AppError(` Please Activate your Account`, 401));
+  }
+
   req.user = currentUser;
 
   next();

@@ -89,6 +89,10 @@ router.post(
       };
     });
 
+    await CartItem.deleteMany({
+      cart: formattedCartItems[0].cart,
+    });
+
     const newCartItems = await CartItem.create(formattedCartItems);
 
     if (newCartItems.length === 0)
@@ -121,8 +125,6 @@ router.post(
       }
     }
     const totalPrice = countCartTotalPrice(cart.items);
-
-    console.log("============================================");
 
     const updatedCart = await Cart.findByIdAndUpdate(
       cart._id,
@@ -296,12 +298,10 @@ router.post("/webHook", async (req, res, next) => {
 router.get("/acceptPayment", async (req, res) => {
   let success = req.query.success;
 
-  console.log(req.body, req.query,req.params)
+  console.log(req.body, req.query, req.params);
   try {
     if (success === "true") {
-      res.redirect(
-        "http://localhost:3000/en/user/payment/status=success"
-      );
+      res.redirect("http://localhost:3000/en/user/payment/status=success");
     } else {
       res.redirect("http://localhost:3000/en/user/payment/status=failed");
     }

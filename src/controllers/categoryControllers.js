@@ -139,6 +139,8 @@ export const getFilteredCategories = catchAsync(async (req, res, next) => {
     allCategories = [];
   }
 
+  console.log(allCategories);
+
   if (!allCategories) return next(new AppError(`No Category in the DB`, 404));
 
   res.status(200).json({

@@ -49,7 +49,10 @@ export const signUp = catchAsync(async (req, res, next) => {
 export const login = catchAsync(async (req, res, next) => {
   const { email, password } = req.body;
 
-  const user = await User.findOne({ email }).populate("cart");
+  const user = await User.findOne({ email }).populate({
+    path: "cart",
+    populate: "items",
+  });
 
   if (!user) return next(new AppError(`Invalid email or password`, 404));
 

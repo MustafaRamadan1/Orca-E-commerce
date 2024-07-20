@@ -1,6 +1,8 @@
 import AppError from "../utils/AppError.js";
 
 const validation = (schema) => (req, res, next) => {
+  console.log(req.originalUrl);
+
   const errorMessages = [];
 
   const checkParts = ["body", "params", "query"];

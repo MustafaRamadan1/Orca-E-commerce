@@ -13,7 +13,7 @@ import restrictTo from "../middlewares/Authorization.js";
 const router = Router();
 
 router.post("/", isAuth, restrictTo("user"), createReview);
-router.get("/", isAuth, restrictTo("user", "admin"), getAllReviews);
+router.get("/", getAllReviews);
 router.get("/:id", isAuth, restrictTo("admin"), getReviewById);
 router.get(
   "/:userId/user",
