@@ -475,3 +475,22 @@ export const getProductsColors = catchAsync(async (req, res, next) => {
     data: [...uniqueColors],
   });
 });
+
+
+export const getAllProductsAdmin = catchAsync(async (req, res, next) => {
+
+
+  const totalDocumentCount = await Product.countDocuments();
+
+  const apiFeature = new ApiFeature(Product.find(), req.query)
+    .sort()
+    .limitFields()
+    .pagination(totalDocumentCount);
+
+  const allProducts = await apiFeature.query; 
+  res.status(200).json({
+    status: "success",
+    result: allProducts.length,
+    data: allProducts,
+  });
+})

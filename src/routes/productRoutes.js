@@ -4,6 +4,7 @@ import {
   deleteProduct,
   filterProducts,
   getAllProducts,
+  getAllProductsAdmin,
   getProduct,
   getProductById,
   getProductsColors,
@@ -55,6 +56,6 @@ router.put(
   updateProduct
 );
 
-
+router.get('/allProductsAdmin', isAuth, Authorization('admin'), getAllProductsAdmin)
 router.get('/colors', getProductsColors)
 export default router;
