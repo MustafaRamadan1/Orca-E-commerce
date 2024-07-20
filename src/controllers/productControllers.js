@@ -490,7 +490,7 @@ export const getAllProductsAdmin = catchAsync(async (req, res, next) => {
   res.status(200).json({
     status: "success",
     result: allProducts.length,
-    numPages: Math.ceil(allProducts.length / limit),
+    numPages: Math.ceil(totalDocumentCount / limit),
     data: allProducts,
   });
 });
