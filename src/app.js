@@ -5,7 +5,9 @@ import helmet from "helmet";
 import mongoSanitize from 'express-mongo-sanitize';
 import cors from 'cors'
 import xss from 'xss-clean';
+import cookieParser from "cookie-parser";
 import { catchAsync } from "./utils/catchAsync.js";
+
 // create Express App
 
 const app = express();
@@ -34,6 +36,7 @@ app.use(mongoSanitize());
 app.use(helmet());
 app.use(xss());
 app.use(cors());
+app.use(cookieParser());
 // app.use(cors({
 //   origin: "https://your-frontend-domain.com",
 //   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",

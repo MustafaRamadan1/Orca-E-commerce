@@ -1,6 +1,7 @@
 import AppError from "../utils/AppError.js";
 import { catchAsync } from "../utils/catchAsync.js";
 import CartItem from "../Db/models/cartItem.model.js";
+import CookieCart from '../Db/models/cookieCart.model.js'
 import Cart from "../Db/models/cart.model.js";
 import { countCartTotalPrice } from "../utils/helperFunc.js";
 
@@ -44,6 +45,11 @@ export const createCartItem = catchAsync(async (req, res, next) => {
     { runValidators: true, new: true }
   );
 
+  const cookieCart = await CookieCart.create({
+    user: currentCart.user._id,
+    cartItems:req.cookies.cartItems
+  })
+  console.log(cookieCart)
   res.status(201).json({
     status: "success",
     data: newCartItems,
