@@ -17,6 +17,7 @@ import Product from "../Db/models/product.model.js";
 import { formatBilling_Data } from "../utils/paymentHelperFunc.js";
 import isAuth from "../middlewares/authentication.js";
 import restrictTo from "../middlewares/Authorization.js";
+import CookieCart from "../Db/models/cookieCart.model.js";
 const router = Router();
 
 router.post("/pay", async (req, res, next) => {
@@ -157,6 +158,8 @@ router.post(
       cartItems: updatedCart.items.map((item) => item._id),
     });
 
+
+    await CookieCart.findOneAndDelete({user: updatedCart.user._id});
     const url = generatePaymentLink(response.data.client_secret);
     res.status(200).json({
       status: "success",

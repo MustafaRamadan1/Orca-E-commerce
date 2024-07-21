@@ -16,4 +16,6 @@ const cookieCartSchema = new mongoose.Schema({
 });
 
 
+cookieCartSchema.index({user:1, cartItems:1}, {unique: true});
+
 export default mongoose.model('CookieCart', cookieCartSchema)
