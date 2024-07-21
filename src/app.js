@@ -1,6 +1,5 @@
 import morgan from "morgan";
 import express from "express";
-import cors from "cors";
 import rateLimit from "express-rate-limit";
 import helmet from "helmet";
 import mongoSanitize from "express-mongo-sanitize";
@@ -31,6 +30,7 @@ app.use(morgan("dev"));
 app.use(mongoSanitize());
 app.use(helmet());
 app.use(xss());
+app.use(cors());
 // app.use(cors({
 //   origin: "https://your-frontend-domain.com",
 //   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
@@ -42,7 +42,7 @@ app.use(xss());
 //     message: 'Too many requests from this IP, please try again in an hour'
 // }));
 
-// router
+
 
 import userRouter from "./routes/userRoutes.js";
 import categoryRouter from "./routes/categoryRoutes.js";

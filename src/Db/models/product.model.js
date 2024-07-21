@@ -89,4 +89,21 @@ productSchema.virtual("saleProduct").get(function () {
   return this.price - this.price * (this.discount / 100);
 });
 
+productSchema.pre("save", function (next) {
+  if (this.isNew || this.isModified("name")) {
+    this.slug = slug(this.name, "_");
+  }
+  return next();
+});
+
+productSchema.pre("findOneAndUpdate", function (next) {
+  const update = this.getUpdate();
+
+  if (update.name) {
+    this.slug = slug(update.name, "_");
+  }
+
+  return next();
+});
+
 export default mongoose.model("Product", productSchema);

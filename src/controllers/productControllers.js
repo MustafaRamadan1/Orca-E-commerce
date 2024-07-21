@@ -60,7 +60,7 @@ export const createProduct = catchAsync(async (req, res, next) => {
     return total + cur.quantity;
   }, 0);
 
-  if (colorsQuantity !== req.body.quantity)
+  if (+colorsQuantity !== +req.body.quantity)
     return next(
       new AppError(
         `colors total quantity not qual quantity please provide valide value `,
@@ -137,12 +137,11 @@ export const createProduct = catchAsync(async (req, res, next) => {
 });
 
 export const getProduct = catchAsync(async (req, res, next) => {
-  const { params } = req.params;
-  console.log(`inside the aggregation `);
-  console.log(params);
+  const { slug } = req.params;
+
   const products = await Product.aggregate([
     {
-      $match: { slug: params },
+      $match: { slug },
     },
     {
       $group: {
@@ -207,6 +206,8 @@ export const getProduct = catchAsync(async (req, res, next) => {
 
   console.log(products);
   if (!products.length) return next(new AppError(`No Product Found`, 404));
+
+  console.log(products);
 
   res.status(200).json({
     status: "success",
@@ -433,6 +434,8 @@ export const filterProducts = catchAsync(async (req, res, next) => {
     allProducts = [];
   }
 
+  console.log(allProducts);
+
   res.status(200).json({
     status: "success",
     length: allProducts.length,
@@ -479,5 +482,24 @@ export const getProductsColors = catchAsync(async (req, res, next) => {
   res.status(200).json({
     status: "success",
     data: [...uniqueColors],
+  });
+});
+
+export const getAllProductsAdmin = catchAsync(async (req, res, next) => {
+  const totalDocumentCount = await Product.countDocuments();
+
+  const limit = req.query.limit * 1 || 5;
+
+  const apiFeature = new ApiFeature(Product.find(), req.query)
+    .sort()
+    .limitFields()
+    .pagination(totalDocumentCount);
+
+  const allProducts = await apiFeature.query;
+  res.status(200).json({
+    status: "success",
+    result: allProducts.length,
+    numPages: Math.ceil(totalDocumentCount / limit),
+    data: allProducts,
   });
 });

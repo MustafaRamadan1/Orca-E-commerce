@@ -9,8 +9,6 @@ export const getAllOrders = catchAsync(async (req, res, next) => {
       path: "items",
       populate: {
         path: "product",
-        select:
-          " -category -subCategory -images -description -colors -slug -ratingAverage -ratingQuantity",
       },
     })
     .populate({
@@ -54,8 +52,18 @@ export const getOrder = catchAsync(async (req, res, next) => {
 export const getUserOrders = catchAsync(async (req, res, next) => {
   const { id } = req.params;
 
-  const userOrders = await Order.find({ user: id });
-
+  const userOrders = await Order.find({ user: id })
+    .populate({
+      path: "items",
+      populate: {
+        path: "product",
+      },
+    })
+    .populate({
+      path: "user",
+      select:
+        "-id -otpCode  -otpExpired -passwordChangedAt -createdAt -updatedAt",
+    });
   if (!userOrders) return next(new AppError(`No Orders for that user`, 400));
 
   res.status(200).json({

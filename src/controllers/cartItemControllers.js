@@ -1,103 +1,122 @@
 import AppError from "../utils/AppError.js";
 import { catchAsync } from "../utils/catchAsync.js";
-import CartItem from '../Db/models/cartItem.model.js';
-import Cart from '../Db/models/cart.model.js';
+import CartItem from "../Db/models/cartItem.model.js";
+import Cart from "../Db/models/cart.model.js";
 import { countCartTotalPrice } from "../utils/helperFunc.js";
 
-export const createCartItem = catchAsync(async (req, res ,next)=>{
+export const createCartItem = catchAsync(async (req, res, next) => {
+  const { cartItems } = req.body;
 
-    const {product, cart, quantity} = req.body;
-    
-    const newCartItem = await CartItem.create({product, cart,quantity});
+  const formattedCartItems = cartItems.map((item) => {
+    return {
+      cart: item.cart,
+      product: item.product,
+      quantity: item.quantity,
+      color: item.colorId,
+    };
+  });
 
-    if(!newCartItem) return next(new AppError(`Couldn't Create new Cart Item`, 400));
+  const newCartItems = await CartItem.create(formattedCartItems);
 
-    const currentCart = await Cart.findById(newCartItem.cart).populate({
-        path:'items',
-        populate:'product'
-      });
+  if (newCartItems.length === 0)
+    return next(new AppError(`Couldn't Create Cart Items`, 400));
 
+  const currentCart = await Cart.findById(newCartItems[0].cart).populate({
+    path: "items",
+    populate: "product",
+  });
 
-      if(!currentCart) {
-        await CartItem.findByIdAndDelete(newCartItem._id);
-        return next(new AppError(`No Cart With this id`, 400));
-      }
+  console.log(currentCart);
 
-      const totalPrice = countCartTotalPrice(currentCart.items);
+  if (!currentCart) {
+    for (const key of newCartItems) {
+      await CartItem.findByIdAndDelete(key._id);
+    }
 
-       await Cart.findByIdAndUpdate(newCartItem.cart, {totalPrice: totalPrice},{runValidators:true, new:true});
+    return next(new AppError(`No Cart With this id`, 400));
+  }
 
+  const totalPrice = countCartTotalPrice(currentCart.items);
 
-    res.status(201).json({
-        status: 'success',
-        data:newCartItem
-    })
+  await Cart.findByIdAndUpdate(
+    currentCart._id,
+    { totalPrice: totalPrice },
+    { runValidators: true, new: true }
+  );
+
+  res.status(201).json({
+    status: "success",
+    data: newCartItems,
+  });
 });
-
 
 export const getCartItemsPerCart = catchAsync(async (req, res, next) => {
+  const { id } = req.params;
 
-    const {id} = req.params;
+  const cartItems = await CartItem.find({ cart: id }).populate("product cart");
 
-    const cartItems = await CartItem.find({cart:id}).populate('product cart');
+  if (!cartItems)
+    return next(new AppError(`No Cart Items Found For That Cart`, 404));
 
-    if(!cartItems) return next(new AppError(`No Cart Items Found For That Cart`, 404));
-
-
-    res.status(200).json({
-        status:'success',
-        data: cartItems
-    })
-
+  res.status(200).json({
+    status: "success",
+    data: cartItems,
+  });
 });
-
 
 export const updateCartItem = catchAsync(async (req, res, next) => {
+  const { id } = req.params;
+  const { quantity } = req.body;
+  const updatedCartItem = await CartItem.findByIdAndUpdate(
+    id,
+    { quantity },
+    { runValidators: true }
+  );
 
-    const {id} = req.params;
-    const {quantity} = req.body;
-    const updatedCartItem = await CartItem.findByIdAndUpdate(id, {quantity}, {runValidators:true});
+  if (!updatedCartItem)
+    return next(new AppError(`No Cart Item With this id`, 404));
+  const cart = await Cart.findById(updatedCartItem.cart).populate({
+    path: "items",
+    populate: "product",
+  });
+  const totalPrice = countCartTotalPrice(cart.items);
 
-    if(!updatedCartItem) return next(new AppError(`No Cart Item With this id`, 404));
-    const cart = await Cart.findById(updatedCartItem.cart).populate({
-        path:'items',
-        populate:'product'
-    })
-    const totalPrice =  countCartTotalPrice(cart.items);
+  await Cart.findByIdAndUpdate(
+    updatedCartItem.cart,
+    { totalPrice: totalPrice },
+    { runValidators: true, new: true }
+  );
 
-    await Cart.findByIdAndUpdate(updatedCartItem.cart, {totalPrice: totalPrice},{runValidators:true, new:true});
-
-    res.status(200).json({
-        status:'success',
-        data: updatedCartItem
-    })
+  res.status(200).json({
+    status: "success",
+    data: updatedCartItem,
+  });
 });
 
-
-
 export const deleteCartItem = catchAsync(async (req, res, next) => {
+  const { id } = req.params;
 
-    const {id}  = req.params;
+  const deletedCartItem = await CartItem.findByIdAndDelete(id);
 
+  if (!deletedCartItem)
+    return next(new AppError(`No Cart Item With this id`, 404));
 
-    const deletedCartItem = await CartItem.findByIdAndDelete(id);
-    
-    if(!deletedCartItem)    return next(new AppError(`No Cart Item With this id`, 404));
+  const cart = await Cart.findById(deletedCartItem.cart).populate({
+    path: "items",
+    populate: "product",
+  });
 
-    const cart = await Cart.findById(deletedCartItem.cart).populate({
-        path:'items',
-        populate:'product'
-    })
-    
-    console.log(cart)
-    const totalPrice = countCartTotalPrice(cart.items);
-  
-    await Cart.findByIdAndUpdate(deletedCartItem.cart, {totalPrice: totalPrice},{runValidators:true, new:true});
+  console.log(cart);
+  const totalPrice = countCartTotalPrice(cart.items);
 
-    res.status(204).json({
-        status:'success',
-        message: 'Cart Item Deleted Successfully',
-    })
-})
+  await Cart.findByIdAndUpdate(
+    deletedCartItem.cart,
+    { totalPrice: totalPrice },
+    { runValidators: true, new: true }
+  );
 
-
+  res.status(204).json({
+    status: "success",
+    message: "Cart Item Deleted Successfully",
+  });
+});

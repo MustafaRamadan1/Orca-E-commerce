@@ -49,7 +49,10 @@ export const signUp = catchAsync(async (req, res, next) => {
 export const login = catchAsync(async (req, res, next) => {
   const { email, password } = req.body;
 
-  const user = await User.findOne({ email }).populate("cart");
+  const user = await User.findOne({ email }).populate({
+    path: "cart",
+    populate: "items",
+  });
 
   if (!user) return next(new AppError(`Invalid email or password`, 404));
 
@@ -178,23 +181,17 @@ export const updateUserPassword = catchAsync(async (req, res, next) => {
   });
 });
 
-
 export const getUserById = catchAsync(async (req, res, next) => {
+  const { id } = req.params;
 
-  const {id} = req.params;
+  const user = await User.findById(id).populate("cart");
 
-  const user = await User.findById(id).populate('cart');
-
-  if(!user) return next( new AppError(`No User with this id`, 404));
+  if (!user) return next(new AppError(`No User with this id`, 404));
 
   res.status(200).json({
-    status:'success',
-    data:user
+    status: "success",
+    data: user,
   });
-})
+});
 
-
-export const deleteUser = catchAsync(async (req, res, next) => {
-
-  
-})
+export const deleteUser = catchAsync(async (req, res, next) => {});
