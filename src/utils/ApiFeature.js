@@ -93,7 +93,7 @@ class ApiFeature {
   }
 
   pagination(totalDocumentCounts) {
-    const limit = this.queryString.limit * 1 || 3;
+    const limit = this.queryString.limit * 1 || 5;
     const page = this.queryString.page * 1 || 1;
     const skip = (page - 1) * limit;
 
