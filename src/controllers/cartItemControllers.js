@@ -7,7 +7,7 @@ import { countCartTotalPrice } from "../utils/helperFunc.js";
 
 export const createCartItem = catchAsync(async (req, res, next) => {
   const { cartItems } = req.body;
-
+  await CookieCart.findOneAndDelete({user: req.user._id})
   await CartItem.deleteMany({cart:cartItems.cart});
 
   const formattedCartItems = cartItems.map((item) => {
