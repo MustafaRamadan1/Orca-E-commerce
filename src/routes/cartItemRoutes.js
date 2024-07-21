@@ -12,10 +12,10 @@ import restrictTo from "../middlewares/Authorization.js";
 const router = Router();
 
 // validation(cartItemSchema.createCartItem)
+router.post("/", createCartItem);
 
 router.use(isAuth, restrictTo("user"));
 
-router.post("/", createCartItem);
 router.patch("/:id", updateCartItem);
 router.get("/cart/:id", getCartItemsPerCart);
 router.delete("/:id", deleteCartItem);
