@@ -3,6 +3,7 @@ import {
   createReview,
   deleteReview,
   getAllReviews,
+  getAllReviewsForProduct,
   getReviewById,
   getUserReviews,
   updateReview,
@@ -14,6 +15,7 @@ const router = Router();
 
 router.post("/", isAuth, restrictTo("user"), createReview);
 router.get("/", getAllReviews);
+router.get('/:productId/product', getAllReviewsForProduct)
 router.get("/:id", isAuth, restrictTo("admin"), getReviewById);
 router.get(
   "/:userId/user",

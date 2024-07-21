@@ -175,3 +175,49 @@ export const deleteReview = catchAsync(async (req, res, next) => {
     message: "Review Deleted Successfully",
   });
 });
+
+
+
+export const getAllReviewsForProduct = catchAsync(async (req, res ,next)=>{
+
+  const{productId} = req.params;
+
+  let productReviews =  Review.find({product:productId}).populate({
+    path: "user",
+    select: "-__v -createdAt -updatedAt",
+  });
+
+
+  if (req.query.sort) {
+    const sortBy = req.query.sort.split(",").join(" ");
+
+    productReviews = productReviews.sort(sortBy);
+  } else {
+    productReviews = productReviews.sort("-createdAt");
+  }
+
+  const totalDocumentCounts = (await Review.find({product:productId})).length;
+  const limit = req.query.limit * 1 || 3;
+  const page = req.query.page * 1 || 1;
+  const skip = (page - 1) * limit;
+
+  if (skip >= totalDocumentCounts) {
+    productReviews = new Promise((resolve) => {
+      resolve([]);
+    });
+  } else {
+    productReviews = productReviews.skip(skip).limit(limit);
+  }
+
+  productReviews = await productReviews;
+
+  if(productReviews.length === 0)
+    return next(new AppError(`Couldn't Find Reviews For that product`, 400));
+
+
+  res.status(200).json({
+    status: "success",
+    data: productReviews
+  })
+})
+
