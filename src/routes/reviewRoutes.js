@@ -25,4 +25,6 @@ router.get(
 );
 router.patch("/:id", isAuth, restrictTo("admin", "user"), updateReview);
 router.delete("/:id", isAuth, restrictTo("admin", "user"), deleteReview);
+
+router.get('/allReviewsAdmin',isAuth,restrictTo('admin'),getAllReviewsAdmin)
 export default router;

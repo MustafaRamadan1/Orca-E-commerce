@@ -221,3 +221,29 @@ export const getAllReviewsForProduct = catchAsync(async (req, res ,next)=>{
   })
 })
 
+
+
+
+export const getAllReviewsAdmin = catchAsync(async (req, res ,next)=>{
+
+  const limit = req.query.limit  * 1 || 5;
+
+  const totalDocumentCounts = await Review.countDocuments();
+
+
+  const apiFeature = new ApiFeature(Review.find(),req.query).sort().limitFields().pagination();
+
+  const getAllReviews = await apiFeature.query.populate({
+    path: "user",
+    select: "-__v -createdAt -updatedAt",
+  });
+
+  if(getAllReviews.length === 0) return next(new AppError(`No Reviews Found`, 404));
+
+  res.status(200).json({
+    status:'success',
+    result:getAllReviews.length,
+    numPages:Math.ceil(totalDocumentCounts / limit),
+    data:getAllReviews
+  })
+})
