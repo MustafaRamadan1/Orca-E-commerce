@@ -3,6 +3,7 @@ import {
   createSubCategory,
   deleteSubCategory,
   getAllSubCategories,
+  getAllSubCategoriesAdmin,
   getAllSubCategoriesIds,
   getFilteredSubCategories,
   getSubCategory,
@@ -44,6 +45,6 @@ router.delete(
 );
 
 
-router.get('/allSubCategoriesAdmin',isAuth, Authorization('admin'),getAllCategoriesAdmin)
+router.get('/allSubCategoriesAdmin',isAuth, Authorization('admin'),getAllSubCategoriesAdmin)
 
 export default router;

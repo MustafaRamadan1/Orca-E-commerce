@@ -181,7 +181,6 @@ export const getAllSubCategoriesAdmin = catchAsync(async (req, res, nex) => {
 
   const allSubCategories = await apiFeature.query.populate('category');
 
-  if(allSubCategories.length === 0) return next(new AppError(`No SubCategories Found`, 404));
 
   res.status(200).json({
     status:'success',

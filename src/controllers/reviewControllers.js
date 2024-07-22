@@ -65,15 +65,13 @@ export const createReview = catchAsync(async (req, res, next) => {
 });
 
 export const getAllReviews = catchAsync(async (req, res, next) => {
+
   const totalDocumentCounts = await Review.countDocuments();
 
   let reviews = Review.find().populate({
     path: "user",
     select: "-__v -createdAt -updatedAt",
   });
-
-  if (reviews.length === 0)
-    return next(new AppError(`No Documents in the Reviews models`, 404));
 
   if (req.query.sort) {
     const sortBy = req.query.sort.split(",").join(" ");
@@ -123,16 +121,39 @@ export const getReviewById = catchAsync(async (req, res, next) => {
 export const getUserReviews = catchAsync(async (req, res, next) => {
   const { userId } = req.params;
 
-  const userReviews = await Review.find({ user: userId }).populate({
+  const limit = req.query.limit * 1 || 5;
+
+  const userReviewsLength = (await Order.Review({ user: userId })).length;
+
+  let userReviews =  Review.find({ user: userId }).populate({
     path: "user",
     select: "-__v -createdAt -updatedAt",
   });
 
-  if (userReviews.length === 0)
-    return next(new AppError(`Couldn't Find Reviews For that user`, 400));
+  if (req.query.sort) {
+    const sortBy = req.query.sorts.split(",").join(" ");
 
+    userReviews = userReviews.sort(sortBy);
+  } else {
+    userReviews = userReviews.sort("-createdAt");
+  }
+
+  const page = req.query.page * 1 || 1;
+  const skip = (page - 1) * limit;
+
+  if (skip >= userReviewsLength) {
+    userReviews = new Promise((resolve) => {
+      resolve([]);
+    });
+  } else {
+    userReviews = userReviews.skip(skip).limit(limit);
+  }
+
+  userReviews = await userReviews;
   res.status(200).json({
     status: "success",
+    result:userReviews.length,
+    numPages:Math.ceil(userReviews.length/limit),
     data: userReviews,
   });
 });
@@ -211,12 +232,12 @@ export const getAllReviewsForProduct = catchAsync(async (req, res ,next)=>{
 
   productReviews = await productReviews;
 
-  if(productReviews.length === 0)
-    return next(new AppError(`Couldn't Find Reviews For that product`, 400));
 
 
   res.status(200).json({
     status: "success",
+    result:productReviews.length,
+    numPages:Math.ceil(totalDocumentCounts / limit),
     data: productReviews
   })
 })

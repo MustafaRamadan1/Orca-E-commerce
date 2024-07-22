@@ -73,8 +73,6 @@ export const login = catchAsync(async (req, res, next) => {
 
 export const getAllUsers = catchAsync(async (req, res, next) => {
   
-  
-
   const limit = req.query.limit  * 1 || 5;
 
   const totalDocumentCounts = await Review.countDocuments();
@@ -83,8 +81,6 @@ export const getAllUsers = catchAsync(async (req, res, next) => {
   const apiFeature = new ApiFeature(User.find(),req.query).sort().limitFields().pagination();
 
   const getAllUsers = await apiFeature.query
-
-  if(getAllUsers.length === 0) return next(new AppError(`No Users Found`, 404));
 
   res.status(200).json({
     status:'success',
