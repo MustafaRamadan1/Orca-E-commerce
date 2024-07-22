@@ -72,12 +72,26 @@ export const login = catchAsync(async (req, res, next) => {
 });
 
 export const getAllUsers = catchAsync(async (req, res, next) => {
-  const users = await User.find();
+  
+  
+
+  const limit = req.query.limit  * 1 || 5;
+
+  const totalDocumentCounts = await Review.countDocuments();
+
+
+  const apiFeature = new ApiFeature(User.find(),req.query).sort().limitFields().pagination();
+
+  const getAllUsers = await apiFeature.query
+
+  if(getAllUsers.length === 0) return next(new AppError(`No Users Found`, 404));
 
   res.status(200).json({
-    status: "success",
-    data: users,
-  });
+    status:'success',
+    result:getAllUsers.length,
+    numPages:Math.ceil(totalDocumentCounts / limit),
+    data:getAllUsers
+  })
 });
 
 export const forgetPassword = catchAsync(async (req, res, next) => {
