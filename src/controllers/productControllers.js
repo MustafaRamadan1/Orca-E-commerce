@@ -146,6 +146,7 @@ export const getProduct = catchAsync(async (req, res, next) => {
     {
       $group: {
         _id: "$size.value",
+        slug:{$first:'$slug'},
         name: { $first: "$name" },
         description: { $first: "$description" },
         price: { $first: "$price" },
@@ -173,6 +174,7 @@ export const getProduct = catchAsync(async (req, res, next) => {
           $push: {
             size: "$_id",
             name: "$name",
+            slug:'$slug',
             description: "$description",
             price: "$price",
             category: "$category",
