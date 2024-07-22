@@ -3,6 +3,7 @@ import {
   createReview,
   deleteReview,
   getAllReviews,
+  getAllReviewsAdmin,
   getAllReviewsForProduct,
   getReviewById,
   getUserReviews,
