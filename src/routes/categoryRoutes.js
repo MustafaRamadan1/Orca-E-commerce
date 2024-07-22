@@ -37,4 +37,6 @@ router.delete(
   deleteCategory
 );
 
+router.get('/allCategoriesAdmin',isAuth, Authorization('admin'),getAllCategoriesAdmin)
+
 export default router;

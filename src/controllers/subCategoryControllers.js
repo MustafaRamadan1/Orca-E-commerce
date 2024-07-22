@@ -1,6 +1,7 @@
 import AppError from "../utils/AppError.js";
 import { catchAsync } from "../utils/catchAsync.js";
 import subCategory from "../Db/models/sub-Category.model.js";
+import ApiFeature from "../utils/ApiFeature.js";
 
 export const createSubCategory = catchAsync(async (req, res, next) => {
   const { name, description, category } = req.body;
@@ -169,3 +170,23 @@ export const getAllSubCategoriesIds = catchAsync(async (req, res, nex) => {
     data: allSubCategories,
   });
 });
+
+
+export const getAllSubCategoriesAdmin = catchAsync(async (req, res, nex) => {
+
+  const totalDocumentNumbers = await subCategory.countDocuments();
+  const limit = req.query.limit  * 1 || 5;
+
+  const apiFeature = new ApiFeature(subCategory.find(),req.query).sort().limitFields().pagination();
+
+  const allSubCategories = await apiFeature.query.populate('category');
+
+  if(allSubCategories.length === 0) return next(new AppError(`No SubCategories Found`, 404));
+
+  res.status(200).json({
+    status:'success',
+    result:allSubCategories.length,
+    numPages:Math.ceil(totalDocumentNumbers / limit),
+    data:allSubCategories
+  })
+})

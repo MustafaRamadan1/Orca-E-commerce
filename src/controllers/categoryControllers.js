@@ -1,11 +1,9 @@
-import slug from "slug";
 import { catchAsync } from "../utils/catchAsync.js";
 import AppError from "../utils/AppError.js";
 import Category from "../Db/models/category.model.js";
 import subCategory from "../Db/models/sub-Category.model.js";
 import Product from "../Db/models/product.model.js";
-import { filterObject } from "../utils/helperFunc.js";
-
+import ApiFeature from "../utils/ApiFeature.js";
 // create category , get all categories , get one cateogry , update one , delete one
 
 export const createCategory = catchAsync(async (req, res, next) => {
@@ -149,3 +147,26 @@ export const getFilteredCategories = catchAsync(async (req, res, next) => {
     data: allCategories,
   });
 });
+
+
+
+
+export const getAllCategoriesAdmin = catchAsync(async (req, res, next) => {
+
+  const totalDocumentCount = await Category.countDocuments();
+
+  const limit = req.query.limit * 1 || 5;
+
+  const apiFeature = new ApiFeature(Category.find(), req.query)
+    .sort()
+    .limitFields()
+    .pagination(totalDocumentCount);
+
+  const allCategories = await apiFeature.query;
+  res.status(200).json({
+    status: "success",
+    result: allCategories.length,
+    numPages: Math.ceil(totalDocumentCount / limit),
+    data: allCategories,
+  });
+})
