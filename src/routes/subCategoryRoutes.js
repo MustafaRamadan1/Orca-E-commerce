@@ -21,6 +21,7 @@ const router = Router();
 router.get("/", getAllSubCategories);
 router.get("/filtered", getFilteredSubCategories);
 router.get("/allIds", getAllSubCategoriesIds);
+router.get('/allSubCategoriesAdmin',isAuth, Authorization('admin'),getAllSubCategoriesAdmin)
 router.get(
   "/:id",
   validation(subCategorySchema.getSubCategory),
@@ -45,6 +46,5 @@ router.delete(
 );
 
 
-router.get('/allSubCategoriesAdmin',isAuth, Authorization('admin'),getAllSubCategoriesAdmin)
 
 export default router;
