@@ -68,7 +68,7 @@ class ApiFeature {
     }
 
 
-    if(filterObject.sale){
+    if(filterObject.sale === 'true'){
       filterObject.discount ={$gt:0};
       delete filterObject.sale;
     }
