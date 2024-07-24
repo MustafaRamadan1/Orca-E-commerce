@@ -49,10 +49,12 @@ export const signUp = catchAsync(async (req, res, next) => {
 export const login = catchAsync(async (req, res, next) => {
   const { email, password } = req.body;
 
-  const user = await User.findOne({ email }).populate({
-    path: "cart",
-    populate: "items",
-  });
+  const user = await User.findOne({ email })
+    .populate({
+      path: "cart",
+      populate: "items",
+    })
+    .populate("cookieCart");
 
   if (!user) return next(new AppError(`Invalid email or password`, 404));
 
@@ -72,11 +74,22 @@ export const login = catchAsync(async (req, res, next) => {
 });
 
 export const getAllUsers = catchAsync(async (req, res, next) => {
-  const users = await User.find();
+  const limit = req.query.limit * 1 || 5;
+
+  const totalDocumentCounts = await Review.countDocuments();
+
+  const apiFeature = new ApiFeature(User.find(), req.query)
+    .sort()
+    .limitFields()
+    .pagination();
+
+  const getAllUsers = await apiFeature.query;
 
   res.status(200).json({
     status: "success",
-    data: users,
+    result: getAllUsers.length,
+    numPages: Math.ceil(totalDocumentCounts / limit),
+    data: getAllUsers,
   });
 });
 

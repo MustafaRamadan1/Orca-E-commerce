@@ -3,6 +3,8 @@ import {
   createReview,
   deleteReview,
   getAllReviews,
+  getAllReviewsAdmin,
+  getAllReviewsForProduct,
   getReviewById,
   getUserReviews,
   updateReview,
@@ -14,6 +16,7 @@ const router = Router();
 
 router.post("/", isAuth, restrictTo("user"), createReview);
 router.get("/", getAllReviews);
+router.get('/:productId/product', getAllReviewsForProduct)
 router.get("/:id", isAuth, restrictTo("admin"), getReviewById);
 router.get(
   "/:userId/user",
@@ -23,4 +26,6 @@ router.get(
 );
 router.patch("/:id", isAuth, restrictTo("admin", "user"), updateReview);
 router.delete("/:id", isAuth, restrictTo("admin", "user"), deleteReview);
+
+router.get('/allReviewsAdmin',isAuth,restrictTo('admin'),getAllReviewsAdmin)
 export default router;

@@ -1,15 +1,27 @@
 import AppError from "../utils/AppError.js";
 import { catchAsync } from "../utils/catchAsync.js";
 import CartItem from "../Db/models/cartItem.model.js";
+import CookieCart from "../Db/models/cookieCart.model.js";
 import Cart from "../Db/models/cart.model.js";
+import User from "../Db/models/user.model.js";
 import { countCartTotalPrice } from "../utils/helperFunc.js";
 
 export const createCartItem = catchAsync(async (req, res, next) => {
   const { cartItems } = req.body;
 
+  const user = await User.findById(req.body.user).populate("cart");
+
+  console.log(user);
+
+  if (!user) return next(new AppError(`Invalid User Id`, 400));
+
+  await CookieCart.findOneAndDelete({ user: user._id });
+
+  await CartItem.deleteMany({ cart: user.cart._id });
+
   const formattedCartItems = cartItems.map((item) => {
     return {
-      cart: item.cart,
+      cart: user.cart._id,
       product: item.product,
       quantity: item.quantity,
       color: item.colorId,
@@ -44,6 +56,11 @@ export const createCartItem = catchAsync(async (req, res, next) => {
     { runValidators: true, new: true }
   );
 
+  const cookieCart = await CookieCart.create({
+    user: currentCart.user._id,
+    cartItems,
+  });
+  console.log(cookieCart);
   res.status(201).json({
     status: "success",
     data: newCartItems,

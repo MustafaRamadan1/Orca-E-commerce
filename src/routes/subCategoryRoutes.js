@@ -3,6 +3,7 @@ import {
   createSubCategory,
   deleteSubCategory,
   getAllSubCategories,
+  getAllSubCategoriesAdmin,
   getAllSubCategoriesIds,
   getFilteredSubCategories,
   getSubCategory,
@@ -12,6 +13,7 @@ import validation from "../middlewares/validation.js";
 import { subCategorySchema } from "../validation/index.js";
 import isAuth from "../middlewares/authentication.js";
 import Authorization from "../middlewares/Authorization.js";
+import { getAllCategoriesAdmin } from "../controllers/categoryControllers.js";
 
 // descruct the schema
 const router = Router();
@@ -41,5 +43,8 @@ router.delete(
   validation(subCategorySchema.deleteSubCategory),
   deleteSubCategory
 );
+
+
+router.get('/allSubCategoriesAdmin',isAuth, Authorization('admin'),getAllSubCategoriesAdmin)
 
 export default router;

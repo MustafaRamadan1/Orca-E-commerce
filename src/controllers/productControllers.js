@@ -146,6 +146,7 @@ export const getProduct = catchAsync(async (req, res, next) => {
     {
       $group: {
         _id: "$size.value",
+        slug:{$first:'$slug'},
         name: { $first: "$name" },
         description: { $first: "$description" },
         price: { $first: "$price" },
@@ -173,6 +174,7 @@ export const getProduct = catchAsync(async (req, res, next) => {
           $push: {
             size: "$_id",
             name: "$name",
+            slug:'$slug',
             description: "$description",
             price: "$price",
             category: "$category",
@@ -276,10 +278,6 @@ export const updateProduct = catchAsync(async (req, res, next) => {
     }
   }
 
-  if (req.body.quantity) {
-    req.body.quantity = req.body.quantity[req.body.quantity.length - 1];
-  }
-
   if (req.body.size) {
     req.body.size = JSON.parse(req.body.size);
   }
@@ -288,7 +286,9 @@ export const updateProduct = catchAsync(async (req, res, next) => {
     return total + cur.quantity;
   }, 0);
 
-  if (colorsQuantity !== +req.body.quantity)
+  console.log(colorsQuantity, +req.body.quantity);
+
+  if (+colorsQuantity !== +req.body.quantity)
     return next(
       new AppError(
         `colors total quantity not qual quantity please provide valide value `,
@@ -472,7 +472,7 @@ export const getProductsColors = catchAsync(async (req, res, next) => {
   const colors = [];
 
   for (let product of allProducts) {
-    const productsColors = product.colors.map((color) => color.value);
+    const productsColors = product.colors.map((color) => color.label);
 
     colors.push(...productsColors);
   }

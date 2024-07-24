@@ -3,8 +3,11 @@ import express from "express";
 import rateLimit from "express-rate-limit";
 import helmet from "helmet";
 import mongoSanitize from "express-mongo-sanitize";
+import cors from "cors";
 import xss from "xss-clean";
+import cookieParser from "cookie-parser";
 import { catchAsync } from "./utils/catchAsync.js";
+
 // create Express App
 
 const app = express();
@@ -30,19 +33,18 @@ app.use(morgan("dev"));
 app.use(mongoSanitize());
 app.use(helmet());
 app.use(xss());
-app.use(cors());
-// app.use(cors({
-//   origin: "https://your-frontend-domain.com",
-//   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-//   allowedHeaders: ["Content-Type", "Authorization"]
-// }));
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
 // app.use(rateLimit({
 //     windowMs: 60*60*1000,
 //     max:100,
 //     message: 'Too many requests from this IP, please try again in an hour'
 // }));
-
-
 
 import userRouter from "./routes/userRoutes.js";
 import categoryRouter from "./routes/categoryRoutes.js";
