@@ -1,5 +1,6 @@
 import slug from "slug";
 import AppError from "../utils/AppError.js";
+import logger from '../utils/logger.js'
 const castId = (err) => {
   return new AppError(` Invalid ID, ${err.value} is not a valid ID`, 404);
 };
@@ -27,6 +28,9 @@ const validationError = (err) => {
 const productionHandler = (err, res) => {
   if (err.isOperational) {
     console.log(err.message.toUpperCase());
+    logger.error(`Error: ${err.message}`,{
+      stack:err.stack
+    })
     res.status(err.statusCode).json({
       status: err.status,
       message: slug(err.message.toUpperCase(), {
@@ -35,6 +39,11 @@ const productionHandler = (err, res) => {
       }),
     });
   } else {
+
+    logger.error(`Something went wrong`,{
+      error:err,
+      stack:err.stack
+    })
     res.status(500).json({
       status: "error",
       message: "Something went wrong",

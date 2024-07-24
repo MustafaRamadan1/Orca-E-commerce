@@ -7,6 +7,7 @@ import { signToken, compileTemplate } from "../utils/helperFunc.js";
 import sendEmail from "../utils/sendEmail.js";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
+import logger from "../utils/logger.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -20,7 +21,14 @@ export const signUp = catchAsync(async (req, res, next) => {
     password,
   });
 
-  if (!newUser) return next(new AppError(`Couldn't create new User`, 400));
+  if (!newUser) {
+    logger.error(`Couldn't Create new user`,{
+      name,
+      email
+    }
+    )
+    return next(new AppError(`Couldn't create new User`, 400));
+  }
 
   const otp = newUser.createOTP();
   await newUser.save();
@@ -37,7 +45,13 @@ export const signUp = catchAsync(async (req, res, next) => {
     html,
   });
 
+
   const token = signToken({ id: newUser._id });
+  logger.info(`Created the user and send OTP to the email`,{
+    userId: newUser._id,
+    name: newUser.name,
+    email: newUser.email
+  })
 
   res.status(200).json({
     status: "success",
@@ -56,15 +70,42 @@ export const login = catchAsync(async (req, res, next) => {
     })
     .populate("cookieCart");
 
-  if (!user) return next(new AppError(`Invalid email or password`, 404));
+  if (!user) {
 
-  if (!(await user.CheckPassword(password)))
+    logger.error(`Invalid Email or Password for user in login`,{
+      email
+    })
     return next(new AppError(`Invalid email or password`, 404));
+  }
 
-  if (!user.isActive)
+  if (!(await user.CheckPassword(password))){
+
+    logger.error(`Invalid Email or Password for user in login`,{
+      email
+    })
+    return next(new AppError(`Invalid email or password`, 404));
+  }
+
+  if (!user.isActive){
+    logger.error(`Not Activated User , should Activate his account`,{
+      userId: user._id,
+      email:user.email,
+      name: user.name,
+      isActive: user.isActive
+    })
     return next(new AppError("Please Active your account", 401));
+  }
+   
 
   const token = signToken({ id: user._id });
+
+  logger.info(`User Authenticated Success`,{
+    userId: user._id,
+    email:user.email,
+      name: user.name,
+      isActive: user.isActive
+
+  })
 
   res.status(200).json({
     status: "success",
@@ -85,6 +126,11 @@ export const getAllUsers = catchAsync(async (req, res, next) => {
 
   const getAllUsers = await apiFeature.query;
 
+  logger.info(`Get All User Route Accessed by following account`,{
+    userId: req.user._id,
+    role: req.user._role
+  })
+
   res.status(200).json({
     status: "success",
     result: getAllUsers.length,
@@ -98,7 +144,12 @@ export const forgetPassword = catchAsync(async (req, res, next) => {
   // if(!email) return next(new AppError(`Please Provide Email`, 404));
 
   const user = await User.findOne({ email });
-  if (!user) return next(new AppError(`No User with This Email`, 404));
+  if (!user) {
+    logger.error(`No User with this email`,{
+      email:user.email
+    })
+    return next(new AppError(`No User with This Email`, 404));
+  }
 
   const token = user.createResetPasswordToken();
 
@@ -112,6 +163,13 @@ export const forgetPassword = catchAsync(async (req, res, next) => {
       req.get("host").split(":")[0]
     }:3000/${locale}/user/resetPassword/${token}`,
   });
+
+  logger.info(`Sending Email to the user to reset the password`,{
+    userId: user._id,
+    email: user.email,
+    name: user.name,
+
+  })
 
   res.status(200).json({
     status: "success",
@@ -134,15 +192,27 @@ export const resetPassword = catchAsync(async (req, res, next) => {
     passwordResetExpires: { $gte: Date.now() },
   });
 
-  if (!user)
-    return next(
+  if (!user){
+
+    logger.error(`Expired or Invalid Reset Token , Please Try again`,{
+      userId: user._id,
+      email: user.email,  
+      });
+   return next(
       new AppError(`Expired or Invalid Reset Token , Please Try again`, 400)
     );
+  }
 
   user.password = newPassword;
   user.passwordResetToken = undefined;
   user.passwordResetExpires = undefined;
   await user.save();
+
+
+  logger.info(`Reset Password for the user after recieve the token of it `,{
+    userId: user._id,
+      email: user.email, 
+  })
 
   res.status(200).json({
     status: "success",
@@ -160,13 +230,23 @@ export const activateUser = catchAsync(async (req, res, next) => {
     otpExpired: { $gte: Date.now() },
   });
 
-  if (!user)
-    return next(new AppError(`Expired or Invalid OTP , Please Try again`, 400));
+  if (!user){
+  logger.error(`Expired or Invalid OTP`)
+  return next(new AppError(`Expired or Invalid OTP , Please Try again`, 400));
+  }
+    
 
   user.isActive = true;
   user.otpCode = undefined;
   user.otpExpired = undefined;
   await user.save();
+
+
+  logger.info(`Activated the user by the OTP Code The server recieved `,{
+    userId: user._id,
+    email: user.email,
+    isActive: user.isActive
+  })
 
   res.status(200).json({
     status: "success",
@@ -180,13 +260,30 @@ export const updateUserPassword = catchAsync(async (req, res, next) => {
 
   const user = await User.findById(req.user._id);
 
-  if (!user) return next(new AppError(` User Not Found`, 404));
+  if (!user) {
 
-  if (!(await user.CheckPassword(oldPassword)))
+    logger.error(`No User Found`);
+    return next(new AppError(` User Not Found`, 404));
+  }
+
+  if (!(await user.CheckPassword(oldPassword))){
+    logger.error(`Invalid Password`,{
+
+      userId: req.user._id
+    })
     return next(new AppError(` Invalid Password`, 400));
+  }
+ 
 
   user.password = newPassword;
   await user.save();
+
+
+  logger.info(`Update Password for the user after received the old Password and he's authenticated`,{
+
+    userId: req.user._id
+  });
+
 
   res.status(200).json({
     status: "success",
@@ -199,8 +296,10 @@ export const getUserById = catchAsync(async (req, res, next) => {
 
   const user = await User.findById(id).populate("cart");
 
-  if (!user) return next(new AppError(`No User with this id`, 404));
-
+  if (!user) {
+ 
+    return next(new AppError(`No User with this id`, 404));
+  }
   res.status(200).json({
     status: "success",
     data: user,

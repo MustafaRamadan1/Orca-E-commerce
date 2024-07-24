@@ -4,6 +4,7 @@ import CartItem from "../Db/models/cartItem.model.js";
 import CookieCart from "../Db/models/cookieCart.model.js";
 import Cart from "../Db/models/cart.model.js";
 import User from "../Db/models/user.model.js";
+import logger from "../utils/logger.js";
 import { countCartTotalPrice } from "../utils/helperFunc.js";
 
 export const createCartItem = catchAsync(async (req, res, next) => {
@@ -11,9 +12,10 @@ export const createCartItem = catchAsync(async (req, res, next) => {
 
   const user = await User.findById(req.body.user).populate("cart");
 
-  console.log(user);
-
-  if (!user) return next(new AppError(`Invalid User Id`, 400));
+  if (!user) {
+    logger.error(`Invalid User Id for creating cartItems`);
+    return next(new AppError(`Invalid User Id`, 400));
+  }
 
   await CookieCart.findOneAndDelete({ user: user._id });
 
@@ -30,21 +32,25 @@ export const createCartItem = catchAsync(async (req, res, next) => {
 
   const newCartItems = await CartItem.create(formattedCartItems);
 
-  if (newCartItems.length === 0)
+  if (newCartItems.length === 0){
+    logger.error(`Couldn't Create Cart Items for the user ${user._id}`);
     return next(new AppError(`Couldn't Create Cart Items`, 400));
+  }
+   
 
   const currentCart = await Cart.findById(newCartItems[0].cart).populate({
     path: "items",
     populate: "product",
   });
 
-  console.log(currentCart);
+ 
 
   if (!currentCart) {
     for (const key of newCartItems) {
       await CartItem.findByIdAndDelete(key._id);
     }
 
+    logger.error(`No Cart With this id and deleted the created Cart Items for the user ${user._id}`);
     return next(new AppError(`No Cart With this id`, 400));
   }
 
@@ -56,11 +62,21 @@ export const createCartItem = catchAsync(async (req, res, next) => {
     { runValidators: true, new: true }
   );
 
+  logger.info(`Update the cart total Id with the updated TotalPrice`,{
+    totalPrice: totalPrice,
+    userId: user._id
+  })
+
   const cookieCart = await CookieCart.create({
     user: currentCart.user._id,
     cartItems,
   });
   console.log(cookieCart);
+
+  logger.info(`Created Cart Items For The User ${user._id}`,{
+    userId: user._id,
+    cartItems: [...currentCart.items.map((item) => item.product._id)],
+  });
   res.status(201).json({
     status: "success",
     data: newCartItems,
@@ -72,8 +88,14 @@ export const getCartItemsPerCart = catchAsync(async (req, res, next) => {
 
   const cartItems = await CartItem.find({ cart: id }).populate("product cart");
 
-  if (!cartItems)
+  if (cartItems.length === 0){
+    logger.error(`No Cart Items Found For That Cart`,{
+      userId: req.user._id,
+      cartId: id
+    });
     return next(new AppError(`No Cart Items Found For That Cart`, 404));
+  }
+   
 
   res.status(200).json({
     status: "success",
@@ -90,8 +112,15 @@ export const updateCartItem = catchAsync(async (req, res, next) => {
     { runValidators: true }
   );
 
-  if (!updatedCartItem)
+  if (!updatedCartItem){
+
+    logger.error(`No Cart Item With this id`,{
+      userId: req.user._id,
+      cartItemId: id
+    })
     return next(new AppError(`No Cart Item With this id`, 404));
+  }
+    
   const cart = await Cart.findById(updatedCartItem.cart).populate({
     path: "items",
     populate: "product",
@@ -104,6 +133,12 @@ export const updateCartItem = catchAsync(async (req, res, next) => {
     { runValidators: true, new: true }
   );
 
+
+  logger.info(`Updated the cartItem with id ${id} and updated quantity ${quantity}`,{
+    userId: req.user._id,
+    cartItemId: id,
+    quantity: quantity
+  })
   res.status(200).json({
     status: "success",
     data: updatedCartItem,
@@ -115,8 +150,14 @@ export const deleteCartItem = catchAsync(async (req, res, next) => {
 
   const deletedCartItem = await CartItem.findByIdAndDelete(id);
 
-  if (!deletedCartItem)
+  if (!deletedCartItem){
+    logger.error(`No Cart Item With this id`,{
+      userId: req.user._id,
+      cartItemId: id
+    })
     return next(new AppError(`No Cart Item With this id`, 404));
+  }
+    
 
   const cart = await Cart.findById(deletedCartItem.cart).populate({
     path: "items",
@@ -132,6 +173,12 @@ export const deleteCartItem = catchAsync(async (req, res, next) => {
     { runValidators: true, new: true }
   );
 
+
+  logger.info(`Delete cart Item with id ${id} , Update the cart TotalPrice`,{
+    userId: req.user._id,
+    cartItemId: id,
+    totalPrice: totalPrice
+  })
   res.status(204).json({
     status: "success",
     message: "Cart Item Deleted Successfully",

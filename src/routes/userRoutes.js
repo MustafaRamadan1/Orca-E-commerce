@@ -40,6 +40,6 @@ router.patch(
 //users
 router.get("/users", isAuth, Authorization("admin"), getAllUsers);
 router.get('/users/:id', isAuth,Authorization('admin'), getUserById);
-router.delete('/users/deleteUser', isAuth, Authorization('user'), deleteUser);
+// router.delete('/users/deleteUser', isAuth, Authorization('user'), deleteUser);
 //delete user 
 export default router;
