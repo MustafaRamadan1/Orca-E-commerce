@@ -1665,3 +1665,624 @@
   message: 'GET /api/v1/orders/669c2bc60b1a3087bc29784b/user 200 778ms',
   timestamp: '2024-07-25T18:31:52.650Z'
 }
+{
+  message: 'Database Connection Successfully',
+  level: 'info',
+  timestamp: '2024-07-25T20:27:00.542Z'
+}
+{
+  message: 'Server Listening on PORT 3000',
+  level: 'info',
+  timestamp: '2024-07-25T20:27:00.633Z'
+}
+{
+  message: 'User Authenticated Successfully',
+  level: 'info',
+  timestamp: '2024-07-25T20:27:27.286Z'
+}
+{
+  userId: new ObjectId('66819a7da656501549f7e1b3'),
+  url: '/api/v1/analytics',
+  level: 'info',
+  message: 'User Authorized to access the route ',
+  timestamp: '2024-07-25T20:27:27.288Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/analytics',
+      headers: {
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ODE5YTdkYTY1NjUwMTU0OWY3ZTFiMyIsImlhdCI6MTcyMTkwODY4MywiZXhwIjoxNzI5Njg0NjgzfQ.UjNou7EDj-xvG6lYHK793yadTRQa1Yd1uBmzP-GRSMU',
+        'user-agent': 'PostmanRuntime/7.40.0',
+        accept: '*/*',
+        'postman-token': '337600a0-e549-456f-9a04-85f637359216',
+        host: 'localhost:3000',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/analytics',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 2151
+  },
+  level: 'info',
+  message: 'GET /api/v1/analytics 200 2151ms',
+  timestamp: '2024-07-25T20:27:29.240Z'
+}
+{
+  message: 'Database Connection Successfully',
+  level: 'info',
+  timestamp: '2024-07-25T20:29:20.330Z'
+}
+{
+  message: 'Server Listening on PORT 3000',
+  level: 'info',
+  timestamp: '2024-07-25T20:29:20.348Z'
+}
+{
+  message: 'Database Connection Successfully',
+  level: 'info',
+  timestamp: '2024-07-25T20:35:15.410Z'
+}
+{
+  message: 'Server Listening on PORT 3000',
+  level: 'info',
+  timestamp: '2024-07-25T20:35:15.425Z'
+}
+{
+  message: 'User Authenticated Successfully',
+  level: 'info',
+  timestamp: '2024-07-25T20:35:44.500Z'
+}
+{
+  userId: new ObjectId('66819a7da656501549f7e1b3'),
+  url: '/api/v1/analytics',
+  level: 'info',
+  message: 'User Authorized to access the route ',
+  timestamp: '2024-07-25T20:35:44.501Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/analytics',
+      headers: {
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ODE5YTdkYTY1NjUwMTU0OWY3ZTFiMyIsImlhdCI6MTcyMTkwODY4MywiZXhwIjoxNzI5Njg0NjgzfQ.UjNou7EDj-xvG6lYHK793yadTRQa1Yd1uBmzP-GRSMU',
+        'user-agent': 'PostmanRuntime/7.40.0',
+        accept: '*/*',
+        'postman-token': 'bd9f834b-08da-43b7-ac67-e93e47726a03',
+        host: 'localhost:3000',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/analytics',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 2242
+  },
+  level: 'info',
+  message: 'GET /api/v1/analytics 200 2242ms',
+  timestamp: '2024-07-25T20:35:46.765Z'
+}
+{
+  message: 'Database Connection Successfully',
+  level: 'info',
+  timestamp: '2024-07-25T20:38:20.700Z'
+}
+{
+  message: 'Server Listening on PORT 3000',
+  level: 'info',
+  timestamp: '2024-07-25T20:38:20.783Z'
+}
+{
+  message: 'User Authenticated Successfully',
+  level: 'info',
+  timestamp: '2024-07-25T20:38:26.460Z'
+}
+{
+  userId: new ObjectId('66819a7da656501549f7e1b3'),
+  url: '/api/v1/analytics',
+  level: 'info',
+  message: 'User Authorized to access the route ',
+  timestamp: '2024-07-25T20:38:26.461Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/analytics',
+      headers: {
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ODE5YTdkYTY1NjUwMTU0OWY3ZTFiMyIsImlhdCI6MTcyMTkwODY4MywiZXhwIjoxNzI5Njg0NjgzfQ.UjNou7EDj-xvG6lYHK793yadTRQa1Yd1uBmzP-GRSMU',
+        'user-agent': 'PostmanRuntime/7.40.0',
+        accept: '*/*',
+        'postman-token': '71d58e0a-a27f-4897-99e1-08fbb773a6f8',
+        host: 'localhost:3000',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/analytics',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 2852
+  },
+  level: 'info',
+  message: 'GET /api/v1/analytics 200 2852ms',
+  timestamp: '2024-07-25T20:38:29.145Z'
+}
+{
+  message: 'Database Connection Successfully',
+  level: 'info',
+  timestamp: '2024-07-25T20:40:20.908Z'
+}
+{
+  message: 'Server Listening on PORT 3000',
+  level: 'info',
+  timestamp: '2024-07-25T20:40:20.914Z'
+}
+{
+  message: 'User Authenticated Successfully',
+  level: 'info',
+  timestamp: '2024-07-25T20:40:24.954Z'
+}
+{
+  userId: new ObjectId('66819a7da656501549f7e1b3'),
+  url: '/api/v1/analytics',
+  level: 'info',
+  message: 'User Authorized to access the route ',
+  timestamp: '2024-07-25T20:40:24.956Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/analytics',
+      headers: {
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ODE5YTdkYTY1NjUwMTU0OWY3ZTFiMyIsImlhdCI6MTcyMTkwODY4MywiZXhwIjoxNzI5Njg0NjgzfQ.UjNou7EDj-xvG6lYHK793yadTRQa1Yd1uBmzP-GRSMU',
+        'user-agent': 'PostmanRuntime/7.40.0',
+        accept: '*/*',
+        'postman-token': 'c141097d-bb60-40a5-890e-a1a2d0fa5be9',
+        host: 'localhost:3000',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/analytics',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 3715
+  },
+  level: 'info',
+  message: 'GET /api/v1/analytics 200 3715ms',
+  timestamp: '2024-07-25T20:40:27.759Z'
+}
+{
+  message: 'Database Connection Successfully',
+  level: 'info',
+  timestamp: '2024-07-25T20:41:55.068Z'
+}
+{
+  message: 'Server Listening on PORT 3000',
+  level: 'info',
+  timestamp: '2024-07-25T20:41:55.102Z'
+}
+{
+  message: 'User Authenticated Successfully',
+  level: 'info',
+  timestamp: '2024-07-25T20:42:36.288Z'
+}
+{
+  userId: new ObjectId('66819a7da656501549f7e1b3'),
+  url: '/api/v1/analytics',
+  level: 'info',
+  message: 'User Authorized to access the route ',
+  timestamp: '2024-07-25T20:42:36.289Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/analytics',
+      headers: {
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ODE5YTdkYTY1NjUwMTU0OWY3ZTFiMyIsImlhdCI6MTcyMTkwODY4MywiZXhwIjoxNzI5Njg0NjgzfQ.UjNou7EDj-xvG6lYHK793yadTRQa1Yd1uBmzP-GRSMU',
+        'user-agent': 'PostmanRuntime/7.40.0',
+        accept: '*/*',
+        'postman-token': '0e8b7edc-8eec-4f79-84b0-e6756ca4ed4c',
+        host: 'localhost:3000',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/analytics',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 2000
+  },
+  level: 'info',
+  message: 'GET /api/v1/analytics 200 2000ms',
+  timestamp: '2024-07-25T20:42:38.118Z'
+}
+{
+  message: 'Database Connection Successfully',
+  level: 'info',
+  timestamp: '2024-07-25T20:46:42.782Z'
+}
+{
+  message: 'Server Listening on PORT 3000',
+  level: 'info',
+  timestamp: '2024-07-25T20:46:42.792Z'
+}
+{
+  message: 'User Authenticated Successfully',
+  level: 'info',
+  timestamp: '2024-07-25T20:46:50.845Z'
+}
+{
+  userId: new ObjectId('66819a7da656501549f7e1b3'),
+  url: '/api/v1/analytics',
+  level: 'info',
+  message: 'User Authorized to access the route ',
+  timestamp: '2024-07-25T20:46:50.846Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/analytics',
+      headers: {
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ODE5YTdkYTY1NjUwMTU0OWY3ZTFiMyIsImlhdCI6MTcyMTkwODY4MywiZXhwIjoxNzI5Njg0NjgzfQ.UjNou7EDj-xvG6lYHK793yadTRQa1Yd1uBmzP-GRSMU',
+        'user-agent': 'PostmanRuntime/7.40.0',
+        accept: '*/*',
+        'postman-token': '66751be3-7e9f-4d85-8462-d6a9190b4628',
+        host: 'localhost:3000',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/analytics',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 2090
+  },
+  level: 'info',
+  message: 'GET /api/v1/analytics 200 2090ms',
+  timestamp: '2024-07-25T20:46:52.760Z'
+}
+{
+  message: 'Database Connection Successfully',
+  level: 'info',
+  timestamp: '2024-07-25T20:48:49.618Z'
+}
+{
+  message: 'Server Listening on PORT 3000',
+  level: 'info',
+  timestamp: '2024-07-25T20:48:49.633Z'
+}
+{
+  message: 'User Authenticated Successfully',
+  level: 'info',
+  timestamp: '2024-07-25T20:48:59.942Z'
+}
+{
+  userId: new ObjectId('66819a7da656501549f7e1b3'),
+  url: '/api/v1/analytics',
+  level: 'info',
+  message: 'User Authorized to access the route ',
+  timestamp: '2024-07-25T20:48:59.944Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/analytics',
+      headers: {
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ODE5YTdkYTY1NjUwMTU0OWY3ZTFiMyIsImlhdCI6MTcyMTkwODY4MywiZXhwIjoxNzI5Njg0NjgzfQ.UjNou7EDj-xvG6lYHK793yadTRQa1Yd1uBmzP-GRSMU',
+        'user-agent': 'PostmanRuntime/7.40.0',
+        accept: '*/*',
+        'postman-token': 'a7a60e55-149d-4b65-a966-2ba55e7b25e1',
+        host: 'localhost:3000',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/analytics',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 2085
+  },
+  level: 'info',
+  message: 'GET /api/v1/analytics 200 2085ms',
+  timestamp: '2024-07-25T20:49:01.838Z'
+}
+{
+  message: 'User Authenticated Successfully',
+  level: 'info',
+  timestamp: '2024-07-25T20:49:17.620Z'
+}
+{
+  userId: new ObjectId('66819a7da656501549f7e1b3'),
+  url: '/api/v1/analytics',
+  level: 'info',
+  message: 'User Authorized to access the route ',
+  timestamp: '2024-07-25T20:49:17.621Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/analytics',
+      headers: {
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ODE5YTdkYTY1NjUwMTU0OWY3ZTFiMyIsImlhdCI6MTcyMTkwODY4MywiZXhwIjoxNzI5Njg0NjgzfQ.UjNou7EDj-xvG6lYHK793yadTRQa1Yd1uBmzP-GRSMU',
+        'user-agent': 'PostmanRuntime/7.40.0',
+        accept: '*/*',
+        'postman-token': '1793e3a2-261f-49e7-a3b1-a04e7f3775b6',
+        host: 'localhost:3000',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/analytics',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 1993
+  },
+  level: 'info',
+  message: 'GET /api/v1/analytics 200 1993ms',
+  timestamp: '2024-07-25T20:49:19.447Z'
+}
+{
+  message: 'Database Connection Successfully',
+  level: 'info',
+  timestamp: '2024-07-25T20:50:07.803Z'
+}
+{
+  message: 'Server Listening on PORT 3000',
+  level: 'info',
+  timestamp: '2024-07-25T20:50:07.883Z'
+}
+{
+  message: 'User Authenticated Successfully',
+  level: 'info',
+  timestamp: '2024-07-25T20:50:12.592Z'
+}
+{
+  userId: new ObjectId('66819a7da656501549f7e1b3'),
+  url: '/api/v1/analytics',
+  level: 'info',
+  message: 'User Authorized to access the route ',
+  timestamp: '2024-07-25T20:50:12.593Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/analytics',
+      headers: {
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ODE5YTdkYTY1NjUwMTU0OWY3ZTFiMyIsImlhdCI6MTcyMTkwODY4MywiZXhwIjoxNzI5Njg0NjgzfQ.UjNou7EDj-xvG6lYHK793yadTRQa1Yd1uBmzP-GRSMU',
+        'user-agent': 'PostmanRuntime/7.40.0',
+        accept: '*/*',
+        'postman-token': '85583f65-a644-4cd6-9377-78d42a4f0ffa',
+        host: 'localhost:3000',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/analytics',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 2049
+  },
+  level: 'info',
+  message: 'GET /api/v1/analytics 200 2049ms',
+  timestamp: '2024-07-25T20:50:14.444Z'
+}
+{
+  message: 'Database Connection Successfully',
+  level: 'info',
+  timestamp: '2024-07-25T20:52:21.422Z'
+}
+{
+  message: 'Server Listening on PORT 3000',
+  level: 'info',
+  timestamp: '2024-07-25T20:52:21.429Z'
+}
+{
+  message: 'User Authenticated Successfully',
+  level: 'info',
+  timestamp: '2024-07-25T20:52:31.339Z'
+}
+{
+  userId: new ObjectId('66819a7da656501549f7e1b3'),
+  url: '/api/v1/analytics',
+  level: 'info',
+  message: 'User Authorized to access the route ',
+  timestamp: '2024-07-25T20:52:31.340Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/analytics',
+      headers: {
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ODE5YTdkYTY1NjUwMTU0OWY3ZTFiMyIsImlhdCI6MTcyMTkwODY4MywiZXhwIjoxNzI5Njg0NjgzfQ.UjNou7EDj-xvG6lYHK793yadTRQa1Yd1uBmzP-GRSMU',
+        'user-agent': 'PostmanRuntime/7.40.0',
+        accept: '*/*',
+        'postman-token': 'bf1bce51-9f49-4612-9d21-2417c1ef2b7e',
+        host: 'localhost:3000',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/analytics',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 2010
+  },
+  level: 'info',
+  message: 'GET /api/v1/analytics 200 2010ms',
+  timestamp: '2024-07-25T20:52:33.163Z'
+}
+{
+  message: 'Database Connection Successfully',
+  level: 'info',
+  timestamp: '2024-07-25T20:53:15.789Z'
+}
+{
+  message: 'Server Listening on PORT 3000',
+  level: 'info',
+  timestamp: '2024-07-25T20:53:15.814Z'
+}
+{
+  message: 'User Authenticated Successfully',
+  level: 'info',
+  timestamp: '2024-07-25T20:53:19.482Z'
+}
+{
+  userId: new ObjectId('66819a7da656501549f7e1b3'),
+  url: '/api/v1/analytics',
+  level: 'info',
+  message: 'User Authorized to access the route ',
+  timestamp: '2024-07-25T20:53:19.483Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/analytics',
+      headers: {
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ODE5YTdkYTY1NjUwMTU0OWY3ZTFiMyIsImlhdCI6MTcyMTkwODY4MywiZXhwIjoxNzI5Njg0NjgzfQ.UjNou7EDj-xvG6lYHK793yadTRQa1Yd1uBmzP-GRSMU',
+        'user-agent': 'PostmanRuntime/7.40.0',
+        accept: '*/*',
+        'postman-token': '0edb2f2e-52c6-43e4-bb74-928707e71505',
+        host: 'localhost:3000',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/analytics',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 2297
+  },
+  level: 'info',
+  message: 'GET /api/v1/analytics 200 2297ms',
+  timestamp: '2024-07-25T20:53:21.592Z'
+}
+{
+  message: 'Database Connection Successfully',
+  level: 'info',
+  timestamp: '2024-07-25T20:54:13.017Z'
+}
+{
+  message: 'Server Listening on PORT 3000',
+  level: 'info',
+  timestamp: '2024-07-25T20:54:13.025Z'
+}
+{
+  message: 'Database Connection Successfully',
+  level: 'info',
+  timestamp: '2024-07-25T20:56:09.895Z'
+}
+{
+  message: 'Server Listening on PORT 3000',
+  level: 'info',
+  timestamp: '2024-07-25T20:56:09.909Z'
+}
+{
+  message: 'User Authenticated Successfully',
+  level: 'info',
+  timestamp: '2024-07-25T20:56:15.772Z'
+}
+{
+  userId: new ObjectId('66819a7da656501549f7e1b3'),
+  url: '/api/v1/analytics',
+  level: 'info',
+  message: 'User Authorized to access the route ',
+  timestamp: '2024-07-25T20:56:15.773Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/analytics',
+      headers: {
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ODE5YTdkYTY1NjUwMTU0OWY3ZTFiMyIsImlhdCI6MTcyMTkwODY4MywiZXhwIjoxNzI5Njg0NjgzfQ.UjNou7EDj-xvG6lYHK793yadTRQa1Yd1uBmzP-GRSMU',
+        'user-agent': 'PostmanRuntime/7.40.0',
+        accept: '*/*',
+        'postman-token': '9da5e626-a58e-4f77-8c78-fb66b5de1ed3',
+        host: 'localhost:3000',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/analytics',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 2019
+  },
+  level: 'info',
+  message: 'GET /api/v1/analytics 200 2019ms',
+  timestamp: '2024-07-25T20:56:17.610Z'
+}
+{
+  message: 'Database Connection Successfully',
+  level: 'info',
+  timestamp: '2024-07-25T20:57:10.108Z'
+}
+{
+  message: 'Server Listening on PORT 3000',
+  level: 'info',
+  timestamp: '2024-07-25T20:57:10.120Z'
+}
+{
+  message: 'User Authenticated Successfully',
+  level: 'info',
+  timestamp: '2024-07-25T20:57:27.906Z'
+}
+{
+  userId: new ObjectId('66819a7da656501549f7e1b3'),
+  url: '/api/v1/analytics',
+  level: 'info',
+  message: 'User Authorized to access the route ',
+  timestamp: '2024-07-25T20:57:27.907Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/analytics',
+      headers: {
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ODE5YTdkYTY1NjUwMTU0OWY3ZTFiMyIsImlhdCI6MTcyMTkwODY4MywiZXhwIjoxNzI5Njg0NjgzfQ.UjNou7EDj-xvG6lYHK793yadTRQa1Yd1uBmzP-GRSMU',
+        'user-agent': 'PostmanRuntime/7.40.0',
+        accept: '*/*',
+        'postman-token': 'd3c6cc6f-a1d0-4d3f-89a0-5fb15e0ceef2',
+        host: 'localhost:3000',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/analytics',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 1998
+  },
+  level: 'info',
+  message: 'GET /api/v1/analytics 200 1998ms',
+  timestamp: '2024-07-25T20:57:29.729Z'
+}

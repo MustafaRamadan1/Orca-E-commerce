@@ -124,12 +124,87 @@ app.get(
       {
         $group: {
           _id: {
-            $dateToString: { format: "%d/%m", date: "$createdAt" }
+            month: { $month: "$createdAt" },
+            day: { $dayOfMonth: "$createdAt" }
           },
-          documents: { $push: "$$ROOT" }  // Collect all documents in each group
+          users: { $push: "$$ROOT" }
         }
-      },{
-        $sort: { _id: -1 } 
+      },
+      {
+        $project: {
+          _id: {
+            day: "$_id.day",
+            month: "$_id.month",
+            formatted: {
+              $concat: [
+                { $toString: "$_id.day" },
+                "/",
+                { $toString: "$_id.month" }
+              ]
+            }
+          },
+          users: 1
+        }
+      },
+      {
+        $unwind: "$users"
+      },
+      {
+        $sort: { "users.createdAt": -1 }
+      },
+      {
+        $group: {
+          _id: "$_id",
+          users: { $push: "$users" }
+        }
+      },
+      {
+        $sort: {
+          "_id.month": -1,
+          "_id.day": -1
+        }
+      },
+      {
+        $project: {
+          _id: "$_id.formatted",
+          month: "$_id.month",
+          day: "$_id.day",
+          users: 1
+        }
+      },
+      {
+        $unwind: "$users"
+      },
+      {
+        $sort: {
+          month: -1,
+          day: -1
+        }
+      },
+      {
+        $limit: 30
+      },
+      {
+        $group: {
+          _id: {
+            formatted: "$_id",
+            month: "$month",
+            day: "$day"
+          },
+          users: { $push: "$users" }
+        }
+      },
+      {
+        $sort: {
+          "_id.month": -1,
+          "_id.day": -1
+        }
+      },
+      {
+        $project: {
+          _id: "$_id.formatted",
+          users: 1
+        }
       }
     ])
     console.log(users)
