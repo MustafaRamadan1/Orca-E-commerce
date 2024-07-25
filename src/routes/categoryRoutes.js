@@ -27,6 +27,7 @@ router.get("/:name/:params", (req, res, next) => {
 
 router.get("/", getAllCategories);
 router.get("/filtered", getFilteredCategories);
+router.get('/allCategoriesAdmin',isAuth, authorization('admin'),getAllCategoriesAdmin)
 router.get("/:id", validation(categorySchema.getCategory), getCategory);
 
 router.use(isAuth, authorization("admin"));
@@ -38,6 +39,5 @@ router.delete(
   deleteCategory
 );
 
-router.get('/allCategoriesAdmin',isAuth, authorization('admin'),getAllCategoriesAdmin)
 
 export default router;
