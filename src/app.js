@@ -5,6 +5,7 @@ import helmet from "helmet";
 import mongoSanitize from "express-mongo-sanitize";
 import cors from "cors";
 import xss from "xss-clean";
+import expressWinston from 'express-winston'
 import cookieParser from "cookie-parser";
 import { catchAsync } from "./utils/catchAsync.js";
 
@@ -46,6 +47,15 @@ app.use(
 //     message: 'Too many requests from this IP, please try again in an hour'
 // }));
 
+app.use(expressWinston.logger({
+  winstonInstance: logger,
+  meta: true,
+  msg: "HTTP {{req.method}} {{req.url}}",
+  expressFormat: true,
+  colorize: false,
+  ignoreRoute: function (req, res) { return false; }
+}));
+
 import userRouter from "./routes/userRoutes.js";
 import categoryRouter from "./routes/categoryRoutes.js";
 import subCategoryRouter from "./routes/subCategoryRoutes.js";
@@ -58,6 +68,7 @@ import orderRouter from "./routes/orderRoutes.js";
 import FeedBackRouter from "./routes/feedBackRoutes.js";
 import AppError from "./utils/AppError.js";
 import globalErrorHandler from "./middlewares/globalerrorHandler.js";
+import logger from "./utils/logger.js";
 
 // App Routes
 
@@ -75,6 +86,8 @@ app.use("/api/v1/feedBacks", FeedBackRouter);
 //  not found route for non exist routes
 
 app.all("*", (req, res, next) => {
+
+  logger.error(`Accessing Not Found Route , ${req.originalUrl}`);
   return next(
     new AppError(
       `Not Found Page , No route with your ${req.originalUrl} URL`,

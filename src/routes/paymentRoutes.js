@@ -18,6 +18,7 @@ import { formatBilling_Data } from "../utils/paymentHelperFunc.js";
 import isAuth from "../middlewares/authentication.js";
 import restrictTo from "../middlewares/Authorization.js";
 import CookieCart from "../Db/models/cookieCart.model.js";
+import logger from "../utils/logger.js";
 const router = Router();
 
 router.post("/pay", async (req, res, next) => {
@@ -94,10 +95,15 @@ router.post(
       cart: formattedCartItems[0].cart,
     });
 
+    logger.info(` deleting cartItems from cart ${formattedCartItems[0].cart} before creating new cartItems
+      for the order`);
+
     const newCartItems = await CartItem.create(formattedCartItems);
 
-    if (newCartItems.length === 0)
+    if (newCartItems.length === 0) {
+      logger.error(`Couldn't Create Cart Items for the user ${req.user._id}`);
       return next(new AppError(`Couldn't Create Cart Items`, 400));
+    }
 
     const cart = await Cart.findById(newCartItems[0].cart)
       .populate({
@@ -110,6 +116,8 @@ router.post(
 
     if (!cart) {
       await CartItem.deleteMany({ cart: newCartItems[0].cart._id });
+
+      logger.error(`Delete cartItems cuz no Cart with the id of them `);
       return next(new AppError(`No Cart with this ID`, 400));
     }
 
@@ -118,6 +126,10 @@ router.post(
         if (color.id === item.color) {
           if (color.quantity < item.quantity) {
             await CartItem.findByIdAndDelete(item._id);
+
+            logger.error(
+              `Delete cartItems cuz the needed quantity more than the available `
+            );
             return next(
               new AppError(`Your needed quantity more than the available `, 400)
             );
@@ -132,11 +144,11 @@ router.post(
       { totalPrice },
       { new: true, runValidators: true }
     )
-      .populate({
-        path: "items",
-        populate: "product",
-      })
-      .populate("user");
+    .populate({
+      path: "items",
+      populate: "product",
+    })
+    .populate("user");
 
     const formattedItems = formatItemsForPayment(updatedCart.items);
 
@@ -159,7 +171,11 @@ router.post(
     });
 
 
-    await CookieCart.findOneAndDelete({user: updatedCart.user._id});
+    logger.info(`Created new Payment for user ${updatedCart.user._id} , Create Intention for the payment`);
+
+    await CookieCart.findOneAndDelete({ user: updatedCart.user._id });
+
+    logger.info(`Created Payment Link for Multiple Method`)
     const url = generatePaymentLink(response.data.client_secret);
     res.status(200).json({
       status: "success",
@@ -227,7 +243,6 @@ router.post("/webHook", async (req, res, next) => {
 
     console.log(hash, req.query.hmac);
     if (hmac === hash && success === true) {
-      console.log(`in the condition`);
       const payment = await Payment.findOne({
         intention_id: req.body.obj.payment_key_claims.next_payment_intention,
       }).populate({
@@ -235,10 +250,12 @@ router.post("/webHook", async (req, res, next) => {
         populate: "product cart",
       });
 
-      console.log(payment);
+    
       // return and log the error  that
-      if (!payment)
+      if (!payment){
+        logger.error(`Payment with the id of ${req.body.obj.payment_key_claims.next_payment_intention} not found `)
         return next(new AppError(`No Payment with this Intention`, 400));
+      }
 
       const billingData = formatBilling_Data(billing_data);
       const newOrder = await Order.create({
@@ -260,10 +277,15 @@ router.post("/webHook", async (req, res, next) => {
       });
 
       // log the error and return
-      if (!newOrder)
+      if (!newOrder){
+        logger.error(`Couldn't create new order`)
         return next(new AppError(`couldn't create new order`, 400));
+      }
 
-      console.log(`we are in the webook`);
+      logger.info(`Created new order for user ${payment.user._id} `,{
+        orderId: newOrder._id
+      })
+        
       for (let item of payment.cartItems) {
         const product = await Product.findById(item.product._id);
         const colors = product.colors.map((color) =>
@@ -279,11 +301,12 @@ router.post("/webHook", async (req, res, next) => {
         product.quantity = quantity;
         await product.save();
       }
-      console.log(payment.cartItems);
-
+      
       await CartItem.deleteMany({
         cart: new mongoose.Types.ObjectId(payment.cartItems[0].cart._id),
       });
+
+      logger.info(`Delete the cart Items after create the order for it `)
       await Cart.findByIdAndUpdate(payment.cartItems[0].cart._id, {
         totalPrice: 0,
       });

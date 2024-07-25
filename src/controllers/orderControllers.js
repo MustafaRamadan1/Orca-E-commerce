@@ -3,6 +3,7 @@ import AppError from "../utils/AppError.js";
 import { catchAsync } from "../utils/catchAsync.js";
 import Order from "../Db/models/order.model.js";
 import ApiFeature from "../utils/ApiFeature.js";
+import logger from "../utils/logger.js";
 
 export const getAllOrders = catchAsync(async (req, res, next) => {
   let orders = Order.find()
@@ -18,8 +19,11 @@ export const getAllOrders = catchAsync(async (req, res, next) => {
         "-id -otpCode  -otpExpired -passwordChangedAt -createdAt -updatedAt",
     });
 
-  if (orders.length === 0)
+  if (orders.length === 0){
+    logger.error(`No Documents in the order models`);
     return next(new AppError(`No Documents in the order models`, 404));
+  }
+    
 
   if (req.query.sort) {
     const sortBy = req.query.sort.split(",").join(" ");
@@ -43,6 +47,8 @@ export const getAllOrders = catchAsync(async (req, res, next) => {
   }
 
   orders = await orders;
+
+  logger.info(`Fetched ${orders.length} Orders`);
   res.status(200).json({
     status: "success",
     length: orders.length,
@@ -65,7 +71,13 @@ export const getOrder = catchAsync(async (req, res, next) => {
         "-id -otpCode  -otpExpired -passwordChangedAt -createdAt -updatedAt",
     });
 
-  if (!order) return next(new AppError(`No Order with this ID`, 404));
+  if (!order) {
+
+    logger.error(`No Order with this ID`,{
+      orderId: id
+    });
+    return next(new AppError(`No Order with this ID`, 404));
+  }
 
   res.status(200).json({
     status: "success",
@@ -112,6 +124,12 @@ export const getUserOrders = catchAsync(async (req, res, next) => {
 
   userOrders = await userOrders;
   
+
+
+  logger.info(`Get User with ID ${id} Orders`,{
+    userId: id,
+    orderLength: userOrders.length
+  })
   res.status(200).json({
     status: "success",
     result: userOrders.length,
@@ -131,7 +149,15 @@ export const updateOrder = catchAsync(async (req, res, next) => {
     { new: true, runValidators: true }
   );
 
-  if (!updatedOrder) return next(new AppError(`No order with this id`), 400);
+  if (!updatedOrder) {
+    logger.error(`No order with this id`);
+    return next(new AppError(`No order with this id`), 400);
+  }
+
+  logger.info(`Order with Id ${id} UpdatedSuccessfully`,{
+    orderId: id,
+    orderStatus
+  });
 
   res.status(200).json({
     status: "success",
