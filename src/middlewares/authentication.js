@@ -22,6 +22,7 @@ const authentication = catchAsync(async (req, res, next) => {
   }
     
 
+ 
   const decode = await promisify(jwt.verify)(token, process.env.SECERT_KEY);
 
   const currentUser = await User.findById(decode.id);
