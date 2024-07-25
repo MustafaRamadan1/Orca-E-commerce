@@ -8,6 +8,7 @@ import sendEmail from "../utils/sendEmail.js";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
 import logger from "../utils/logger.js";
+import ApiFeature from "../utils/ApiFeature.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -117,7 +118,7 @@ export const login = catchAsync(async (req, res, next) => {
 export const getAllUsers = catchAsync(async (req, res, next) => {
   const limit = req.query.limit * 1 || 5;
 
-  const totalDocumentCounts = await Review.countDocuments();
+  const totalDocumentCounts = await User.countDocuments();
 
   const apiFeature = new ApiFeature(User.find(), req.query)
     .sort()
