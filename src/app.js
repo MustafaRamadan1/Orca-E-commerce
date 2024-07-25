@@ -177,8 +177,8 @@ app.get(
       },
       {
         $sort: {
-          month: -1,
-          day: -1
+          month: 1,
+          day: 1
         }
       },
       {
@@ -196,8 +196,8 @@ app.get(
       },
       {
         $sort: {
-          "_id.month": -1,
-          "_id.day": -1
+          "_id.month": 1,
+          "_id.day": 1
         }
       },
       {
