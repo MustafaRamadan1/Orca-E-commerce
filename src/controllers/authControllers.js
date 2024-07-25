@@ -8,6 +8,7 @@ import sendEmail from "../utils/sendEmail.js";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
 import logger from "../utils/logger.js";
+import ApiFeature from "../utils/ApiFeature.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);

@@ -5,8 +5,7 @@ import helmet from "helmet";
 import mongoSanitize from "express-mongo-sanitize";
 import cors from "cors";
 import xss from "xss-clean";
-import expressWinston from 'express-winston'
-import cookieParser from "cookie-parser";
+import expressWinston from "express-winston";
 import { catchAsync } from "./utils/catchAsync.js";
 
 // create Express App
@@ -47,14 +46,18 @@ app.use(
 //     message: 'Too many requests from this IP, please try again in an hour'
 // }));
 
-app.use(expressWinston.logger({
-  winstonInstance: logger,
-  meta: true,
-  msg: "HTTP {{req.method}} {{req.url}}",
-  expressFormat: true,
-  colorize: false,
-  ignoreRoute: function (req, res) { return false; }
-}));
+app.use(
+  expressWinston.logger({
+    winstonInstance: logger,
+    meta: true,
+    msg: "HTTP {{req.method}} {{req.url}}",
+    expressFormat: true,
+    colorize: false,
+    ignoreRoute: function (req, res) {
+      return false;
+    },
+  })
+);
 
 import userRouter from "./routes/userRoutes.js";
 import categoryRouter from "./routes/categoryRoutes.js";
@@ -66,6 +69,7 @@ import paymentRouter from "./routes/paymentRoutes.js";
 import reviewRouter from "./routes/reviewRoutes.js";
 import orderRouter from "./routes/orderRoutes.js";
 import FeedBackRouter from "./routes/feedBackRoutes.js";
+import wishListRouter from "./routes/wishListRoutes.js";
 import AppError from "./utils/AppError.js";
 import globalErrorHandler from "./middlewares/globalerrorHandler.js";
 import logger from "./utils/logger.js";
@@ -82,11 +86,27 @@ app.use("/api/v1/payment", paymentRouter);
 app.use("/api/v1/reviews", reviewRouter);
 app.use("/api/v1/orders", orderRouter);
 app.use("/api/v1/feedBacks", FeedBackRouter);
+app.use("/api/v1/wishlist", wishListRouter);
+
+import isAuth from "./middlewares/authentication.js";
+import restrictTo from "./middlewares/Authorization.js";
+import Category from "./Db/models/category.model.js";
+import Product from "./Db/models/product.model.js";
+import Order from "./Db/models/order.model.js";
+
+app.get(
+  "/api/v1/analytics",
+  isAuth,
+  restrictTo("admin"),
+  catchAsync(async (req, res, next) => {
+
+    
+  })
+);
 
 //  not found route for non exist routes
 
 app.all("*", (req, res, next) => {
-
   logger.error(`Accessing Not Found Route , ${req.originalUrl}`);
   return next(
     new AppError(
