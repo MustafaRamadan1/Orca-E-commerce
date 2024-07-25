@@ -11,7 +11,7 @@ const wishListSchema = new mongoose.Schema({
         type: mongoose.Types.ObjectId,
         ref:'Product',
         required:[true, 'Wishlist must has products']
-    }]
+    }],
 },{
     timestamps:true
 });

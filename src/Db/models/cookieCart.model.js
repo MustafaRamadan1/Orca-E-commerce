@@ -11,6 +11,10 @@ const cookieCartSchema = new mongoose.Schema({
     cartItems:{
         type:Array,
         required:[true, 'Cookie Cart Must has a cart']
+    },
+    wishListItems:{
+        type:Array,
+        required:[true, 'Cookie Cart Must has a cart']
     }
 
 });

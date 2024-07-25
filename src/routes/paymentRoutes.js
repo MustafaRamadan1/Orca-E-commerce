@@ -172,9 +172,7 @@ router.post(
 
 
     logger.info(`Created new Payment for user ${updatedCart.user._id} , Create Intention for the payment`);
-
-    await CookieCart.findOneAndDelete({ user: updatedCart.user._id });
-
+    await CookieCart.findByIdAndUpdate({user:updatedCart.user._id},{cartItems:[]})
     logger.info(`Created Payment Link for Multiple Method`)
     const url = generatePaymentLink(response.data.client_secret);
     res.status(200).json({

@@ -114,11 +114,25 @@ app.get(
       const productCountForCategory = (await Product.find({category})).length;
 
       productCountForLast10Categories.push({
-        category,
-        productCountForCategory
+        id:category.name,
+        value:productCountForCategory,
+        label:category.name
       })
     }
-    
+
+    const users = await User.aggregate([
+      {
+        $group: {
+          _id: {
+            $dateToString: { format: "%d/%m", date: "$createdAt" }
+          },
+          documents: { $push: "$$ROOT" }  // Collect all documents in each group
+        }
+      },{
+        $sort: { _id: -1 } 
+      }
+    ])
+    console.log(users)
     res.status(200).json({
       success: true,
       userCount,
@@ -127,7 +141,9 @@ app.get(
       categoryCount,
       last10Orders,
       top3Categories,
-      productCountForLast10Categories
+      productCountForLast10Categories,
+      users
+
     });
 
   })

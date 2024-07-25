@@ -9,3 +9,14 @@
   message: 'Invalid Email or Password for user in login',
   timestamp: '2024-07-24T13:59:51.142Z'
 }
+{
+  token: '',
+  level: 'error',
+  message: 'No token in the header to make the user login ',
+  timestamp: '2024-07-25T16:27:01.887Z'
+}
+{
+  message: 'Accessing Not Found Route , /favicon.ico',
+  level: 'error',
+  timestamp: '2024-07-25T16:27:05.256Z'
+}
