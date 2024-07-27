@@ -23,11 +23,10 @@ export const signUp = catchAsync(async (req, res, next) => {
   });
 
   if (!newUser) {
-    logger.error(`Couldn't Create new user`,{
+    logger.error(`Couldn't Create new user`, {
       name,
-      email
-    }
-    )
+      email,
+    });
     return next(new AppError(`Couldn't create new User`, 400));
   }
 
@@ -46,13 +45,12 @@ export const signUp = catchAsync(async (req, res, next) => {
     html,
   });
 
-
   const token = signToken({ id: newUser._id });
-  logger.info(`Created the user and send OTP to the email`,{
+  logger.info(`Created the user and send OTP to the email`, {
     userId: newUser._id,
     name: newUser.name,
-    email: newUser.email
-  })
+    email: newUser.email,
+  });
 
   res.status(200).json({
     status: "success",
@@ -72,41 +70,37 @@ export const login = catchAsync(async (req, res, next) => {
     .populate("cookieCart");
 
   if (!user) {
-
-    logger.error(`Invalid Email or Password for user in login`,{
-      email
-    })
+    logger.error(`Invalid Email or Password for user in login`, {
+      email,
+    });
     return next(new AppError(`Invalid email or password`, 404));
   }
 
-  if (!(await user.CheckPassword(password))){
-
-    logger.error(`Invalid Email or Password for user in login`,{
-      email
-    })
+  if (!(await user.CheckPassword(password))) {
+    logger.error(`Invalid Email or Password for user in login`, {
+      email,
+    });
     return next(new AppError(`Invalid email or password`, 404));
   }
 
-  if (!user.isActive){
-    logger.error(`Not Activated User , should Activate his account`,{
+  if (!user.isActive) {
+    logger.error(`Not Activated User , should Activate his account`, {
       userId: user._id,
-      email:user.email,
+      email: user.email,
       name: user.name,
-      isActive: user.isActive
-    })
+      isActive: user.isActive,
+    });
     return next(new AppError("Please Active your account", 401));
   }
-   
 
   const token = signToken({ id: user._id });
 
-  logger.info(`User Authenticated Success`,{
+  logger.info(`User Authenticated Success`, {
     userId: user._id,
-    email:user.email,
-      name: user.name,
-      isActive: user.isActive
-
-  })
+    email: user.email,
+    name: user.name,
+    isActive: user.isActive,
+  });
 
   res.status(200).json({
     status: "success",
@@ -127,10 +121,10 @@ export const getAllUsers = catchAsync(async (req, res, next) => {
 
   const getAllUsers = await apiFeature.query;
 
-  logger.info(`Get All User Route Accessed by following account`,{
+  logger.info(`Get All User Route Accessed by following account`, {
     userId: req.user._id,
-    role: req.user._role
-  })
+    role: req.user._role,
+  });
 
   res.status(200).json({
     status: "success",
@@ -146,9 +140,9 @@ export const forgetPassword = catchAsync(async (req, res, next) => {
 
   const user = await User.findOne({ email });
   if (!user) {
-    logger.error(`No User with this email`,{
-      email:user.email
-    })
+    logger.error(`No User with this email`, {
+      email: user.email,
+    });
     return next(new AppError(`No User with This Email`, 404));
   }
 
@@ -165,12 +159,11 @@ export const forgetPassword = catchAsync(async (req, res, next) => {
     }:3000/${locale}/user/resetPassword/${token}`,
   });
 
-  logger.info(`Sending Email to the user to reset the password`,{
+  logger.info(`Sending Email to the user to reset the password`, {
     userId: user._id,
     email: user.email,
     name: user.name,
-
-  })
+  });
 
   res.status(200).json({
     status: "success",
@@ -193,13 +186,12 @@ export const resetPassword = catchAsync(async (req, res, next) => {
     passwordResetExpires: { $gte: Date.now() },
   });
 
-  if (!user){
-
-    logger.error(`Expired or Invalid Reset Token , Please Try again`,{
+  if (!user) {
+    logger.error(`Expired or Invalid Reset Token , Please Try again`, {
       userId: user._id,
-      email: user.email,  
-      });
-   return next(
+      email: user.email,
+    });
+    return next(
       new AppError(`Expired or Invalid Reset Token , Please Try again`, 400)
     );
   }
@@ -209,11 +201,10 @@ export const resetPassword = catchAsync(async (req, res, next) => {
   user.passwordResetExpires = undefined;
   await user.save();
 
-
-  logger.info(`Reset Password for the user after recieve the token of it `,{
+  logger.info(`Reset Password for the user after recieve the token of it `, {
     userId: user._id,
-      email: user.email, 
-  })
+    email: user.email,
+  });
 
   res.status(200).json({
     status: "success",
@@ -231,23 +222,21 @@ export const activateUser = catchAsync(async (req, res, next) => {
     otpExpired: { $gte: Date.now() },
   });
 
-  if (!user){
-  logger.error(`Expired or Invalid OTP`)
-  return next(new AppError(`Expired or Invalid OTP , Please Try again`, 400));
+  if (!user) {
+    logger.error(`Expired or Invalid OTP`);
+    return next(new AppError(`Expired or Invalid OTP , Please Try again`, 400));
   }
-    
 
   user.isActive = true;
   user.otpCode = undefined;
   user.otpExpired = undefined;
   await user.save();
 
-
-  logger.info(`Activated the user by the OTP Code The server recieved `,{
+  logger.info(`Activated the user by the OTP Code The server recieved `, {
     userId: user._id,
     email: user.email,
-    isActive: user.isActive
-  })
+    isActive: user.isActive,
+  });
 
   res.status(200).json({
     status: "success",
@@ -262,29 +251,26 @@ export const updateUserPassword = catchAsync(async (req, res, next) => {
   const user = await User.findById(req.user._id);
 
   if (!user) {
-
     logger.error(`No User Found`);
     return next(new AppError(` User Not Found`, 404));
   }
 
-  if (!(await user.CheckPassword(oldPassword))){
-    logger.error(`Invalid Password`,{
-
-      userId: req.user._id
-    })
+  if (!(await user.CheckPassword(oldPassword))) {
+    logger.error(`Invalid Password`, {
+      userId: req.user._id,
+    });
     return next(new AppError(` Invalid Password`, 400));
   }
- 
 
   user.password = newPassword;
   await user.save();
 
-
-  logger.info(`Update Password for the user after received the old Password and he's authenticated`,{
-
-    userId: req.user._id
-  });
-
+  logger.info(
+    `Update Password for the user after received the old Password and he's authenticated`,
+    {
+      userId: req.user._id,
+    }
+  );
 
   res.status(200).json({
     status: "success",
@@ -298,7 +284,6 @@ export const getUserById = catchAsync(async (req, res, next) => {
   const user = await User.findById(id).populate("cart");
 
   if (!user) {
- 
     return next(new AppError(`No User with this id`, 404));
   }
   res.status(200).json({

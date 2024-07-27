@@ -144,11 +144,11 @@ router.post(
       { totalPrice },
       { new: true, runValidators: true }
     )
-    .populate({
-      path: "items",
-      populate: "product",
-    })
-    .populate("user");
+      .populate({
+        path: "items",
+        populate: "product",
+      })
+      .populate("user");
 
     const formattedItems = formatItemsForPayment(updatedCart.items);
 
@@ -170,10 +170,14 @@ router.post(
       cartItems: updatedCart.items.map((item) => item._id),
     });
 
-
-    logger.info(`Created new Payment for user ${updatedCart.user._id} , Create Intention for the payment`);
-    await CookieCart.findByIdAndUpdate({user:updatedCart.user._id},{cartItems:[]})
-    logger.info(`Created Payment Link for Multiple Method`)
+    logger.info(
+      `Created new Payment for user ${updatedCart.user._id} , Create Intention for the payment`
+    );
+    await CookieCart.findByIdAndUpdate(
+      { user: updatedCart.user._id },
+      { cartItems: [] }
+    );
+    logger.info(`Created Payment Link for Multiple Method`);
     const url = generatePaymentLink(response.data.client_secret);
     res.status(200).json({
       status: "success",
@@ -248,10 +252,11 @@ router.post("/webHook", async (req, res, next) => {
         populate: "product cart",
       });
 
-    
       // return and log the error  that
-      if (!payment){
-        logger.error(`Payment with the id of ${req.body.obj.payment_key_claims.next_payment_intention} not found `)
+      if (!payment) {
+        logger.error(
+          `Payment with the id of ${req.body.obj.payment_key_claims.next_payment_intention} not found `
+        );
         return next(new AppError(`No Payment with this Intention`, 400));
       }
 
@@ -275,15 +280,15 @@ router.post("/webHook", async (req, res, next) => {
       });
 
       // log the error and return
-      if (!newOrder){
-        logger.error(`Couldn't create new order`)
+      if (!newOrder) {
+        logger.error(`Couldn't create new order`);
         return next(new AppError(`couldn't create new order`, 400));
       }
 
-      logger.info(`Created new order for user ${payment.user._id} `,{
-        orderId: newOrder._id
-      })
-        
+      logger.info(`Created new order for user ${payment.user._id} `, {
+        orderId: newOrder._id,
+      });
+
       for (let item of payment.cartItems) {
         const product = await Product.findById(item.product._id);
         const colors = product.colors.map((color) =>
@@ -299,12 +304,12 @@ router.post("/webHook", async (req, res, next) => {
         product.quantity = quantity;
         await product.save();
       }
-      
+
       await CartItem.deleteMany({
         cart: new mongoose.Types.ObjectId(payment.cartItems[0].cart._id),
       });
 
-      logger.info(`Delete the cart Items after create the order for it `)
+      logger.info(`Delete the cart Items after create the order for it `);
       await Cart.findByIdAndUpdate(payment.cartItems[0].cart._id, {
         totalPrice: 0,
       });

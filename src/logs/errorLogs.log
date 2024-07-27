@@ -20,3 +20,81 @@
   level: 'error',
   timestamp: '2024-07-25T16:27:05.256Z'
 }
+{
+  message: "Couldn't Create Cart Items for the user 669c2bc60b1a3087bc29784b",
+  level: 'error',
+  timestamp: '2024-07-25T23:01:52.836Z'
+}
+{
+  message: "Couldn't Create Cart Items for the user 669c2bc60b1a3087bc29784b",
+  level: 'error',
+  timestamp: '2024-07-25T23:02:14.669Z'
+}
+{
+  message: "Couldn't Create Cart Items for the user 669c2bc60b1a3087bc29784b",
+  level: 'error',
+  timestamp: '2024-07-25T23:06:19.708Z'
+}
+{
+  message: "Couldn't Create Cart Items for the user 669c2bc60b1a3087bc29784b",
+  level: 'error',
+  timestamp: '2024-07-25T23:15:30.776Z'
+}
+{
+  message: "Couldn't Create Cart Items for the user 669c2bc60b1a3087bc29784b",
+  level: 'error',
+  timestamp: '2024-07-25T23:16:09.575Z'
+}
+{
+  message: "Couldn't Create Cart Items for the user 669c2bc60b1a3087bc29784b",
+  level: 'error',
+  timestamp: '2024-07-25T23:16:20.594Z'
+}
+{
+  message: "Couldn't Create Cart Items for the user 669c2bc60b1a3087bc29784b",
+  level: 'error',
+  timestamp: '2024-07-25T23:16:45.631Z'
+}
+{
+  message: "Couldn't Create Cart Items for the user 669c2bc60b1a3087bc29784b",
+  level: 'error',
+  timestamp: '2024-07-25T23:19:12.904Z'
+}
+{
+  message: "Couldn't Create Cart Items for the user 669c2bc60b1a3087bc29784b",
+  level: 'error',
+  timestamp: '2024-07-26T00:50:23.400Z'
+}
+{
+  message: "Couldn't Create Cart Items for the user 669c2bc60b1a3087bc29784b",
+  level: 'error',
+  timestamp: '2024-07-26T01:32:16.531Z'
+}
+{
+  message: "Couldn't Create Cart Items for the user 669c2bc60b1a3087bc29784b",
+  level: 'error',
+  timestamp: '2024-07-26T01:34:27.595Z'
+}
+{
+  email: 'mustafa.ramadan165@gmail.com',
+  level: 'error',
+  message: 'Invalid Email or Password for user in login',
+  timestamp: '2024-07-26T14:50:25.979Z'
+}
+{
+  email: 'admin@gmail.com',
+  level: 'error',
+  message: 'Invalid Email or Password for user in login',
+  timestamp: '2024-07-26T17:17:01.008Z'
+}
+{
+  message: "Couldn't Create Cart Items for the user 669c2bc60b1a3087bc29784b",
+  level: 'error',
+  timestamp: '2024-07-27T00:20:23.688Z'
+}
+{
+  email: 'admin@gmail.com',
+  level: 'error',
+  message: 'Invalid Email or Password for user in login',
+  timestamp: '2024-07-27T13:37:24.672Z'
+}
