@@ -9,7 +9,6 @@ import { fileURLToPath } from "url";
 import { dirname } from "path";
 import logger from "../utils/logger.js";
 import ApiFeature from "../utils/ApiFeature.js";
-import resend from '../utils/Resend.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -39,21 +38,12 @@ export const signUp = catchAsync(async (req, res, next) => {
     otpCode: otp,
   });
 
-
-  await resend({
+  await sendEmail({
     to: newUser.email,
     subject: "Verify Your Email",
     text: `To Verfiy your account in our site , It's your OTP : ${otp}`,
-    html
-    
-  })
-
-  // await sendEmail({
-  //   to: newUser.email,
-  //   subject: "Verify Your Email",
-  //   text: `To Verfiy your account in our site , It's your OTP : ${otp}`,
-  //   html,
-  // });
+    html,
+  });
 
   const token = signToken({ id: newUser._id });
   logger.info(`Created the user and send OTP to the email`, {
@@ -248,8 +238,13 @@ export const activateUser = catchAsync(async (req, res, next) => {
     isActive: user.isActive,
   });
 
+  const token = signToken({
+    id: user._id,
+  });
+
   res.status(200).json({
     status: "success",
+    token,
     // message: "User Activated Successfully",
     data: user,
   });
