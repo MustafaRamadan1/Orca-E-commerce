@@ -38,6 +38,7 @@ app.use(
     origin: "http://localhost:3000",
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true, // If you need to send cookies or auth headers
   })
 );
 // app.use(rateLimit({
