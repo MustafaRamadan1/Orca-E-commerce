@@ -360,9 +360,9 @@ router.get("/acceptPayment", async (req, res) => {
   console.log(req.body, req.query, req.params);
   try {
     if (success === "true") {
-      res.redirect("http://localhost:3000/en/user/payment/status=success");
+      res.redirect("https://orca-commerce-git-refactor-cart-ahmed-nassers-projects.vercel.app/en/user/payment/status=success");
     } else {
-      res.redirect("http://localhost:3000/en/user/payment/status=failed");
+      res.redirect("https://orca-commerce-git-refactor-cart-ahmed-nassers-projects.vercel.app/en/user/payment/status=failed");
     }
   } catch (error) {
     next(createError(500, error.message));
