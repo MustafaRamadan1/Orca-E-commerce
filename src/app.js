@@ -35,7 +35,7 @@ app.use(helmet());
 app.use(xss());
 app.use(
   cors({
-    origin: "https://orca-commerce-git-refactor-cart-ahmed-nassers-projects.vercel.app/en",
+    origin: "https://ecs-commerce.vercel.app/en",
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true // If you need to send cookies or auth headers
