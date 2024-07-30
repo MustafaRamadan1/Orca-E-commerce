@@ -176,12 +176,12 @@ router.post(
 
     const userCookieCart = await CookieCart.findById(updatedCart.user._id);
 
-    if (userCookieCart) {
-      await CookieCart.findByIdAndUpdate(
-        { user: new mongoose.Types.ObjectId(updatedCart.user._id) },
-        { cartItems: [] }
-      );
-    }
+    // if (userCookieCart) {
+    //   await CookieCart.findByIdAndUpdate(
+    //     { user: new mongoose.Types.ObjectId(updatedCart.user._id) },
+    //     { cartItems: [] }
+    //   );
+    // }
 
     logger.info(`Created Payment Link for Multiple Method`);
     const url = generatePaymentLink(response.data.client_secret);
@@ -320,6 +320,15 @@ router.post("/webHook", async (req, res, next) => {
         totalPrice: 0,
       });
     }
+
+    await CookieCart.findOneAndUpdate(
+      {
+        user: new mongoose.Types.ObjectId(payment.user),
+      },
+      {
+        cartItems: [],
+      }
+    );
 
     console.log(`outside `);
   } catch (err) {
