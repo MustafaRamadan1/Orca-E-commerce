@@ -65,7 +65,6 @@ export const createReview = catchAsync(async (req, res, next) => {
 });
 
 export const getAllReviews = catchAsync(async (req, res, next) => {
-
   const totalDocumentCounts = await Review.countDocuments();
 
   let reviews = Review.find().populate({
@@ -125,7 +124,7 @@ export const getUserReviews = catchAsync(async (req, res, next) => {
 
   const userReviewsLength = (await Order.Review({ user: userId })).length;
 
-  let userReviews =  Review.find({ user: userId }).populate({
+  let userReviews = Review.find({ user: userId }).populate({
     path: "user",
     select: "-__v -createdAt -updatedAt",
   });
@@ -152,8 +151,8 @@ export const getUserReviews = catchAsync(async (req, res, next) => {
   userReviews = await userReviews;
   res.status(200).json({
     status: "success",
-    result:userReviews.length,
-    numPages:Math.ceil(userReviews.length/limit),
+    result: userReviews.length,
+    numPages: Math.ceil(userReviews.length / limit),
     data: userReviews,
   });
 });
@@ -197,17 +196,13 @@ export const deleteReview = catchAsync(async (req, res, next) => {
   });
 });
 
+export const getAllReviewsForProduct = catchAsync(async (req, res, next) => {
+  const { productId } = req.params;
 
-
-export const getAllReviewsForProduct = catchAsync(async (req, res ,next)=>{
-
-  const{productId} = req.params;
-
-  let productReviews =  Review.find({product:productId}).populate({
+  let productReviews = Review.find({ product: productId }).populate({
     path: "user",
     select: "-__v -createdAt -updatedAt",
   });
-
 
   if (req.query.sort) {
     const sortBy = req.query.sort.split(",").join(" ");
@@ -217,7 +212,8 @@ export const getAllReviewsForProduct = catchAsync(async (req, res ,next)=>{
     productReviews = productReviews.sort("-createdAt");
   }
 
-  const totalDocumentCounts = (await Review.find({product:productId})).length;
+  const totalDocumentCounts = (await Review.find({ product: productId }))
+    .length;
   const limit = req.query.limit * 1 || 3;
   const page = req.query.page * 1 || 1;
   const skip = (page - 1) * limit;
@@ -232,39 +228,35 @@ export const getAllReviewsForProduct = catchAsync(async (req, res ,next)=>{
 
   productReviews = await productReviews;
 
-
-
   res.status(200).json({
     status: "success",
-    result:productReviews.length,
-    numPages:Math.ceil(totalDocumentCounts / limit),
-    data: productReviews
-  })
-})
+    result: productReviews.length,
+    numPages: Math.ceil(totalDocumentCounts / limit),
+    data: productReviews,
+  });
+});
 
-
-
-
-export const getAllReviewsAdmin = catchAsync(async (req, res ,next)=>{
-
-  const limit = req.query.limit  * 1 || 5;
+export const getAllReviewsAdmin = catchAsync(async (req, res, next) => {
+  const limit = req.query.limit * 1 || 5;
 
   const totalDocumentCounts = await Review.countDocuments();
 
-
-  const apiFeature = new ApiFeature(Review.find(),req.query).sort().limitFields().pagination();
+  const apiFeature = new ApiFeature(Review.find(), req.query)
+    .sort()
+    .limitFields()
+    .pagination();
 
   const getAllReviews = await apiFeature.query.populate({
     path: "user",
     select: "-__v -createdAt -updatedAt",
   });
 
-  if(getAllReviews.length === 0) return next(new AppError(`No Reviews Found`, 404));
+  const isEmpty = getAllReviews.length === 0;
 
   res.status(200).json({
-    status:'success',
-    result:getAllReviews.length,
-    numPages:Math.ceil(totalDocumentCounts / limit),
-    data:getAllReviews
-  })
-})
+    status: "success",
+    result: getAllReviews.length,
+    numPages: Math.ceil(totalDocumentCounts / limit),
+    data: isEmpty ? [] : getAllReviews,
+  });
+});

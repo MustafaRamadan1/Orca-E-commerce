@@ -30,8 +30,8 @@ const resizeProductImg = catchAsync(async (req, res, next) => {
     const filepath = `${__dirname}/../uploads/products/${uuid()}.jpg`;
     await sharp(req.files[i].buffer)
       .resize({
-        width: 3817,
-        height: 3817,
+        width: 700,
+        height: 700,
         fit: sharp.fit.cover,
         position: sharp.strategy.entropy,
         kernel: sharp.kernel.lanczos3,
