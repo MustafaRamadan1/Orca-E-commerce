@@ -38,6 +38,7 @@ app.use(
     origin: "http://localhost:3000",
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true, // If you need to send cookies or auth headers
   })
 );
 // app.use(rateLimit({
@@ -93,31 +94,34 @@ import restrictTo from "./middlewares/Authorization.js";
 import Category from "./Db/models/category.model.js";
 import Product from "./Db/models/product.model.js";
 import Order from "./Db/models/order.model.js";
-import User from './Db/models/user.model.js'
+import User from "./Db/models/user.model.js";
 
 app.get(
   "/api/v1/analytics",
   isAuth,
   restrictTo("admin"),
   catchAsync(async (req, res, next) => {
-
-    const userCount = await User.countDocuments();
+    const userCount = await User.find({
+      role: { $ne: "admin" },
+    }).count();
     const productCount = await Product.countDocuments();
     const orderCount = await Order.countDocuments();
     const categoryCount = await Category.countDocuments();
-    const last10Orders = await Order.find().sort('-createdAt').limit(10);
-    const top3Categories = await Category.find().sort({ createdAt: -1 }).limit(3);
-    const last10Categories = await Category.find().sort('-createdAt').limit(10);
+    const last10Orders = await Order.find().sort("-createdAt").limit(10);
+    const top3Categories = await Category.find()
+      .sort({ createdAt: -1 })
+      .limit(3);
+    const last10Categories = await Category.find().sort("-createdAt").limit(10);
     const productCountForLast10Categories = [];
 
-    for(let category of last10Categories){
-      const productCountForCategory = (await Product.find({category})).length;
+    for (let category of last10Categories) {
+      const productCountForCategory = (await Product.find({ category })).length;
 
       productCountForLast10Categories.push({
-        id:category.name,
-        value:productCountForCategory,
-        label:category.name
-      })
+        id: category.name,
+        value: productCountForCategory,
+        label: category.name,
+      });
     }
 
     const users = await User.aggregate([
@@ -125,10 +129,10 @@ app.get(
         $group: {
           _id: {
             month: { $month: "$createdAt" },
-            day: { $dayOfMonth: "$createdAt" }
+            day: { $dayOfMonth: "$createdAt" },
           },
-          users: { $push: "$$ROOT" }
-        }
+          users: { $push: "$$ROOT" },
+        },
       },
       {
         $project: {
@@ -139,75 +143,75 @@ app.get(
               $concat: [
                 { $toString: "$_id.day" },
                 "/",
-                { $toString: "$_id.month" }
-              ]
-            }
+                { $toString: "$_id.month" },
+              ],
+            },
           },
-          users: 1
-        }
+          users: 1,
+        },
       },
       {
-        $unwind: "$users"
+        $unwind: "$users",
       },
       {
-        $sort: { "users.createdAt": -1 }
+        $sort: { "users.createdAt": -1 },
       },
       {
         $group: {
           _id: "$_id",
-          users: { $push: "$users" }
-        }
+          users: { $push: "$users" },
+        },
       },
       {
         $sort: {
           "_id.month": -1,
-          "_id.day": -1
-        }
+          "_id.day": -1,
+        },
       },
       {
         $project: {
           _id: "$_id.formatted",
           month: "$_id.month",
           day: "$_id.day",
-          users: 1
-        }
+          users: 1,
+        },
       },
       {
-        $unwind: "$users"
+        $unwind: "$users",
       },
       {
         $sort: {
           month: 1,
-          day: 1
-        }
+          day: 1,
+        },
       },
       {
-        $limit: 30
+        $limit: 30,
       },
       {
         $group: {
           _id: {
             formatted: "$_id",
             month: "$month",
-            day: "$day"
+            day: "$day",
           },
-          users: { $push: "$users" }
-        }
+          users: { $push: "$users" },
+        },
       },
       {
         $sort: {
           "_id.month": 1,
-          "_id.day": 1
-        }
+          "_id.day": 1,
+        },
       },
       {
         $project: {
           _id: "$_id.formatted",
-          users: 1
-        }
-      }
-    ])
-    console.log(users)
+          users: 1,
+        },
+      },
+    ]);
+    console.log(users);
     res.status(200).json({
       success: true,
       userCount,
@@ -217,13 +221,10 @@ app.get(
       last10Orders,
       top3Categories,
       productCountForLast10Categories,
-      users
-
+      users,
     });
-
   })
 );
-
 
 /*
 top 3 categories

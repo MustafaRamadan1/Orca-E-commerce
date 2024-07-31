@@ -19,11 +19,10 @@ export const getAllOrders = catchAsync(async (req, res, next) => {
         "-id -otpCode  -otpExpired -passwordChangedAt -createdAt -updatedAt",
     });
 
-  if (orders.length === 0){
+  if (orders.length === 0) {
     logger.error(`No Documents in the order models`);
     return next(new AppError(`No Documents in the order models`, 404));
   }
-    
 
   if (req.query.sort) {
     const sortBy = req.query.sort.split(",").join(" ");
@@ -52,7 +51,7 @@ export const getAllOrders = catchAsync(async (req, res, next) => {
   res.status(200).json({
     status: "success",
     length: orders.length,
-    NumPages: Math.ceil(totalDocumentCounts / limit),
+    numPages: Math.ceil(totalDocumentCounts / limit),
     data: orders,
   });
 });
@@ -72,9 +71,8 @@ export const getOrder = catchAsync(async (req, res, next) => {
     });
 
   if (!order) {
-
-    logger.error(`No Order with this ID`,{
-      orderId: id
+    logger.error(`No Order with this ID`, {
+      orderId: id,
     });
     return next(new AppError(`No Order with this ID`, 404));
   }
@@ -123,18 +121,16 @@ export const getUserOrders = catchAsync(async (req, res, next) => {
   }
 
   userOrders = await userOrders;
-  
 
-
-  logger.info(`Get User with ID ${id} Orders`,{
+  logger.info(`Get User with ID ${id} Orders`, {
     userId: id,
-    orderLength: userOrders.length
-  })
+    orderLength: userOrders.length,
+  });
   res.status(200).json({
     status: "success",
     result: userOrders.length,
     numPages: Math.ceil(userOrdersLength / limit),
-    data: userOrders
+    data: userOrders,
   });
 });
 
@@ -154,9 +150,9 @@ export const updateOrder = catchAsync(async (req, res, next) => {
     return next(new AppError(`No order with this id`), 400);
   }
 
-  logger.info(`Order with Id ${id} UpdatedSuccessfully`,{
+  logger.info(`Order with Id ${id} UpdatedSuccessfully`, {
     orderId: id,
-    orderStatus
+    orderStatus,
   });
 
   res.status(200).json({

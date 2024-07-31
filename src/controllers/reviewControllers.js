@@ -49,6 +49,10 @@ const updateProductRating = async (productId) => {
 export const createReview = catchAsync(async (req, res, next) => {
   const { title, user, product, ratings } = req.body;
 
+  console.log(title);
+  console.log(user);
+  console.log(ratings);
+
   if (!title || !user || !product || !ratings)
     return next(new AppError(`Please Provide Required Fields`, 400));
 

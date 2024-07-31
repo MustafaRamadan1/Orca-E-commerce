@@ -9,7 +9,6 @@ import { fileURLToPath } from "url";
 import { dirname } from "path";
 import logger from "../utils/logger.js";
 import ApiFeature from "../utils/ApiFeature.js";
-import resend from "../utils/Resend.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -39,19 +38,12 @@ export const signUp = catchAsync(async (req, res, next) => {
     otpCode: otp,
   });
 
-  await resend({
+  await sendEmail({
     to: newUser.email,
     subject: "Verify Your Email",
     text: `To Verfiy your account in our site , It's your OTP : ${otp}`,
     html,
   });
-
-  // await sendEmail({
-  //   to: newUser.email,
-  //   subject: "Verify Your Email",
-  //   text: `To Verfiy your account in our site , It's your OTP : ${otp}`,
-  //   html,
-  // });
 
   const token = signToken({ id: newUser._id });
   logger.info(`Created the user and send OTP to the email`, {
@@ -223,12 +215,13 @@ export const resetPassword = catchAsync(async (req, res, next) => {
 export const activateUser = catchAsync(async (req, res, next) => {
   const { otp } = req.body;
 
+  if (!otp) return next(new AppError(`Please Provide OTP on the body`, 400));
   const otpCode = crypto.createHash("sha256").update(otp).digest("hex");
 
   const user = await User.findOne({
     otpCode,
     otpExpired: { $gte: Date.now() },
-  });
+  }).populate("cart");
 
   if (!user) {
     logger.error(`Expired or Invalid OTP`);
@@ -246,8 +239,13 @@ export const activateUser = catchAsync(async (req, res, next) => {
     isActive: user.isActive,
   });
 
+  const token = signToken({
+    id: user._id,
+  });
+
   res.status(200).json({
     status: "success",
+    token,
     // message: "User Activated Successfully",
     data: user,
   });
