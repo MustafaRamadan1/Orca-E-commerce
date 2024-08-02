@@ -18,7 +18,7 @@ export const createFeedBack = catchAsync(async (req, res, next) => {
 export const getAllFeedBacks = catchAsync(async (req, res, next) => {
   const AllFeedBacks = await FeedBack.find();
 
-  const isEmpty = !AllFeedBacks || AllFeedBacks.length === 0;
+  const isEmpty = AllFeedBacks.length === 0 ? true : false;
 
   res.status(200).json({
     status: "success",

@@ -82,6 +82,8 @@ router.post(
   catchAsync(async (req, res, next) => {
     const { cartItems } = req.body;
 
+    console.log("cartItems", cartItems);
+
     const formattedCartItems = cartItems.map((item) => {
       return {
         cart: item.cart,
@@ -104,6 +106,8 @@ router.post(
       logger.error(`Couldn't Create Cart Items for the user ${req.user._id}`);
       return next(new AppError(`Couldn't Create Cart Items`, 400));
     }
+
+    console.log("created Cart Items", newCartItems);
 
     const cart = await Cart.findById(newCartItems[0].cart)
       .populate({
@@ -173,6 +177,8 @@ router.post(
     logger.info(
       `Created new Payment for user ${updatedCart.user._id} , Create Intention for the payment`
     );
+
+    console.log("paymentDoc", paymentDoc);
 
     const userCookieCart = await CookieCart.findById(updatedCart.user._id);
 
