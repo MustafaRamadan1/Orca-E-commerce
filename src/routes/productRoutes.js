@@ -53,8 +53,8 @@ router.put(
 
 router.get(
   "/allProductsAdmin",
-  isAuth,
-  Authorization("admin", "user"),
+  // isAuth,
+  // Authorization("admin", "user"),
   getAllProductsAdmin
 );
 router.get("/colors", getProductsColors);

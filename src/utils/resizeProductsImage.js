@@ -28,6 +28,7 @@ const resizeProductImg = catchAsync(async (req, res, next) => {
   console.log(req.files.length);
   for (let i = 0; i < req.files.length; i++) {
     const filepath = `${__dirname}/../uploads/products/${uuid()}.jpg`;
+    // const filepath = `/tmp/${uuid()}.jpg`;
     await sharp(req.files[i].buffer)
       .resize({
         width: 700,

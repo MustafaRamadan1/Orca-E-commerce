@@ -117,8 +117,10 @@ export const deleteCategory = catchAsync(async (req, res, next) => {
 });
 
 export const getFilteredCategories = catchAsync(async (req, res, next) => {
-  const { letters } = req.query;
+  const { lang, letters } = req.query;
   let query = {};
+
+  console.log(req.query);
 
   let allCategories;
   if (letters) {
@@ -130,7 +132,11 @@ export const getFilteredCategories = catchAsync(async (req, res, next) => {
       "i"
     );
 
-    query.name = regex;
+    if (lang === "en") {
+      query["name.en"] = regex;
+    } else if (lang === "ar") {
+      query["name.ar"] = regex;
+    }
 
     allCategories = await Category.find(query);
   } else {
@@ -148,11 +154,7 @@ export const getFilteredCategories = catchAsync(async (req, res, next) => {
   });
 });
 
-
-
-
 export const getAllCategoriesAdmin = catchAsync(async (req, res, next) => {
-
   const totalDocumentCount = await Category.countDocuments();
 
   const limit = req.query.limit * 1 || 5;
@@ -169,4 +171,4 @@ export const getAllCategoriesAdmin = catchAsync(async (req, res, next) => {
     numPages: Math.ceil(totalDocumentCount / limit),
     data: allCategories,
   });
-})
+});
