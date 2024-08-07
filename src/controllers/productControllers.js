@@ -4,11 +4,11 @@ import Product from "../Db/models/product.model.js";
 import { catchAsync } from "../utils/catchAsync.js";
 import {
   cloudinaryUploadImg,
-  cloudinaryDeleteImg,
+  cloudinaryDeleteImg
 } from "../utils/cloudinary.js";
 import {
   deletePhotoFromServer,
-  uploadToCloudinary,
+  uploadToCloudinary
 } from "../utils/uploadImgHelperFunc.js";
 
 export const createProduct = catchAsync(async (req, res, next) => {
@@ -124,7 +124,7 @@ export const createProduct = catchAsync(async (req, res, next) => {
     discount: Number(JSON.parse(discount)),
     colors: bodyColors,
     images,
-    subCategory,
+    subCategory
   });
 
   if (!newProduct) {
@@ -136,7 +136,7 @@ export const createProduct = catchAsync(async (req, res, next) => {
 
   res.status(201).json({
     status: "success",
-    data: newProduct,
+    data: newProduct
   });
 });
 
@@ -145,7 +145,7 @@ export const getProduct = catchAsync(async (req, res, next) => {
 
   const products = await Product.aggregate([
     {
-      $match: { slug },
+      $match: { slug }
     },
     {
       $group: {
@@ -164,11 +164,11 @@ export const getProduct = catchAsync(async (req, res, next) => {
           $first: {
             $subtract: [
               "$price",
-              { $divide: [{ $multiply: ["$price", "$discount"] }, 100] },
-            ],
-          },
-        },
-      },
+              { $divide: [{ $multiply: ["$price", "$discount"] }, 100] }
+            ]
+          }
+        }
+      }
     },
     {
       $group: {
@@ -187,27 +187,27 @@ export const getProduct = catchAsync(async (req, res, next) => {
             discount: "$discount",
             colors: "$colors",
             productId: "$productId",
-            saleProduct: "$saleProduct",
-          },
-        },
-      },
+            saleProduct: "$saleProduct"
+          }
+        }
+      }
     },
     {
       $lookup: {
         from: "products",
         localField: "products.name",
         foreignField: "name",
-        as: "allProducts",
-      },
+        as: "allProducts"
+      }
     },
     {
       $project: {
         _id: 0,
         totalQuantity: 1,
         images: { $arrayElemAt: ["$allProducts.images", 0] },
-        products: 1,
-      },
-    },
+        products: 1
+      }
+    }
   ]);
 
   console.log(products);
@@ -217,7 +217,7 @@ export const getProduct = catchAsync(async (req, res, next) => {
 
   res.status(200).json({
     status: "success",
-    data: products[0],
+    data: products[0]
   });
 });
 
@@ -241,17 +241,12 @@ export const getAllProducts = catchAsync(async (req, res, next) => {
     status: "success",
     result: products.length,
     pagesNumber: Math.ceil(pagesNumber.length / limit),
-    data: products,
+    data: products
   });
 });
 
 export const updateProduct = catchAsync(async (req, res, next) => {
   const { id } = req.params;
-
-  console.log(req.body);
-
-  // if (req.body.name) {
-  // }
 
   let images = [];
   let bodyColors = [];
@@ -300,7 +295,13 @@ export const updateProduct = catchAsync(async (req, res, next) => {
       )
     );
 
-  // find Product
+  let subCategory = req.body.subCategory;
+
+  if (req.body.subCategory) {
+    subCategory = [...new Set([...subCategory])];
+
+    console.log("subCategory", subCategory);
+  }
 
   const product = await Product.findById(id);
 
@@ -343,15 +344,12 @@ export const updateProduct = catchAsync(async (req, res, next) => {
       await cloudinaryDeleteImg(image.id);
     }
   }
-  console.log(req.body.images);
-
-  console.log(images);
 
   req.body.description = JSON.parse(req.body.description);
 
   const updatedProductBySlug = await Product.updateMany(
     {
-      slug: product.slug,
+      slug: product.slug
     },
     { name: JSON.parse(req.body.name) || product.name, images }
   );
@@ -363,13 +361,16 @@ export const updateProduct = catchAsync(async (req, res, next) => {
     id,
     {
       ...req.body,
-      images,
+      subCategory,
+      images
     },
     {
       new: true,
-      runValidators: true,
+      runValidators: true
     }
   );
+
+  console.log("updatedProductById", updatedProductById);
 
   if (!updatedProductById)
     return next(
@@ -387,7 +388,7 @@ export const updateProduct = catchAsync(async (req, res, next) => {
   res.status(200).json({
     status: "success",
     message: "Updated Successfully",
-    data: updatedProductById,
+    data: updatedProductById
   });
 });
 
@@ -414,7 +415,7 @@ export const deleteProduct = catchAsync(async (req, res, next) => {
 
   res.status(204).json({
     status: "success",
-    message: "Deleted Successfully",
+    message: "Deleted Successfully"
   });
 });
 
@@ -449,7 +450,7 @@ export const filterProducts = catchAsync(async (req, res, next) => {
   res.status(200).json({
     status: "success",
     length: allProducts.length,
-    data: allProducts,
+    data: allProducts
   });
 });
 
@@ -460,11 +461,11 @@ export const getProductById = catchAsync(async (req, res, next) => {
   const currentProduct = await Product.findById(params)
     .populate({
       path: "category",
-      select: "-__v -updatedAt -createdAt",
+      select: "-__v -updatedAt -createdAt"
     })
     .populate({
       path: "subCategory",
-      select: "-__v -updatedAt -createdAt",
+      select: "-__v -updatedAt -createdAt"
     });
 
   if (!currentProduct)
@@ -472,7 +473,7 @@ export const getProductById = catchAsync(async (req, res, next) => {
 
   res.status(200).json({
     status: "success",
-    data: currentProduct,
+    data: currentProduct
   });
 });
 
@@ -491,7 +492,7 @@ export const getProductsColors = catchAsync(async (req, res, next) => {
 
   res.status(200).json({
     status: "success",
-    data: [...uniqueColors],
+    data: [...uniqueColors]
   });
 });
 
@@ -510,6 +511,6 @@ export const getAllProductsAdmin = catchAsync(async (req, res, next) => {
     status: "success",
     result: allProducts.length,
     numPages: Math.ceil(totalDocumentCount / limit),
-    data: allProducts,
+    data: allProducts
   });
 });
