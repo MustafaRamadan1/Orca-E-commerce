@@ -353,6 +353,7 @@ export const updateProduct = catchAsync(async (req, res, next) => {
     },
     { name: JSON.parse(req.body.name) || product.name, images }
   );
+  console.log("hello");
 
   delete req.body.name;
   delete req.body.images;
