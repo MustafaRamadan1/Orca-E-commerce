@@ -215,13 +215,13 @@ export const resetPassword = catchAsync(async (req, res, next) => {
 export const activateUser = catchAsync(async (req, res, next) => {
   const { otp } = req.body;
 
-  if(!otp) return next(new AppError(`Please Provide OTP on the body`, 400));
+  if (!otp) return next(new AppError(`Please Provide OTP on the body`, 400));
   const otpCode = crypto.createHash("sha256").update(otp).digest("hex");
 
   const user = await User.findOne({
     otpCode,
     otpExpired: { $gte: Date.now() },
-  }).populate('cart')
+  }).populate("cart");
 
   if (!user) {
     logger.error(`Expired or Invalid OTP`);

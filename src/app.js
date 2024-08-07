@@ -33,7 +33,14 @@ app.use(morgan("dev"));
 app.use(mongoSanitize());
 app.use(helmet());
 app.use(xss());
+
 app.use(
+  // cors({
+  //   origin: "https://ecs-commerce.vercel.app",
+  //   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  //   allowedHeaders: ["Content-Type", "Authorization"],
+  //   credentials: true, // If you need to send cookies or auth headers
+  // })
   cors({
     origin: "http://localhost:3000",
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
@@ -41,6 +48,15 @@ app.use(
     credentials: true, // If you need to send cookies or auth headers
   })
 );
+
+// app.use(
+//   cors({
+//     origin: ["https://ecs-commerce.vercel.app", "https://ecs-commerce.vercel.app/en"],
+//     methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"],
+//     allowedHeaders: ["Content-Type", "Authorization"],
+//     credentials: true // If you need to send cookies or auth headers
+//   })
+// );
 // app.use(rateLimit({
 //     windowMs: 60*60*1000,
 //     max:100,
