@@ -3,16 +3,33 @@ import slug from "slug";
 const productSchema = new mongoose.Schema(
   {
     name: {
-      type: String,
-      required: [true, "name is Required"],
-      trim: true,
-      minLength: [3, "name must be at least 3 character"],
+      en: {
+        type: String,
+        required: [true, "name is Required"],
+        trim: true,
+        minLength: [3, "name must be at least 3 character"],
+      },
+      ar: {
+        type: String,
+        required: [true, "name is Required"],
+        trim: true,
+        minLength: [3, "name must be at least 3 character"],
+      },
     },
+
     description: {
-      type: String,
-      required: [true, "description is Required"],
-      trim: true,
+      en: {
+        type: String,
+        required: [true, "description is Required"],
+        trim: true,
+      },
+      ar: {
+        type: String,
+        required: [true, "description is Required"],
+        trim: true,
+      },
     },
+
     slug: {
       type: String,
     },
@@ -91,7 +108,7 @@ productSchema.virtual("saleProduct").get(function () {
 
 productSchema.pre("save", function (next) {
   if (this.isNew || this.isModified("name")) {
-    this.slug = slug(this.name, "_");
+    this.slug = slug(this.name.en, "_");
   }
   return next();
 });
@@ -100,7 +117,7 @@ productSchema.pre("findOneAndUpdate", function (next) {
   const update = this.getUpdate();
 
   if (update.name) {
-    this.slug = slug(update.name, "_");
+    this.slug = slug(update.name.en, "_");
   }
 
   return next();

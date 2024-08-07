@@ -137,3 +137,356 @@
   message: 'Error: Duplicate Key , slug ,test_2',
   timestamp: '2024-08-01T17:48:54.933Z'
 }
+{
+  error: {
+    statusCode: 500,
+    status: 'error',
+    message: "Cannot read properties of null (reading '_id')"
+  },
+  stack: undefined,
+  level: 'error',
+  message: 'Something went wrong',
+  timestamp: '2024-08-02T15:19:37.254Z'
+}
+{
+  error: {
+    statusCode: 500,
+    status: 'error',
+    message: "Cannot read properties of null (reading '_id')"
+  },
+  stack: undefined,
+  level: 'error',
+  message: 'Something went wrong',
+  timestamp: '2024-08-02T15:19:37.258Z'
+}
+{
+  message: "Couldn't Create Cart Items for the user 66a7fe733bbf88338c59348f",
+  level: 'error',
+  timestamp: '2024-08-02T15:20:20.921Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: "Error: Couldn't Create Cart Items",
+  timestamp: '2024-08-02T15:20:20.923Z'
+}
+{
+  message: "Couldn't Create Cart Items for the user 66a7fe733bbf88338c59348f",
+  level: 'error',
+  timestamp: '2024-08-02T15:20:20.926Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: "Error: Couldn't Create Cart Items",
+  timestamp: '2024-08-02T15:20:20.928Z'
+}
+{
+  error: {
+    statusCode: 500,
+    status: 'error',
+    message: "Cannot read properties of null (reading '_id')"
+  },
+  stack: undefined,
+  level: 'error',
+  message: 'Something went wrong',
+  timestamp: '2024-08-02T15:57:54.353Z'
+}
+{
+  email: 'nasserahmed093@gmail.com',
+  level: 'error',
+  message: 'Invalid Email or Password for user in login',
+  timestamp: '2024-08-02T16:00:00.704Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Invalid email or password',
+  timestamp: '2024-08-02T16:00:00.706Z'
+}
+{
+  message: "Couldn't Create Cart Items for the user 66a7fe733bbf88338c59348f",
+  level: 'error',
+  timestamp: '2024-08-02T16:49:08.771Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: "Error: Couldn't Create Cart Items",
+  timestamp: '2024-08-02T16:49:08.773Z'
+}
+{
+  message: "Couldn't Create Cart Items for the user 66a7fe733bbf88338c59348f",
+  level: 'error',
+  timestamp: '2024-08-02T17:51:20.714Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: "Error: Couldn't Create Cart Items",
+  timestamp: '2024-08-02T17:51:20.717Z'
+}
+{
+  message: "Couldn't Create Cart Items for the user 66a7fe733bbf88338c59348f",
+  level: 'error',
+  timestamp: '2024-08-02T18:42:41.639Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: "Error: Couldn't Create Cart Items",
+  timestamp: '2024-08-02T18:42:41.642Z'
+}
+{
+  message: "Couldn't Create Cart Items for the user 66a7fe733bbf88338c59348f",
+  level: 'error',
+  timestamp: '2024-08-02T18:43:47.296Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: "Error: Couldn't Create Cart Items",
+  timestamp: '2024-08-02T18:43:47.298Z'
+}
+{
+  email: 'nasserahmed093@gmail.com',
+  level: 'error',
+  message: 'Invalid Email or Password for user in login',
+  timestamp: '2024-08-02T22:36:58.539Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Invalid email or password',
+  timestamp: '2024-08-02T22:36:58.542Z'
+}
+{
+  email: 'nasserahmed093@gmail.com',
+  level: 'error',
+  message: 'Invalid Email or Password for user in login',
+  timestamp: '2024-08-02T22:38:08.482Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Invalid email or password',
+  timestamp: '2024-08-02T22:38:08.484Z'
+}
+{
+  email: 'admin@gmail.com',
+  level: 'error',
+  message: 'Invalid Email or Password for user in login',
+  timestamp: '2024-08-03T12:57:17.725Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Invalid email or password',
+  timestamp: '2024-08-03T12:57:17.729Z'
+}
+{
+  message: "Couldn't Create Cart Items for the user 66a7fe733bbf88338c59348f",
+  level: 'error',
+  timestamp: '2024-08-03T13:22:04.109Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: "Error: Couldn't Create Cart Items",
+  timestamp: '2024-08-03T13:22:04.112Z'
+}
+{
+  message: "Couldn't Create Cart Items for the user 66a7fe733bbf88338c59348f",
+  level: 'error',
+  timestamp: '2024-08-03T13:31:07.809Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: "Error: Couldn't Create Cart Items",
+  timestamp: '2024-08-03T13:31:07.812Z'
+}
+{
+  email: 'nasserahmed093@gmail.com',
+  level: 'error',
+  message: 'Invalid Email or Password for user in login',
+  timestamp: '2024-08-03T13:32:03.453Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Invalid email or password',
+  timestamp: '2024-08-03T13:32:03.455Z'
+}
+{
+  message: "Couldn't Create Cart Items for the user 66a7fe733bbf88338c59348f",
+  level: 'error',
+  timestamp: '2024-08-03T13:33:09.533Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: "Error: Couldn't Create Cart Items",
+  timestamp: '2024-08-03T13:33:09.536Z'
+}
+{
+  message: "Couldn't Create Cart Items for the user 66a7fe733bbf88338c59348f",
+  level: 'error',
+  timestamp: '2024-08-03T13:34:36.012Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: "Error: Couldn't Create Cart Items",
+  timestamp: '2024-08-03T13:34:36.014Z'
+}
+{
+  email: 'nasserahmed093@gmail.com',
+  level: 'error',
+  message: 'Invalid Email or Password for user in login',
+  timestamp: '2024-08-03T13:36:15.436Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Invalid email or password',
+  timestamp: '2024-08-03T13:36:15.438Z'
+}
+{
+  message: "Couldn't Create Cart Items for the user 66a7fe733bbf88338c59348f",
+  level: 'error',
+  timestamp: '2024-08-03T13:37:39.787Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: "Error: Couldn't Create Cart Items",
+  timestamp: '2024-08-03T13:37:39.790Z'
+}
+{
+  stack: 'Error:  Invalid ID, [object Object] is not a valid ID\n' +
+    '    at castId (file:///H:/Backend%20Backup/Orca-E-commerce/src/middlewares/globalerrorHandler.js:5:10)\n' +
+    '    at globalErrorHandler (file:///H:/Backend%20Backup/Orca-E-commerce/src/middlewares/globalerrorHandler.js:69:43)\n' +
+    '    at Layer.handle_error (H:\\Backend Backup\\Orca-E-commerce\\node_modules\\express\\lib\\router\\layer.js:71:5)\n' +
+    '    at trim_prefix (H:\\Backend Backup\\Orca-E-commerce\\node_modules\\express\\lib\\router\\index.js:326:13)\n' +
+    '    at H:\\Backend Backup\\Orca-E-commerce\\node_modules\\express\\lib\\router\\index.js:286:9\n' +
+    '    at Function.process_params (H:\\Backend Backup\\Orca-E-commerce\\node_modules\\express\\lib\\router\\index.js:346:12)\n' +
+    '    at Immediate.next (H:\\Backend Backup\\Orca-E-commerce\\node_modules\\express\\lib\\router\\index.js:280:10)\n' +
+    '    at Immediate._onImmediate (H:\\Backend Backup\\Orca-E-commerce\\node_modules\\express\\lib\\router\\index.js:646:15)\n' +
+    '    at process.processImmediate (node:internal/timers:480:21)',
+  level: 'error',
+  message: 'Error:  Invalid ID, [object Object] is not a valid ID',
+  timestamp: '2024-08-03T17:35:03.036Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: {"type":"body","error":"Name must be a string"}',
+  timestamp: '2024-08-04T17:48:40.175Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: {"type":"body","error":"Name must be a string"}',
+  timestamp: '2024-08-04T20:47:51.513Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: {"type":"body","error":"Name must be a string"}',
+  timestamp: '2024-08-05T00:15:46.218Z'
+}
+{
+  error: {
+    message: '/tmp/c9d71394-3bc3-4ee7-b1b4-dbfc43333ff6.jpg: unable to open for write\n' +
+      'windows error: The system cannot find the file specified.',
+    statusCode: 500,
+    status: 'error'
+  },
+  stack: undefined,
+  level: 'error',
+  message: 'Something went wrong',
+  timestamp: '2024-08-05T01:34:53.368Z'
+}
+{
+  error: {
+    message: '/tmp/82ec9a64-f5f3-44bf-87c5-5f8fcc050093.jpg: unable to open for write\n' +
+      'windows error: The system cannot find the file specified.',
+    statusCode: 500,
+    status: 'error'
+  },
+  stack: undefined,
+  level: 'error',
+  message: 'Something went wrong',
+  timestamp: '2024-08-05T02:55:57.073Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: {"type":"body","error":"Description must be a string"}',
+  timestamp: '2024-08-05T10:24:19.393Z'
+}
+{
+  error: {
+    statusCode: 500,
+    status: 'error',
+    message: 'slug() requires a string argument, received object'
+  },
+  stack: undefined,
+  level: 'error',
+  message: 'Something went wrong',
+  timestamp: '2024-08-05T10:26:33.937Z'
+}
+{
+  error: {
+    statusCode: 500,
+    status: 'error',
+    message: 'slug() requires a string argument, received object'
+  },
+  stack: undefined,
+  level: 'error',
+  message: 'Something went wrong',
+  timestamp: '2024-08-05T10:26:56.288Z'
+}
+{
+  message: 'Accessing Not Found Route , /api/v1/product',
+  level: 'error',
+  timestamp: '2024-08-05T20:11:00.922Z'
+}
+{
+  message: 'Accessing Not Found Route , /favicon.ico',
+  level: 'error',
+  timestamp: '2024-08-05T20:11:01.189Z'
+}
+{
+  message: 'Accessing Not Found Route , /api/v1/product',
+  level: 'error',
+  timestamp: '2024-08-05T20:11:02.734Z'
+}
+{
+  message: 'Accessing Not Found Route , /api/v1/product',
+  level: 'error',
+  timestamp: '2024-08-05T20:11:02.738Z'
+}
+{
+  token: '',
+  level: 'error',
+  message: 'No token in the header to make the user login ',
+  timestamp: '2024-08-07T10:04:17.449Z'
+}
+{
+  message: 'Accessing Not Found Route , /favicon.ico',
+  level: 'error',
+  timestamp: '2024-08-07T11:14:02.281Z'
+}
+{
+  message: "Couldn't Create Cart Items for the user 66a7fe733bbf88338c59348f",
+  level: 'error',
+  timestamp: '2024-08-07T16:21:08.644Z'
+}
+{
+  email: 'nasserahmed093@gmail.com',
+  level: 'error',
+  message: 'Invalid Email or Password for user in login',
+  timestamp: '2024-08-07T16:24:19.734Z'
+}

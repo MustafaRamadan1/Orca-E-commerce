@@ -29,17 +29,8 @@ export const createProduct = catchAsync(async (req, res, next) => {
   }
 
   console.log(req.body);
-  const {
-    name,
-    description,
-    price,
-    category,
-    quantity,
-    size,
-    discount,
-    colors,
-    subCategory,
-  } = req.body;
+  let { name, description, price, category, quantity, size, discount, colors } =
+    req.body;
 
   if (
     !name ||
@@ -68,7 +59,20 @@ export const createProduct = catchAsync(async (req, res, next) => {
       )
     );
 
-  const product = await Product.findOne({ name });
+  let subCategory = req.body.subCategory;
+
+  if (req.body.subCategory) {
+    subCategory = [...new Set([...subCategory])];
+
+    console.log("subCategory", subCategory);
+  }
+
+  name = JSON.parse(name);
+
+  description = JSON.parse(description);
+
+  const product = await Product.findOne({ "name.en": name.en });
+
   let images = [];
   if (product) {
     if (req.images.length === 3) {
@@ -146,7 +150,7 @@ export const getProduct = catchAsync(async (req, res, next) => {
     {
       $group: {
         _id: "$size.value",
-        slug:{$first:'$slug'},
+        slug: { $first: "$slug" },
         name: { $first: "$name" },
         description: { $first: "$description" },
         price: { $first: "$price" },
@@ -174,7 +178,7 @@ export const getProduct = catchAsync(async (req, res, next) => {
           $push: {
             size: "$_id",
             name: "$name",
-            slug:'$slug',
+            slug: "$slug",
             description: "$description",
             price: "$price",
             category: "$category",
@@ -243,6 +247,12 @@ export const getAllProducts = catchAsync(async (req, res, next) => {
 
 export const updateProduct = catchAsync(async (req, res, next) => {
   const { id } = req.params;
+
+  console.log(req.body);
+
+  // if (req.body.name) {
+  // }
+
   let images = [];
   let bodyColors = [];
   let bodyImages = [];
@@ -337,11 +347,13 @@ export const updateProduct = catchAsync(async (req, res, next) => {
 
   console.log(images);
 
+  req.body.description = JSON.parse(req.body.description);
+
   const updatedProductBySlug = await Product.updateMany(
     {
       slug: product.slug,
     },
-    { name: req.body.name || product.name, images }
+    { name: JSON.parse(req.body.name) || product.name, images }
   );
 
   delete req.body.name;
@@ -408,7 +420,7 @@ export const deleteProduct = catchAsync(async (req, res, next) => {
 
 export const filterProducts = catchAsync(async (req, res, next) => {
   let allProducts = [];
-  const { letters } = req.query;
+  const { lang, letters } = req.query;
 
   let query = {};
 
@@ -421,7 +433,11 @@ export const filterProducts = catchAsync(async (req, res, next) => {
       "i"
     );
 
-    query.name = regex;
+    if (lang === "en") {
+      query["name.en"] = regex;
+    } else if (lang === "ar") {
+      query["name.ar"] = regex;
+    }
 
     allProducts = await Product.find(query);
   } else {
