@@ -10,6 +10,7 @@
 - Product Management
 - Cart Management
 - Payment Integration
+- Localization for supporting English and Arabic
 
 ## Technologies Used
 - **Backend Framework:** Express.js
