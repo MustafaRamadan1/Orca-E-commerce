@@ -67,17 +67,15 @@ class ApiFeature {
       delete filterObject.min;
     }
 
-
-    if(filterObject.sale === 'true'){
-      filterObject.discount ={$gt:0};
+    if (filterObject.sale === "true") {
+      filterObject.discount = { $gt: 0 };
       delete filterObject.sale;
-    }
-    else{
-      filterObject.discount =0;
+    } else {
+      // filterObject.discount =0;
       delete filterObject.sale;
     }
 
-    console.log(filterObject)
+    console.log(filterObject);
     this.query = this.query.find(filterObject);
 
     return this;

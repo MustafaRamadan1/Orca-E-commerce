@@ -206,6 +206,8 @@ router.post("/webHook", async (req, res, next) => {
 
   const billing_data = obj.payment_key_claims.billing_data;
 
+  console.log("billing_data",billing_data);
+
   const amount_cents = obj.amount_cents;
   const created_at = obj.created_at;
   const currency = obj.currency;
@@ -272,7 +274,15 @@ router.post("/webHook", async (req, res, next) => {
         return next(new AppError(`No Payment with this Intention`, 400));
       }
 
+
+console.log("payment",payment);
+
+
+
       const billingData = formatBilling_Data(billing_data);
+
+console.log("Formated Billing Data",billingData )
+
       const newOrder = await Order.create({
         transaction_id: obj.id,
         user: payment.user,
@@ -291,6 +301,8 @@ router.post("/webHook", async (req, res, next) => {
         paymentOrderId: obj.order.id,
       });
 
+
+
       // log the error and return
       if (!newOrder) {
         logger.error(`Couldn't create new order`);
@@ -300,6 +312,9 @@ router.post("/webHook", async (req, res, next) => {
       logger.info(`Created new order for user ${payment.user._id} `, {
         orderId: newOrder._id,
       });
+
+
+      console.log("order",order)
 
       for (let item of payment.cartItems) {
         const product = await Product.findById(item.product._id);
@@ -359,4 +374,35 @@ router.get("/acceptPayment", async (req, res) => {
     next(createError(500, error.message));
   }
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// router.get("/acceptPayment", async (req, res) => {
+//   let success = req.query.success;
+
+//   console.log(req.body, req.query, req.params);
+//   try {
+//     if (success === "true") {
+//       res.redirect("https://ecs-commerce.vercel.app/en/user/payment/status=success");
+//     } else {
+//       res.redirect("https://ecs-commerce.vercel.app/en/user/payment/status=failed");
+//     }
+//   } catch (error) {
+//     next(createError(500, error.message));
+//   }
+// });
 export default router;

@@ -124,7 +124,9 @@ export const deleteSubCategory = catchAsync(async (req, res, next) => {
 });
 
 export const getFilteredSubCategories = catchAsync(async (req, res, next) => {
-  const { letters } = req.query;
+  const { lang, letters } = req.query;
+
+  console.log("letters: ", letters);
 
   let allSubCategories;
 
@@ -138,7 +140,11 @@ export const getFilteredSubCategories = catchAsync(async (req, res, next) => {
       "i"
     );
 
-    query.name = regex;
+    if (lang === "en") {
+      query["name.en"] = regex;
+    } else if (lang === "ar") {
+      query["name.ar"] = regex;
+    }
 
     if (req.query.category) {
       query.category = req.query.category;
@@ -171,21 +177,21 @@ export const getAllSubCategoriesIds = catchAsync(async (req, res, nex) => {
   });
 });
 
-
 export const getAllSubCategoriesAdmin = catchAsync(async (req, res, nex) => {
-
   const totalDocumentNumbers = await subCategory.countDocuments();
-  const limit = req.query.limit  * 1 || 5;
+  const limit = req.query.limit * 1 || 5;
 
-  const apiFeature = new ApiFeature(subCategory.find(),req.query).sort().limitFields().pagination();
+  const apiFeature = new ApiFeature(subCategory.find(), req.query)
+    .sort()
+    .limitFields()
+    .pagination();
 
-  const allSubCategories = await apiFeature.query.populate('category');
-
+  const allSubCategories = await apiFeature.query.populate("category");
 
   res.status(200).json({
-    status:'success',
-    result:allSubCategories.length,
-    numPages:Math.ceil(totalDocumentNumbers / limit),
-    data:allSubCategories
-  })
-})
+    status: "success",
+    result: allSubCategories.length,
+    numPages: Math.ceil(totalDocumentNumbers / limit),
+    data: allSubCategories,
+  });
+});
