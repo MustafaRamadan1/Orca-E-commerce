@@ -19350,3 +19350,37 @@
   message: 'Invalid Email or Password for user in login',
   timestamp: '2024-08-09T23:14:24.970Z'
 }
+{
+  error: {
+    statusCode: 500,
+    status: 'error',
+    message: "Cannot read properties of null (reading '_id')"
+  },
+  stack: undefined,
+  level: 'error',
+  message: 'Something went wrong',
+  timestamp: '2024-08-10T19:22:07.150Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: No Category with this ID',
+  timestamp: '2024-08-10T19:22:36.538Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: No Category with this ID',
+  timestamp: '2024-08-10T19:22:51.023Z'
+}
+{
+  error: {
+    statusCode: 500,
+    status: 'error',
+    message: 'Invalid regular expression: /(?=.*[)(?=.*ش)(?=.*ر)/: Unterminated character class'
+  },
+  stack: undefined,
+  level: 'error',
+  message: 'Something went wrong',
+  timestamp: '2024-08-10T19:27:35.977Z'
+}
