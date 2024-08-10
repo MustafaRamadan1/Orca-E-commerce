@@ -112,7 +112,7 @@ export const updateSubCategory = catchAsync(async (req, res, next) => {
 export const deleteSubCategory = catchAsync(async (req, res, next) => {
   const { id } = req.params;
 
-  const deletedSubCategory = await SubCategory.findByIdAndDelete(id);
+  const deletedSubCategory = await subCategory.findByIdAndDelete(id);
 
   if (!deletedSubCategory)
     return next(new AppError(`No SubCategory with this ID`, 404));
