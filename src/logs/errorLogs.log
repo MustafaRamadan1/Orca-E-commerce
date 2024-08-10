@@ -19350,3 +19350,19 @@
   message: 'Invalid Email or Password for user in login',
   timestamp: '2024-08-09T23:14:24.970Z'
 }
+{
+  userId: new ObjectId('66b7960bef26c5dc0da3439a'),
+  level: 'error',
+  message: "This user didn't activate his account",
+  timestamp: '2024-08-10T17:07:23.934Z'
+}
+{
+  message: 'Accessing Not Found Route , /favicon.ico',
+  level: 'error',
+  timestamp: '2024-08-10T20:35:16.055Z'
+}
+{
+  message: 'Delete cartItems cuz the needed quantity more than the available ',
+  level: 'error',
+  timestamp: '2024-08-10T20:51:35.869Z'
+}
