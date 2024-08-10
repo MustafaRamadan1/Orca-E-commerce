@@ -311,8 +311,6 @@ router.post("/webHook", async (req, res, next) => {
         orderId: newOrder._id,
       });
 
-      console.log("order", order);
-
       for (let item of payment.cartItems) {
         const product = await Product.findById(item.product._id);
         const colors = product.colors.map((color) =>
@@ -341,7 +339,7 @@ router.post("/webHook", async (req, res, next) => {
 
     await CookieCart.findOneAndUpdate(
       {
-        user: new mongoose.Types.ObjectId(payment.user),
+        user: payment.user,
       },
       {
         cartItems: [],

@@ -19351,36 +19351,18 @@
   timestamp: '2024-08-09T23:14:24.970Z'
 }
 {
-  error: {
-    statusCode: 500,
-    status: 'error',
-    message: "Cannot read properties of null (reading '_id')"
-  },
-  stack: undefined,
+  userId: new ObjectId('66b7960bef26c5dc0da3439a'),
   level: 'error',
-  message: 'Something went wrong',
-  timestamp: '2024-08-10T19:22:07.150Z'
+  message: "This user didn't activate his account",
+  timestamp: '2024-08-10T17:07:23.934Z'
 }
 {
-  stack: undefined,
+  message: 'Accessing Not Found Route , /favicon.ico',
   level: 'error',
-  message: 'Error: No Category with this ID',
-  timestamp: '2024-08-10T19:22:36.538Z'
+  timestamp: '2024-08-10T20:35:16.055Z'
 }
 {
-  stack: undefined,
+  message: 'Delete cartItems cuz the needed quantity more than the available ',
   level: 'error',
-  message: 'Error: No Category with this ID',
-  timestamp: '2024-08-10T19:22:51.023Z'
-}
-{
-  error: {
-    statusCode: 500,
-    status: 'error',
-    message: 'Invalid regular expression: /(?=.*[)(?=.*ش)(?=.*ر)/: Unterminated character class'
-  },
-  stack: undefined,
-  level: 'error',
-  message: 'Something went wrong',
-  timestamp: '2024-08-10T19:27:35.977Z'
+  timestamp: '2024-08-10T20:51:35.869Z'
 }
