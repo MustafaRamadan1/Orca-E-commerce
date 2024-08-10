@@ -14,6 +14,8 @@ const authentication = catchAsync(async (req, res, next) => {
     token = req.headers.authorization.split(" ")[1];
   }
 
+
+
   if (!token){
     logger.error(`No token in the header to make the user login `,{
       token
