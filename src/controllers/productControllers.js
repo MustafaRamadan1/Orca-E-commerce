@@ -11,36 +11,44 @@ import {
   uploadToCloudinary,
 } from "../utils/uploadImgHelperFunc.js";
 
-export const createProduct = catchAsync(async (req, res, next) => {
-  let bodyImages = [];
-
-  let bodyColors = [];
-
-  if (req.body.colors) {
-    if (req.body.colors.constructor.name === "Array") {
-      bodyColors = req.body.colors
-        ? req.body.colors.map((color) => {
+function parseData(data) {
+  let parsedData = [];
+  if (data) {
+    if (Array.isArray(data)) {
+      parsedData = data
+        ? data.map((color) => {
             return JSON.parse(color);
           })
         : [];
-    } else if (JSON.parse(req.body.colors).constructor.name === "Object") {
-      bodyColors = [JSON.parse(req.body.colors)];
+    } else if (JSON.parse(data).constructor.name === "Object") {
+      parsedData = [JSON.parse(data)];
     }
+  }
+  return parsedData;
+}
+
+export const createProduct = catchAsync(async (req, res, next) => {
+  // let bodyImages = Array.isArray(
+  //   req.body.images.map((image) => JSON.parse(image))
+  // )
+  //   ? req.body.images
+  //   : [JSON.parse(req.body.images)];
+
+  let bodyImages = [];
+  let bodyColors = [];
+
+  if (req.body.images) {
+    bodyImages = parseData(req.body.images);
+  }
+  if (req.body.colors) {
+    bodyColors = parseData(req.body.colors);
   }
 
   console.log(req.body);
   let { name, description, price, category, quantity, size, discount, colors } =
     req.body;
 
-  if (
-    !name ||
-    !description ||
-    !price ||
-    !category ||
-    !quantity ||
-    !size ||
-    !discount
-  ) {
+  if (!name || !description || !price || !category || !quantity || !size) {
     for (let file of req.images) {
       await deletePhotoFromServer(file);
     }
@@ -83,6 +91,8 @@ export const createProduct = catchAsync(async (req, res, next) => {
 
   const product = await Product.findOne({ "name.en": name.en });
 
+  console.log("product", product);
+
   let images = [];
   if (product) {
     if (req.images.length === 3) {
@@ -97,7 +107,7 @@ export const createProduct = catchAsync(async (req, res, next) => {
 
       images.push(...uploadedImages);
 
-      await Product.findOneAndUpdate({ name }, { images });
+      await Product.findOneAndUpdate({ "name.en": name.en }, { images });
     } else if (bodyImages.length === 3) {
       images.push(...bodyImages);
     } else {
@@ -112,7 +122,7 @@ export const createProduct = catchAsync(async (req, res, next) => {
       }
       images.push(...uploadedImages);
       images.push(...bodyImages);
-      await Product.findOneAndUpdate({ name }, { images });
+      await Product.findOneAndUpdate({ "name.en": name.en }, { images });
       for (let image of differenceImg) {
         await cloudinaryDeleteImg(image.id);
       }
@@ -133,7 +143,7 @@ export const createProduct = catchAsync(async (req, res, next) => {
     category,
     quantity: Number(JSON.parse(quantity)),
     size: JSON.parse(size),
-    discount: Number(JSON.parse(discount)),
+    discount: typeof discount !== "number" ? 0 : Number(JSON.parse(discount)),
     colors: bodyColors,
     images,
     subCategory,
@@ -316,9 +326,19 @@ export const updateProduct = catchAsync(async (req, res, next) => {
   let subCategory = req.body.subCategory;
 
   if (req.body.subCategory) {
-    subCategory = [...new Set([...subCategory])];
+    let _subCategoryValue = subCategory;
+    if (subCategory && !Array.isArray(subCategory)) {
+      _subCategoryValue = [subCategory];
+    }
+    if (subCategory) {
+      subCategory = [...new Set([..._subCategoryValue])];
+    } else {
+      subCategory = [];
+    }
 
     console.log("subCategory", subCategory);
+  } else {
+    subCategory = [];
   }
 
   const product = await Product.findById(id);

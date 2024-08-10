@@ -123,7 +123,10 @@ app.get(
     const productCount = await Product.countDocuments();
     const orderCount = await Order.countDocuments();
     const categoryCount = await Category.countDocuments();
-    const last10Orders = await Order.find().sort("-createdAt").limit(10);
+    const last10Orders = await Order.find()
+      .sort("-createdAt")
+      .limit(10)
+      .populate("user");
     const top3Categories = await Category.find()
       .sort({ createdAt: -1 })
       .limit(3);
