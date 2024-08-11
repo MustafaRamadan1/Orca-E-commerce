@@ -60,15 +60,11 @@ export const getOrder = catchAsync(async (req, res, next) => {
   const { id } = req.params;
 
   const order = await Order.findById(id)
-    .populate({
-      path: "items",
-      populate: "product",
-    })
-    .populate({
-      path: "user",
-      select:
-        "-id -otpCode  -otpExpired -passwordChangedAt -createdAt -updatedAt",
-    });
+  .populate({
+    path: "user",
+    select:
+      "-id -otpCode  -otpExpired -passwordChangedAt -createdAt -updatedAt",
+  });
 
   if (!order) {
     logger.error(`No Order with this ID`, {
