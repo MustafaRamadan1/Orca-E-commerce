@@ -7,7 +7,7 @@ const colorSchema = new mongoose.Schema({
   quantity: { type: Number, required: [true, "Color quantity is required"] },
 });
 const cartItemSchema = new mongoose.Schema({
-  product: { type: mongoose.Types.ObjectId, ref: "Product", required: true },
+  product: { type:Object, required: true },
   price: { type: Number, required: true },
   quantity: { type: Number, required: true },
   color: colorSchema,

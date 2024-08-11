@@ -6,9 +6,10 @@ import Cart from "../Db/models/cart.model.js";
 import User from "../Db/models/user.model.js";
 import logger from "../utils/logger.js";
 import { countCartTotalPrice } from "../utils/helperFunc.js";
-import WishList from '../Db/models/wishList.model.js';
+import WishList from "../Db/models/wishList.model.js";
 export const createCartItem = catchAsync(async (req, res, next) => {
-  const { cartItems,wishListItems } = req.body;
+  console.log("req.body: ", req.body);
+  const { cartItems, wishListItems } = req.body;
 
   const user = await User.findById(req.body.user).populate("cart");
 
@@ -21,7 +22,7 @@ export const createCartItem = catchAsync(async (req, res, next) => {
 
   await CartItem.deleteMany({ cart: user.cart._id });
 
-  await WishList.findOneAndUpdate({user:user._id},{items:[]});
+  await WishList.findOneAndUpdate({ user: user._id }, { items: [] });
   const formattedCartItems = cartItems.map((item) => {
     return {
       cart: user.cart._id,
@@ -67,13 +68,16 @@ export const createCartItem = catchAsync(async (req, res, next) => {
     userId: user._id,
   });
 
-  const wishListFormat = wishListItems.map((item) => item.product)
+  const wishListFormat = wishListItems.map((item) => item.product);
 
-  await WishList.findOneAndUpdate({user:user._id},{items:wishListFormat});
+  await WishList.findOneAndUpdate(
+    { user: user._id },
+    { items: wishListFormat }
+  );
   const cookieCart = await CookieCart.create({
     user: currentCart.user._id,
     cartItems,
-    wishListItems
+    wishListItems,
   });
 
   logger.info(`Created Cart Items For The User ${user._id}`, {

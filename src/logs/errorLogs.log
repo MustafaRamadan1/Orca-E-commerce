@@ -19367,259 +19367,143 @@
   timestamp: '2024-08-10T20:51:35.869Z'
 }
 {
-  stack: 'Error:  Invalid ID,  is not a valid ID\n' +
-    '    at castId (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:5:10)\n' +
-    '    at globalErrorHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:69:43)\n' +
-    '    at Layer.handle_error (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/layer.js:71:5)\n' +
-    '    at trim_prefix (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:326:13)\n' +
-    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:286:9\n' +
-    '    at Function.process_params (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:346:12)\n' +
-    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:280:10)\n' +
-    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:646:15\n' +
-    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:265:14)\n' +
-    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/route.js:141:14)',
+  message: 'Delete cartItems cuz the needed quantity more than the available ',
   level: 'error',
-  message: 'Error:  Invalid ID,  is not a valid ID',
-  timestamp: '2024-08-10T21:11:46.199Z'
-}
-{
-  stack: 'Error:  Invalid ID,  is not a valid ID\n' +
-    '    at castId (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:5:10)\n' +
-    '    at globalErrorHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:69:43)\n' +
-    '    at Layer.handle_error (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/layer.js:71:5)\n' +
-    '    at trim_prefix (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:326:13)\n' +
-    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:286:9\n' +
-    '    at Function.process_params (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:346:12)\n' +
-    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:280:10)\n' +
-    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:646:15\n' +
-    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:265:14)\n' +
-    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/route.js:141:14)',
-  level: 'error',
-  message: 'Error:  Invalid ID,  is not a valid ID',
-  timestamp: '2024-08-10T21:18:26.494Z'
-}
-{
-  stack: 'Error:  Invalid ID,  is not a valid ID\n' +
-    '    at castId (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:5:10)\n' +
-    '    at globalErrorHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:69:43)\n' +
-    '    at Layer.handle_error (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/layer.js:71:5)\n' +
-    '    at trim_prefix (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:326:13)\n' +
-    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:286:9\n' +
-    '    at Function.process_params (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:346:12)\n' +
-    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:280:10)\n' +
-    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:646:15\n' +
-    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:265:14)\n' +
-    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/route.js:141:14)',
-  level: 'error',
-  message: 'Error:  Invalid ID,  is not a valid ID',
-  timestamp: '2024-08-10T21:27:18.886Z'
-}
-{
-  stack: 'Error:  Invalid ID,  is not a valid ID\n' +
-    '    at castId (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:5:10)\n' +
-    '    at globalErrorHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:69:43)\n' +
-    '    at Layer.handle_error (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/layer.js:71:5)\n' +
-    '    at trim_prefix (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:326:13)\n' +
-    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:286:9\n' +
-    '    at Function.process_params (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:346:12)\n' +
-    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:280:10)\n' +
-    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:646:15\n' +
-    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:265:14)\n' +
-    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/route.js:141:14)',
-  level: 'error',
-  message: 'Error:  Invalid ID,  is not a valid ID',
-  timestamp: '2024-08-10T21:29:47.286Z'
-}
-{
-  stack: 'Error:  Invalid ID,  is not a valid ID\n' +
-    '    at castId (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:5:10)\n' +
-    '    at globalErrorHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:69:43)\n' +
-    '    at Layer.handle_error (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/layer.js:71:5)\n' +
-    '    at trim_prefix (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:326:13)\n' +
-    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:286:9\n' +
-    '    at Function.process_params (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:346:12)\n' +
-    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:280:10)\n' +
-    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:646:15\n' +
-    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:265:14)\n' +
-    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/route.js:141:14)',
-  level: 'error',
-  message: 'Error:  Invalid ID,  is not a valid ID',
-  timestamp: '2024-08-10T21:30:05.242Z'
-}
-{
-  stack: 'Error:  Invalid ID,  is not a valid ID\n' +
-    '    at castId (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:5:10)\n' +
-    '    at globalErrorHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:69:43)\n' +
-    '    at Layer.handle_error (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/layer.js:71:5)\n' +
-    '    at trim_prefix (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:326:13)\n' +
-    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:286:9\n' +
-    '    at Function.process_params (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:346:12)\n' +
-    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:280:10)\n' +
-    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:646:15\n' +
-    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:265:14)\n' +
-    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/route.js:141:14)',
-  level: 'error',
-  message: 'Error:  Invalid ID,  is not a valid ID',
-  timestamp: '2024-08-10T21:30:13.231Z'
-}
-{
-  stack: 'Error:  Invalid ID,  is not a valid ID\n' +
-    '    at castId (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:5:10)\n' +
-    '    at globalErrorHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:69:43)\n' +
-    '    at Layer.handle_error (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/layer.js:71:5)\n' +
-    '    at trim_prefix (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:326:13)\n' +
-    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:286:9\n' +
-    '    at Function.process_params (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:346:12)\n' +
-    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:280:10)\n' +
-    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:646:15\n' +
-    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:265:14)\n' +
-    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/route.js:141:14)',
-  level: 'error',
-  message: 'Error:  Invalid ID,  is not a valid ID',
-  timestamp: '2024-08-10T21:30:19.834Z'
-}
-{
-  stack: 'Error:  Invalid ID,  is not a valid ID\n' +
-    '    at castId (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:5:10)\n' +
-    '    at globalErrorHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:69:43)\n' +
-    '    at Layer.handle_error (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/layer.js:71:5)\n' +
-    '    at trim_prefix (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:326:13)\n' +
-    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:286:9\n' +
-    '    at Function.process_params (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:346:12)\n' +
-    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:280:10)\n' +
-    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:646:15\n' +
-    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:265:14)\n' +
-    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/route.js:141:14)',
-  level: 'error',
-  message: 'Error:  Invalid ID,  is not a valid ID',
-  timestamp: '2024-08-10T21:30:42.326Z'
-}
-{
-  stack: 'Error:  Invalid ID,  is not a valid ID\n' +
-    '    at castId (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:5:10)\n' +
-    '    at globalErrorHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:69:43)\n' +
-    '    at Layer.handle_error (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/layer.js:71:5)\n' +
-    '    at trim_prefix (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:326:13)\n' +
-    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:286:9\n' +
-    '    at Function.process_params (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:346:12)\n' +
-    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:280:10)\n' +
-    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:646:15\n' +
-    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:265:14)\n' +
-    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/route.js:141:14)',
-  level: 'error',
-  message: 'Error:  Invalid ID,  is not a valid ID',
-  timestamp: '2024-08-10T21:31:34.769Z'
-}
-{
-  stack: 'Error:  Invalid ID,  is not a valid ID\n' +
-    '    at castId (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:5:10)\n' +
-    '    at globalErrorHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:69:43)\n' +
-    '    at Layer.handle_error (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/layer.js:71:5)\n' +
-    '    at trim_prefix (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:326:13)\n' +
-    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:286:9\n' +
-    '    at Function.process_params (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:346:12)\n' +
-    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:280:10)\n' +
-    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:646:15\n' +
-    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:265:14)\n' +
-    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/route.js:141:14)',
-  level: 'error',
-  message: 'Error:  Invalid ID,  is not a valid ID',
-  timestamp: '2024-08-10T21:31:48.358Z'
-}
-{
-  stack: 'Error:  Invalid ID,  is not a valid ID\n' +
-    '    at castId (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:5:10)\n' +
-    '    at globalErrorHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:69:43)\n' +
-    '    at Layer.handle_error (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/layer.js:71:5)\n' +
-    '    at trim_prefix (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:326:13)\n' +
-    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:286:9\n' +
-    '    at Function.process_params (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:346:12)\n' +
-    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:280:10)\n' +
-    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:646:15\n' +
-    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:265:14)\n' +
-    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/route.js:141:14)',
-  level: 'error',
-  message: 'Error:  Invalid ID,  is not a valid ID',
-  timestamp: '2024-08-10T21:32:19.933Z'
-}
-{
-  stack: 'Error:  Invalid ID,  is not a valid ID\n' +
-    '    at castId (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:5:10)\n' +
-    '    at globalErrorHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:69:43)\n' +
-    '    at Layer.handle_error (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/layer.js:71:5)\n' +
-    '    at trim_prefix (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:326:13)\n' +
-    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:286:9\n' +
-    '    at Function.process_params (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:346:12)\n' +
-    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:280:10)\n' +
-    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:646:15\n' +
-    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:265:14)\n' +
-    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/route.js:141:14)',
-  level: 'error',
-  message: 'Error:  Invalid ID,  is not a valid ID',
-  timestamp: '2024-08-10T21:38:09.114Z'
-}
-{
-  stack: 'Error:  Invalid ID,  is not a valid ID\n' +
-    '    at castId (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:5:10)\n' +
-    '    at globalErrorHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:69:43)\n' +
-    '    at Layer.handle_error (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/layer.js:71:5)\n' +
-    '    at trim_prefix (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:326:13)\n' +
-    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:286:9\n' +
-    '    at Function.process_params (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:346:12)\n' +
-    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:280:10)\n' +
-    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:646:15\n' +
-    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:265:14)\n' +
-    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/route.js:141:14)',
-  level: 'error',
-  message: 'Error:  Invalid ID,  is not a valid ID',
-  timestamp: '2024-08-10T21:40:38.071Z'
+  timestamp: '2024-08-10T23:53:36.461Z'
 }
 {
   stack: undefined,
   level: 'error',
   message: 'Error: No Product Found',
-  timestamp: '2024-08-10T21:54:30.881Z'
-}
-{
-  orderId: '66b7e17c7365de27f369e995',
-  level: 'error',
-  message: 'No Order with this ID',
-  timestamp: '2024-08-10T22:26:34.147Z'
+  timestamp: '2024-08-11T02:31:19.191Z'
 }
 {
   stack: undefined,
   level: 'error',
-  message: 'Error: No Order with this ID',
-  timestamp: '2024-08-10T22:26:34.156Z'
-}
-{
-  orderId: '66b7e17c7365de27f369e995',
-  level: 'error',
-  message: 'No Order with this ID',
-  timestamp: '2024-08-10T22:26:39.016Z'
+  message: 'Error: No Product Found',
+  timestamp: '2024-08-11T02:31:22.442Z'
 }
 {
   stack: undefined,
   level: 'error',
-  message: 'Error: No Order with this ID',
-  timestamp: '2024-08-10T22:26:39.017Z'
+  message: 'Error: No Product Found',
+  timestamp: '2024-08-11T02:31:26.112Z'
 }
 {
-  orderId: '66b7e9ba52ed9b911612c405',
+  message: "Couldn't Create Cart Items for the user 66b7ca8530c435ec1e83bdda",
   level: 'error',
-  message: 'No Order with this ID',
-  timestamp: '2024-08-10T22:45:39.748Z'
+  timestamp: '2024-08-11T15:47:27.974Z'
 }
 {
   stack: undefined,
   level: 'error',
-  message: 'Error: No Order with this ID',
-  timestamp: '2024-08-10T22:45:39.759Z'
+  message: "Error: Couldn't Create Cart Items",
+  timestamp: '2024-08-11T15:47:27.979Z'
 }
 {
-  stack: 'Error:  Invalid ID,  is not a valid ID\n' +
-    '    at castId (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:5:10)\n' +
-    '    at globalErrorHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:69:43)\n' +
+  message: "Couldn't Create Cart Items for the user 66b7ca8530c435ec1e83bdda",
+  level: 'error',
+  timestamp: '2024-08-11T15:49:10.428Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: "Error: Couldn't Create Cart Items",
+  timestamp: '2024-08-11T15:49:10.431Z'
+}
+{
+  message: "Couldn't Create Cart Items for the user 66b7ca8530c435ec1e83bdda",
+  level: 'error',
+  timestamp: '2024-08-11T15:50:11.969Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: "Error: Couldn't Create Cart Items",
+  timestamp: '2024-08-11T15:50:11.971Z'
+}
+{
+  error: {
+    name: 'MulterError',
+    message: 'Unexpected field',
+    code: 'LIMIT_UNEXPECTED_FILE',
+    field: 'images',
+    storageErrors: [],
+    statusCode: 500,
+    status: 'error'
+  },
+  stack: undefined,
+  level: 'error',
+  message: 'Something went wrong',
+  timestamp: '2024-08-11T15:59:55.192Z'
+}
+{
+  error: {
+    name: 'MulterError',
+    message: 'Unexpected field',
+    code: 'LIMIT_UNEXPECTED_FILE',
+    field: 'images',
+    storageErrors: [],
+    statusCode: 500,
+    status: 'error'
+  },
+  stack: undefined,
+  level: 'error',
+  message: 'Something went wrong',
+  timestamp: '2024-08-11T16:05:11.375Z'
+}
+{
+  error: {
+    name: 'MulterError',
+    message: 'Unexpected field',
+    code: 'LIMIT_UNEXPECTED_FILE',
+    field: 'images',
+    storageErrors: [],
+    statusCode: 500,
+    status: 'error'
+  },
+  stack: undefined,
+  level: 'error',
+  message: 'Something went wrong',
+  timestamp: '2024-08-11T16:22:22.115Z'
+}
+{
+  message: "Couldn't Create Cart Items for the user 66b7ca8530c435ec1e83bdda",
+  level: 'error',
+  timestamp: '2024-08-11T16:31:54.874Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: "Error: Couldn't Create Cart Items",
+  timestamp: '2024-08-11T16:31:54.875Z'
+}
+{
+  message: "Couldn't Create Cart Items for the user 66b7ca8530c435ec1e83bdda",
+  level: 'error',
+  timestamp: '2024-08-11T16:33:23.739Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: "Error: Couldn't Create Cart Items",
+  timestamp: '2024-08-11T16:33:23.742Z'
+}
+{
+  message: "Couldn't Create Cart Items for the user 66b7ca8530c435ec1e83bdda",
+  level: 'error',
+  timestamp: '2024-08-11T16:34:57.588Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: "Error: Couldn't Create Cart Items",
+  timestamp: '2024-08-11T16:34:57.590Z'
+}
+{
+  stack: 'Error: Duplicate Key , product ,66b8e75adbdbb2678aa12ced\n' +
+    '    at duplicateKeyHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:9:10)\n' +
+    '    at globalErrorHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:70:37)\n' +
     '    at Layer.handle_error (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/layer.js:71:5)\n' +
     '    at trim_prefix (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:326:13)\n' +
     '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:286:9\n' +
@@ -19627,15 +19511,37 @@
     '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:280:10)\n' +
     '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:646:15\n' +
     '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:265:14)\n' +
-    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/route.js:141:14)',
+    '    at Layer.handle_error (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/layer.js:67:12)',
   level: 'error',
-  message: 'Error:  Invalid ID,  is not a valid ID',
-  timestamp: '2024-08-10T22:55:18.677Z'
+  message: 'Error: Duplicate Key , product ,66b8e75adbdbb2678aa12ced',
+  timestamp: '2024-08-11T16:44:27.686Z'
 }
 {
-  stack: 'Error:  Invalid ID,  is not a valid ID\n' +
-    '    at castId (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:5:10)\n' +
-    '    at globalErrorHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:69:43)\n' +
+  message: "Couldn't Create Cart Items for the user 66b7ca8530c435ec1e83bdda",
+  level: 'error',
+  timestamp: '2024-08-11T16:51:46.570Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: "Error: Couldn't Create Cart Items",
+  timestamp: '2024-08-11T16:51:46.572Z'
+}
+{
+  message: "Couldn't Create Cart Items for the user 66b7ca8530c435ec1e83bdda",
+  level: 'error',
+  timestamp: '2024-08-11T16:51:46.635Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: "Error: Couldn't Create Cart Items",
+  timestamp: '2024-08-11T16:51:46.637Z'
+}
+{
+  stack: 'Error: Duplicate Key , product ,66b8edc136ab3b81843756cb\n' +
+    '    at duplicateKeyHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:9:10)\n' +
+    '    at globalErrorHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:70:37)\n' +
     '    at Layer.handle_error (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/layer.js:71:5)\n' +
     '    at trim_prefix (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:326:13)\n' +
     '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:286:9\n' +
@@ -19643,40 +19549,8 @@
     '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:280:10)\n' +
     '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:646:15\n' +
     '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:265:14)\n' +
-    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/route.js:141:14)',
+    '    at Layer.handle_error (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/layer.js:67:12)',
   level: 'error',
-  message: 'Error:  Invalid ID,  is not a valid ID',
-  timestamp: '2024-08-10T23:01:04.005Z'
-}
-{
-  stack: 'Error:  Invalid ID,  is not a valid ID\n' +
-    '    at castId (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:5:10)\n' +
-    '    at globalErrorHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:69:43)\n' +
-    '    at Layer.handle_error (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/layer.js:71:5)\n' +
-    '    at trim_prefix (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:326:13)\n' +
-    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:286:9\n' +
-    '    at Function.process_params (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:346:12)\n' +
-    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:280:10)\n' +
-    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:646:15\n' +
-    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:265:14)\n' +
-    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/route.js:141:14)',
-  level: 'error',
-  message: 'Error:  Invalid ID,  is not a valid ID',
-  timestamp: '2024-08-10T23:01:57.717Z'
-}
-{
-  stack: 'Error:  Invalid ID,  is not a valid ID\n' +
-    '    at castId (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:5:10)\n' +
-    '    at globalErrorHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:69:43)\n' +
-    '    at Layer.handle_error (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/layer.js:71:5)\n' +
-    '    at trim_prefix (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:326:13)\n' +
-    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:286:9\n' +
-    '    at Function.process_params (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:346:12)\n' +
-    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:280:10)\n' +
-    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:646:15\n' +
-    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:265:14)\n' +
-    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/route.js:141:14)',
-  level: 'error',
-  message: 'Error:  Invalid ID,  is not a valid ID',
-  timestamp: '2024-08-10T23:02:43.431Z'
+  message: 'Error: Duplicate Key , product ,66b8edc136ab3b81843756cb',
+  timestamp: '2024-08-11T17:05:12.181Z'
 }

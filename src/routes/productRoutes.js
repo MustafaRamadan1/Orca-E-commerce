@@ -14,6 +14,7 @@ import isAuth from "../middlewares/authentication.js";
 import Authorization from "../middlewares/Authorization.js";
 import uploadImages from "../middlewares/uploadImages.js";
 import resizeProductImg from "../utils/resizeProductsImage.js";
+import { PRODUCT_IMAGES } from "../constants/index.js";
 const router = Router();
 
 router.get("/:name/:params", (req, res, next) => {
@@ -35,7 +36,7 @@ router.post(
   "/",
   isAuth,
   Authorization("admin"),
-  uploadImages.array("images", 3),
+  uploadImages.array("images", PRODUCT_IMAGES),
   resizeProductImg,
   createProduct
 );
@@ -46,7 +47,7 @@ router.put(
   "/:id",
   isAuth,
   Authorization("admin"),
-  uploadImages.array("images", 3),
+  uploadImages.array("images", PRODUCT_IMAGES),
   resizeProductImg,
   updateProduct
 );

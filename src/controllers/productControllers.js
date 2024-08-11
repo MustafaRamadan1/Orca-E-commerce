@@ -10,6 +10,7 @@ import {
   deletePhotoFromServer,
   uploadToCloudinary,
 } from "../utils/uploadImgHelperFunc.js";
+import { PRODUCT_IMAGES } from "../constants/index.js";
 
 function parseData(data) {
   let parsedData = [];
@@ -95,7 +96,7 @@ export const createProduct = catchAsync(async (req, res, next) => {
 
   let images = [];
   if (product) {
-    if (req.images.length === 3) {
+    if (req.images.length === PRODUCT_IMAGES) {
       const uploadedImages = await uploadToCloudinary(req.images);
       for (let file of req.images) {
         await deletePhotoFromServer(file);
@@ -108,7 +109,7 @@ export const createProduct = catchAsync(async (req, res, next) => {
       images.push(...uploadedImages);
 
       await Product.findOneAndUpdate({ "name.en": name.en }, { images });
-    } else if (bodyImages.length === 3) {
+    } else if (bodyImages.length === PRODUCT_IMAGES) {
       images.push(...bodyImages);
     } else {
       const imagesId = bodyImages.map((image) => image.id);

@@ -6,18 +6,11 @@ import ApiFeature from "../utils/ApiFeature.js";
 import logger from "../utils/logger.js";
 
 export const getAllOrders = catchAsync(async (req, res, next) => {
-  let orders = Order.find()
-    .populate({
-      path: "items",
-      populate: {
-        path: "product",
-      },
-    })
-    .populate({
-      path: "user",
-      select:
-        "-id -otpCode  -otpExpired -passwordChangedAt -createdAt -updatedAt",
-    });
+  let orders = Order.find().populate({
+    path: "user",
+    select:
+      "-id -otpCode  -otpExpired -passwordChangedAt -createdAt -updatedAt",
+  });
 
   if (orders.length === 0) {
     logger.error(`No Documents in the order models`);
@@ -59,8 +52,7 @@ export const getAllOrders = catchAsync(async (req, res, next) => {
 export const getOrder = catchAsync(async (req, res, next) => {
   const { id } = req.params;
 
-  const order = await Order.findById(id)
-  .populate({
+  const order = await Order.findById(id).populate({
     path: "user",
     select:
       "-id -otpCode  -otpExpired -passwordChangedAt -createdAt -updatedAt",
@@ -86,16 +78,11 @@ export const getUserOrders = catchAsync(async (req, res, next) => {
 
   const userOrdersLength = (await Order.find({ user: id })).length;
 
-  let userOrders = Order.find({ user: id })
-    .populate({
-      path: "items",
-      populate: "product",
-    })
-    .populate({
-      path: "user",
-      select:
-        "-id -otpCode  -otpExpired -passwordChangedAt -createdAt -updatedAt",
-    });
+  let userOrders = Order.find({ user: id }).populate({
+    path: "user",
+    select:
+      "-id -otpCode  -otpExpired -passwordChangedAt -createdAt -updatedAt",
+  });
 
   if (req.query.sort) {
     const sortBy = req.query.sorts.split(",").join(" ");

@@ -281,6 +281,8 @@ router.post("/webHook", async (req, res, next) => {
 
       const billingData = formatBilling_Data(billing_data);
 
+      payment.cartItems.forEach((item) => console.log(item.product));
+
       console.log("Formated Billing Data", billingData);
 
       const newOrder = await Order.create({
@@ -289,7 +291,11 @@ router.post("/webHook", async (req, res, next) => {
         orderPrice: obj.amount_cents / 100,
         items: payment.cartItems.map((item) => {
           return {
-            product: item.product._id,
+            product:{
+              name: item.product.name,
+              size: item.product.size,
+              images:item.product.images
+            },
             price: item.product.saleProduct,
             quantity: item.quantity,
             color: item.product.colors.filter(
@@ -335,18 +341,20 @@ router.post("/webHook", async (req, res, next) => {
       await Cart.findByIdAndUpdate(payment.cartItems[0].cart._id, {
         totalPrice: 0,
       });
+
+      await CookieCart.findOneAndUpdate(
+        {
+          user: new mongoose.Types.ObjectId(payment.user),
+        },
+        {
+          cartItems: [],
+        }
+      );
+  
     }
 
-    await CookieCart.findOneAndUpdate(
-      {
-        user: payment.user,
-      },
-      {
-        cartItems: [],
-      }
-    );
-
-    console.log(`outside `);
+    
+  
   } catch (err) {
     // log the error
     console.log(err);
