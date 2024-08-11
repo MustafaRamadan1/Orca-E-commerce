@@ -19366,3 +19366,8 @@
   level: 'error',
   timestamp: '2024-08-10T20:51:35.869Z'
 }
+{
+  message: 'Delete cartItems cuz the needed quantity more than the available ',
+  level: 'error',
+  timestamp: '2024-08-10T23:53:36.461Z'
+}

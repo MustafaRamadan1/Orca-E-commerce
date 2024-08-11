@@ -8,12 +8,6 @@ import logger from "../utils/logger.js";
 export const getAllOrders = catchAsync(async (req, res, next) => {
   let orders = Order.find()
     .populate({
-      path: "items",
-      populate: {
-        path: "product",
-      },
-    })
-    .populate({
       path: "user",
       select:
         "-id -otpCode  -otpExpired -passwordChangedAt -createdAt -updatedAt",
@@ -61,10 +55,6 @@ export const getOrder = catchAsync(async (req, res, next) => {
 
   const order = await Order.findById(id)
     .populate({
-      path: "items",
-      populate: "product",
-    })
-    .populate({
       path: "user",
       select:
         "-id -otpCode  -otpExpired -passwordChangedAt -createdAt -updatedAt",
@@ -91,10 +81,6 @@ export const getUserOrders = catchAsync(async (req, res, next) => {
   const userOrdersLength = (await Order.find({ user: id })).length;
 
   let userOrders = Order.find({ user: id })
-    .populate({
-      path: "items",
-      populate: "product",
-    })
     .populate({
       path: "user",
       select:
