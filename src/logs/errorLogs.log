@@ -20327,3 +20327,265 @@
   message: 'Error: Invalid email or password',
   timestamp: '2024-08-12T15:08:41.128Z'
 }
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Name must only contain letters',
+  timestamp: '2024-08-12T15:10:39.077Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Name must only contain letters',
+  timestamp: '2024-08-12T15:10:42.467Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Name must only contain letters',
+  timestamp: '2024-08-12T15:10:43.036Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Name must only contain letters',
+  timestamp: '2024-08-12T15:10:43.223Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Name must only contain letters',
+  timestamp: '2024-08-12T15:10:44.178Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Name must only contain letters',
+  timestamp: '2024-08-12T15:10:44.351Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Name must only contain letters',
+  timestamp: '2024-08-12T15:10:46.080Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Name must only contain letters',
+  timestamp: '2024-08-12T15:10:46.272Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Name must only contain letters',
+  timestamp: '2024-08-12T15:10:46.691Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Name must only contain letters',
+  timestamp: '2024-08-12T15:10:46.889Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Name must only contain letters',
+  timestamp: '2024-08-12T15:10:47.092Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Name must only contain letters',
+  timestamp: '2024-08-12T15:10:47.289Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Name must only contain letters',
+  timestamp: '2024-08-12T15:10:47.505Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Name must only contain letters',
+  timestamp: '2024-08-12T15:10:47.739Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Name must only contain letters',
+  timestamp: '2024-08-12T15:10:47.976Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Name must only contain letters',
+  timestamp: '2024-08-12T15:10:48.204Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Name must only contain letters',
+  timestamp: '2024-08-12T15:10:48.437Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Name must only contain letters',
+  timestamp: '2024-08-12T15:10:48.809Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Name must only contain letters',
+  timestamp: '2024-08-12T15:10:48.905Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Name must only contain letters',
+  timestamp: '2024-08-12T15:10:49.142Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Name must only contain letters',
+  timestamp: '2024-08-12T15:10:49.445Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Name must only contain letters',
+  timestamp: '2024-08-12T15:10:49.658Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Name must only contain letters',
+  timestamp: '2024-08-12T15:10:50.043Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Name must only contain letters',
+  timestamp: '2024-08-12T15:10:50.240Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Name must only contain letters',
+  timestamp: '2024-08-12T15:10:50.455Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Name must only contain letters',
+  timestamp: '2024-08-12T15:10:50.671Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Name must only contain letters',
+  timestamp: '2024-08-12T15:10:50.887Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Name must only contain letters',
+  timestamp: '2024-08-12T15:10:51.139Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Name must only contain letters',
+  timestamp: '2024-08-12T15:10:51.372Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Name must only contain letters',
+  timestamp: '2024-08-12T15:11:15.460Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Name must only contain letters',
+  timestamp: '2024-08-12T15:11:15.606Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Name must only contain letters',
+  timestamp: '2024-08-12T15:11:15.771Z'
+}
+{
+  stack: 'Error: Duplicate Key , slug ,pants\n' +
+    '    at duplicateKeyHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:9:10)\n' +
+    '    at globalErrorHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:70:37)\n' +
+    '    at Layer.handle_error (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/layer.js:71:5)\n' +
+    '    at trim_prefix (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:326:13)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:286:9\n' +
+    '    at Function.process_params (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:346:12)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:280:10)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:646:15\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:265:14)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/route.js:141:14)',
+  level: 'error',
+  message: 'Error: Duplicate Key , slug ,pants',
+  timestamp: '2024-08-12T15:14:50.126Z'
+}
+{
+  message: "Couldn't Create Cart Items for the user 66ba262028dac15a78177430",
+  level: 'error',
+  timestamp: '2024-08-12T15:15:49.350Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: "Error: Couldn't Create Cart Items",
+  timestamp: '2024-08-12T15:15:49.352Z'
+}
+{
+  stack: 'Error: Duplicate Key , slug ,male_jeans\n' +
+    '    at duplicateKeyHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:9:10)\n' +
+    '    at globalErrorHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:70:37)\n' +
+    '    at Layer.handle_error (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/layer.js:71:5)\n' +
+    '    at trim_prefix (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:326:13)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:286:9\n' +
+    '    at Function.process_params (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:346:12)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:280:10)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:646:15\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:265:14)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/route.js:141:14)',
+  level: 'error',
+  message: 'Error: Duplicate Key , slug ,male_jeans',
+  timestamp: '2024-08-12T15:16:09.288Z'
+}
+{
+  error: {
+    statusCode: 500,
+    status: 'error',
+    message: 'Invalid regular expression: /(?=.*[)/: Unterminated character class'
+  },
+  stack: undefined,
+  level: 'error',
+  message: 'Something went wrong',
+  timestamp: '2024-08-12T15:42:34.595Z'
+}
+{
+  stack: 'Error: Duplicate Key , subCategory ,66ba26f779c6bd6aa93a7e31\n' +
+    '    at duplicateKeyHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:9:10)\n' +
+    '    at globalErrorHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:70:37)\n' +
+    '    at Layer.handle_error (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/layer.js:71:5)\n' +
+    '    at trim_prefix (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:326:13)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:286:9\n' +
+    '    at Function.process_params (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:346:12)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:280:10)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:646:15\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:265:14)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/route.js:141:14)',
+  level: 'error',
+  message: 'Error: Duplicate Key , subCategory ,66ba26f779c6bd6aa93a7e31',
+  timestamp: '2024-08-12T15:43:24.374Z'
+}
