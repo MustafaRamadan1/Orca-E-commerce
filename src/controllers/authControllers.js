@@ -158,10 +158,6 @@ resetPasswordURL */
     }:3000/${locale}/user/resetPassword/${token}`,
   });
 
-
-  console.log(`${req.protocol}://${
-      req.get("host").split(":")[0]
-    }:3000/${locale}/user/resetPassword/${token}`)
   await sendEmail({
     to: user.email,
     subject: "Reset Your Password",

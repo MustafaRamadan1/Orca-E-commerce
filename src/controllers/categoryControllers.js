@@ -120,7 +120,7 @@ export const getFilteredCategories = catchAsync(async (req, res, next) => {
   const { lang, letters } = req.query;
   let query = {};
 
-  console.log(req.query);
+
 
   let allCategories;
   if (letters) {
@@ -142,8 +142,6 @@ export const getFilteredCategories = catchAsync(async (req, res, next) => {
   } else {
     allCategories = [];
   }
-
-  console.log(allCategories);
 
   if (!allCategories) return next(new AppError(`No Category in the DB`, 404));
 

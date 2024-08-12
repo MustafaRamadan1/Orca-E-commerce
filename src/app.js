@@ -230,7 +230,7 @@ app.get(
         },
       },
     ]);
-    console.log(users);
+ 
     res.status(200).json({
       success: true,
       userCount,
