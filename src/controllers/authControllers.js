@@ -298,12 +298,9 @@ export const updateUserPassword = catchAsync(async (req, res, next) => {
   );
 
 
-  const token  = signToken({id:user._id});
-
   res.status(200).json({
     status: "success",
     message: "Password Changed Successfully",
-    token
   });
 });
 
