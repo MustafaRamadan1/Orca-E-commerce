@@ -390,7 +390,9 @@ export const updateProduct = catchAsync(async (req, res, next) => {
     {
       slug: product.slug,
     },
-    { name: JSON.parse(req.body.name) || product.name, images }
+    { name: JSON.parse(req.body.name) || product.name, images ,
+      category: req.body.category,
+    }
   );
   console.log("hello");
 
