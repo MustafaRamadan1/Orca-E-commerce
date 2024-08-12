@@ -408,6 +408,15 @@ export const updateProduct = catchAsync(async (req, res, next) => {
     req.body.description = JSON.parse(req.body.description);
   }
 
+  if(req.body.discount){
+
+    req.body.discount = Number(req.body.discount);
+  }
+  else{
+    req.body.discount = 0;
+  }
+
+  
   const updatedProductBySlug = await Product.updateMany(
     {
       slug: product.slug,
