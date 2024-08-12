@@ -135,7 +135,15 @@ export const createProduct = catchAsync(async (req, res, next) => {
     }
   }
 
-  console.log("##### subCategory #####: ", subCategory);
+ 
+  if(discount){
+    
+    discount = Number(discount);
+  }
+  else{
+    discount = 0;
+  }
+  
 
   const newProduct = await Product.create({
     name,
@@ -144,7 +152,7 @@ export const createProduct = catchAsync(async (req, res, next) => {
     category,
     quantity: Number(JSON.parse(quantity)),
     size: JSON.parse(size),
-    discount: typeof discount !== "number" ? 0 : Number(JSON.parse(discount)),
+    discount,
     colors: bodyColors,
     images,
     subCategory,
@@ -156,6 +164,13 @@ export const createProduct = catchAsync(async (req, res, next) => {
     }
     return next(new AppError(`Couldn't Create new Product`, 400));
   }
+
+  await Product.updateMany(
+    {
+      slug: newProduct.slug,
+    },
+    { $set: { category: newProduct.category } }
+  );
 
   res.status(201).json({
     status: "success",
@@ -310,19 +325,23 @@ export const updateProduct = catchAsync(async (req, res, next) => {
     req.body.size = JSON.parse(req.body.size);
   }
 
-  const colorsQuantity = bodyColors.reduce((total, cur) => {
-    return total + cur.quantity;
-  }, 0);
+  if (req.body.colors) {
+    const colorsQuantity = bodyColors.reduce((total, cur) => {
+      return total + cur.quantity;
+    }, 0);
 
-  console.log(colorsQuantity, +req.body.quantity);
+    console.log(colorsQuantity, +req.body.quantity);
 
-  if (+colorsQuantity !== +req.body.quantity)
-    return next(
-      new AppError(
-        `colors total quantity not qual quantity please provide valide value `,
-        400
-      )
-    );
+    if (req.body.quantity) {
+      if (+colorsQuantity !== +req.body.quantity)
+        return next(
+          new AppError(
+            `colors total quantity not qual quantity please provide valide value `,
+            400
+          )
+        );
+    }
+  }
 
   let subCategory = req.body.subCategory;
 
@@ -384,13 +403,20 @@ export const updateProduct = catchAsync(async (req, res, next) => {
     }
   }
 
-  req.body.description = JSON.parse(req.body.description);
+  console.log(req.body.description);
+  if (req.body.description) {
+    req.body.description = JSON.parse(req.body.description);
+  }
 
   const updatedProductBySlug = await Product.updateMany(
     {
       slug: product.slug,
     },
-    { name: JSON.parse(req.body.name) || product.name, images }
+    {
+      name: req.body.name? JSON.parse(req.body.name) : product.name,
+      images,
+      category: req.body.category,
+    }
   );
   console.log("hello");
 

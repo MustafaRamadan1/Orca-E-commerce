@@ -17,7 +17,7 @@ export const signUp = catchAsync(async (req, res, next) => {
   const { name, email, password } = req.body;
 
   const newUser = await User.create({
-    name,
+    name: name.split(' ')[0],
     email,
     password,
   });
@@ -158,10 +158,6 @@ resetPasswordURL */
     }:3000/${locale}/user/resetPassword/${token}`,
   });
 
-
-  console.log(`${req.protocol}://${
-      req.get("host").split(":")[0]
-    }:3000/${locale}/user/resetPassword/${token}`)
   await sendEmail({
     to: user.email,
     subject: "Reset Your Password",
