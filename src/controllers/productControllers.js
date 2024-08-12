@@ -135,7 +135,15 @@ export const createProduct = catchAsync(async (req, res, next) => {
     }
   }
 
-  console.log("##### subCategory #####: ", subCategory);
+ 
+  if(discount){
+    
+    discount = Number(discount);
+  }
+  else{
+    discount = 0;
+  }
+  
 
   const newProduct = await Product.create({
     name,
@@ -144,7 +152,7 @@ export const createProduct = catchAsync(async (req, res, next) => {
     category,
     quantity: Number(JSON.parse(quantity)),
     size: JSON.parse(size),
-    discount: typeof discount !== "number" ? 0 : Number(JSON.parse(discount)),
+    discount,
     colors: bodyColors,
     images,
     subCategory,
