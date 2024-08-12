@@ -16,22 +16,24 @@ const validation = (schema) => (req, res, next) => {
 
       if (error) {
         console.log(error);
-        errorMessages.push(errorFormat(error, part));
+        errorMessages.push(error.details[0].message);
       }
     }
   });
 
   if (errorMessages.length > 0) {
-    console.log(JSON.parse(errorMessages.join(" , ")));
+    // console.log(JSON.parse(errorMessages.join(" , ")));
+    // return next(new AppError(errorMessages.join(" , "), 400));
     return next(new AppError(errorMessages.join(" , "), 400));
   } else {
     return next();
   }
 };
 
-function errorFormat(error, part) {
-  const object = { type: part, error: error.details[0].message };
-  // return `${part}Error : ${error.details[0].message}`
-  return JSON.stringify(object);
-}
+// function errorFormat(error, part) {
+//   console.log("error.details[0]", error.details[0]);
+//   const object = { error: error.details[0].message };
+//   // return `${part}Error : ${error.details[0].message}`
+//   return JSON.stringify(object);
+// }
 export default validation;
