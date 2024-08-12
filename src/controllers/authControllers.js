@@ -147,17 +147,36 @@ export const forgetPassword = catchAsync(async (req, res, next) => {
   }
 
   const token = user.createResetPasswordToken();
-
+/*
+resetPasswordURL */
   await user.save();
 
-  await sendEmail({
-    to: user.email,
-    subject: "Forget Your Password , Please Check Email to reset it again",
-    text: `If you forget your Password Please click on the link below\n
-          ${req.protocol}://${
+  const html = compileTemplate(`${__dirname}/../views/forgetPassword.pug`, {
+    firstName: user.name,
+    resetPasswordLink: `${req.protocol}://${
       req.get("host").split(":")[0]
     }:3000/${locale}/user/resetPassword/${token}`,
   });
+
+
+  console.log(`${req.protocol}://${
+      req.get("host").split(":")[0]
+    }:3000/${locale}/user/resetPassword/${token}`)
+  await sendEmail({
+    to: user.email,
+    subject: "Reset Your Password",
+    html,
+  });
+
+
+  // await sendEmail({
+  //   to: user.email,
+  //   subject: "Forget Your Password , Please Check Email to reset it again",
+  //   text: `If you forget your Password Please click on the link below\n
+  //         ${req.protocol}://${
+  //     req.get("host").split(":")[0]
+  //   }:3000/${locale}/user/resetPassword/${token}`,
+  // });
 
   logger.info(`Sending Email to the user to reset the password`, {
     userId: user._id,
@@ -278,9 +297,13 @@ export const updateUserPassword = catchAsync(async (req, res, next) => {
     }
   );
 
+
+  const token  = signToken({id:user._id});
+
   res.status(200).json({
     status: "success",
     message: "Password Changed Successfully",
+    token
   });
 });
 
