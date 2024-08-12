@@ -157,6 +157,11 @@ export const createProduct = catchAsync(async (req, res, next) => {
     return next(new AppError(`Couldn't Create new Product`, 400));
   }
 
+
+  await Product.updateMany({
+    slug: newProduct.slug
+  }, {$set:{category:newProduct.category}});
+
   res.status(201).json({
     status: "success",
     data: newProduct,
