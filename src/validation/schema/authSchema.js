@@ -4,7 +4,7 @@ const signUp = {
     name: Joi.string()
       .required()
       .min(3)
-      .pattern(/^[a-zA-Z]+$/)
+      .pattern(/^[a-zA-Z\s]+$/)
       .messages({
         "any.required": "Name is Required",
         "string.base": "Name must be a string",

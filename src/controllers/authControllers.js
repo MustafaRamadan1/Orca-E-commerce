@@ -17,7 +17,7 @@ export const signUp = catchAsync(async (req, res, next) => {
   const { name, email, password } = req.body;
 
   const newUser = await User.create({
-    name,
+    name: name.split(' ')[0],
     email,
     password,
   });
