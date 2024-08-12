@@ -245,15 +245,6 @@ app.get(
   })
 );
 
-/*
-top 3 categories
-products number of last 10 categories
-last 10 orders
-number of all users
-number of all orders
-number of all products
-number of all categories
-*/
 //  not found route for non exist routes
 
 app.all("*", (req, res, next) => {
