@@ -86,7 +86,7 @@ router.post(
 
       const productNExist = [];
       for(let item in cartItems){
-        const product = await Product.findById(item.product._id);
+        const product = await Product.findById(item.product);
         if(!product) productNExist.push(item.name);
       }
 
