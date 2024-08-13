@@ -19,7 +19,7 @@
     "cloudinary": "^2.2.0",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
-    "debug": "^4.3.1",
+    "debug": "^4.3.5",
     "dotenv": "^16.4.5",
     "e-commerce": "file:",
     "express": "^4.19.2",
