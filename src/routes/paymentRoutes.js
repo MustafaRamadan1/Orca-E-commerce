@@ -223,8 +223,6 @@ router.post("/webHook", async (req, res, next) => {
 
   console.log(req.body, req.query);
 
-  console.log("billing_data", billing_data);
-
   const amount_cents = obj.amount_cents;
   const created_at = obj.created_at;
   const currency = obj.currency;
@@ -350,9 +348,14 @@ router.post("/webHook", async (req, res, next) => {
           (total, color) => total + color.quantity,
           0
         );
+       if(quantity === 0){
+       await Product.findByIdAndDelete(product._id);
+       }
+       else{
         product.colors = colors;
         product.quantity = quantity;
         await product.save();
+       }
       }
 
       await CartItem.deleteMany({

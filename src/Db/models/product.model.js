@@ -122,15 +122,6 @@ productSchema.pre('save', async function(next) {
   if(this.colors.length > 0){
     this.colors = this.colors.filter(color=> color.quantity > 0);
   }
-  if (this.quantity <= 0) {
-    // Delete the document if quantity is 0 or less
-    await this.constructor.deleteOne({ _id: this._id });
-    // Prevent further save operations
-    logger.info(`deleted product with id ${this._id}`);
-    console.log(`Delete the product cuz the quantity is 0 ${this}`);
-  } else {
-    next();
-  }
 });
 productSchema.pre("findOneAndUpdate", function (next) {
   const update = this.getUpdate();
