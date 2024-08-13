@@ -4,25 +4,25 @@ const cartItemSchema = new mongoose.Schema(
     product: {
       type: mongoose.Types.ObjectId,
       ref: "Product",
-      required: [true, "Cart Item Must has a product"],
+      required: [true, "Cart Item Must has a product"]
     },
     cart: {
       type: mongoose.Types.ObjectId,
       ref: "Cart",
-      required: [true, "Cart Item must belongs to cart"],
+      required: [true, "Cart Item must belongs to cart"]
     },
 
     quantity: {
       type: Number,
-      required: [true, "Cart Item Must has a quantity"],
+      required: [true, "Cart Item Must has a quantity"]
     },
     color: {
       type: String,
-      required: [true, `Color Id is Required for Cart Item`],
-    },
+      required: [true, `Color Id is Required for Cart Item`]
+    }
   },
   {
-    timestamps: true,
+    timestamps: true
   }
 );
 

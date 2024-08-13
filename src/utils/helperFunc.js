@@ -2,14 +2,14 @@ import jwt from "jsonwebtoken";
 import pug from "pug";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
-import Product from '../Db/models/product.model.js'
+import Product from "../Db/models/product.model.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 export const signToken = (payload) => {
   return jwt.sign(payload, process.env.SECERT_KEY, {
-    expiresIn: process.env.EXPIRES_IN,
+    expiresIn: process.env.EXPIRES_IN
   });
 };
 
@@ -38,7 +38,7 @@ export const formatItemsForPayment = (cartItem, locale) => {
       name: item.product.name[locale],
       description: item.product.description[locale],
       amount: item.product.saleProduct * 100,
-      quantity: item.quantity,
+      quantity: item.quantity
     };
   });
 };
@@ -54,26 +54,25 @@ export const compileTemplate = (templatePath, data) => {
   return html;
 };
 
-
-export const validateCartItemsQuantity = async(cartItems)=>{
+export const validateCartItemsQuantity = async (cartItems) => {
   const productNExist = [];
   for (let item of cartItems) {
     const product = await Product.findById(item.product);
     if (!product) {
-      productNExist.push(item.name);
+      productNExist.push({ name: item.name });
     } else {
       product.colors.forEach((color) => {
-        console.log("color", color);
         color;
         if (color.id === item.colorId) {
           color.quantity < item.quantity
-            ? productNExist.push(item.name)
+            ? productNExist.push({
+                name: item.name,
+                quantity: product.quantity
+              })
             : null;
-        } else {
-          productNExist.push(item.name);
         }
       });
     }
   }
   return productNExist;
-}
+};
