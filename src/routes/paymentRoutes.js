@@ -84,6 +84,22 @@ router.post(
 
     console.log("cartItems", cartItems);
 
+      const productNExist = [];
+      for(let item in cartItems){
+        const product = await Product.findById(item.product._id);
+        if(!product) productNExist.push(item.name);
+      }
+
+      if(productNExist.length > 0){
+
+        return res.status(400).json({
+          status:'fail',
+          message:{en:productNExist.map(item => item.name.en).join(' '),
+            en:productNExist.map(item => item.name.en).join(' ')
+          }
+        })
+      }
+
     const formattedCartItems = cartItems.map((item) => {
       return {
         cart: item.cart,
@@ -285,6 +301,7 @@ router.post("/webHook", async (req, res, next) => {
 
       console.log("Formated Billing Data", billingData);
 
+      console.log(payment.cartItems.map((item) => item.product));
       const newOrder = await Order.create({
         transaction_id: obj.id,
         user: payment.user,

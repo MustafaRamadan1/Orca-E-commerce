@@ -7,7 +7,7 @@ const castId = (err) => {
 
 const duplicateKeyHandler = (err) => {
   const message = Object.keys(err.keyValue).map((key)=>
-  `Key ${key} is Already exist in the Db with  Value: ${err.keyValue[key]}`)
+  `Key ${key} is Already exist in the Db`)
   return new AppError(
     `${message} `,
     422
