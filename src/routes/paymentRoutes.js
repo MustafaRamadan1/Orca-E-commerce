@@ -84,21 +84,26 @@ router.post(
 
     console.log("cartItems", cartItems);
 
-      const productNExist = [];
-      for(let item in cartItems){
-        const product = await Product.findById(item.product);
-        if(!product) productNExist.push(item.name);
-      }
+    const productNExist = [];
+    for (let item of cartItems) {
+      const product = await Product.findById(item.product);
+      if (!product) productNExist.push(item.name);
+      product.colors.forEach((color) => {
+        if (color._id === item.colorId) {
+          color.quantity < item.quantity ? productNExist.push(item.name) : null;
+        }
+      });
+    }
 
-      if(productNExist.length > 0){
-
-        return res.status(400).json({
-          status:'fail',
-          message:{en:productNExist.map(item => item.name.en).join(' '),
-            en:productNExist.map(item => item.name.en).join(' ')
-          }
-        })
-      }
+    if (productNExist.length > 0) {
+      return res.status(400).json({
+        status: "fail",
+        message: {
+          en: productNExist.map((item) => item.name.en).join(" "),
+          en: productNExist.map((item) => item.name.en).join(" "),
+        },
+      });
+    }
 
     const formattedCartItems = cartItems.map((item) => {
       return {
@@ -308,10 +313,10 @@ router.post("/webHook", async (req, res, next) => {
         orderPrice: obj.amount_cents / 100,
         items: payment.cartItems.map((item) => {
           return {
-            product:{
+            product: {
               name: item.product.name,
               size: item.product.size,
-              images:item.product.images
+              images: item.product.images,
             },
             price: item.product.saleProduct,
             quantity: item.quantity,
@@ -367,11 +372,7 @@ router.post("/webHook", async (req, res, next) => {
           cartItems: [],
         }
       );
-  
     }
-
-    
-  
   } catch (err) {
     // log the error
     console.log(err);
