@@ -36,7 +36,7 @@ export const formatItemsForPayment = (cartItem, locale) => {
   return cartItem.map((item) => {
     return {
       name: item.product.name.en,
-      description: item.product.description.en,
+      description: "YES" || item.product.description.en,
       amount: item.product.saleProduct * 100,
       quantity: item.quantity,
     };
