@@ -68,6 +68,11 @@ export const createProduct = catchAsync(async (req, res, next) => {
       )
     );
 
+  if (req.body.quantity) {
+    if (req.body.quantity < 0)
+      return next(new AppError(`quantity is not valid`, 400));
+  }
+
   let subCategory = req.body.subCategory;
 
   if (req.body.subCategory) {
@@ -135,8 +140,9 @@ export const createProduct = catchAsync(async (req, res, next) => {
     }
   }
 
+  // 'undefiend'
   if (discount) {
-    discount = Number(discount);
+    discount = Number.isNaN(+discount) ? 0 : Number(discount);
   } else {
     discount = 0;
   }
@@ -151,7 +157,10 @@ export const createProduct = catchAsync(async (req, res, next) => {
     discount,
     colors: bodyColors,
     images,
-    subCategory: subCategory?.length > 0 ? subCategory : product.subCategory,
+    subCategory:
+      Array.isArray(subCategory) && subCategory?.length > 0
+        ? subCategory
+        : product?.subCategory || [],
   });
 
   if (!newProduct) {

@@ -20928,3 +20928,350 @@
   message: 'Error: Invalid email or password',
   timestamp: '2024-08-13T14:55:52.048Z'
 }
+{
+  email: 'admin@gmail.com',
+  level: 'error',
+  message: 'Invalid Email or Password for user in login',
+  timestamp: '2024-08-13T14:58:13.082Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Invalid email or password',
+  timestamp: '2024-08-13T14:58:13.084Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Password must be at least 8 characters',
+  timestamp: '2024-08-13T14:58:15.990Z'
+}
+{
+  userId: new ObjectId('66bb743450f4ed785105e3cc'),
+  email: 'khalednasser788@gmail.com',
+  name: 'Khaled',
+  isActive: false,
+  level: 'error',
+  message: 'Not Activated User , should Activate his account',
+  timestamp: '2024-08-13T14:58:29.677Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Please Active your account',
+  timestamp: '2024-08-13T14:58:29.678Z'
+}
+{
+  userId: new ObjectId('66bb743450f4ed785105e3cc'),
+  email: 'khalednasser788@gmail.com',
+  name: 'Khaled',
+  isActive: false,
+  level: 'error',
+  message: 'Not Activated User , should Activate his account',
+  timestamp: '2024-08-13T14:58:33.867Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Please Active your account',
+  timestamp: '2024-08-13T14:58:33.868Z'
+}
+{
+  userId: new ObjectId('66bb743450f4ed785105e3cc'),
+  email: 'khalednasser788@gmail.com',
+  name: 'Khaled',
+  isActive: false,
+  level: 'error',
+  message: 'Not Activated User , should Activate his account',
+  timestamp: '2024-08-13T14:58:34.645Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Please Active your account',
+  timestamp: '2024-08-13T14:58:34.646Z'
+}
+{
+  userId: new ObjectId('66bb743450f4ed785105e3cc'),
+  email: 'khalednasser788@gmail.com',
+  name: 'Khaled',
+  isActive: false,
+  level: 'error',
+  message: 'Not Activated User , should Activate his account',
+  timestamp: '2024-08-13T14:58:44.201Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Please Active your account',
+  timestamp: '2024-08-13T14:58:44.201Z'
+}
+{
+  userId: new ObjectId('66bb743450f4ed785105e3cc'),
+  email: 'khalednasser788@gmail.com',
+  name: 'Khaled',
+  isActive: false,
+  level: 'error',
+  message: 'Not Activated User , should Activate his account',
+  timestamp: '2024-08-13T14:59:03.034Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Please Active your account',
+  timestamp: '2024-08-13T14:59:03.035Z'
+}
+{
+  userId: new ObjectId('66bb743450f4ed785105e3cc'),
+  email: 'khalednasser788@gmail.com',
+  name: 'Khaled',
+  isActive: false,
+  level: 'error',
+  message: 'Not Activated User , should Activate his account',
+  timestamp: '2024-08-13T15:01:15.640Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Please Active your account',
+  timestamp: '2024-08-13T15:01:15.641Z'
+}
+{
+  userId: new ObjectId('66bb743450f4ed785105e3cc'),
+  email: 'khalednasser788@gmail.com',
+  name: 'Khaled',
+  isActive: false,
+  level: 'error',
+  message: 'Not Activated User , should Activate his account',
+  timestamp: '2024-08-13T15:01:17.296Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Please Active your account',
+  timestamp: '2024-08-13T15:01:17.296Z'
+}
+{
+  userId: new ObjectId('66bb743450f4ed785105e3cc'),
+  email: 'khalednasser788@gmail.com',
+  name: 'Khaled',
+  isActive: false,
+  level: 'error',
+  message: 'Not Activated User , should Activate his account',
+  timestamp: '2024-08-13T15:01:33.432Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Please Active your account',
+  timestamp: '2024-08-13T15:01:33.433Z'
+}
+{
+  userId: new ObjectId('66bb743450f4ed785105e3cc'),
+  email: 'khalednasser788@gmail.com',
+  name: 'Khaled',
+  isActive: false,
+  level: 'error',
+  message: 'Not Activated User , should Activate his account',
+  timestamp: '2024-08-13T15:01:45.528Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Please Active your account',
+  timestamp: '2024-08-13T15:01:45.528Z'
+}
+{
+  userId: new ObjectId('66bb743450f4ed785105e3cc'),
+  email: 'khalednasser788@gmail.com',
+  name: 'Khaled',
+  isActive: false,
+  level: 'error',
+  message: 'Not Activated User , should Activate his account',
+  timestamp: '2024-08-13T15:01:46.702Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Please Active your account',
+  timestamp: '2024-08-13T15:01:46.702Z'
+}
+{
+  email: 'khalednasser788@gmail.com',
+  level: 'error',
+  message: 'Invalid Email or Password for user in login',
+  timestamp: '2024-08-13T15:02:39.810Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Invalid email or password',
+  timestamp: '2024-08-13T15:02:39.811Z'
+}
+{
+  userId: new ObjectId('66bb743450f4ed785105e3cc'),
+  email: 'khalednasser788@gmail.com',
+  name: 'Khaled',
+  isActive: false,
+  level: 'error',
+  message: 'Not Activated User , should Activate his account',
+  timestamp: '2024-08-13T15:02:43.990Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Please Active your account',
+  timestamp: '2024-08-13T15:02:43.991Z'
+}
+{
+  message: "Couldn't Create Cart Items for the user 66bb743450f4ed785105e3cc",
+  level: 'error',
+  timestamp: '2024-08-13T15:03:14.297Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: "Error: Couldn't Create Cart Items",
+  timestamp: '2024-08-13T15:03:14.298Z'
+}
+{
+  stack: 'Error: Key email is Already exist in the Db\n' +
+    '    at duplicateKeyHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:13:10)\n' +
+    '    at globalErrorHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:68:37)\n' +
+    '    at Layer.handle_error (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/layer.js:71:5)\n' +
+    '    at trim_prefix (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:326:13)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:286:9\n' +
+    '    at Function.process_params (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:346:12)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:280:10)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:646:15\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:265:14)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/route.js:141:14)',
+  level: 'error',
+  message: 'Error: Key email is Already exist in the Db',
+  timestamp: '2024-08-13T15:03:32.319Z'
+}
+{
+  stack: 'Error: Key email is Already exist in the Db\n' +
+    '    at duplicateKeyHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:13:10)\n' +
+    '    at globalErrorHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:68:37)\n' +
+    '    at Layer.handle_error (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/layer.js:71:5)\n' +
+    '    at trim_prefix (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:326:13)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:286:9\n' +
+    '    at Function.process_params (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:346:12)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:280:10)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:646:15\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:265:14)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/route.js:141:14)',
+  level: 'error',
+  message: 'Error: Key email is Already exist in the Db',
+  timestamp: '2024-08-13T15:03:48.887Z'
+}
+{
+  error: {
+    statusCode: 500,
+    status: 'error',
+    message: "Cannot read properties of null (reading 'subCategory')"
+  },
+  stack: undefined,
+  level: 'error',
+  message: 'Something went wrong',
+  timestamp: '2024-08-13T15:11:31.719Z'
+}
+{
+  error: {
+    statusCode: 500,
+    status: 'error',
+    message: "Cannot read properties of null (reading 'subCategory')"
+  },
+  stack: undefined,
+  level: 'error',
+  message: 'Something went wrong',
+  timestamp: '2024-08-13T15:15:10.626Z'
+}
+{
+  error: {
+    statusCode: 500,
+    status: 'error',
+    message: "Cannot read properties of null (reading 'subCategory')"
+  },
+  stack: undefined,
+  level: 'error',
+  message: 'Something went wrong',
+  timestamp: '2024-08-13T15:15:16.003Z'
+}
+{
+  error: {
+    statusCode: 500,
+    status: 'error',
+    message: "Cannot read properties of null (reading 'subCategory')"
+  },
+  stack: undefined,
+  level: 'error',
+  message: 'Something went wrong',
+  timestamp: '2024-08-13T15:16:12.105Z'
+}
+{
+  error: {
+    statusCode: 500,
+    status: 'error',
+    message: "Cannot read properties of null (reading 'subCategory')"
+  },
+  stack: undefined,
+  level: 'error',
+  message: 'Something went wrong',
+  timestamp: '2024-08-13T15:16:50.110Z'
+}
+{
+  error: {
+    statusCode: 500,
+    status: 'error',
+    message: "Cannot read properties of null (reading 'subCategory')"
+  },
+  stack: undefined,
+  level: 'error',
+  message: 'Something went wrong',
+  timestamp: '2024-08-13T15:22:10.366Z'
+}
+{
+  error: {
+    statusCode: 500,
+    status: 'error',
+    message: "Cannot read properties of null (reading 'subCategory')"
+  },
+  stack: undefined,
+  level: 'error',
+  message: 'Something went wrong',
+  timestamp: '2024-08-13T15:24:03.045Z'
+}
+{
+  stack: 'Error: discount : Cast to Number failed for value "NaN" (type number) at path "discount",\n' +
+    '    at validationError (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:24:10)\n' +
+    '    at globalErrorHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:69:49)\n' +
+    '    at Layer.handle_error (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/layer.js:71:5)\n' +
+    '    at trim_prefix (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:326:13)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:286:9\n' +
+    '    at Function.process_params (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:346:12)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:280:10)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:646:15\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:265:14)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/route.js:141:14)',
+  level: 'error',
+  message: 'Error: discount : Cast to Number failed for value "NaN" (type number) at path "discount",',
+  timestamp: '2024-08-13T15:24:34.089Z'
+}
+{
+  stack: 'Error: colors.0.quantity : Color quantity is required,\n' +
+    '    at validationError (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:24:10)\n' +
+    '    at globalErrorHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:69:49)\n' +
+    '    at Layer.handle_error (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/layer.js:71:5)\n' +
+    '    at trim_prefix (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:326:13)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:286:9\n' +
+    '    at Function.process_params (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:346:12)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:280:10)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:646:15\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:265:14)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/route.js:141:14)',
+  level: 'error',
+  message: 'Error: colors.0.quantity : Color quantity is required,',
+  timestamp: '2024-08-13T15:33:51.289Z'
+}
