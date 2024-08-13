@@ -64,13 +64,10 @@ export const validateCartItemsQuantity = async(cartItems)=>{
     } else {
       product.colors.forEach((color) => {
         console.log("color", color);
-        color;
         if (color.id === item.colorId) {
           color.quantity < item.quantity
             ? productNExist.push(item.name)
             : null;
-        } else {
-          productNExist.push(item.name);
         }
       });
     }

@@ -89,7 +89,7 @@ export const createCartItem = catchAsync(async (req, res, next) => {
   );
   const cookieCart = await CookieCart.create({
     user: currentCart.user._id,
-    cartItems,
+    cartItems:newCartItemsBody,
     wishListItems,
   });
 
