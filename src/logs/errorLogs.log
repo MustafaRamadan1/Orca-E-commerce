@@ -20589,3 +20589,307 @@
   message: 'Error: Duplicate Key , subCategory ,66ba26f779c6bd6aa93a7e31',
   timestamp: '2024-08-12T15:43:24.374Z'
 }
+{
+  stack: 'Error: Key name is Already exist in the Db,Key size.value is Already exist in the Db \n' +
+    '    at duplicateKeyHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:11:10)\n' +
+    '    at globalErrorHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:70:37)\n' +
+    '    at Layer.handle_error (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/layer.js:71:5)\n' +
+    '    at trim_prefix (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:326:13)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:286:9\n' +
+    '    at Function.process_params (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:346:12)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:280:10)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:646:15\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:265:14)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/route.js:141:14)',
+  level: 'error',
+  message: 'Error: Key name is Already exist in the Db,Key size.value is Already exist in the Db ',
+  timestamp: '2024-08-13T14:17:19.134Z'
+}
+{
+  stack: 'Error: Key name is Already exist in the Db,Key size.value is Already exist in the Db \n' +
+    '    at duplicateKeyHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:11:10)\n' +
+    '    at globalErrorHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:70:37)\n' +
+    '    at Layer.handle_error (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/layer.js:71:5)\n' +
+    '    at trim_prefix (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:326:13)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:286:9\n' +
+    '    at Function.process_params (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:346:12)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:280:10)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:646:15\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:265:14)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/route.js:141:14)',
+  level: 'error',
+  message: 'Error: Key name is Already exist in the Db,Key size.value is Already exist in the Db ',
+  timestamp: '2024-08-13T14:17:39.923Z'
+}
+{
+  stack: 'Error: Key name is Already exist in the Db,Key size.value is Already exist in the Db \n' +
+    '    at duplicateKeyHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:11:10)\n' +
+    '    at globalErrorHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:70:37)\n' +
+    '    at Layer.handle_error (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/layer.js:71:5)\n' +
+    '    at trim_prefix (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:326:13)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:286:9\n' +
+    '    at Function.process_params (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:346:12)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:280:10)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:646:15\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:265:14)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/route.js:141:14)',
+  level: 'error',
+  message: 'Error: Key name is Already exist in the Db,Key size.value is Already exist in the Db ',
+  timestamp: '2024-08-13T14:17:54.091Z'
+}
+{
+  stack: 'Error: Key name is Already exist in the Db,,Key size.value is Already exist in the Db, \n' +
+    '    at duplicateKeyHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:12:10)\n' +
+    '    at globalErrorHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:67:37)\n' +
+    '    at Layer.handle_error (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/layer.js:71:5)\n' +
+    '    at trim_prefix (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:326:13)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:286:9\n' +
+    '    at Function.process_params (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:346:12)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:280:10)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:646:15\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:265:14)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/route.js:141:14)',
+  level: 'error',
+  message: 'Error: Key name is Already exist in the Db,,Key size.value is Already exist in the Db, ',
+  timestamp: '2024-08-13T14:22:20.273Z'
+}
+{
+  stack: 'Error: Key name is Already exist in the Db, KHALED,Key size.value is Already exist in the Db, KHALED \n' +
+    '    at duplicateKeyHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:12:10)\n' +
+    '    at globalErrorHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:67:37)\n' +
+    '    at Layer.handle_error (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/layer.js:71:5)\n' +
+    '    at trim_prefix (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:326:13)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:286:9\n' +
+    '    at Function.process_params (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:346:12)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:280:10)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:646:15\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:265:14)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/route.js:141:14)',
+  level: 'error',
+  message: 'Error: Key name is Already exist in the Db, KHALED,Key size.value is Already exist in the Db, KHALED ',
+  timestamp: '2024-08-13T14:22:49.830Z'
+}
+{
+  stack: 'Error: Key name is Already exist in the Db,,Key size.value is Already exist in the Db, \n' +
+    '    at duplicateKeyHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:12:10)\n' +
+    '    at globalErrorHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:67:37)\n' +
+    '    at Layer.handle_error (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/layer.js:71:5)\n' +
+    '    at trim_prefix (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:326:13)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:286:9\n' +
+    '    at Function.process_params (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:346:12)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:280:10)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:646:15\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:265:14)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/route.js:141:14)',
+  level: 'error',
+  message: 'Error: Key name is Already exist in the Db,,Key size.value is Already exist in the Db, ',
+  timestamp: '2024-08-13T14:23:49.749Z'
+}
+{
+  stack: 'Error: Key name is Already exist in the Db,Key size.value is Already exist in the Db \n' +
+    '    at duplicateKeyHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:13:10)\n' +
+    '    at globalErrorHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:68:37)\n' +
+    '    at Layer.handle_error (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/layer.js:71:5)\n' +
+    '    at trim_prefix (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:326:13)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:286:9\n' +
+    '    at Function.process_params (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:346:12)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:280:10)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:646:15\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:265:14)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/route.js:141:14)',
+  level: 'error',
+  message: 'Error: Key name is Already exist in the Db,Key size.value is Already exist in the Db ',
+  timestamp: '2024-08-13T14:24:21.888Z'
+}
+{
+  stack: 'Error: Key name is Already exist in the Db,Key size.value is Already exist in the Db \n' +
+    '    at duplicateKeyHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:14:10)\n' +
+    '    at globalErrorHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:69:37)\n' +
+    '    at Layer.handle_error (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/layer.js:71:5)\n' +
+    '    at trim_prefix (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:326:13)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:286:9\n' +
+    '    at Function.process_params (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:346:12)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:280:10)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:646:15\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:265:14)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/route.js:141:14)',
+  level: 'error',
+  message: 'Error: Key name is Already exist in the Db,Key size.value is Already exist in the Db ',
+  timestamp: '2024-08-13T14:25:10.754Z'
+}
+{
+  stack: 'Error: Key name is Already exist in the Db \n' +
+    '    at duplicateKeyHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:14:10)\n' +
+    '    at globalErrorHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:69:37)\n' +
+    '    at Layer.handle_error (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/layer.js:71:5)\n' +
+    '    at trim_prefix (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:326:13)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:286:9\n' +
+    '    at Function.process_params (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:346:12)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:280:10)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:646:15\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:265:14)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/route.js:141:14)',
+  level: 'error',
+  message: 'Error: Key name is Already exist in the Db ',
+  timestamp: '2024-08-13T14:25:45.138Z'
+}
+{
+  stack: 'Error: Key name is Already exist in the Db \n' +
+    '    at duplicateKeyHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:14:10)\n' +
+    '    at globalErrorHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:69:37)\n' +
+    '    at Layer.handle_error (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/layer.js:71:5)\n' +
+    '    at trim_prefix (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:326:13)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:286:9\n' +
+    '    at Function.process_params (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:346:12)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:280:10)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:646:15\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:265:14)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/route.js:141:14)',
+  level: 'error',
+  message: 'Error: Key name is Already exist in the Db ',
+  timestamp: '2024-08-13T14:25:48.027Z'
+}
+{
+  stack: 'Error: Key name is Already exist in the Db,,Key size.value is Already exist in the Db,\n' +
+    '    at duplicateKeyHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:14:10)\n' +
+    '    at globalErrorHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:69:37)\n' +
+    '    at Layer.handle_error (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/layer.js:71:5)\n' +
+    '    at trim_prefix (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:326:13)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:286:9\n' +
+    '    at Function.process_params (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:346:12)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:280:10)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:646:15\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:265:14)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/route.js:141:14)',
+  level: 'error',
+  message: 'Error: Key name is Already exist in the Db,,Key size.value is Already exist in the Db,',
+  timestamp: '2024-08-13T14:27:10.516Z'
+}
+{
+  stack: 'Error: Key name is Already exist in the Db,Key size.value is Already exist in the Db\n' +
+    '    at duplicateKeyHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:14:10)\n' +
+    '    at globalErrorHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:69:37)\n' +
+    '    at Layer.handle_error (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/layer.js:71:5)\n' +
+    '    at trim_prefix (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:326:13)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:286:9\n' +
+    '    at Function.process_params (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:346:12)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:280:10)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:646:15\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:265:14)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/route.js:141:14)',
+  level: 'error',
+  message: 'Error: Key name is Already exist in the Db,Key size.value is Already exist in the Db',
+  timestamp: '2024-08-13T14:27:31.395Z'
+}
+{
+  stack: 'Error: Key name is Already exist in the Db,Key size.value is Already exist in the Db\n' +
+    '    at duplicateKeyHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:14:10)\n' +
+    '    at globalErrorHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:69:37)\n' +
+    '    at Layer.handle_error (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/layer.js:71:5)\n' +
+    '    at trim_prefix (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:326:13)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:286:9\n' +
+    '    at Function.process_params (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:346:12)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:280:10)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:646:15\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:265:14)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/route.js:141:14)',
+  level: 'error',
+  message: 'Error: Key name is Already exist in the Db,Key size.value is Already exist in the Db',
+  timestamp: '2024-08-13T14:29:05.588Z'
+}
+{
+  stack: 'Error: Key name is Already exist in the Db,Key size.value is Already exist in the Db\n' +
+    '    at duplicateKeyHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:14:10)\n' +
+    '    at globalErrorHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:69:37)\n' +
+    '    at Layer.handle_error (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/layer.js:71:5)\n' +
+    '    at trim_prefix (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:326:13)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:286:9\n' +
+    '    at Function.process_params (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:346:12)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:280:10)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:646:15\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:265:14)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/route.js:141:14)',
+  level: 'error',
+  message: 'Error: Key name is Already exist in the Db,Key size.value is Already exist in the Db',
+  timestamp: '2024-08-13T14:29:10.247Z'
+}
+{
+  stack: 'Error: ,Key size.value is Already exist in the Db\n' +
+    '    at duplicateKeyHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:15:10)\n' +
+    '    at globalErrorHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:70:37)\n' +
+    '    at Layer.handle_error (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/layer.js:71:5)\n' +
+    '    at trim_prefix (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:326:13)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:286:9\n' +
+    '    at Function.process_params (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:346:12)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:280:10)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:646:15\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:265:14)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/route.js:141:14)',
+  level: 'error',
+  message: 'Error: ,Key size.value is Already exist in the Db',
+  timestamp: '2024-08-13T14:30:35.701Z'
+}
+{
+  stack: 'Error: ,Key size.value is Already exist in the Db\n' +
+    '    at duplicateKeyHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:15:10)\n' +
+    '    at globalErrorHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:70:37)\n' +
+    '    at Layer.handle_error (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/layer.js:71:5)\n' +
+    '    at trim_prefix (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:326:13)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:286:9\n' +
+    '    at Function.process_params (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:346:12)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:280:10)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:646:15\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:265:14)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/route.js:141:14)',
+  level: 'error',
+  message: 'Error: ,Key size.value is Already exist in the Db',
+  timestamp: '2024-08-13T14:31:26.384Z'
+}
+{
+  stack: 'Error: ,Key size.value is Already exist in the Db\n' +
+    '    at duplicateKeyHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:15:10)\n' +
+    '    at globalErrorHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:70:37)\n' +
+    '    at Layer.handle_error (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/layer.js:71:5)\n' +
+    '    at trim_prefix (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:326:13)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:286:9\n' +
+    '    at Function.process_params (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:346:12)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:280:10)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:646:15\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:265:14)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/route.js:141:14)',
+  level: 'error',
+  message: 'Error: ,Key size.value is Already exist in the Db',
+  timestamp: '2024-08-13T14:31:28.398Z'
+}
+{
+  stack: 'Error: ,Key size.value is Already exist in the Db\n' +
+    '    at duplicateKeyHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:15:10)\n' +
+    '    at globalErrorHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:70:37)\n' +
+    '    at Layer.handle_error (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/layer.js:71:5)\n' +
+    '    at trim_prefix (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:326:13)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:286:9\n' +
+    '    at Function.process_params (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:346:12)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:280:10)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:646:15\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:265:14)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/route.js:141:14)',
+  level: 'error',
+  message: 'Error: ,Key size.value is Already exist in the Db',
+  timestamp: '2024-08-13T14:31:42.524Z'
+}
+{
+  stack: 'Error: ,Key size.value is Already exist in the Db\n' +
+    '    at duplicateKeyHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:15:10)\n' +
+    '    at globalErrorHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:70:37)\n' +
+    '    at Layer.handle_error (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/layer.js:71:5)\n' +
+    '    at trim_prefix (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:326:13)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:286:9\n' +
+    '    at Function.process_params (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:346:12)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:280:10)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:646:15\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:265:14)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/route.js:141:14)',
+  level: 'error',
+  message: 'Error: ,Key size.value is Already exist in the Db',
+  timestamp: '2024-08-13T14:32:10.208Z'
+}
