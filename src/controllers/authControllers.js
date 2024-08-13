@@ -17,15 +17,15 @@ export const signUp = catchAsync(async (req, res, next) => {
   const { name, email, password } = req.body;
 
   const newUser = await User.create({
-    name: name.split(' ')[0],
+    name: name.split(" ")[0],
     email,
-    password,
+    password
   });
 
   if (!newUser) {
     logger.error(`Couldn't Create new user`, {
       name,
-      email,
+      email
     });
     return next(new AppError(`Couldn't create new User`, 400));
   }
@@ -35,27 +35,27 @@ export const signUp = catchAsync(async (req, res, next) => {
 
   const html = compileTemplate(`${__dirname}/../views/activateAccount.pug`, {
     firstName: newUser.name,
-    otpCode: otp,
+    otpCode: otp
   });
 
   await sendEmail({
     to: newUser.email,
     subject: "Verify Your Email",
     text: `To Verfiy your account in our site , It's your OTP : ${otp}`,
-    html,
+    html
   });
 
   const token = signToken({ id: newUser._id });
   logger.info(`Created the user and send OTP to the email`, {
     userId: newUser._id,
     name: newUser.name,
-    email: newUser.email,
+    email: newUser.email
   });
 
   res.status(200).json({
     status: "success",
     token,
-    data: newUser,
+    data: newUser
   });
 });
 
@@ -65,20 +65,20 @@ export const login = catchAsync(async (req, res, next) => {
   const user = await User.findOne({ email })
     .populate({
       path: "cart",
-      populate: "items",
+      populate: "items"
     })
     .populate("cookieCart");
 
   if (!user) {
     logger.error(`Invalid Email or Password for user in login`, {
-      email,
+      email
     });
     return next(new AppError(`Invalid email or password`, 404));
   }
 
   if (!(await user.CheckPassword(password))) {
     logger.error(`Invalid Email or Password for user in login`, {
-      email,
+      email
     });
     return next(new AppError(`Invalid email or password`, 404));
   }
@@ -88,7 +88,7 @@ export const login = catchAsync(async (req, res, next) => {
       userId: user._id,
       email: user.email,
       name: user.name,
-      isActive: user.isActive,
+      isActive: user.isActive
     });
     return next(new AppError("Please Active your account", 401));
   }
@@ -99,13 +99,13 @@ export const login = catchAsync(async (req, res, next) => {
     userId: user._id,
     email: user.email,
     name: user.name,
-    isActive: user.isActive,
+    isActive: user.isActive
   });
 
   res.status(200).json({
     status: "success",
     token,
-    data: user,
+    data: user
   });
 });
 
@@ -123,14 +123,14 @@ export const getAllUsers = catchAsync(async (req, res, next) => {
 
   logger.info(`Get All User Route Accessed by following account`, {
     userId: req.user._id,
-    role: req.user._role,
+    role: req.user._role
   });
 
   res.status(200).json({
     status: "success",
     result: _getAllUsers.length,
     numPages: Math.ceil(totalDocumentCounts / limit),
-    data: _getAllUsers,
+    data: _getAllUsers
   });
 });
 
@@ -141,13 +141,13 @@ export const forgetPassword = catchAsync(async (req, res, next) => {
   const user = await User.findOne({ email });
   if (!user) {
     logger.error(`No User with this email`, {
-      email: user.email,
+      email: user.email
     });
     return next(new AppError(`No User with This Email`, 404));
   }
 
   const token = user.createResetPasswordToken();
-/*
+  /*
 resetPasswordURL */
   await user.save();
 
@@ -155,15 +155,14 @@ resetPasswordURL */
     firstName: user.name,
     resetPasswordLink: `${req.protocol}://${
       req.get("host").split(":")[0]
-    }:3000/${locale}/user/resetPassword/${token}`,
+    }:3000/${locale}/user/resetPassword/${token}`
   });
 
   await sendEmail({
     to: user.email,
     subject: "Reset Your Password",
-    html,
+    html
   });
-
 
   // await sendEmail({
   //   to: user.email,
@@ -177,12 +176,12 @@ resetPasswordURL */
   logger.info(`Sending Email to the user to reset the password`, {
     userId: user._id,
     email: user.email,
-    name: user.name,
+    name: user.name
   });
 
   res.status(200).json({
     status: "success",
-    message: "Email Sent Successfully",
+    message: "Email Sent Successfully"
   });
 });
 
@@ -198,13 +197,13 @@ export const resetPassword = catchAsync(async (req, res, next) => {
 
   const user = await User.findOne({
     passwordResetToken: hashedToken,
-    passwordResetExpires: { $gte: Date.now() },
+    passwordResetExpires: { $gte: Date.now() }
   });
 
   if (!user) {
     logger.error(`Expired or Invalid Reset Token , Please Try again`, {
       userId: user._id,
-      email: user.email,
+      email: user.email
     });
     return next(
       new AppError(`Expired or Invalid Reset Token , Please Try again`, 400)
@@ -218,12 +217,12 @@ export const resetPassword = catchAsync(async (req, res, next) => {
 
   logger.info(`Reset Password for the user after recieve the token of it `, {
     userId: user._id,
-    email: user.email,
+    email: user.email
   });
 
   res.status(200).json({
     status: "success",
-    message: "Password Reset Successfully",
+    message: "Password Reset Successfully"
   });
 });
 
@@ -235,7 +234,7 @@ export const activateUser = catchAsync(async (req, res, next) => {
 
   const user = await User.findOne({
     otpCode,
-    otpExpired: { $gte: Date.now() },
+    otpExpired: { $gte: Date.now() }
   }).populate("cart");
 
   if (!user) {
@@ -251,18 +250,18 @@ export const activateUser = catchAsync(async (req, res, next) => {
   logger.info(`Activated the user by the OTP Code The server recieved `, {
     userId: user._id,
     email: user.email,
-    isActive: user.isActive,
+    isActive: user.isActive
   });
 
   const token = signToken({
-    id: user._id,
+    id: user._id
   });
 
   res.status(200).json({
     status: "success",
     token,
     // message: "User Activated Successfully",
-    data: user,
+    data: user
   });
 });
 
@@ -278,7 +277,7 @@ export const updateUserPassword = catchAsync(async (req, res, next) => {
 
   if (!(await user.CheckPassword(oldPassword))) {
     logger.error(`Invalid Password`, {
-      userId: req.user._id,
+      userId: req.user._id
     });
     return next(new AppError(` Invalid Password`, 400));
   }
@@ -289,14 +288,13 @@ export const updateUserPassword = catchAsync(async (req, res, next) => {
   logger.info(
     `Update Password for the user after received the old Password and he's authenticated`,
     {
-      userId: req.user._id,
+      userId: req.user._id
     }
   );
 
-
   res.status(200).json({
     status: "success",
-    message: "Password Changed Successfully",
+    message: "Password Changed Successfully"
   });
 });
 
@@ -310,7 +308,7 @@ export const getUserById = catchAsync(async (req, res, next) => {
   }
   res.status(200).json({
     status: "success",
-    data: user,
+    data: user
   });
 });
 

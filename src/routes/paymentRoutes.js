@@ -8,7 +8,7 @@ import CartItem from "../Db/models/cartItem.model.js";
 import {
   countCartTotalPrice,
   formatItemsForPayment,
-  generatePaymentLink,
+  generatePaymentLink
 } from "../utils/helperFunc.js";
 import { createPaymentLinkMultiMethods } from "../payment/paymentHandler.js";
 import Payment from "../Db/models/payment.model.js";
@@ -19,6 +19,7 @@ import isAuth from "../middlewares/authentication.js";
 import restrictTo from "../middlewares/Authorization.js";
 import CookieCart from "../Db/models/cookieCart.model.js";
 import logger from "../utils/logger.js";
+import { validateCartItemsQuantity } from "../utils/helperFunc.js";
 const router = Router();
 
 router.post("/pay", async (req, res, next) => {
@@ -33,7 +34,7 @@ router.post("/pay", async (req, res, next) => {
 
     const currentCart = await Cart.findById(newCartItem[0].cart).populate({
       path: "items",
-      populate: "product",
+      populate: "product"
     });
 
     const totalPrice = countCartTotalPrice(currentCart.items);
@@ -45,7 +46,7 @@ router.post("/pay", async (req, res, next) => {
     )
       .populate({
         path: "items",
-        populate: "product",
+        populate: "product"
       })
       .populate("user");
     const items = updatedCart.items.map((item) => {
@@ -53,7 +54,7 @@ router.post("/pay", async (req, res, next) => {
         product_id: item.product._id.toString(),
         name: item.product.name,
         amount_cents: item.product.price * 100,
-        quantity: item.quantity,
+        quantity: item.quantity
       };
     });
 
@@ -66,7 +67,7 @@ router.post("/pay", async (req, res, next) => {
 
     res.status(200).json({
       status: "success",
-      data: response,
+      data: response
     });
   } catch (err) {
     console.log(err);
@@ -84,17 +85,42 @@ router.post(
 
     console.log("cartItems", cartItems);
 
+    const productNExist = await validateCartItemsQuantity(cartItems);
+
+    // if (productNExist.length > 0) {
+    //   return res.status(400).json({
+    //     status: "fail",
+    //     message: {
+    //       en: productNExist.map((item) => item.en).join(" "),
+    //       ar: productNExist.map((item) => item.ar).join(" "),
+    //     },
+    //   });
+    // }
+
+    console.log("productNExist", productNExist);
+
+    if (productNExist.length > 0) {
+      return res.status(400).json({
+        status: "fail",
+        message: {
+          en: productNExist.map((item) => item.name?.en).join(" "),
+          ar: productNExist.map((item) => item.name?.ar).join(" "),
+          quantity: productNExist.map((item) => item.quantity).join(" ")
+        }
+      });
+    }
+
     const formattedCartItems = cartItems.map((item) => {
       return {
         cart: item.cart,
         product: item.product,
         quantity: item.quantity,
-        color: item.colorId,
+        color: item.colorId
       };
     });
 
     await CartItem.deleteMany({
-      cart: formattedCartItems[0].cart,
+      cart: formattedCartItems[0].cart
     });
 
     logger.info(` deleting cartItems from cart ${formattedCartItems[0].cart} before creating new cartItems
@@ -112,12 +138,11 @@ router.post(
     const cart = await Cart.findById(newCartItems[0].cart)
       .populate({
         path: "items",
-        populate: "product",
+        populate: "product"
       })
       .populate("user");
 
-    console.log(cart.items[0].product.colors);
-
+    console.log(cart);
     if (!cart) {
       await CartItem.deleteMany({ cart: newCartItems[0].cart._id });
 
@@ -150,7 +175,7 @@ router.post(
     )
       .populate({
         path: "items",
-        populate: "product",
+        populate: "product"
       })
       .populate("user");
 
@@ -165,7 +190,7 @@ router.post(
       updatedCart.totalPrice,
       [
         +process.env.PAYMOB_CARD_INTEGRATION,
-        +process.env.PAYMOB_WALLET_INTEGRATION,
+        +process.env.PAYMOB_WALLET_INTEGRATION
       ],
       formattedItems,
       req.body.billing_data
@@ -174,7 +199,7 @@ router.post(
     const paymentDoc = await Payment.create({
       intention_id: response.data.id,
       user: updatedCart.user._id,
-      cartItems: updatedCart.items.map((item) => item._id),
+      cartItems: updatedCart.items.map((item) => item._id)
     });
 
     logger.info(
@@ -196,7 +221,7 @@ router.post(
     const url = generatePaymentLink(response.data.client_secret);
     res.status(200).json({
       status: "success",
-      url,
+      url
     });
   })
 );
@@ -263,10 +288,10 @@ router.post("/webHook", async (req, res, next) => {
     console.log(hash, req.query.hmac);
     if (hmac === hash && success === true) {
       const payment = await Payment.findOne({
-        intention_id: req.body.obj.payment_key_claims.next_payment_intention,
+        intention_id: req.body.obj.payment_key_claims.next_payment_intention
       }).populate({
         path: "cartItems",
-        populate: "product cart",
+        populate: "product cart"
       });
 
       // return and log the error  that
@@ -285,26 +310,27 @@ router.post("/webHook", async (req, res, next) => {
 
       console.log("Formated Billing Data", billingData);
 
+      console.log(payment.cartItems.map((item) => item.product));
       const newOrder = await Order.create({
         transaction_id: obj.id,
         user: payment.user,
         orderPrice: obj.amount_cents / 100,
         items: payment.cartItems.map((item) => {
           return {
-            product:{
+            product: {
               name: item.product.name,
               size: item.product.size,
-              images:item.product.images
+              images: item.product.images
             },
             price: item.product.saleProduct,
             quantity: item.quantity,
             color: item.product.colors.filter(
               (color) => color.id === item.color
-            )[0],
+            )[0]
           };
         }),
         billingData,
-        paymentOrderId: obj.order.id,
+        paymentOrderId: obj.order.id
       });
 
       // log the error and return
@@ -314,7 +340,7 @@ router.post("/webHook", async (req, res, next) => {
       }
 
       logger.info(`Created new order for user ${payment.user._id} `, {
-        orderId: newOrder._id,
+        orderId: newOrder._id
       });
 
       for (let item of payment.cartItems) {
@@ -334,27 +360,23 @@ router.post("/webHook", async (req, res, next) => {
       }
 
       await CartItem.deleteMany({
-        cart: new mongoose.Types.ObjectId(payment.cartItems[0].cart._id),
+        cart: new mongoose.Types.ObjectId(payment.cartItems[0].cart._id)
       });
 
       logger.info(`Delete the cart Items after create the order for it `);
       await Cart.findByIdAndUpdate(payment.cartItems[0].cart._id, {
-        totalPrice: 0,
+        totalPrice: 0
       });
 
       await CookieCart.findOneAndUpdate(
         {
-          user: new mongoose.Types.ObjectId(payment.user),
+          user: new mongoose.Types.ObjectId(payment.user)
         },
         {
-          cartItems: [],
+          cartItems: []
         }
       );
-  
     }
-
-    
-  
   } catch (err) {
     // log the error
     console.log(err);

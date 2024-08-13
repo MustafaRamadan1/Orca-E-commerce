@@ -7,6 +7,8 @@ import User from "../Db/models/user.model.js";
 import logger from "../utils/logger.js";
 import { countCartTotalPrice } from "../utils/helperFunc.js";
 import WishList from "../Db/models/wishList.model.js";
+import Product from "../Db/models/product.model.js";
+
 export const createCartItem = catchAsync(async (req, res, next) => {
   console.log("req.body: ", req.body);
   const { cartItems, wishListItems } = req.body;
@@ -18,17 +20,30 @@ export const createCartItem = catchAsync(async (req, res, next) => {
     return next(new AppError(`Invalid User Id`, 400));
   }
 
+  const newCartItemsBody = [];
+
+  for (let item of cartItems) {
+    const product = await Product.findById(item.product);
+    if (product) {
+      product.colors.forEach((color) => {
+        if (color.id === item.colorId) {
+          color.quantity >= item.quantity ? newCartItemsBody.push(item) : null;
+        }
+      });
+    }
+  }
+
   await CookieCart.findOneAndDelete({ user: user._id });
 
   await CartItem.deleteMany({ cart: user.cart._id });
 
   await WishList.findOneAndUpdate({ user: user._id }, { items: [] });
-  const formattedCartItems = cartItems.map((item) => {
+  const formattedCartItems = newCartItemsBody.map((item) => {
     return {
       cart: user.cart._id,
       product: item.product,
       quantity: item.quantity,
-      color: item.colorId,
+      color: item.colorId
     };
   });
 
@@ -41,7 +56,7 @@ export const createCartItem = catchAsync(async (req, res, next) => {
 
   const currentCart = await Cart.findById(newCartItems[0].cart).populate({
     path: "items",
-    populate: "product",
+    populate: "product"
   });
 
   if (!currentCart) {
@@ -65,7 +80,7 @@ export const createCartItem = catchAsync(async (req, res, next) => {
 
   logger.info(`Update the cart total Id with the updated TotalPrice`, {
     totalPrice: totalPrice,
-    userId: user._id,
+    userId: user._id
   });
 
   const wishListFormat = wishListItems.map((item) => item.product);
@@ -76,17 +91,22 @@ export const createCartItem = catchAsync(async (req, res, next) => {
   );
   const cookieCart = await CookieCart.create({
     user: currentCart.user._id,
-    cartItems,
+<<<<<<< HEAD
+    cartItems: newCartItemsBody,
+    wishListItems
+=======
+    cartItems:newCartItemsBody,
     wishListItems,
+>>>>>>> 17268e0f70c9b9cf7e32656235edb18607702356
   });
 
   logger.info(`Created Cart Items For The User ${user._id}`, {
     userId: user._id,
-    cartItems: [...currentCart.items.map((item) => item.product._id)],
+    cartItems: [...currentCart.items.map((item) => item.product._id)]
   });
   res.status(201).json({
     status: "success",
-    data: newCartItems,
+    data: newCartItems
   });
 });
 
@@ -98,14 +118,14 @@ export const getCartItemsPerCart = catchAsync(async (req, res, next) => {
   if (cartItems.length === 0) {
     logger.error(`No Cart Items Found For That Cart`, {
       userId: req.user._id,
-      cartId: id,
+      cartId: id
     });
     return next(new AppError(`No Cart Items Found For That Cart`, 404));
   }
 
   res.status(200).json({
     status: "success",
-    data: cartItems,
+    data: cartItems
   });
 });
 
@@ -121,14 +141,14 @@ export const updateCartItem = catchAsync(async (req, res, next) => {
   if (!updatedCartItem) {
     logger.error(`No Cart Item With this id`, {
       userId: req.user._id,
-      cartItemId: id,
+      cartItemId: id
     });
     return next(new AppError(`No Cart Item With this id`, 404));
   }
 
   const cart = await Cart.findById(updatedCartItem.cart).populate({
     path: "items",
-    populate: "product",
+    populate: "product"
   });
   const totalPrice = countCartTotalPrice(cart.items);
 
@@ -143,12 +163,12 @@ export const updateCartItem = catchAsync(async (req, res, next) => {
     {
       userId: req.user._id,
       cartItemId: id,
-      quantity: quantity,
+      quantity: quantity
     }
   );
   res.status(200).json({
     status: "success",
-    data: updatedCartItem,
+    data: updatedCartItem
   });
 });
 
@@ -160,14 +180,14 @@ export const deleteCartItem = catchAsync(async (req, res, next) => {
   if (!deletedCartItem) {
     logger.error(`No Cart Item With this id`, {
       userId: req.user._id,
-      cartItemId: id,
+      cartItemId: id
     });
     return next(new AppError(`No Cart Item With this id`, 404));
   }
 
   const cart = await Cart.findById(deletedCartItem.cart).populate({
     path: "items",
-    populate: "product",
+    populate: "product"
   });
 
   console.log(cart);
@@ -182,10 +202,10 @@ export const deleteCartItem = catchAsync(async (req, res, next) => {
   logger.info(`Delete cart Item with id ${id} , Update the cart TotalPrice`, {
     userId: req.user._id,
     cartItemId: id,
-    totalPrice: totalPrice,
+    totalPrice: totalPrice
   });
   res.status(204).json({
     status: "success",
-    message: "Cart Item Deleted Successfully",
+    message: "Cart Item Deleted Successfully"
   });
 });
