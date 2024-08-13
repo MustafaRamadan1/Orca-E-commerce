@@ -43,7 +43,7 @@ export const createCartItem = catchAsync(async (req, res, next) => {
       cart: user.cart._id,
       product: item.product,
       quantity: item.quantity,
-      color: item.colorId
+      color: item.colorId,
     };
   });
 
@@ -56,7 +56,7 @@ export const createCartItem = catchAsync(async (req, res, next) => {
 
   const currentCart = await Cart.findById(newCartItems[0].cart).populate({
     path: "items",
-    populate: "product"
+    populate: "product",
   });
 
   if (!currentCart) {
@@ -80,7 +80,7 @@ export const createCartItem = catchAsync(async (req, res, next) => {
 
   logger.info(`Update the cart total Id with the updated TotalPrice`, {
     totalPrice: totalPrice,
-    userId: user._id
+    userId: user._id,
   });
 
   const wishListFormat = wishListItems.map((item) => item.product);
@@ -91,22 +91,17 @@ export const createCartItem = catchAsync(async (req, res, next) => {
   );
   const cookieCart = await CookieCart.create({
     user: currentCart.user._id,
-<<<<<<< HEAD
     cartItems: newCartItemsBody,
-    wishListItems
-=======
-    cartItems:newCartItemsBody,
     wishListItems,
->>>>>>> 17268e0f70c9b9cf7e32656235edb18607702356
   });
 
   logger.info(`Created Cart Items For The User ${user._id}`, {
     userId: user._id,
-    cartItems: [...currentCart.items.map((item) => item.product._id)]
+    cartItems: [...currentCart.items.map((item) => item.product._id)],
   });
   res.status(201).json({
     status: "success",
-    data: newCartItems
+    data: newCartItems,
   });
 });
 
@@ -118,14 +113,14 @@ export const getCartItemsPerCart = catchAsync(async (req, res, next) => {
   if (cartItems.length === 0) {
     logger.error(`No Cart Items Found For That Cart`, {
       userId: req.user._id,
-      cartId: id
+      cartId: id,
     });
     return next(new AppError(`No Cart Items Found For That Cart`, 404));
   }
 
   res.status(200).json({
     status: "success",
-    data: cartItems
+    data: cartItems,
   });
 });
 
@@ -141,14 +136,14 @@ export const updateCartItem = catchAsync(async (req, res, next) => {
   if (!updatedCartItem) {
     logger.error(`No Cart Item With this id`, {
       userId: req.user._id,
-      cartItemId: id
+      cartItemId: id,
     });
     return next(new AppError(`No Cart Item With this id`, 404));
   }
 
   const cart = await Cart.findById(updatedCartItem.cart).populate({
     path: "items",
-    populate: "product"
+    populate: "product",
   });
   const totalPrice = countCartTotalPrice(cart.items);
 
@@ -163,12 +158,12 @@ export const updateCartItem = catchAsync(async (req, res, next) => {
     {
       userId: req.user._id,
       cartItemId: id,
-      quantity: quantity
+      quantity: quantity,
     }
   );
   res.status(200).json({
     status: "success",
-    data: updatedCartItem
+    data: updatedCartItem,
   });
 });
 
@@ -180,14 +175,14 @@ export const deleteCartItem = catchAsync(async (req, res, next) => {
   if (!deletedCartItem) {
     logger.error(`No Cart Item With this id`, {
       userId: req.user._id,
-      cartItemId: id
+      cartItemId: id,
     });
     return next(new AppError(`No Cart Item With this id`, 404));
   }
 
   const cart = await Cart.findById(deletedCartItem.cart).populate({
     path: "items",
-    populate: "product"
+    populate: "product",
   });
 
   console.log(cart);
@@ -202,10 +197,10 @@ export const deleteCartItem = catchAsync(async (req, res, next) => {
   logger.info(`Delete cart Item with id ${id} , Update the cart TotalPrice`, {
     userId: req.user._id,
     cartItemId: id,
-    totalPrice: totalPrice
+    totalPrice: totalPrice,
   });
   res.status(204).json({
     status: "success",
-    message: "Cart Item Deleted Successfully"
+    message: "Cart Item Deleted Successfully",
   });
 });
