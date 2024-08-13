@@ -18,12 +18,25 @@ export const createCartItem = catchAsync(async (req, res, next) => {
     return next(new AppError(`Invalid User Id`, 400));
   }
 
+  const newCartItemsBody = [];
+
+  for (let item of cartItems) {
+    const product = await Product.findById(item.product);
+    if (product) {
+      product.colors.forEach((color) => {
+        if (color.id === item.colorId) {
+          color.quantity >= item.quantity ? newCartItemsBody.push(item) : null;
+        }
+      });
+    }
+  }
+
   await CookieCart.findOneAndDelete({ user: user._id });
 
   await CartItem.deleteMany({ cart: user.cart._id });
 
   await WishList.findOneAndUpdate({ user: user._id }, { items: [] });
-  const formattedCartItems = cartItems.map((item) => {
+  const formattedCartItems = newCartItemsBody.map((item) => {
     return {
       cart: user.cart._id,
       product: item.product,

@@ -19,6 +19,7 @@ import isAuth from "../middlewares/authentication.js";
 import restrictTo from "../middlewares/Authorization.js";
 import CookieCart from "../Db/models/cookieCart.model.js";
 import logger from "../utils/logger.js";
+import {validateCartItemsQuantity} from '../utils/helperFunc.js'
 const router = Router();
 
 router.post("/pay", async (req, res, next) => {
@@ -84,23 +85,15 @@ router.post(
 
     console.log("cartItems", cartItems);
 
-    const productNExist = [];
-    for (let item of cartItems) {
-      const product = await Product.findById(item.product);
-      if (!product) productNExist.push(item.name);
-      product.colors.forEach((color) => {
-        if (color._id === item.colorId) {
-          color.quantity < item.quantity ? productNExist.push(item.name) : null;
-        }
-      });
-    }
-
+    
+    const productNExist = await validateCartItemsQuantity(cartItems);
+ 
     if (productNExist.length > 0) {
       return res.status(400).json({
         status: "fail",
         message: {
-          en: productNExist.map((item) => item.name.en).join(" "),
-          en: productNExist.map((item) => item.name.en).join(" "),
+          en: productNExist.map((item) => item.en).join(" "),
+          ar: productNExist.map((item) => item.ar).join(" "),
         },
       });
     }
@@ -137,8 +130,7 @@ router.post(
       })
       .populate("user");
 
-    console.log(cart.items[0].product.colors);
-
+      console.log(cart);
     if (!cart) {
       await CartItem.deleteMany({ cart: newCartItems[0].cart._id });
 

@@ -2,6 +2,7 @@ import jwt from "jsonwebtoken";
 import pug from "pug";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
+import Product from '../Db/models/product.model.js'
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -52,3 +53,27 @@ export const compileTemplate = (templatePath, data) => {
 
   return html;
 };
+
+
+export const validateCartItemsQuantity = async(cartItems)=>{
+  const productNExist = [];
+  for (let item of cartItems) {
+    const product = await Product.findById(item.product);
+    if (!product) {
+      productNExist.push(item.name);
+    } else {
+      product.colors.forEach((color) => {
+        console.log("color", color);
+        color;
+        if (color.id === item.colorId) {
+          color.quantity < item.quantity
+            ? productNExist.push(item.name)
+            : null;
+        } else {
+          productNExist.push(item.name);
+        }
+      });
+    }
+  }
+  return productNExist;
+}
