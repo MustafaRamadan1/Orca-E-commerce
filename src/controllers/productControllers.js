@@ -135,15 +135,11 @@ export const createProduct = catchAsync(async (req, res, next) => {
     }
   }
 
- 
-  if(discount){
-    
+  if (discount) {
     discount = Number(discount);
-  }
-  else{
+  } else {
     discount = 0;
   }
-  
 
   const newProduct = await Product.create({
     name,
@@ -155,7 +151,7 @@ export const createProduct = catchAsync(async (req, res, next) => {
     discount,
     colors: bodyColors,
     images,
-    subCategory,
+    subCategory: subCategory?.length > 0 ? subCategory : product.subCategory,
   });
 
   if (!newProduct) {
@@ -408,21 +404,18 @@ export const updateProduct = catchAsync(async (req, res, next) => {
     req.body.description = JSON.parse(req.body.description);
   }
 
-  if(req.body.discount){
-
+  if (req.body.discount) {
     req.body.discount = Number(req.body.discount);
-  }
-  else{
+  } else {
     req.body.discount = 0;
   }
 
-  
   const updatedProductBySlug = await Product.updateMany(
     {
       slug: product.slug,
     },
     {
-      name: req.body.name? JSON.parse(req.body.name) : product.name,
+      name: req.body.name ? JSON.parse(req.body.name) : product.name,
       images,
       category: req.body.category,
     }

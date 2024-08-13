@@ -20893,3 +20893,38 @@
   message: 'Error: ,Key size.value is Already exist in the Db',
   timestamp: '2024-08-13T14:32:10.208Z'
 }
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: No Category with this ID',
+  timestamp: '2024-08-13T14:52:12.219Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: No Category with this ID',
+  timestamp: '2024-08-13T14:52:17.240Z'
+}
+{
+  error: {
+    statusCode: 500,
+    status: 'error',
+    message: "Cannot read properties of null (reading '_id')"
+  },
+  stack: undefined,
+  level: 'error',
+  message: 'Something went wrong',
+  timestamp: '2024-08-13T14:52:53.515Z'
+}
+{
+  email: 'khalednasser788@gmail.com',
+  level: 'error',
+  message: 'Invalid Email or Password for user in login',
+  timestamp: '2024-08-13T14:55:52.047Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Invalid email or password',
+  timestamp: '2024-08-13T14:55:52.048Z'
+}

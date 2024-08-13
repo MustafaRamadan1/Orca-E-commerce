@@ -9,7 +9,7 @@ const __dirname = dirname(__filename);
 
 export const signToken = (payload) => {
   return jwt.sign(payload, process.env.SECERT_KEY, {
-    expiresIn: process.env.EXPIRES_IN
+    expiresIn: process.env.EXPIRES_IN,
   });
 };
 
@@ -38,7 +38,7 @@ export const formatItemsForPayment = (cartItem, locale) => {
       name: item.product.name[locale],
       description: item.product.description[locale],
       amount: item.product.saleProduct * 100,
-      quantity: item.quantity
+      quantity: item.quantity,
     };
   });
 };
@@ -61,16 +61,20 @@ export const validateCartItemsQuantity = async (cartItems) => {
     if (!product) {
       productNExist.push({ name: item.name });
     } else {
-      product.colors.forEach((color) => {
-        if (color.id === item.colorId) {
-          color.quantity < item.quantity
-            ? productNExist.push({
-                name: item.name,
-                quantity: product.quantity
-              })
-            : null;
-        }
-      });
+      if (Array.isArray(product.colors)) {
+        product.colors.forEach((color) => {
+          if (color.id === item.colorId) {
+            color.quantity < item.quantity
+              ? productNExist.push({
+                  name: item.name,
+                  quantity: product.quantity,
+                })
+              : null;
+          } else {
+            productNExist.push({ name: item.name });
+          }
+        });
+      }
     }
   }
   return productNExist;
