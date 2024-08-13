@@ -62,7 +62,6 @@ export const validateCartItemsQuantity = async (cartItems) => {
       productNExist.push({ name: item.name });
     } else {
       product.colors.forEach((color) => {
-        color;
         if (color.id === item.colorId) {
           color.quantity < item.quantity
             ? productNExist.push({

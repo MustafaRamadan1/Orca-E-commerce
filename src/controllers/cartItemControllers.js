@@ -91,8 +91,13 @@ export const createCartItem = catchAsync(async (req, res, next) => {
   );
   const cookieCart = await CookieCart.create({
     user: currentCart.user._id,
+<<<<<<< HEAD
     cartItems: newCartItemsBody,
     wishListItems
+=======
+    cartItems:newCartItemsBody,
+    wishListItems,
+>>>>>>> 17268e0f70c9b9cf7e32656235edb18607702356
   });
 
   logger.info(`Created Cart Items For The User ${user._id}`, {
