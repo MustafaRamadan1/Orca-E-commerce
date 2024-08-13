@@ -87,16 +87,6 @@ router.post(
 
     const productNExist = await validateCartItemsQuantity(cartItems);
 
-    // if (productNExist.length > 0) {
-    //   return res.status(400).json({
-    //     status: "fail",
-    //     message: {
-    //       en: productNExist.map((item) => item.en).join(" "),
-    //       ar: productNExist.map((item) => item.ar).join(" "),
-    //     },
-    //   });
-    // }
-
     console.log("productNExist", productNExist);
 
     if (productNExist.length > 0) {
@@ -199,7 +189,8 @@ router.post(
     const paymentDoc = await Payment.create({
       intention_id: response.data.id,
       user: updatedCart.user._id,
-      cartItems: updatedCart.items.map((item) => item._id)
+      cartItems: updatedCart.items.map((item) => item._id),
+      billingData: req.body.billing_data
     });
 
     logger.info(
@@ -231,8 +222,8 @@ router.post("/webHook", async (req, res, next) => {
   const { hmac } = req.query;
 
   console.log(req.body, req.query);
+ 
 
-  const billing_data = obj.payment_key_claims.billing_data;
 
   console.log("billing_data", billing_data);
 
@@ -303,6 +294,16 @@ router.post("/webHook", async (req, res, next) => {
       }
 
       console.log("payment", payment);
+
+
+      let billing_data;
+      if(obj.payment_key_claims.billing_data){
+    
+         billing_data = obj.payment_key_claims.billing_data;
+      }
+      else{
+        billing_data = payment.billingData;
+      }
 
       const billingData = formatBilling_Data(billing_data);
 

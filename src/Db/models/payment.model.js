@@ -18,6 +18,21 @@ const paymentSchema = new mongoose.Schema(
         required: [true, "Payment should has cart items"],
       },
     ],
+    billingData: [
+      {
+        type: {
+          firstName: String,
+          lastName: String,
+          apartment: String,
+          street: String,
+          building: String,
+          city: String,
+          country: String,
+          floor: String,
+          phoneNumber: String,
+        },
+      },
+    ]
   },
   {
     timestamps: true,
