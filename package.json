@@ -24,7 +24,7 @@
     "e-commerce": "file:",
     "express": "^4.19.2",
     "express-mongo-sanitize": "^2.2.0",
-    "express-rate-limit": "^7.3.1",
+    "express-rate-limit": "^7.4.0",
     "express-winston": "^4.2.0",
     "helmet": "^7.1.0",
     "joi": "^17.13.3",
