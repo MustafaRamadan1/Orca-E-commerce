@@ -56,7 +56,13 @@ export const createReview = catchAsync(async (req, res, next) => {
   if (!title || !user || !product || !ratings)
     return next(new AppError(`Please Provide Required Fields`, 400));
 
-  const newReview = await Review.create({ title, user, product, ratings });
+  const selectedProduct = await Product.findById(product);
+  const newReview = await Review.create({
+    title,
+    user,
+    product: selectedProduct,
+    ratings,
+  });
 
   if (!newReview) return next(new AppError(` Couldn't Create New Review`, 400));
 

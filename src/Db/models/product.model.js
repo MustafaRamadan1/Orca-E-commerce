@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import slug from "slug";
 import logger from "../../utils/logger.js";
-const productSchema = new mongoose.Schema(
+export const productSchema = new mongoose.Schema(
   {
     name: {
       en: {
@@ -115,12 +115,11 @@ productSchema.pre("save", function (next) {
   return next();
 });
 
-
-productSchema.pre('save', async function(next) {
+productSchema.pre("save", async function (next) {
   // 'this' refers to the current document being saved
 
-  if(this.colors.length > 0){
-    this.colors = this.colors.filter(color=> color.quantity > 0);
+  if (this.colors.length > 0) {
+    this.colors = this.colors.filter((color) => color.quantity > 0);
   }
 });
 productSchema.pre("findOneAndUpdate", function (next) {

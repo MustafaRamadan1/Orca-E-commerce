@@ -21275,3 +21275,48 @@
   message: 'Error: colors.0.quantity : Color quantity is required,',
   timestamp: '2024-08-13T15:33:51.289Z'
 }
+{
+  stack: 'Error:  Invalid ID,  is not a valid ID\n' +
+    '    at castId (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:5:10)\n' +
+    '    at globalErrorHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:67:43)\n' +
+    '    at Layer.handle_error (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/layer.js:71:5)\n' +
+    '    at trim_prefix (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:326:13)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:286:9\n' +
+    '    at Function.process_params (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:346:12)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:280:10)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:646:15\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:265:14)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/route.js:141:14)',
+  level: 'error',
+  message: 'Error:  Invalid ID,  is not a valid ID',
+  timestamp: '2024-08-13T18:50:05.954Z'
+}
+{
+  email: 'admin@gmail.com',
+  level: 'error',
+  message: 'Invalid Email or Password for user in login',
+  timestamp: '2024-08-16T11:24:50.197Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Invalid email or password',
+  timestamp: '2024-08-16T11:24:50.198Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Password must be at least 8 characters',
+  timestamp: '2024-08-16T11:24:53.069Z'
+}
+{
+  error: {
+    statusCode: 500,
+    status: 'error',
+    message: 'Invalid regular expression: /(?=.*[)/: Unterminated character class'
+  },
+  stack: undefined,
+  level: 'error',
+  message: 'Something went wrong',
+  timestamp: '2024-08-16T11:36:48.629Z'
+}
