@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-import { productSchema } from "./product.model.js";
 
 const reviewSchema = new mongoose.Schema({
   title: {
@@ -13,8 +12,9 @@ const reviewSchema = new mongoose.Schema({
     required: [true, "Review must belong to a user"],
   },
   product: {
-    type: productSchema,
-    required: [true, "Review must be attached to a product"],
+    type: mongoose.Schema.ObjectId,
+    ref: "Product",
+    required: [true, "Review must belong to a product"],
   },
   ratings: {
     type: Number,

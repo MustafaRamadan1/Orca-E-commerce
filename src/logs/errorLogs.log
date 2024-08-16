@@ -21320,3 +21320,238 @@
   message: 'Something went wrong',
   timestamp: '2024-08-16T11:36:48.629Z'
 }
+{
+  stack: 'Error:  Invalid ID, 66bf3e6a8fa16995cb6541b5 is not a valid ID\n' +
+    '    at castId (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:5:10)\n' +
+    '    at globalErrorHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:67:43)\n' +
+    '    at Layer.handle_error (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/layer.js:71:5)\n' +
+    '    at trim_prefix (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:326:13)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:286:9\n' +
+    '    at Function.process_params (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:346:12)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:280:10)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:646:15\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:265:14)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/route.js:141:14)',
+  level: 'error',
+  message: 'Error:  Invalid ID, 66bf3e6a8fa16995cb6541b5 is not a valid ID',
+  timestamp: '2024-08-16T11:57:29.852Z'
+}
+{
+  stack: 'Error:  Invalid ID, 66bf3e6a8fa16995cb6541b5 is not a valid ID\n' +
+    '    at castId (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:5:10)\n' +
+    '    at globalErrorHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:67:43)\n' +
+    '    at Layer.handle_error (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/layer.js:71:5)\n' +
+    '    at trim_prefix (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:326:13)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:286:9\n' +
+    '    at Function.process_params (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:346:12)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:280:10)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:646:15\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:265:14)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/route.js:141:14)',
+  level: 'error',
+  message: 'Error:  Invalid ID, 66bf3e6a8fa16995cb6541b5 is not a valid ID',
+  timestamp: '2024-08-16T11:58:13.244Z'
+}
+{
+  stack: 'Error:  Invalid ID, 66bf3e6a8fa16995cb6541b5 is not a valid ID\n' +
+    '    at castId (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:5:10)\n' +
+    '    at globalErrorHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:67:43)\n' +
+    '    at Layer.handle_error (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/layer.js:71:5)\n' +
+    '    at trim_prefix (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:326:13)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:286:9\n' +
+    '    at Function.process_params (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:346:12)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:280:10)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:646:15\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:265:14)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/route.js:141:14)',
+  level: 'error',
+  message: 'Error:  Invalid ID, 66bf3e6a8fa16995cb6541b5 is not a valid ID',
+  timestamp: '2024-08-16T11:58:22.366Z'
+}
+{
+  stack: 'Error:  Invalid ID, 66bf3e6a8fa16995cb6541b5 is not a valid ID\n' +
+    '    at castId (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:5:10)\n' +
+    '    at globalErrorHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:67:43)\n' +
+    '    at Layer.handle_error (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/layer.js:71:5)\n' +
+    '    at trim_prefix (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:326:13)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:286:9\n' +
+    '    at Function.process_params (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:346:12)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:280:10)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:646:15\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:265:14)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/route.js:141:14)',
+  level: 'error',
+  message: 'Error:  Invalid ID, 66bf3e6a8fa16995cb6541b5 is not a valid ID',
+  timestamp: '2024-08-16T11:58:26.127Z'
+}
+{
+  stack: 'Error: Key product.name is Already exist in the Db,Key product.size.value is Already exist in the Db\n' +
+    '    at duplicateKeyHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:13:10)\n' +
+    '    at globalErrorHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:68:37)\n' +
+    '    at Layer.handle_error (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/layer.js:71:5)\n' +
+    '    at trim_prefix (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:326:13)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:286:9\n' +
+    '    at Function.process_params (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:346:12)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:280:10)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:646:15\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:265:14)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/route.js:141:14)',
+  level: 'error',
+  message: 'Error: Key product.name is Already exist in the Db,Key product.size.value is Already exist in the Db',
+  timestamp: '2024-08-16T11:59:31.734Z'
+}
+{
+  stack: 'Error:  Invalid ID, 66bf3e6a8fa16995cb6541b5 is not a valid ID\n' +
+    '    at castId (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:5:10)\n' +
+    '    at globalErrorHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:67:43)\n' +
+    '    at Layer.handle_error (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/layer.js:71:5)\n' +
+    '    at trim_prefix (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:326:13)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:286:9\n' +
+    '    at Function.process_params (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:346:12)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:280:10)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:646:15\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:265:14)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/route.js:141:14)',
+  level: 'error',
+  message: 'Error:  Invalid ID, 66bf3e6a8fa16995cb6541b5 is not a valid ID',
+  timestamp: '2024-08-16T11:59:31.752Z'
+}
+{
+  stack: 'Error:  Invalid ID, 66bf3e6a8fa16995cb6541b5 is not a valid ID\n' +
+    '    at castId (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:5:10)\n' +
+    '    at globalErrorHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:67:43)\n' +
+    '    at Layer.handle_error (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/layer.js:71:5)\n' +
+    '    at trim_prefix (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:326:13)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:286:9\n' +
+    '    at Function.process_params (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:346:12)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:280:10)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:646:15\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:265:14)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/route.js:141:14)',
+  level: 'error',
+  message: 'Error:  Invalid ID, 66bf3e6a8fa16995cb6541b5 is not a valid ID',
+  timestamp: '2024-08-16T11:59:54.989Z'
+}
+{
+  stack: 'Error:  Invalid ID, 66bf3e6a8fa16995cb6541b5 is not a valid ID\n' +
+    '    at castId (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:5:10)\n' +
+    '    at globalErrorHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:67:43)\n' +
+    '    at Layer.handle_error (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/layer.js:71:5)\n' +
+    '    at trim_prefix (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:326:13)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:286:9\n' +
+    '    at Function.process_params (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:346:12)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:280:10)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:646:15\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:265:14)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/route.js:141:14)',
+  level: 'error',
+  message: 'Error:  Invalid ID, 66bf3e6a8fa16995cb6541b5 is not a valid ID',
+  timestamp: '2024-08-16T12:00:25.829Z'
+}
+{
+  stack: 'Error:  Invalid ID, 66bf3e6a8fa16995cb6541b5 is not a valid ID\n' +
+    '    at castId (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:5:10)\n' +
+    '    at globalErrorHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:67:43)\n' +
+    '    at Layer.handle_error (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/layer.js:71:5)\n' +
+    '    at trim_prefix (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:326:13)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:286:9\n' +
+    '    at Function.process_params (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:346:12)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:280:10)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:646:15\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:265:14)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/route.js:141:14)',
+  level: 'error',
+  message: 'Error:  Invalid ID, 66bf3e6a8fa16995cb6541b5 is not a valid ID',
+  timestamp: '2024-08-16T12:04:41.738Z'
+}
+{
+  stack: 'Error:  Invalid ID, 66bf3e6a8fa16995cb6541b5 is not a valid ID\n' +
+    '    at castId (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:5:10)\n' +
+    '    at globalErrorHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:67:43)\n' +
+    '    at Layer.handle_error (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/layer.js:71:5)\n' +
+    '    at trim_prefix (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:326:13)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:286:9\n' +
+    '    at Function.process_params (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:346:12)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:280:10)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:646:15\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:265:14)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/route.js:141:14)',
+  level: 'error',
+  message: 'Error:  Invalid ID, 66bf3e6a8fa16995cb6541b5 is not a valid ID',
+  timestamp: '2024-08-16T12:04:52.219Z'
+}
+{
+  stack: 'Error:  Invalid ID, 66bf3e6a8fa16995cb6541b5 is not a valid ID\n' +
+    '    at castId (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:5:10)\n' +
+    '    at globalErrorHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:67:43)\n' +
+    '    at Layer.handle_error (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/layer.js:71:5)\n' +
+    '    at trim_prefix (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:326:13)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:286:9\n' +
+    '    at Function.process_params (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:346:12)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:280:10)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:646:15\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:265:14)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/route.js:141:14)',
+  level: 'error',
+  message: 'Error:  Invalid ID, 66bf3e6a8fa16995cb6541b5 is not a valid ID',
+  timestamp: '2024-08-16T12:05:48.036Z'
+}
+{
+  stack: 'Error:  Invalid ID, 66bf3e6a8fa16995cb6541b5 is not a valid ID\n' +
+    '    at castId (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:5:10)\n' +
+    '    at globalErrorHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:67:43)\n' +
+    '    at Layer.handle_error (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/layer.js:71:5)\n' +
+    '    at trim_prefix (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:326:13)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:286:9\n' +
+    '    at Function.process_params (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:346:12)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:280:10)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:646:15\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:265:14)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/route.js:141:14)',
+  level: 'error',
+  message: 'Error:  Invalid ID, 66bf3e6a8fa16995cb6541b5 is not a valid ID',
+  timestamp: '2024-08-16T12:05:54.167Z'
+}
+{
+  error: {
+    statusCode: 500,
+    status: 'error',
+    message: "Cannot access 'productId' before initialization"
+  },
+  stack: undefined,
+  level: 'error',
+  message: 'Something went wrong',
+  timestamp: '2024-08-16T12:07:42.536Z'
+}
+{
+  stack: 'Error:  Invalid ID, 66bf3e6a8fa16995cb6541b5 is not a valid ID\n' +
+    '    at castId (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:5:10)\n' +
+    '    at globalErrorHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:67:43)\n' +
+    '    at Layer.handle_error (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/layer.js:71:5)\n' +
+    '    at trim_prefix (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:326:13)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:286:9\n' +
+    '    at Function.process_params (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:346:12)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:280:10)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:646:15\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:265:14)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/route.js:141:14)',
+  level: 'error',
+  message: 'Error:  Invalid ID, 66bf3e6a8fa16995cb6541b5 is not a valid ID',
+  timestamp: '2024-08-16T12:08:40.023Z'
+}
+{
+  stack: 'Error:  Invalid ID, 66bf3e6a8fa16995cb6541b5 is not a valid ID\n' +
+    '    at castId (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:5:10)\n' +
+    '    at globalErrorHandler (file:///Users/khalednasser/Documents/My-Work/E-commerce/src/middlewares/globalerrorHandler.js:67:43)\n' +
+    '    at Layer.handle_error (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/layer.js:71:5)\n' +
+    '    at trim_prefix (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:326:13)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:286:9\n' +
+    '    at Function.process_params (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:346:12)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:280:10)\n' +
+    '    at /Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:646:15\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/index.js:265:14)\n' +
+    '    at next (/Users/khalednasser/Documents/My-Work/E-commerce/node_modules/express/lib/router/route.js:141:14)',
+  level: 'error',
+  message: 'Error:  Invalid ID, 66bf3e6a8fa16995cb6541b5 is not a valid ID',
+  timestamp: '2024-08-16T12:10:52.624Z'
+}
