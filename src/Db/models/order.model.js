@@ -7,7 +7,7 @@ const colorSchema = new mongoose.Schema({
   quantity: { type: Number, required: [true, "Color quantity is required"] },
 });
 const cartItemSchema = new mongoose.Schema({
-  product: { type:Object, required: true },
+  product: { type: Object, required: true },
   price: { type: Number, required: true },
   quantity: { type: Number, required: true },
   color: colorSchema,
@@ -28,11 +28,19 @@ const orderSchema = new mongoose.Schema(
       type: Number,
       required: [true, "order must has a price"],
     },
+    paymentMethod: {
+      type: String,
+      enum: {
+        values: ["visa", "cash"],
+        message: "Your value not supported",
+      },
+      default: "visa",
+    },
     items: [cartItemSchema],
     orderStatus: {
       type: String,
       enum: {
-        values: ["created", "delivering", "delivered", "refund","shipped"],
+        values: ["created", "delivering", "delivered", "refund", "shipped"],
         message: "Your value not supported",
       },
       default: "created",

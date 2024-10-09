@@ -308,6 +308,7 @@ router.post("/webHook", async (req, res, next) => {
       const newOrder = await Order.create({
         transaction_id: obj.id,
         user: payment.user,
+        paymentMethod: "visa",
         orderPrice: obj.amount_cents / 100,
         items: payment.cartItems.map((item) => {
           return {
@@ -348,6 +349,14 @@ router.post("/webHook", async (req, res, next) => {
           (total, color) => total + color.quantity,
           0
         );
+        //  if(quantity === 0){
+        //  await Product.findByIdAndDelete(product._id);
+        //  }
+        //  else{
+        //   product.colors = colors;
+        //   product.quantity = quantity;
+        //   await product.save();
+        // }
         product.colors = colors;
         product.quantity = quantity;
         await product.save();

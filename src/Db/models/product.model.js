@@ -73,6 +73,7 @@ export const productSchema = new mongoose.Schema(
         color: { type: String, required: [true, "Color is required"] },
         quantity: {
           type: Number,
+          min: [0, "Quantity can not be negative"],
           required: [true, "Color quantity is required"],
 	  min: [0, "Quantity can not be negative"],
         },
@@ -115,6 +116,14 @@ productSchema.pre("save", function (next) {
   }
   return next();
 });
+
+// productSchema.pre("save", async function (next) {
+//   // 'this' refers to the current document being saved
+
+//   if (this.colors.length > 0) {
+//     this.colors = this.colors.filter((color) => color.quantity > 0);
+//   }
+// });
 
 productSchema.pre("findOneAndUpdate", function (next) {
   const update = this.getUpdate();
