@@ -28,40 +28,28 @@ app.use(express.static(`${__dirname}/public`, { maxAge: "1d" }));
 // global Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors());
 app.use(morgan("dev"));
 app.use(mongoSanitize());
 app.use(helmet());
 app.use(xss());
 
-app.use(
-  // cors({
-  //   origin: "https://ecs-commerce.vercel.app",
-  //   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  //   allowedHeaders: ["Content-Type", "Authorization"],
-  //   credentials: true, // If you need to send cookies or auth headers
-  // })
-  cors({
-    origin: "http://localhost:3000",
-    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-    allowedHeaders: ["Content-Type", "Authorization"],
-    credentials: true, // If you need to send cookies or auth headers
-  })
-);
 
-// app.use(
-//   cors({
-//     origin: ["https://ecs-commerce.vercel.app", "https://ecs-commerce.vercel.app/en"],
-//     methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"],
-//     allowedHeaders: ["Content-Type", "Authorization"],
-//     credentials: true // If you need to send cookies or auth headers
-//   })
-// );
-// app.use(rateLimit({
-//     windowMs: 60*60*1000,
-//     max:100,
-//     message: 'Too many requests from this IP, please try again in an hour'
-// }));
+
+
+/*const corsOptions = {
+    origin: [/https?:\/\/(www\.)?orca-wear\.com$/], // Allow only orca-wear.com and www.orca-wear.com
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
+    allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true, // Required if your frontend needs to send cookies or use Authorization headers
+};
+
+app.use(cors(corsOptions));
+*/
+
+app.use(cors({
+origin:/https?:\/\/(www\.)?orca-wear\.com$/,
+optionsSuccessStatus: 200,
+}))
 
 app.use(
   expressWinston.logger({
@@ -119,7 +107,8 @@ app.get(
   catchAsync(async (req, res, next) => {
     const userCount = await User.find({
       role: { $ne: "admin" },
-    }).count();
+    }).countDocuments();
+console.log("userCount" , userCount)
     const productCount = await Product.countDocuments();
     const orderCount = await Order.countDocuments();
     const categoryCount = await Category.countDocuments();

@@ -20,7 +20,7 @@ class ApiFeature {
       delete filterObject.category;
     }
 
-    if (filterObject.subCategory !== "undefined") {
+    if (filterObject.subCategory !== "undefined" && filterObject.subCategory !== "") {
       const subCategoriesIds = filterObject.subCategory.split(",");
       filterObject = {
         ...filterObject,

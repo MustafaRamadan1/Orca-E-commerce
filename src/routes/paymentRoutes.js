@@ -348,14 +348,9 @@ router.post("/webHook", async (req, res, next) => {
           (total, color) => total + color.quantity,
           0
         );
-       if(quantity === 0){
-       await Product.findByIdAndDelete(product._id);
-       }
-       else{
         product.colors = colors;
         product.quantity = quantity;
         await product.save();
-       }
       }
 
       await CartItem.deleteMany({
@@ -389,9 +384,9 @@ router.get("/acceptPayment", async (req, res) => {
 
   try {
     if (success === "true") {
-      res.redirect("http://localhost:3000/en/user/payment/status=success");
+      res.redirect("https://orca-wear.com/en/user/payment/status=success");
     } else {
-      res.redirect("http://localhost:3000/en/user/payment/status=failed");
+      res.redirect("https://orca-wear.com/en/en/user/payment/status=failed");
     }
   } catch (error) {
     next(createError(500, error.message));

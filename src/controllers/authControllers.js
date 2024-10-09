@@ -141,7 +141,7 @@ export const forgetPassword = catchAsync(async (req, res, next) => {
   const user = await User.findOne({ email });
   if (!user) {
     logger.error(`No User with this email`, {
-      email: user.email
+      email: user?.email
     });
     return next(new AppError(`No User with This Email`, 404));
   }

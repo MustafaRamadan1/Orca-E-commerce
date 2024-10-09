@@ -61,16 +61,16 @@ export const validateCartItemsQuantity = async (cartItems) => {
     if (!product) {
       productNExist.push({ name: item.name });
     } else {
+      const colors = product.colors.map((c) => c._id);
       if (Array.isArray(product.colors)) {
         for (let color of product.colors) {
-          if (color.id === item.colorId) {
-            color.quantity < item.quantity
-              ? productNExist.push({
-                  name: item.name,
-                  quantity: product.quantity,
-                })
-              : null;
-            break;
+          if (!colors.includes(color)) {
+            if (!(color.quantity >= item.quantity)) {
+              productNExist.push({
+                name: item.name,
+                quantity: product.quantity,
+              });
+            }
           } else {
             productNExist.push({ name: item.name });
           }
