@@ -1,0 +1,1194 @@
+{
+  message: 'Database Connection Successfully',
+  level: 'info',
+  timestamp: '2024-10-09T23:41:57.188Z'
+}
+{
+  message: 'Server Listening on PORT 8000',
+  level: 'info',
+  timestamp: '2024-10-09T23:41:57.195Z'
+}
+{
+  message: 'Database Connection Successfully',
+  level: 'info',
+  timestamp: '2024-10-09T23:45:46.606Z'
+}
+{
+  message: 'Server Listening on PORT 8000',
+  level: 'info',
+  timestamp: '2024-10-09T23:45:46.609Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/categories',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyODUwNDk3OCwiZXhwIjoxNzI4NzY0MTc4fQ.ZqH8kNcGRhMXZx7nMKYXJPjJ3JXnGcakFRmnisGmh-A',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"bf-2xKbhXh3Ij0v1dfsZWEC2a9RIJk"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/categories',
+      query: {}
+    },
+    res: { statusCode: 304 },
+    responseTime: 174
+  },
+  level: 'info',
+  message: 'GET /api/v1/categories 304 174ms',
+  timestamp: '2024-10-09T23:45:55.508Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/products/filtered?letters=undefined&lang=en',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyODUwNDk3OCwiZXhwIjoxNzI4NzY0MTc4fQ.ZqH8kNcGRhMXZx7nMKYXJPjJ3JXnGcakFRmnisGmh-A',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"29-w89SXXqzP1Ws/hRUCc9t9ps9F0I"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/products/filtered?letters=undefined&lang=en',
+      query: { letters: 'undefined', lang: 'en' }
+    },
+    res: { statusCode: 304 },
+    responseTime: 135
+  },
+  level: 'info',
+  message: 'GET /api/v1/products/filtered?letters=undefined&lang=en 304 135ms',
+  timestamp: '2024-10-09T23:45:55.697Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/subCategories?category=66cca1dcd4e2b0f897ec3947',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyODUwNDk3OCwiZXhwIjoxNzI4NzY0MTc4fQ.ZqH8kNcGRhMXZx7nMKYXJPjJ3JXnGcakFRmnisGmh-A',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"156-sfpsdj1lN50nlXkN83pbHTVkQmk"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/subCategories?category=66cca1dcd4e2b0f897ec3947',
+      query: { category: '66cca1dcd4e2b0f897ec3947' }
+    },
+    res: { statusCode: 304 },
+    responseTime: 240
+  },
+  level: 'info',
+  message: 'GET /api/v1/subCategories?category=66cca1dcd4e2b0f897ec3947 304 240ms',
+  timestamp: '2024-10-09T23:45:55.799Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/products/filtered?letters=&lang=en',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyODUwNDk3OCwiZXhwIjoxNzI4NzY0MTc4fQ.ZqH8kNcGRhMXZx7nMKYXJPjJ3JXnGcakFRmnisGmh-A',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"29-w89SXXqzP1Ws/hRUCc9t9ps9F0I"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/products/filtered?letters=&lang=en',
+      query: { letters: '', lang: 'en' }
+    },
+    res: { statusCode: 304 },
+    responseTime: 0
+  },
+  level: 'info',
+  message: 'GET /api/v1/products/filtered?letters=&lang=en 304 0ms',
+  timestamp: '2024-10-09T23:45:56.047Z'
+}
+{
+  message: 'User Authenticated Successfully',
+  level: 'info',
+  timestamp: '2024-10-09T23:46:08.173Z'
+}
+{
+  userId: new ObjectId('66bf67d0f792c1d16898ca6c'),
+  url: '/api/v1/payment/cashPayment',
+  level: 'info',
+  message: 'User Authorized to access the route ',
+  timestamp: '2024-10-09T23:46:08.174Z'
+}
+{
+  message: ' deleting cartItems from cart 66bf67d1f792c1d16898ca6f before creating new cartItems\n' +
+    '      for the order',
+  level: 'info',
+  timestamp: '2024-10-09T23:46:08.675Z'
+}
+{
+  message: 'Created an order (CASH ON DELIVERY)',
+  level: 'info',
+  timestamp: '2024-10-09T23:46:09.694Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/categories',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyODUwNDk3OCwiZXhwIjoxNzI4NzY0MTc4fQ.ZqH8kNcGRhMXZx7nMKYXJPjJ3JXnGcakFRmnisGmh-A',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"bf-2xKbhXh3Ij0v1dfsZWEC2a9RIJk"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/categories',
+      query: {}
+    },
+    res: { statusCode: 304 },
+    responseTime: 172
+  },
+  level: 'info',
+  message: 'GET /api/v1/categories 304 172ms',
+  timestamp: '2024-10-09T23:58:05.067Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/products/filtered?letters=undefined&lang=en',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyODUwNDk3OCwiZXhwIjoxNzI4NzY0MTc4fQ.ZqH8kNcGRhMXZx7nMKYXJPjJ3JXnGcakFRmnisGmh-A',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"29-w89SXXqzP1Ws/hRUCc9t9ps9F0I"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/products/filtered?letters=undefined&lang=en',
+      query: { letters: 'undefined', lang: 'en' }
+    },
+    res: { statusCode: 304 },
+    responseTime: 142
+  },
+  level: 'info',
+  message: 'GET /api/v1/products/filtered?letters=undefined&lang=en 304 142ms',
+  timestamp: '2024-10-09T23:58:05.331Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/subCategories?category=66cca1dcd4e2b0f897ec3947',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyODUwNDk3OCwiZXhwIjoxNzI4NzY0MTc4fQ.ZqH8kNcGRhMXZx7nMKYXJPjJ3JXnGcakFRmnisGmh-A',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"156-sfpsdj1lN50nlXkN83pbHTVkQmk"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/subCategories?category=66cca1dcd4e2b0f897ec3947',
+      query: { category: '66cca1dcd4e2b0f897ec3947' }
+    },
+    res: { statusCode: 304 },
+    responseTime: 302
+  },
+  level: 'info',
+  message: 'GET /api/v1/subCategories?category=66cca1dcd4e2b0f897ec3947 304 302ms',
+  timestamp: '2024-10-09T23:58:05.471Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/products/filtered?letters=&lang=en',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyODUwNDk3OCwiZXhwIjoxNzI4NzY0MTc4fQ.ZqH8kNcGRhMXZx7nMKYXJPjJ3JXnGcakFRmnisGmh-A',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"29-w89SXXqzP1Ws/hRUCc9t9ps9F0I"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/products/filtered?letters=&lang=en',
+      query: { letters: '', lang: 'en' }
+    },
+    res: { statusCode: 304 },
+    responseTime: 0
+  },
+  level: 'info',
+  message: 'GET /api/v1/products/filtered?letters=&lang=en 304 0ms',
+  timestamp: '2024-10-09T23:58:05.642Z'
+}
+{
+  message: 'User Authenticated Successfully',
+  level: 'info',
+  timestamp: '2024-10-09T23:58:21.430Z'
+}
+{
+  userId: new ObjectId('66bf67d0f792c1d16898ca6c'),
+  url: '/api/v1/payment/cashPayment',
+  level: 'info',
+  message: 'User Authorized to access the route ',
+  timestamp: '2024-10-09T23:58:21.431Z'
+}
+{
+  message: ' deleting cartItems from cart 66bf67d1f792c1d16898ca6f before creating new cartItems\n' +
+    '      for the order',
+  level: 'info',
+  timestamp: '2024-10-09T23:58:22.000Z'
+}
+{
+  message: 'Created an order (CASH ON DELIVERY)',
+  level: 'info',
+  timestamp: '2024-10-09T23:58:22.980Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/categories',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyODUwNDk3OCwiZXhwIjoxNzI4NzY0MTc4fQ.ZqH8kNcGRhMXZx7nMKYXJPjJ3JXnGcakFRmnisGmh-A',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"bf-2xKbhXh3Ij0v1dfsZWEC2a9RIJk"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/categories',
+      query: {}
+    },
+    res: { statusCode: 304 },
+    responseTime: 179
+  },
+  level: 'info',
+  message: 'GET /api/v1/categories 304 179ms',
+  timestamp: '2024-10-09T23:59:45.987Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/products/filtered?letters=undefined&lang=en',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyODUwNDk3OCwiZXhwIjoxNzI4NzY0MTc4fQ.ZqH8kNcGRhMXZx7nMKYXJPjJ3JXnGcakFRmnisGmh-A',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"29-w89SXXqzP1Ws/hRUCc9t9ps9F0I"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/products/filtered?letters=undefined&lang=en',
+      query: { letters: 'undefined', lang: 'en' }
+    },
+    res: { statusCode: 304 },
+    responseTime: 114
+  },
+  level: 'info',
+  message: 'GET /api/v1/products/filtered?letters=undefined&lang=en 304 114ms',
+  timestamp: '2024-10-09T23:59:46.183Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/subCategories?category=66cca1dcd4e2b0f897ec3947',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyODUwNDk3OCwiZXhwIjoxNzI4NzY0MTc4fQ.ZqH8kNcGRhMXZx7nMKYXJPjJ3JXnGcakFRmnisGmh-A',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"156-sfpsdj1lN50nlXkN83pbHTVkQmk"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/subCategories?category=66cca1dcd4e2b0f897ec3947',
+      query: { category: '66cca1dcd4e2b0f897ec3947' }
+    },
+    res: { statusCode: 304 },
+    responseTime: 307
+  },
+  level: 'info',
+  message: 'GET /api/v1/subCategories?category=66cca1dcd4e2b0f897ec3947 304 307ms',
+  timestamp: '2024-10-09T23:59:46.353Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/products/filtered?letters=&lang=en',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyODUwNDk3OCwiZXhwIjoxNzI4NzY0MTc4fQ.ZqH8kNcGRhMXZx7nMKYXJPjJ3JXnGcakFRmnisGmh-A',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"29-w89SXXqzP1Ws/hRUCc9t9ps9F0I"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/products/filtered?letters=&lang=en',
+      query: { letters: '', lang: 'en' }
+    },
+    res: { statusCode: 304 },
+    responseTime: 3
+  },
+  level: 'info',
+  message: 'GET /api/v1/products/filtered?letters=&lang=en 304 3ms',
+  timestamp: '2024-10-09T23:59:46.545Z'
+}
+{
+  message: 'User Authenticated Successfully',
+  level: 'info',
+  timestamp: '2024-10-09T23:59:58.969Z'
+}
+{
+  userId: new ObjectId('66bf67d0f792c1d16898ca6c'),
+  url: '/api/v1/payment/cashPayment',
+  level: 'info',
+  message: 'User Authorized to access the route ',
+  timestamp: '2024-10-09T23:59:58.970Z'
+}
+{
+  message: ' deleting cartItems from cart 66bf67d1f792c1d16898ca6f before creating new cartItems\n' +
+    '      for the order',
+  level: 'info',
+  timestamp: '2024-10-09T23:59:59.514Z'
+}
+{
+  message: 'Created an order (CASH ON DELIVERY)',
+  level: 'info',
+  timestamp: '2024-10-10T00:00:00.490Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/categories',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyODUwNDk3OCwiZXhwIjoxNzI4NzY0MTc4fQ.ZqH8kNcGRhMXZx7nMKYXJPjJ3JXnGcakFRmnisGmh-A',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"bf-2xKbhXh3Ij0v1dfsZWEC2a9RIJk"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/categories',
+      query: {}
+    },
+    res: { statusCode: 304 },
+    responseTime: 311
+  },
+  level: 'info',
+  message: 'GET /api/v1/categories 304 311ms',
+  timestamp: '2024-10-10T00:01:19.067Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/products/filtered?letters=undefined&lang=en',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyODUwNDk3OCwiZXhwIjoxNzI4NzY0MTc4fQ.ZqH8kNcGRhMXZx7nMKYXJPjJ3JXnGcakFRmnisGmh-A',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"29-w89SXXqzP1Ws/hRUCc9t9ps9F0I"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/products/filtered?letters=undefined&lang=en',
+      query: { letters: 'undefined', lang: 'en' }
+    },
+    res: { statusCode: 304 },
+    responseTime: 145
+  },
+  level: 'info',
+  message: 'GET /api/v1/products/filtered?letters=undefined&lang=en 304 145ms',
+  timestamp: '2024-10-10T00:01:19.342Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/subCategories?category=66cca1dcd4e2b0f897ec3947',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyODUwNDk3OCwiZXhwIjoxNzI4NzY0MTc4fQ.ZqH8kNcGRhMXZx7nMKYXJPjJ3JXnGcakFRmnisGmh-A',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"156-sfpsdj1lN50nlXkN83pbHTVkQmk"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/subCategories?category=66cca1dcd4e2b0f897ec3947',
+      query: { category: '66cca1dcd4e2b0f897ec3947' }
+    },
+    res: { statusCode: 304 },
+    responseTime: 315
+  },
+  level: 'info',
+  message: 'GET /api/v1/subCategories?category=66cca1dcd4e2b0f897ec3947 304 315ms',
+  timestamp: '2024-10-10T00:01:19.506Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/products/filtered?letters=&lang=en',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyODUwNDk3OCwiZXhwIjoxNzI4NzY0MTc4fQ.ZqH8kNcGRhMXZx7nMKYXJPjJ3JXnGcakFRmnisGmh-A',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"29-w89SXXqzP1Ws/hRUCc9t9ps9F0I"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/products/filtered?letters=&lang=en',
+      query: { letters: '', lang: 'en' }
+    },
+    res: { statusCode: 304 },
+    responseTime: 0
+  },
+  level: 'info',
+  message: 'GET /api/v1/products/filtered?letters=&lang=en 304 0ms',
+  timestamp: '2024-10-10T00:01:19.676Z'
+}
+{
+  message: 'User Authenticated Successfully',
+  level: 'info',
+  timestamp: '2024-10-10T00:01:32.075Z'
+}
+{
+  userId: new ObjectId('66bf67d0f792c1d16898ca6c'),
+  url: '/api/v1/payment/cashPayment',
+  level: 'info',
+  message: 'User Authorized to access the route ',
+  timestamp: '2024-10-10T00:01:32.077Z'
+}
+{
+  message: ' deleting cartItems from cart 66bf67d1f792c1d16898ca6f before creating new cartItems\n' +
+    '      for the order',
+  level: 'info',
+  timestamp: '2024-10-10T00:01:32.625Z'
+}
+{
+  message: 'Created an order (CASH ON DELIVERY)',
+  level: 'info',
+  timestamp: '2024-10-10T00:01:33.653Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/categories',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyODUwNDk3OCwiZXhwIjoxNzI4NzY0MTc4fQ.ZqH8kNcGRhMXZx7nMKYXJPjJ3JXnGcakFRmnisGmh-A',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"bf-2xKbhXh3Ij0v1dfsZWEC2a9RIJk"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/categories',
+      query: {}
+    },
+    res: { statusCode: 304 },
+    responseTime: 180
+  },
+  level: 'info',
+  message: 'GET /api/v1/categories 304 180ms',
+  timestamp: '2024-10-10T00:03:48.589Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/products/filtered?letters=undefined&lang=en',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyODUwNDk3OCwiZXhwIjoxNzI4NzY0MTc4fQ.ZqH8kNcGRhMXZx7nMKYXJPjJ3JXnGcakFRmnisGmh-A',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"29-w89SXXqzP1Ws/hRUCc9t9ps9F0I"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/products/filtered?letters=undefined&lang=en',
+      query: { letters: 'undefined', lang: 'en' }
+    },
+    res: { statusCode: 304 },
+    responseTime: 144
+  },
+  level: 'info',
+  message: 'GET /api/v1/products/filtered?letters=undefined&lang=en 304 144ms',
+  timestamp: '2024-10-10T00:03:48.870Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/subCategories?category=66cca1dcd4e2b0f897ec3947',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyODUwNDk3OCwiZXhwIjoxNzI4NzY0MTc4fQ.ZqH8kNcGRhMXZx7nMKYXJPjJ3JXnGcakFRmnisGmh-A',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"156-sfpsdj1lN50nlXkN83pbHTVkQmk"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/subCategories?category=66cca1dcd4e2b0f897ec3947',
+      query: { category: '66cca1dcd4e2b0f897ec3947' }
+    },
+    res: { statusCode: 304 },
+    responseTime: 245
+  },
+  level: 'info',
+  message: 'GET /api/v1/subCategories?category=66cca1dcd4e2b0f897ec3947 304 245ms',
+  timestamp: '2024-10-10T00:03:48.978Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/products/filtered?letters=&lang=en',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyODUwNDk3OCwiZXhwIjoxNzI4NzY0MTc4fQ.ZqH8kNcGRhMXZx7nMKYXJPjJ3JXnGcakFRmnisGmh-A',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"29-w89SXXqzP1Ws/hRUCc9t9ps9F0I"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/products/filtered?letters=&lang=en',
+      query: { letters: '', lang: 'en' }
+    },
+    res: { statusCode: 304 },
+    responseTime: 1
+  },
+  level: 'info',
+  message: 'GET /api/v1/products/filtered?letters=&lang=en 304 1ms',
+  timestamp: '2024-10-10T00:03:49.163Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/categories',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyODUwNDk3OCwiZXhwIjoxNzI4NzY0MTc4fQ.ZqH8kNcGRhMXZx7nMKYXJPjJ3JXnGcakFRmnisGmh-A',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"bf-2xKbhXh3Ij0v1dfsZWEC2a9RIJk"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/categories',
+      query: {}
+    },
+    res: { statusCode: 304 },
+    responseTime: 160
+  },
+  level: 'info',
+  message: 'GET /api/v1/categories 304 160ms',
+  timestamp: '2024-10-10T00:04:03.679Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/products/filtered?letters=undefined&lang=en',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyODUwNDk3OCwiZXhwIjoxNzI4NzY0MTc4fQ.ZqH8kNcGRhMXZx7nMKYXJPjJ3JXnGcakFRmnisGmh-A',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"29-w89SXXqzP1Ws/hRUCc9t9ps9F0I"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/products/filtered?letters=undefined&lang=en',
+      query: { letters: 'undefined', lang: 'en' }
+    },
+    res: { statusCode: 304 },
+    responseTime: 135
+  },
+  level: 'info',
+  message: 'GET /api/v1/products/filtered?letters=undefined&lang=en 304 135ms',
+  timestamp: '2024-10-10T00:04:03.881Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/subCategories?category=66cca1dcd4e2b0f897ec3947',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyODUwNDk3OCwiZXhwIjoxNzI4NzY0MTc4fQ.ZqH8kNcGRhMXZx7nMKYXJPjJ3JXnGcakFRmnisGmh-A',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"156-sfpsdj1lN50nlXkN83pbHTVkQmk"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/subCategories?category=66cca1dcd4e2b0f897ec3947',
+      query: { category: '66cca1dcd4e2b0f897ec3947' }
+    },
+    res: { statusCode: 304 },
+    responseTime: 234
+  },
+  level: 'info',
+  message: 'GET /api/v1/subCategories?category=66cca1dcd4e2b0f897ec3947 304 234ms',
+  timestamp: '2024-10-10T00:04:03.976Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/products/filtered?letters=&lang=en',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyODUwNDk3OCwiZXhwIjoxNzI4NzY0MTc4fQ.ZqH8kNcGRhMXZx7nMKYXJPjJ3JXnGcakFRmnisGmh-A',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"29-w89SXXqzP1Ws/hRUCc9t9ps9F0I"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/products/filtered?letters=&lang=en',
+      query: { letters: '', lang: 'en' }
+    },
+    res: { statusCode: 304 },
+    responseTime: 1
+  },
+  level: 'info',
+  message: 'GET /api/v1/products/filtered?letters=&lang=en 304 1ms',
+  timestamp: '2024-10-10T00:04:04.226Z'
+}
+{
+  message: 'User Authenticated Successfully',
+  level: 'info',
+  timestamp: '2024-10-10T00:04:25.629Z'
+}
+{
+  userId: new ObjectId('66bf67d0f792c1d16898ca6c'),
+  url: '/api/v1/payment/cashPayment',
+  level: 'info',
+  message: 'User Authorized to access the route ',
+  timestamp: '2024-10-10T00:04:25.630Z'
+}
+{
+  message: ' deleting cartItems from cart 66bf67d1f792c1d16898ca6f before creating new cartItems\n' +
+    '      for the order',
+  level: 'info',
+  timestamp: '2024-10-10T00:04:26.107Z'
+}
+{
+  message: 'Created an order (CASH ON DELIVERY)',
+  level: 'info',
+  timestamp: '2024-10-10T00:04:27.118Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/categories',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyODUwNDk3OCwiZXhwIjoxNzI4NzY0MTc4fQ.ZqH8kNcGRhMXZx7nMKYXJPjJ3JXnGcakFRmnisGmh-A',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"bf-2xKbhXh3Ij0v1dfsZWEC2a9RIJk"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/categories',
+      query: {}
+    },
+    res: { statusCode: 304 },
+    responseTime: 178
+  },
+  level: 'info',
+  message: 'GET /api/v1/categories 304 178ms',
+  timestamp: '2024-10-10T00:08:11.369Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/products/filtered?letters=undefined&lang=en',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyODUwNDk3OCwiZXhwIjoxNzI4NzY0MTc4fQ.ZqH8kNcGRhMXZx7nMKYXJPjJ3JXnGcakFRmnisGmh-A',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"29-w89SXXqzP1Ws/hRUCc9t9ps9F0I"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/products/filtered?letters=undefined&lang=en',
+      query: { letters: 'undefined', lang: 'en' }
+    },
+    res: { statusCode: 304 },
+    responseTime: 112
+  },
+  level: 'info',
+  message: 'GET /api/v1/products/filtered?letters=undefined&lang=en 304 112ms',
+  timestamp: '2024-10-10T00:08:11.532Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/subCategories?category=66cca1dcd4e2b0f897ec3947',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyODUwNDk3OCwiZXhwIjoxNzI4NzY0MTc4fQ.ZqH8kNcGRhMXZx7nMKYXJPjJ3JXnGcakFRmnisGmh-A',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"156-sfpsdj1lN50nlXkN83pbHTVkQmk"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/subCategories?category=66cca1dcd4e2b0f897ec3947',
+      query: { category: '66cca1dcd4e2b0f897ec3947' }
+    },
+    res: { statusCode: 304 },
+    responseTime: 269
+  },
+  level: 'info',
+  message: 'GET /api/v1/subCategories?category=66cca1dcd4e2b0f897ec3947 304 269ms',
+  timestamp: '2024-10-10T00:08:11.687Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/products/filtered?letters=&lang=en',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyODUwNDk3OCwiZXhwIjoxNzI4NzY0MTc4fQ.ZqH8kNcGRhMXZx7nMKYXJPjJ3JXnGcakFRmnisGmh-A',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"29-w89SXXqzP1Ws/hRUCc9t9ps9F0I"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/products/filtered?letters=&lang=en',
+      query: { letters: '', lang: 'en' }
+    },
+    res: { statusCode: 304 },
+    responseTime: 0
+  },
+  level: 'info',
+  message: 'GET /api/v1/products/filtered?letters=&lang=en 304 0ms',
+  timestamp: '2024-10-10T00:08:11.908Z'
+}
+{
+  message: 'User Authenticated Successfully',
+  level: 'info',
+  timestamp: '2024-10-10T00:08:29.959Z'
+}
+{
+  userId: new ObjectId('66bf67d0f792c1d16898ca6c'),
+  url: '/api/v1/payment/cashPayment',
+  level: 'info',
+  message: 'User Authorized to access the route ',
+  timestamp: '2024-10-10T00:08:29.960Z'
+}
+{
+  message: ' deleting cartItems from cart 66bf67d1f792c1d16898ca6f before creating new cartItems\n' +
+    '      for the order',
+  level: 'info',
+  timestamp: '2024-10-10T00:08:30.528Z'
+}
+{
+  message: 'Created an order (CASH ON DELIVERY)',
+  level: 'info',
+  timestamp: '2024-10-10T00:08:31.504Z'
+}

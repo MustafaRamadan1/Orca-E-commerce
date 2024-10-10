@@ -33,9 +33,6 @@ app.use(mongoSanitize());
 app.use(helmet());
 app.use(xss());
 
-
-
-
 /*const corsOptions = {
     origin: [/https?:\/\/(www\.)?orca-wear\.com$/], // Allow only orca-wear.com and www.orca-wear.com
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
@@ -46,10 +43,11 @@ app.use(xss());
 app.use(cors(corsOptions));
 */
 
-app.use(cors({
-origin:/https?:\/\/(www\.)?orca-wear\.com$/,
-optionsSuccessStatus: 200,
-}))
+// app.use(cors({
+// origin:/https?:\/\/(www\.)?orca-wear\.com$/,
+// optionsSuccessStatus: 200,
+// }))
+app.use(cors());
 
 app.use(
   expressWinston.logger({
@@ -108,7 +106,7 @@ app.get(
     const userCount = await User.find({
       role: { $ne: "admin" },
     }).countDocuments();
-console.log("userCount" , userCount)
+    console.log("userCount", userCount);
     const productCount = await Product.countDocuments();
     const orderCount = await Order.countDocuments();
     const categoryCount = await Category.countDocuments();
@@ -219,7 +217,7 @@ console.log("userCount" , userCount)
         },
       },
     ]);
- 
+
     res.status(200).json({
       success: true,
       userCount,

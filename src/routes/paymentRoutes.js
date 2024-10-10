@@ -349,14 +349,6 @@ router.post("/webHook", async (req, res, next) => {
           (total, color) => total + color.quantity,
           0
         );
-        //  if(quantity === 0){
-        //  await Product.findByIdAndDelete(product._id);
-        //  }
-        //  else{
-        //   product.colors = colors;
-        //   product.quantity = quantity;
-        //   await product.save();
-        // }
         product.colors = colors;
         product.quantity = quantity;
         await product.save();
@@ -387,6 +379,183 @@ router.post("/webHook", async (req, res, next) => {
     return next(new AppError(err.message, 400));
   }
 });
+
+// router.post(
+//   "/cashPayment",
+//   isAuth,
+//   restrictTo("user"),
+//   catchAsync(async (req, res, next) => {
+//     const { cartItems } = req.body;
+
+//     const productNExist = await validateCartItemsQuantity(cartItems);
+
+//     if (productNExist.length > 0) {
+//       return res.status(400).json({
+//         status: "fail",
+//         message: {
+//           en: productNExist.map((item) => item.name?.en).join(" "),
+//           ar: productNExist.map((item) => item.name?.ar).join(" "),
+//           quantity: productNExist.map((item) => item.quantity).join(" "),
+//         },
+//       });
+//     }
+
+//     const formattedCartItems = cartItems.map((item) => {
+//       return {
+//         cart: item.cart,
+//         product: item.product,
+//         quantity: item.quantity,
+//         color: item.colorId,
+//       };
+//     });
+
+//     await CartItem.deleteMany({
+//       cart: formattedCartItems[0].cart,
+//     });
+
+//     logger.info(` deleting cartItems from cart ${formattedCartItems[0].cart} before creating new cartItems
+//       for the order`);
+
+//     const newCartItems = await CartItem.create(formattedCartItems);
+
+//     if (newCartItems.length === 0) {
+//       logger.error(`Couldn't Create Cart Items for the user ${req.user._id}`);
+//       return next(new AppError(`Couldn't Create Cart Items`, 400));
+//     }
+
+//     const cart = await Cart.findById(newCartItems[0].cart)
+//       .populate({
+//         path: "items",
+//         populate: "product",
+//       })
+//       .populate("user");
+
+//     if (!cart) {
+//       await CartItem.deleteMany({ cart: newCartItems[0].cart._id });
+
+//       logger.error(`Delete cartItems cuz no Cart with the id of them `);
+//       return next(new AppError(`No Cart with this ID`, 400));
+//     }
+
+//     for (let item of cart.items) {
+//       for (let color of item.product.colors) {
+//         if (color.id === item.color) {
+//           if (color.quantity < item.quantity) {
+//             await CartItem.findByIdAndDelete(item._id);
+
+//             logger.error(
+//               `Delete cartItems cuz the needed quantity more than the available `
+//             );
+//             return next(
+//               new AppError(`Your needed quantity more than the available `, 400)
+//             );
+//           }
+//         }
+//       }
+//     }
+//     const totalPrice = countCartTotalPrice(cart.items);
+
+//     const updatedCart = await Cart.findByIdAndUpdate(
+//       cart._id,
+//       { totalPrice },
+//       { new: true, runValidators: true }
+//     )
+//       .populate({
+//         path: "items",
+//         populate: "product",
+//       })
+//       .populate("user");
+
+//     const formattedItems = formatItemsForPayment(
+//       updatedCart.items,
+//       req.body.locale
+//     );
+
+//     logger.info(`Created an order (CASH ON DELIVERY)`);
+
+//     console.log("updatedCart: ", updatedCart);
+
+//     const newOrder = await Order.create({/////////////////////////////////////////
+//       transaction_id: new Date().getTime().toString(),
+//       user: updatedCart.user._id,
+//       paymentMethod: "cash",
+//       orderPrice: totalPrice,
+//       items: updatedCart.items.map((item) => {
+//         return {
+//           product: {
+//             name: item.product.name,
+//             size: item.product.size,
+//             images: item.product.images,
+//           },
+//           price: item.product.saleProduct,
+//           quantity: item.quantity,
+//           color: item.product.colors.filter(
+//             (color) => color.id === item.color
+//           )[0],
+//         };
+//       }),
+//       billingData: req.body.billing_data,
+//       paymentOrderId: (new Date().getTime() + 1).toString(),
+//     });
+
+//     console.log("after new order", newOrder);
+
+//     // log the error and return
+//     if (!newOrder) {
+//       console.log("no new order");
+//       logger.error(`Couldn't create new order`);
+//       return next(new AppError(`couldn't create new order`, 400));
+//     }
+
+//     logger.info(`Created new order for user ${payment.user._id} `, {
+//       orderId: newOrder._id,
+//     });
+
+//     console.log("3.");
+//     for (let item of updatedCart.items) {
+//       const product = await Product.findById(item.product._id);
+//       const colors = product.colors.map((color) =>
+//         color.id === item.color
+//           ? { ...color, quantity: color.quantity - item.quantity }
+//           : color
+//       );
+//       const quantity = colors.reduce(
+//         (total, color) => total + color.quantity,
+//         0
+//       );
+//       product.colors = colors;
+//       product.quantity = quantity;
+//       await product.save();
+//     }
+
+//     console.log("4.");
+//     await CartItem.deleteMany({
+//       cart: new mongoose.Types.ObjectId(updatedCart._id),
+//     });
+
+//     console.log("5.");
+//     logger.info(`Delete the cart Items after create the order for it `);
+//     await Cart.findByIdAndUpdate(updatedCart._id, {
+//       totalPrice: 0,
+//     });
+
+//     console.log("6.");
+//     await CookieCart.findOneAndUpdate(
+//       {
+//         user: new mongoose.Types.ObjectId(updatedCart.user._id),
+//       },
+//       {
+//         cartItems: [],
+//       }
+//     );
+
+//     console.log("7.");
+//     res.status(200).json({
+//       status: "success",
+//       orderId: newOrder._id,
+//     });
+//   })
+// );
 
 router.get("/acceptPayment", async (req, res) => {
   let success = req.query.success;
