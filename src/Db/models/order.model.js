@@ -40,7 +40,14 @@ const orderSchema = new mongoose.Schema(
     orderStatus: {
       type: String,
       enum: {
-        values: ["created", "delivering", "delivered", "refund", "shipped"],
+        values: [
+          "created",
+          "delivering",
+          "delivered",
+          "refund",
+          "shipped",
+          "cancelled",
+        ],
         message: "Your value not supported",
       },
       default: "created",

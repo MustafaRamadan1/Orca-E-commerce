@@ -1,10 +1,10 @@
-import mongoose from "mongoose";
 import AppError from "../utils/AppError.js";
 import { catchAsync } from "../utils/catchAsync.js";
 import Order from "../Db/models/order.model.js";
-import ApiFeature from "../utils/ApiFeature.js";
 import logger from "../utils/logger.js";
-
+import Product from "../Db/models/product.model.js";
+import mongoose from "mongoose";
+const { ObjectId } = mongoose.Types;
 export const getAllOrders = catchAsync(async (req, res, next) => {
   let orders = Order.find().populate({
     path: "user",
@@ -122,6 +122,43 @@ export const updateOrder = catchAsync(async (req, res, next) => {
 
   const { orderStatus } = req.body;
 
+  const currentOrder = await Order.findById(id);
+
+  if (orderStatus === "cancelled") {
+    console.log("currentOrder", currentOrder);
+    for (let item of currentOrder.items) {
+      const product = await Product.findById(item.product._id);
+      console.log("product", product);
+      const colors = product.colors.map((color) => {
+        console.log("COLOR Q: ", color.quantity);
+        console.log("ITEM.COLOR Q: ", item.color.quantity);
+        console.log(
+          "color.quantity + item.color.quantity",
+          color.quantity + item.color.quantity
+        );
+        console.log(
+          "color._id.equals(item.color._id)",
+          color._id.equals(item.color._id)
+        );
+        return color._id.equals(item.color._id)
+          ? {
+              ...color,
+              quantity: item.color.quantity,
+            }
+          : color;
+      });
+      console.log("colors", colors);
+      const quantity = colors.reduce(
+        (total, color) => total + color.quantity,
+        0
+      );
+      console.log("quantity", quantity);
+      product.colors = colors;
+      product.quantity = quantity;
+      await product.save();
+    }
+  }
+
   const updatedOrder = await Order.findByIdAndUpdate(
     id,
     { orderStatus },
@@ -132,11 +169,16 @@ export const updateOrder = catchAsync(async (req, res, next) => {
     logger.error(`No order with this id`);
     return next(new AppError(`No order with this id`), 400);
   }
-
+  /**
+   * if updatedOrder status == cancelled
+   * return back the order's products
+   */
   logger.info(`Order with Id ${id} UpdatedSuccessfully`, {
     orderId: id,
     orderStatus,
   });
+
+  console.log("updatedOrder", updatedOrder);
 
   res.status(200).json({
     status: "success",

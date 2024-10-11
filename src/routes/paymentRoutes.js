@@ -313,6 +313,7 @@ router.post("/webHook", async (req, res, next) => {
         items: payment.cartItems.map((item) => {
           return {
             product: {
+              _id: item.product._id,
               name: item.product.name,
               size: item.product.size,
               images: item.product.images,
@@ -475,7 +476,8 @@ router.post(
 
     console.log("updatedCart: ", updatedCart);
 
-    const newOrder = await Order.create({/////////////////////////////////////////
+    const newOrder = await Order.create({
+      /////////////////////////////////////////
       transaction_id: new Date().getTime().toString(),
       user: updatedCart.user._id,
       paymentMethod: "cash",
@@ -483,6 +485,7 @@ router.post(
       items: updatedCart.items.map((item) => {
         return {
           product: {
+            _id: item.product._id,
             name: item.product.name,
             size: item.product.size,
             images: item.product.images,
@@ -511,7 +514,7 @@ router.post(
       orderId: newOrder._id,
     });
 
-    console.log(updatedCart.items)
+    console.log(updatedCart.items);
     console.log("3.");
     for (let item of updatedCart.items) {
       const product = await Product.findById(item.product._id);

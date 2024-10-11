@@ -56,27 +56,47 @@ export const compileTemplate = (templatePath, data) => {
 
 export const validateCartItemsQuantity = async (cartItems) => {
   const productNExist = [];
+  console.log("cartItems", cartItems);
   for (let item of cartItems) {
     const product = await Product.findById(item.product);
+    console.log("product", product);
     if (!product) {
       productNExist.push({ name: item.name });
     } else {
-      const colors = product.colors.map((c) => c._id);
-      if (Array.isArray(product.colors)) {
-        for (let color of product.colors) {
-          if (!colors.includes(color)) {
-            if (!(color.quantity >= item.quantity)) {
-              productNExist.push({
-                name: item.name,
-                quantity: product.quantity,
-              });
-            }
-          } else {
-            productNExist.push({ name: item.name });
+      const colors = cartItems.map((c) => c.colorId);
+      const productColors = product.colors.map((c) => c.id);
+      console.log("colors", colors);
+      for (let color of colors) {
+        console.log("color", color);
+        if (productColors.includes(color)) {
+          console.log("1.");
+          const productColor = product.colors.find((c) => c.id === color);
+          console.log("productColor", productColor);
+          if (!(productColor.quantity >= item.quantity)) {
+            console.log("2.");
+            productNExist.push({
+              name: item.name,
+              quantity: product.quantity,
+            });
           }
+        } else {
+          productNExist.push({ name: item.name });
         }
       }
     }
   }
   return productNExist;
 };
+
+/**
+ * FRONT -> cartItems
+ * cartItems -> 1 product - 1 color(blue) - quantity 4
+ * cartItems colors = [id]
+ * 65: (id)
+ *    if(id(blue) in product colors)
+ *      - {color in product}
+ *      - color.quantity(5) >= cartItem.quantity(4)
+ *          - DONE
+ *    else
+ *      -  ERROR
+ */
