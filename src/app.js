@@ -73,6 +73,7 @@ import reviewRouter from "./routes/reviewRoutes.js";
 import orderRouter from "./routes/orderRoutes.js";
 import FeedBackRouter from "./routes/feedBackRoutes.js";
 import wishListRouter from "./routes/wishListRoutes.js";
+import promoCodeRouter from "./routes/promoCodeRoutes.js";
 import AppError from "./utils/AppError.js";
 import globalErrorHandler from "./middlewares/globalerrorHandler.js";
 import logger from "./utils/logger.js";
@@ -90,6 +91,7 @@ app.use("/api/v1/reviews", reviewRouter);
 app.use("/api/v1/orders", orderRouter);
 app.use("/api/v1/feedBacks", FeedBackRouter);
 app.use("/api/v1/wishlist", wishListRouter);
+app.use("/api/v1/promoCodes", promoCodeRouter);
 
 import isAuth from "./middlewares/authentication.js";
 import restrictTo from "./middlewares/Authorization.js";
