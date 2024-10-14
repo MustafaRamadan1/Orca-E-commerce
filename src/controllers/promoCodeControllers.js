@@ -35,6 +35,22 @@ export const getAllPromos = catchAsync(async (req, res ,next)=>{
 
 
 
+export const getPromoCodeByCode = catchAsync(async (req, res ,next)=>{
+
+    const {code} = req.params;
+
+    const currentPromo = await PromoCode.findOne({code});
+
+    if(!currentPromo) return next(new AppError(`No promo found with this code`, 404));
+
+    res.status(200).json({
+        status:'success',
+        data: currentPromo
+    })
+})
+
+
+
 export const getPromoCode = catchAsync(async (req, res ,next)=>{
 
     const {id} = req.params;
