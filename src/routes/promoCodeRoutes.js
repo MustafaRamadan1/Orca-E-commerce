@@ -8,8 +8,8 @@ const promoCodeRouter = Router();
 
 promoCodeRouter.post('/',validation(createPromoCodeSchema), createPromoCode);
 promoCodeRouter.get('/',getAllPromos)
-promoCodeRouter.get('/:code', getPromoCodeByCode)
 promoCodeRouter.get('/:id',getPromoCode);
+promoCodeRouter.get('/filter/:code', getPromoCodeByCode)
 promoCodeRouter.put('/:id', validation(updatePromoCodeSchema), updatePromoCode);
 promoCodeRouter.delete('/:id',deletePromoCode)
 
