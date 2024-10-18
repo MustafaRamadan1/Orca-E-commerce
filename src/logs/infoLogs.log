@@ -1192,3 +1192,652 @@
   level: 'info',
   timestamp: '2024-10-10T00:08:31.504Z'
 }
+{
+  message: 'Database Connection Successfully',
+  level: 'info',
+  timestamp: '2024-10-15T23:58:08.517Z'
+}
+{
+  message: 'Server Listening on PORT 8000',
+  level: 'info',
+  timestamp: '2024-10-15T23:58:08.524Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: No promo found ',
+  timestamp: '2024-10-15T23:58:33.474Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/promoCodes',
+      headers: {
+        host: 'localhost:8000',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:131.0) Gecko/20100101 Firefox/131.0',
+        accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/png,image/svg+xml,*/*;q=0.8',
+        'accept-language': 'en-US,en;q=0.5',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        connection: 'keep-alive',
+        'upgrade-insecure-requests': '1',
+        'sec-fetch-dest': 'document',
+        'sec-fetch-mode': 'navigate',
+        'sec-fetch-site': 'none',
+        'sec-fetch-user': '?1',
+        priority: 'u=0, i'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/promoCodes',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 142
+  },
+  level: 'info',
+  message: 'GET /api/v1/promoCodes 404 142ms',
+  timestamp: '2024-10-15T23:58:33.481Z'
+}
+{
+  message: 'Accessing Not Found Route , /favicon.ico',
+  level: 'error',
+  timestamp: '2024-10-15T23:58:33.556Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Not Found Page , No route with your /favicon.ico URL',
+  timestamp: '2024-10-15T23:58:33.564Z'
+}
+{
+  meta: {
+    req: {
+      url: '/favicon.ico',
+      headers: {
+        host: 'localhost:8000',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:131.0) Gecko/20100101 Firefox/131.0',
+        accept: 'image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5',
+        'accept-language': 'en-US,en;q=0.5',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        connection: 'keep-alive',
+        'sec-fetch-dest': 'image',
+        'sec-fetch-mode': 'no-cors',
+        'sec-fetch-site': 'cross-site',
+        priority: 'u=6'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/favicon.ico',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 11
+  },
+  level: 'info',
+  message: 'GET /favicon.ico 404 11ms',
+  timestamp: '2024-10-15T23:58:33.567Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: No promo found ',
+  timestamp: '2024-10-15T23:58:49.628Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/promoCodes',
+      headers: {
+        host: 'localhost:8000',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:131.0) Gecko/20100101 Firefox/131.0',
+        accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/png,image/svg+xml,*/*;q=0.8',
+        'accept-language': 'en-US,en;q=0.5',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        connection: 'keep-alive',
+        'upgrade-insecure-requests': '1',
+        'sec-fetch-dest': 'document',
+        'sec-fetch-mode': 'navigate',
+        'sec-fetch-site': 'none',
+        'sec-fetch-user': '?1',
+        priority: 'u=0, i'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/promoCodes',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 259
+  },
+  level: 'info',
+  message: 'GET /api/v1/promoCodes 404 259ms',
+  timestamp: '2024-10-15T23:58:49.630Z'
+}
+{
+  message: 'Accessing Not Found Route , /favicon.ico',
+  level: 'error',
+  timestamp: '2024-10-15T23:58:49.737Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Not Found Page , No route with your /favicon.ico URL',
+  timestamp: '2024-10-15T23:58:49.747Z'
+}
+{
+  meta: {
+    req: {
+      url: '/favicon.ico',
+      headers: {
+        host: 'localhost:8000',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:131.0) Gecko/20100101 Firefox/131.0',
+        accept: 'image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5',
+        'accept-language': 'en-US,en;q=0.5',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        connection: 'keep-alive',
+        'sec-fetch-dest': 'image',
+        'sec-fetch-mode': 'no-cors',
+        'sec-fetch-site': 'cross-site',
+        priority: 'u=6'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/favicon.ico',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 11
+  },
+  level: 'info',
+  message: 'GET /favicon.ico 404 11ms',
+  timestamp: '2024-10-15T23:58:49.749Z'
+}
+{
+  message: 'Database Connection Successfully',
+  level: 'info',
+  timestamp: '2024-10-15T23:59:09.515Z'
+}
+{
+  message: 'Server Listening on PORT 8000',
+  level: 'info',
+  timestamp: '2024-10-15T23:59:09.522Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: No promo found ',
+  timestamp: '2024-10-15T23:59:19.087Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/promoCodes',
+      headers: {
+        host: 'localhost:8000',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:131.0) Gecko/20100101 Firefox/131.0',
+        accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/png,image/svg+xml,*/*;q=0.8',
+        'accept-language': 'en-US,en;q=0.5',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        connection: 'keep-alive',
+        'upgrade-insecure-requests': '1',
+        'sec-fetch-dest': 'document',
+        'sec-fetch-mode': 'navigate',
+        'sec-fetch-site': 'none',
+        'sec-fetch-user': '?1',
+        priority: 'u=0, i'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/promoCodes',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 143
+  },
+  level: 'info',
+  message: 'GET /api/v1/promoCodes 404 143ms',
+  timestamp: '2024-10-15T23:59:19.096Z'
+}
+{
+  message: 'Accessing Not Found Route , /favicon.ico',
+  level: 'error',
+  timestamp: '2024-10-15T23:59:19.146Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Not Found Page , No route with your /favicon.ico URL',
+  timestamp: '2024-10-15T23:59:19.154Z'
+}
+{
+  meta: {
+    req: {
+      url: '/favicon.ico',
+      headers: {
+        host: 'localhost:8000',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:131.0) Gecko/20100101 Firefox/131.0',
+        accept: 'image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5',
+        'accept-language': 'en-US,en;q=0.5',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        connection: 'keep-alive',
+        'sec-fetch-dest': 'image',
+        'sec-fetch-mode': 'no-cors',
+        'sec-fetch-site': 'cross-site',
+        priority: 'u=6'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/favicon.ico',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 11
+  },
+  level: 'info',
+  message: 'GET /favicon.ico 404 11ms',
+  timestamp: '2024-10-15T23:59:19.158Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: No promo found ',
+  timestamp: '2024-10-16T00:00:37.707Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/promoCodes/',
+      headers: {
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': 'deeeb59f-73e4-421b-8d33-cc076b24f97c',
+        host: 'localhost:8000',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/promoCodes/',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 134
+  },
+  level: 'info',
+  message: 'GET /api/v1/promoCodes/ 404 134ms',
+  timestamp: '2024-10-16T00:00:37.711Z'
+}
+{
+  message: 'Database Connection Successfully',
+  level: 'info',
+  timestamp: '2024-10-16T00:05:13.021Z'
+}
+{
+  message: 'Server Listening on PORT 8000',
+  level: 'info',
+  timestamp: '2024-10-16T00:05:13.045Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: No promo found ',
+  timestamp: '2024-10-16T00:05:19.415Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/promoCodes/',
+      headers: {
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': 'aa6f4274-5a48-4245-8872-d0b638d87fca',
+        host: 'localhost:8000',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/promoCodes/',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 126
+  },
+  level: 'info',
+  message: 'GET /api/v1/promoCodes/ 404 126ms',
+  timestamp: '2024-10-16T00:05:19.426Z'
+}
+{
+  message: 'Database Connection Successfully',
+  level: 'info',
+  timestamp: '2024-10-16T00:05:50.136Z'
+}
+{
+  message: 'Server Listening on PORT 8000',
+  level: 'info',
+  timestamp: '2024-10-16T00:05:50.155Z'
+}
+{
+  message: 'Database Connection Successfully',
+  level: 'info',
+  timestamp: '2024-10-16T00:05:56.790Z'
+}
+{
+  message: 'Server Listening on PORT 8000',
+  level: 'info',
+  timestamp: '2024-10-16T00:05:56.796Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: No promo found ',
+  timestamp: '2024-10-16T00:06:22.574Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/promoCodes/',
+      headers: {
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': 'fa40acca-852e-4b48-8648-f17d00de9bc5',
+        host: 'localhost:8000',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/promoCodes/',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 152
+  },
+  level: 'info',
+  message: 'GET /api/v1/promoCodes/ 404 152ms',
+  timestamp: '2024-10-16T00:06:22.606Z'
+}
+{
+  message: 'Database Connection Successfully',
+  level: 'info',
+  timestamp: '2024-10-16T00:06:57.197Z'
+}
+{
+  message: 'Server Listening on PORT 8000',
+  level: 'info',
+  timestamp: '2024-10-16T00:06:57.223Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: No promo found ',
+  timestamp: '2024-10-16T00:07:07.851Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/promoCodes/',
+      headers: {
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': 'da9ef8cc-c456-47c4-9027-e2502e9db953',
+        host: 'localhost:8000',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/promoCodes/',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 158
+  },
+  level: 'info',
+  message: 'GET /api/v1/promoCodes/ 404 158ms',
+  timestamp: '2024-10-16T00:07:07.865Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/promoCodes/',
+      headers: {
+        'content-type': 'application/json',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': 'df752ead-778b-4c85-9929-6cbc10e0e5ee',
+        host: 'localhost:8000',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '84'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/promoCodes/',
+      query: {}
+    },
+    res: { statusCode: 201 },
+    responseTime: 163
+  },
+  level: 'info',
+  message: 'POST /api/v1/promoCodes/ 201 163ms',
+  timestamp: '2024-10-16T00:08:22.582Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: No promo found with this code',
+  timestamp: '2024-10-16T00:08:28.759Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/promoCodes/ORCA-50aa',
+      headers: {
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '3b0ec0c3-407c-4705-abbd-68e46428e44e',
+        host: 'localhost:8000',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/promoCodes/ORCA-50aa',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 142
+  },
+  level: 'info',
+  message: 'GET /api/v1/promoCodes/ORCA-50aa 404 142ms',
+  timestamp: '2024-10-16T00:08:28.766Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/promoCodes/',
+      headers: {
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '23ec0975-7239-458f-94f0-955310c85664',
+        host: 'localhost:8000',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/promoCodes/',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 132
+  },
+  level: 'info',
+  message: 'GET /api/v1/promoCodes/ 200 132ms',
+  timestamp: '2024-10-16T00:08:34.401Z'
+}
+{
+  message: 'Database Connection Successfully',
+  level: 'info',
+  timestamp: '2024-10-16T00:10:29.696Z'
+}
+{
+  message: 'Server Listening on PORT 8000',
+  level: 'info',
+  timestamp: '2024-10-16T00:10:29.706Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/promoCodes/',
+      headers: {
+        'content-type': 'application/json',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': 'eca8e777-513d-4f04-b555-f5dcec99d559',
+        host: 'localhost:8000',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '82'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/promoCodes/',
+      query: {}
+    },
+    res: { statusCode: 201 },
+    responseTime: 150
+  },
+  level: 'info',
+  message: 'POST /api/v1/promoCodes/ 201 150ms',
+  timestamp: '2024-10-16T00:10:43.639Z'
+}
+{
+  message: 'Database Connection Successfully',
+  level: 'info',
+  timestamp: '2024-10-16T00:11:42.601Z'
+}
+{
+  message: 'Server Listening on PORT 8000',
+  level: 'info',
+  timestamp: '2024-10-16T00:11:42.611Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/promoCodes/',
+      headers: {
+        'content-type': 'application/json',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': 'cb41da88-ae85-4589-ab76-a00fb9b56614',
+        host: 'localhost:8000',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '82'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/promoCodes/',
+      query: {}
+    },
+    res: { statusCode: 201 },
+    responseTime: 1054
+  },
+  level: 'info',
+  message: 'POST /api/v1/promoCodes/ 201 1054ms',
+  timestamp: '2024-10-16T00:12:47.945Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/promoCodes/',
+      headers: {
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '5af88646-2bae-4ba6-9a3c-f4f067e3d9da',
+        host: 'localhost:8000',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/promoCodes/',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 135
+  },
+  level: 'info',
+  message: 'GET /api/v1/promoCodes/ 200 135ms',
+  timestamp: '2024-10-16T00:12:51.882Z'
+}
+{
+  message: 'Database Connection Successfully',
+  level: 'info',
+  timestamp: '2024-10-16T00:13:24.931Z'
+}
+{
+  message: 'Server Listening on PORT 8000',
+  level: 'info',
+  timestamp: '2024-10-16T00:13:24.944Z'
+}
+{
+  message: 'Database Connection Successfully',
+  level: 'info',
+  timestamp: '2024-10-16T00:13:28.261Z'
+}
+{
+  message: 'Server Listening on PORT 8000',
+  level: 'info',
+  timestamp: '2024-10-16T00:13:28.267Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/promoCodes/670c74a16e9db96ad25b473c',
+      headers: {
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '6036c964-d95d-4565-8ecb-7bb867a4318f',
+        host: 'localhost:8000',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/promoCodes/670c74a16e9db96ad25b473c',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 128
+  },
+  level: 'info',
+  message: 'GET /api/v1/promoCodes/670c74a16e9db96ad25b473c 200 128ms',
+  timestamp: '2024-10-16T00:13:53.549Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/promoCodes/filter/ORCA-50Women',
+      headers: {
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '51c81fd3-a66d-4021-be72-399b06c8d80b',
+        host: 'localhost:8000',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/promoCodes/filter/ORCA-50Women',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 111
+  },
+  level: 'info',
+  message: 'GET /api/v1/promoCodes/filter/ORCA-50Women 200 111ms',
+  timestamp: '2024-10-16T00:14:22.651Z'
+}

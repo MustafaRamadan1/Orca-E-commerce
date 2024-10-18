@@ -22,6 +22,8 @@ const promoCodeSchema = new mongoose.Schema({
     min: [0, "Discount can not be negative"],
     max: [100, "Discount can not be more than 100"],
   },
+},{
+  timestamps:true
 });
 
 promoCodeSchema.pre("save", function (next) {
