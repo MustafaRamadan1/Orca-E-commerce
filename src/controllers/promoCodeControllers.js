@@ -1,115 +1,102 @@
-import PromoCode from '../Db/models/promoCode.model.js';
-import AppError from '../utils/AppError.js';
-import {catchAsync} from '../utils/catchAsync.js';
+import PromoCode from "../Db/models/promoCode.model.js";
+import AppError from "../utils/AppError.js";
+import { catchAsync } from "../utils/catchAsync.js";
 
+export const createPromoCode = catchAsync(async (req, res, next) => {
+  const { code, expirationDate, discount } = req.body;
+  console.log(code);
 
-export const createPromoCode = catchAsync(async (req, res , next)=>{
+  const newPromoCode = await PromoCode.create({
+    code,
+    expirationDate,
+    discount,
+  });
 
-    const {code,expirationDate,discount} = req.body;
-    console.log(code)
+  if (!newPromoCode)
+    return next(new AppError(`Couldn't Create new PromoCode`, 400));
 
-    const newPromoCode = await PromoCode.create({code,expirationDate,discount});
-
-    if(!newPromoCode) return next(new AppError(`Couldn't Create new PromoCode`, 400));
-
-    res.status(201).json({
-        status:'success',
-        data:newPromoCode
-    })
+  res.status(201).json({
+    status: "success",
+    data: newPromoCode,
+  });
 });
 
+export const getAllPromos = catchAsync(async (req, res, next) => {
+  const allPromoCodes = await PromoCode.find();
 
-export const getAllPromos = catchAsync(async (req, res ,next)=>{
+  if (allPromoCodes.length === 0)
+    return next(new AppError(`No promo found `, 404));
 
-    const allPromoCodes = await PromoCode.find();
+  res.status(200).json({
+    status: "success",
+    length: allPromoCodes.length,
+    data: allPromoCodes,
+  });
+});
 
-    if(allPromoCodes.length === 0) return next(new AppError(`No promo found `, 404));
+export const getPromoCodeByCode = catchAsync(async (req, res, next) => {
+  const { code } = req.params;
 
+  const currentPromo = await PromoCode.findOne({ code });
 
-    res.status(200).json({
-        status:'success',
-        length: allPromoCodes.length,
-        data:allPromoCodes
-    })
-})
+  if (!currentPromo)
+    return next(new AppError(`No promo found with this code`, 404));
 
+  res.status(200).json({
+    status: "success",
+    data: currentPromo,
+  });
+});
 
+export const getPromoCode = catchAsync(async (req, res, next) => {
+  const { id } = req.params;
 
-export const getPromoCodeByCode = catchAsync(async (req, res ,next)=>{
+  const currentPromo = await PromoCode.findById(id);
 
-    const {code} = req.params;
+  if (!currentPromo)
+    return next(new AppError(`No promo found with this id`, 404));
 
-    const currentPromo = await PromoCode.findOne({code});
+  res.status(200).json({
+    status: "success",
+    data: currentPromo,
+  });
+});
 
-    if(!currentPromo) return next(new AppError(`No promo found with this code`, 404));
+export const updatePromoCode = catchAsync(async (req, res, next) => {
+  const { id } = req.params;
+  const { code, expirationDate, discount } = req.body;
+  const updatedPromoCode = await PromoCode.findByIdAndUpdate(
+    id,
+    {
+      code,
+      expirationDate,
+      discount,
+    },
+    {
+      new: true,
+      runValidators: true,
+    }
+  );
 
-    res.status(200).json({
-        status:'success',
-        data: currentPromo
-    })
-})
+  if (!updatedPromoCode)
+    return next(new AppError(`No promo found with this id to update it `, 404));
 
+  res.status(200).json({
+    status: "success",
+    data: updatedPromoCode,
+  });
+});
 
+export const deletePromoCode = catchAsync(async (req, res, next) => {
+  const { id } = req.params;
 
-export const getPromoCode = catchAsync(async (req, res ,next)=>{
+  const deletedPromoCode = await PromoCode.findOneAndDelete(id);
 
-    const {id} = req.params;
+  if (!deletedPromoCode)
+    return next(new AppError(`No promo found with this id to delete it `, 404));
 
-    const currentPromo = await PromoCode.findById(id);
-
-    if(!currentPromo) return next( new AppError(`No promo found with this id`, 404));
-
-
-    res.status(200).json({
-        status:'success',
-        data:currentPromo
-    })
-})
-
-
-
-
-
-export const updatePromoCode = catchAsync(async (req, res ,next)=>{
-
-    const {id} = req.params;
-    const {code, expirationDate,discount} = req.body;
-    const updatedPromoCode = await PromoCode.findByIdAndUpdate(id, {
-        code, expirationDate,discount
-    }, {
-        new:true,
-        runValidators:true
-    });
-
-
-    if(!updatedPromoCode)   return next( new AppError(`No promo found with this id to update it `, 404));
-
-
-    res.status(200).json({
-        status:'success',
-        data:updatedPromoCode
-    })
-   
-
-})
-
-
-
-
-
-
-export const deletePromoCode = catchAsync(async (req, res ,next)=>{
-
-    const {id} = req.params;
-
-    const deletedPromoCode = await PromoCode.findOneAndDelete(id);
-
-    if(!deletedPromoCode) return next( new AppError(`No promo found with this id to delete it `, 404));
-
-
-    res.status(204).json({
-        status:'success',
-        message: 'Promo Deleted Successfully'
-    })
-
-})
+  res.status(204).json({
+    status: "success",
+    message: "Promo Deleted Successfully",
+  });
+});
