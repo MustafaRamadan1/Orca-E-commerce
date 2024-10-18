@@ -28,10 +28,10 @@ const authentication = catchAsync(async (req, res, next) => {
   const decode = await promisify(jwt.verify)(token, process.env.SECERT_KEY);
 
   const currentUser = await User.findById(decode.id);
-
+  console.log(currentUser)
   if (!currentUser) {
     logger.error(`No user exist with this id , maybe deleted it `,{
-      userId: currentUser._id
+      userId: decode.id
     })
     return next(new AppError(`User no Longer Exist`, 404));
   }

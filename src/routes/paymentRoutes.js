@@ -18,9 +18,23 @@ import { formatBilling_Data } from "../utils/paymentHelperFunc.js";
 import isAuth from "../middlewares/authentication.js";
 import restrictTo from "../middlewares/Authorization.js";
 import CookieCart from "../Db/models/cookieCart.model.js";
+import PromoCode from '../Db/models/promoCode.model.js';
 import logger from "../utils/logger.js";
 import { validateCartItemsQuantity } from "../utils/helperFunc.js";
 const router = Router();
+
+
+router.get('/test', catchAsync(async (req,res ,next)=>{
+
+  const {promoCode} = req.body;
+
+  const promoCodeDocument = await PromoCode.findOne({code:promoCode});
+
+  res.status(200).json({
+    status:'success',
+    data:promoCodeDocument
+  })
+}))
 
 router.post("/pay", async (req, res, next) => {
   const { cartItems } = req.body;
@@ -81,7 +95,7 @@ router.post(
   isAuth,
   restrictTo("user"),
   catchAsync(async (req, res, next) => {
-    const { cartItems } = req.body;
+    const { cartItems,promocode:promoCode } = req.body;
 
     console.log("cartItems", cartItems);
 
@@ -156,7 +170,14 @@ router.post(
         }
       }
     }
-    const totalPrice = countCartTotalPrice(cart.items);
+
+
+    
+
+    const promoCodeDocument = await PromoCode.findOne({code:promoCode});
+    const promoCodeDiscount = promoCodeDocument?.discount / 100 ?? 0;
+    const cartItemsTotalPrice = countCartTotalPrice(cart.items) ;
+    const totalPrice = cartItemsTotalPrice - (cartItemsTotalPrice * promoCodeDiscount);
 
     const updatedCart = await Cart.findByIdAndUpdate(
       cart._id,
@@ -386,7 +407,7 @@ router.post(
   isAuth,
   restrictTo("user"),
   catchAsync(async (req, res, next) => {
-    const { cartItems } = req.body;
+    const { cartItems, promocode:promoCode } = req.body;
 
     const productNExist = await validateCartItemsQuantity(cartItems);
 
@@ -454,7 +475,12 @@ router.post(
         }
       }
     }
-    const totalPrice = countCartTotalPrice(cart.items);
+
+
+    const promoCodeDocument = await PromoCode.findOne({code:promoCode});
+    const promoCodeDiscount = promoCodeDocument?.discount / 100 ?? 0;
+    const cartItemsTotalPrice = countCartTotalPrice(cart.items) ;
+    const totalPrice = cartItemsTotalPrice - (cartItemsTotalPrice * promoCodeDiscount);
 
     const updatedCart = await Cart.findByIdAndUpdate(
       cart._id,
