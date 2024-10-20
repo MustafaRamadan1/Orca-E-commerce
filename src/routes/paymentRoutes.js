@@ -23,19 +23,6 @@ import logger from "../utils/logger.js";
 import { validateCartItemsQuantity } from "../utils/helperFunc.js";
 const router = Router();
 
-
-router.get('/test', catchAsync(async (req,res ,next)=>{
-
-  const {promoCode} = req.body;
-
-  const promoCodeDocument = await PromoCode.findOne({code:promoCode});
-
-  res.status(200).json({
-    status:'success',
-    data:promoCodeDocument
-  })
-}))
-
 router.post("/pay", async (req, res, next) => {
   const { cartItems } = req.body;
 
