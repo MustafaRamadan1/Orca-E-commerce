@@ -21,10 +21,18 @@ export const createPromoCode = catchAsync(async (req, res , next)=>{
 
 export const getAllPromos = catchAsync(async (req, res ,next)=>{
 
-    const allPromoCodes = await PromoCode.find();
+    
+    let allPromoCodes =  PromoCode.find();
 
-    if(allPromoCodes.length === 0) return next(new AppError(`No promo found `, 404));
+    if(allPromoCodes.length === 0) {
+        allPromoCodes = [];
+    }
 
+    const page = req.query.page * 1 || 1;
+    const limit = req.query.limit * 1 || 5;
+    const skip = (page - 1) * limit;
+
+    allPromoCodes = await allPromoCodes.sort('-createdAt').skip(skip).limit(limit);
 
     res.status(200).json({
         status:'success',
