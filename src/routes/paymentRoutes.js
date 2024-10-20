@@ -18,7 +18,7 @@ import { formatBilling_Data } from "../utils/paymentHelperFunc.js";
 import isAuth from "../middlewares/authentication.js";
 import restrictTo from "../middlewares/Authorization.js";
 import CookieCart from "../Db/models/cookieCart.model.js";
-import PromoCode from '../Db/models/promoCode.model.js';
+import PromoCode from "../Db/models/promoCode.model.js";
 import logger from "../utils/logger.js";
 import { validateCartItemsQuantity } from "../utils/helperFunc.js";
 const router = Router();
@@ -82,7 +82,7 @@ router.post(
   isAuth,
   restrictTo("user"),
   catchAsync(async (req, res, next) => {
-    const { cartItems,promocode:promoCode } = req.body;
+    const { cartItems, promocode: promoCode } = req.body;
 
     console.log("cartItems", cartItems);
 
@@ -117,7 +117,11 @@ router.post(
     logger.info(` deleting cartItems from cart ${formattedCartItems[0].cart} before creating new cartItems
       for the order`);
 
+    console.log("BEFORE newCartItems");
+
     const newCartItems = await CartItem.create(formattedCartItems);
+
+    console.log("newCartItems", newCartItems);
 
     if (newCartItems.length === 0) {
       logger.error(`Couldn't Create Cart Items for the user ${req.user._id}`);
@@ -181,11 +185,12 @@ router.post(
         populate: "product",
       })
       .populate("user");
-
+    console.log("updatedCart", updatedCart);
     const formattedItems = formatItemsForPayment(
       updatedCart.items,
       req.body.locale
     );
+    console.log("formattedItems", formattedItems);
 
     // log the axios error
 
@@ -198,6 +203,8 @@ router.post(
       formattedItems,
       req.body.billing_data
     );
+
+    console.log("response", response);
 
     const paymentDoc = await Payment.create({
       intention_id: response.data.id,
@@ -341,7 +348,7 @@ router.post("/webHook", async (req, res, next) => {
         }),
         billingData,
         paymentOrderId: obj.order.id,
-        promocodeDiscount:payment.promocodeDiscount
+        promocodeDiscount: payment.promocodeDiscount,
       });
 
       // log the error and return
@@ -401,7 +408,7 @@ router.post(
   isAuth,
   restrictTo("user"),
   catchAsync(async (req, res, next) => {
-    const { cartItems, promocode:promoCode } = req.body;
+    const { cartItems, promocode: promoCode } = req.body;
 
     const productNExist = await validateCartItemsQuantity(cartItems);
 
@@ -470,11 +477,11 @@ router.post(
       }
     }
 
-
-    const promoCodeDocument = await PromoCode.findOne({code:promoCode});
+    const promoCodeDocument = await PromoCode.findOne({ code: promoCode });
     const promoCodeDiscount = promoCodeDocument?.discount / 100 ?? 0;
-    const cartItemsTotalPrice = countCartTotalPrice(cart.items) ;
-    const totalPrice = cartItemsTotalPrice - (cartItemsTotalPrice * promoCodeDiscount);
+    const cartItemsTotalPrice = countCartTotalPrice(cart.items);
+    const totalPrice =
+      cartItemsTotalPrice - cartItemsTotalPrice * promoCodeDiscount;
 
     const updatedCart = await Cart.findByIdAndUpdate(
       cart._id,
@@ -519,7 +526,7 @@ router.post(
       }),
       billingData: req.body.billing_data,
       paymentOrderId: (new Date().getTime() + 1).toString(),
-      promocodeDiscount:promoCodeDocument.discount
+      promocodeDiscount: promoCodeDocument.discount,
     });
 
     console.log("after new order", newOrder);
