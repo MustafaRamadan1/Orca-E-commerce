@@ -24,7 +24,7 @@ export const createPromoCode = catchAsync(async (req, res, next) => {
 export const getAllPromos = catchAsync(async (req, res, next) => {
   const allPromoCodes = await PromoCode.find();
 
-  if (allPromoCodes.length === 0)
+  if (!Array.isArray(allPromoCodes))
     return next(new AppError(`No promo found `, 404));
 
   res.status(200).json({
@@ -105,7 +105,9 @@ export const updatePromoCode = catchAsync(async (req, res, next) => {
 export const deletePromoCode = catchAsync(async (req, res, next) => {
   const { id } = req.params;
 
-  const deletedPromoCode = await PromoCode.findOneAndDelete(id);
+  const deletedPromoCode = await PromoCode.findOneAndDelete({
+    _id: new Object(id),
+  });
 
   if (!deletedPromoCode)
     return next(new AppError(`No promo found with this id to delete it `, 404));
