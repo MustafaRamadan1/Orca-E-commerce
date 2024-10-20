@@ -199,6 +199,7 @@ router.post(
       user: updatedCart.user._id,
       cartItems: updatedCart.items.map((item) => item._id),
       billingData: req.body.billing_data,
+      promocodeDiscount:promoCodeDocument.discount
     });
 
     logger.info(
@@ -335,6 +336,7 @@ router.post("/webHook", async (req, res, next) => {
         }),
         billingData,
         paymentOrderId: obj.order.id,
+        promocodeDiscount:payment.promocodeDiscount
       });
 
       // log the error and return
@@ -512,6 +514,7 @@ router.post(
       }),
       billingData: req.body.billing_data,
       paymentOrderId: (new Date().getTime() + 1).toString(),
+      promocodeDiscount:promoCodeDocument.discount
     });
 
     console.log("after new order", newOrder);
