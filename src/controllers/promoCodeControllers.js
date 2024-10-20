@@ -39,6 +39,21 @@ export const getPromoCodeByCode = catchAsync(async (req, res, next) => {
 
   const currentPromo = await PromoCode.findOne({ code });
 
+  let allPromoCodes = PromoCode.find();
+
+  if (allPromoCodes.length === 0) {
+    allPromoCodes = [];
+  }
+
+  const page = req.query.page * 1 || 1;
+  const limit = req.query.limit * 1 || 5;
+  const skip = (page - 1) * limit;
+
+  allPromoCodes = await allPromoCodes
+    .sort("-createdAt")
+    .skip(skip)
+    .limit(limit);
+
   if (!currentPromo)
     return next(new AppError(`No promo found with this code`, 404));
 

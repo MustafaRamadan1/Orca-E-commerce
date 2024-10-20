@@ -32,7 +32,8 @@ const paymentSchema = new mongoose.Schema(
           phoneNumber: String,
         },
       },
-    ]
+    ],
+    promocodeDiscount:Number
   },
   {
     timestamps: true,
