@@ -71,6 +71,7 @@ const orderSchema = new mongoose.Schema(
       type: String,
       required: [true, "Order must has a payment id"],
     },
+    promocodeDiscount:Number
   },
   {
     timestamps: true,
