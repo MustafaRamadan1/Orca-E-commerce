@@ -30,22 +30,15 @@ const resizeProductImg = catchAsync(async (req, res, next) => {
     const filepath = `${__dirname}/../uploads/products/${uuid()}.jpg`;
     // const filepath = `/tmp/${uuid()}.jpg`;
     await sharp(req.files[i].buffer)
-      .resize({
-        width: 800,
-        height: 1200,
-        fit: sharp.fit.cover,
-        position: sharp.strategy.entropy,
-        kernel: sharp.kernel.lanczos3,
-      })
       .sharpen({
         sigma: 1,
         m1: 0.8,
         m2: 0.7,
       })
       .toFormat("jpeg", {
-        quality: 90,
+        quality: 90, // Keep quality high
         progressive: true,
-        chromaSubsampling: "4:4:4",
+        chromaSubsampling: "4:4:4", // Retain full color quality
         trellisQuantisation: true,
         overshootDeringing: true,
         optimizeScans: true,
