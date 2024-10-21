@@ -163,15 +163,18 @@ router.post(
     }
 
     const promoCodeDocument = await PromoCode.findOne({ code: promoCode });
-    console.log("promoCodeDocument", promoCodeDocument);
-    const promoCodeDiscount = promoCodeDocument?.discount / 100 ?? 0;
-    console.log("promoCodeDiscount", promoCodeDiscount);
+
+    const promoCodeDiscount = promoCodeDocument
+      ? promoCodeDocument.discount / 100
+      : 0;
     const cartItemsTotalPrice = countCartTotalPrice(cart.items);
-    console.log("cartItemsTotalPrice", cartItemsTotalPrice);
     const totalPrice =
       cartItemsTotalPrice - cartItemsTotalPrice * promoCodeDiscount;
-    console.log("totalPrice", totalPrice);
 
+    console.log(`PromoCodeDocument`, promoCodeDocument);
+    console.log(`PromoCodeDiscount`, promoCodeDiscount);
+    console.log(`CartItemsTotalPrice`, cartItemsTotalPrice);
+    console.log(`TotalPrice`, totalPrice);
     const updatedCart = await Cart.findByIdAndUpdate(
       cart._id,
       { totalPrice },
@@ -194,6 +197,8 @@ router.post(
     const response = await createPaymentLinkMultiMethods(
       updatedCart.totalPrice,
       [
+        // +process.env.PAYMOB_CARD_INTEGRATION,
+        // +process.env.PAYMOB_WALLET_INTEGRATION,
         +process.env.PAYMOB_PAYMENT_METHOD_1,
         +process.env.PAYMOB_PAYMENT_METHOD_2,
         +process.env.PAYMOB_PAYMENT_METHOD_3,
@@ -201,8 +206,6 @@ router.post(
         +process.env.PAYMOB_PAYMENT_METHOD_5,
         +process.env.PAYMOB_PAYMENT_METHOD_6,
         +process.env.PAYMOB_PAYMENT_METHOD_7,
-        // +process.env.PAYMOB_CARD_INTEGRATION,
-        // +process.env.PAYMOB_WALLET_INTEGRATION,
       ],
       formattedItems,
       req.body.billing_data
@@ -215,7 +218,7 @@ router.post(
       user: updatedCart.user._id,
       cartItems: updatedCart.items.map((item) => item._id),
       billingData: req.body.billing_data,
-      promocodeDiscount: promoCodeDocument.discount,
+      promocodeDiscount: promoCodeDocument ? promoCodeDocument.discount : 0,
     });
 
     logger.info(
