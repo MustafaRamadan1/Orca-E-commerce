@@ -197,10 +197,15 @@ router.post(
     const response = await createPaymentLinkMultiMethods(
       updatedCart.totalPrice,
       [
-        +process.env.PAYMOB_PAYMENT_METHOD_1,
-        +process.env.PAYMOB_PAYMENT_METHOD_3
         // +process.env.PAYMOB_CARD_INTEGRATION,
         // +process.env.PAYMOB_WALLET_INTEGRATION,
+        +process.env.PAYMOB_PAYMENT_METHOD_1,
+        +process.env.PAYMOB_PAYMENT_METHOD_2,
+        +process.env.PAYMOB_PAYMENT_METHOD_3,
+        +process.env.PAYMOB_PAYMENT_METHOD_4,
+        +process.env.PAYMOB_PAYMENT_METHOD_5,
+        +process.env.PAYMOB_PAYMENT_METHOD_6,
+        +process.env.PAYMOB_PAYMENT_METHOD_7,
       ],
       formattedItems,
       req.body.billing_data
