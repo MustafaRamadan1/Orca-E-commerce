@@ -25,19 +25,19 @@ export const filterObject = (object, ...allowedFields) => {
 
 // payment helper function
 
-export const countCartTotalPrice = (cartItemsArray) => {
+export const countCartTotalPrice = (cartItemsArray , promocodeDiscount) => {
   return cartItemsArray.reduce(
-    (total, item) => total + item.quantity * item.product.saleProduct,
+    (total, item) => total + ((item.quantity * item.product.saleProduct) * promocodeDiscount),
     0
   );
 };
 
-export const formatItemsForPayment = (cartItem, locale) => {
+export const formatItemsForPayment = (cartItem, locale, promocodeDiscount) => {
   return cartItem.map((item) => {
     return {
       name: item.product.name.en,
       description: "YES" || item.product.description.en,
-      amount: item.product.saleProduct * 100,
+      amount: item.product.saleProduct * 100 * promocodeDiscount,
       quantity: item.quantity,
     };
   });
