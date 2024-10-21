@@ -1844,11 +1844,16 @@
 {
   message: 'Database Connection Successfully',
   level: 'info',
+<<<<<<< HEAD
   timestamp: '2024-10-18T16:43:03.849Z'
+=======
+  timestamp: '2024-10-21T21:37:41.563Z'
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
 }
 {
   message: 'Server Listening on PORT 8000',
   level: 'info',
+<<<<<<< HEAD
   timestamp: '2024-10-18T16:43:03.861Z'
 }
 {
@@ -1884,20 +1889,31 @@
   level: 'info',
   message: 'GET /api/v1/categories/filtered?letters=pants&lang=en 200 12ms',
   timestamp: '2024-10-18T16:47:46.017Z'
+=======
+  timestamp: '2024-10-21T21:37:41.599Z'
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
 }
 {
   meta: {
     req: {
       url: '/api/v1/categories',
       headers: {
+<<<<<<< HEAD
         host: 'api.orca-wear.com',
         connection: 'upgrade',
         'sec-ch-ua-platform': '"Windows"',
+=======
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyOTQ2MTM1NCwiZXhwIjoxNzI5NzIwNTU0fQ.5T4_SlFUut_xY-_GoiH9OjnRED2EO68esO1rxrSncPk',
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
         'cache-control': 'max-age=31536000',
         'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
         'sec-ch-ua-mobile': '?0',
         'access-control-allow-origin': '*',
         contenttype: 'application/json',
+<<<<<<< HEAD
         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
         accept: 'application/json, text/plain, */*',
         origin: 'https://orca-wear.com',
@@ -1906,32 +1922,63 @@
         'sec-fetch-dest': 'empty',
         'accept-encoding': 'gzip, deflate, br, zstd',
         'accept-language': 'en-US,en;q=0.9'
+=======
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"bf-2xKbhXh3Ij0v1dfsZWEC2a9RIJk"'
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
       },
       method: 'GET',
       httpVersion: '1.1',
       originalUrl: '/api/v1/categories',
       query: {}
     },
+<<<<<<< HEAD
     res: { statusCode: 200 },
     responseTime: 3
   },
   level: 'info',
   message: 'GET /api/v1/categories 200 3ms',
   timestamp: '2024-10-18T16:47:46.024Z'
+=======
+    res: { statusCode: 304 },
+    responseTime: 4185
+  },
+  level: 'info',
+  message: 'GET /api/v1/categories 304 4185ms',
+  timestamp: '2024-10-21T21:39:12.714Z'
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
 }
 {
   meta: {
     req: {
+<<<<<<< HEAD
       url: '/api/v1/products?category=undefined&limit=100&max=undefined&min=undefined&page=undefined&size=undefined&sort=undefined&colors=undefined&subCategory=undefined&sale=undefined',
       headers: {
         host: 'api.orca-wear.com',
         connection: 'upgrade',
         'sec-ch-ua-platform': '"Windows"',
+=======
+      url: '/api/v1/categories/filtered?letters=pants&lang=en',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyOTQ2MTM1NCwiZXhwIjoxNzI5NzIwNTU0fQ.5T4_SlFUut_xY-_GoiH9OjnRED2EO68esO1rxrSncPk',
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
         'cache-control': 'max-age=31536000',
         'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
         'sec-ch-ua-mobile': '?0',
         'access-control-allow-origin': '*',
         contenttype: 'application/json',
+<<<<<<< HEAD
         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
         accept: 'application/json, text/plain, */*',
         origin: 'https://orca-wear.com',
@@ -2273,20 +2320,52 @@
   level: 'info',
   message: 'GET /api/v1/products/slug/wideleg_light_blue_jeans 200 6ms',
   timestamp: '2024-10-18T16:47:46.601Z'
+=======
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"bf-2xKbhXh3Ij0v1dfsZWEC2a9RIJk"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/categories/filtered?letters=pants&lang=en',
+      query: { letters: 'pants', lang: 'en' }
+    },
+    res: { statusCode: 304 },
+    responseTime: 2744
+  },
+  level: 'info',
+  message: 'GET /api/v1/categories/filtered?letters=pants&lang=en 304 2744ms',
+  timestamp: '2024-10-21T21:39:12.876Z'
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
 }
 {
   meta: {
     req: {
       url: '/api/v1/products/filtered?letters=&lang=en',
       headers: {
+<<<<<<< HEAD
         host: 'api.orca-wear.com',
         connection: 'upgrade',
         'sec-ch-ua-platform': '"Windows"',
+=======
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyOTQ2MTM1NCwiZXhwIjoxNzI5NzIwNTU0fQ.5T4_SlFUut_xY-_GoiH9OjnRED2EO68esO1rxrSncPk',
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
         'cache-control': 'max-age=31536000',
         'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
         'sec-ch-ua-mobile': '?0',
         'access-control-allow-origin': '*',
         contenttype: 'application/json',
+<<<<<<< HEAD
         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
         accept: 'application/json, text/plain, */*',
         origin: 'https://orca-wear.com',
@@ -2295,12 +2374,25 @@
         'sec-fetch-dest': 'empty',
         'accept-encoding': 'gzip, deflate, br, zstd',
         'accept-language': 'en-US,en;q=0.9'
+=======
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"29-w89SXXqzP1Ws/hRUCc9t9ps9F0I"'
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
       },
       method: 'GET',
       httpVersion: '1.1',
       originalUrl: '/api/v1/products/filtered?letters=&lang=en',
       query: { letters: '', lang: 'en' }
     },
+<<<<<<< HEAD
     res: { statusCode: 200 },
     responseTime: 1
   },
@@ -2319,21 +2411,39 @@
   level: 'error',
   message: 'Error: Invalid email or password',
   timestamp: '2024-10-18T16:48:06.719Z'
+=======
+    res: { statusCode: 304 },
+    responseTime: 3
+  },
+  level: 'info',
+  message: 'GET /api/v1/products/filtered?letters=&lang=en 304 3ms',
+  timestamp: '2024-10-21T21:39:13.274Z'
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
 }
 {
   meta: {
     req: {
+<<<<<<< HEAD
       url: '/api/v1/auth/login',
       headers: {
         host: 'api.orca-wear.com',
         connection: 'upgrade',
         'content-length': '51',
         'sec-ch-ua-platform': '"Windows"',
+=======
+      url: '/api/v1/products/filtered?letters=undefined&lang=en',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyOTQ2MTM1NCwiZXhwIjoxNzI5NzIwNTU0fQ.5T4_SlFUut_xY-_GoiH9OjnRED2EO68esO1rxrSncPk',
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
         'cache-control': 'max-age=31536000',
         'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
         'sec-ch-ua-mobile': '?0',
         'access-control-allow-origin': '*',
         contenttype: 'application/json',
+<<<<<<< HEAD
         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
         accept: 'application/json, text/plain, */*',
         'content-type': 'application/json',
@@ -2419,12 +2529,37 @@
   level: 'info',
   message: 'GET /api/v1/categories/filtered?letters=pants&lang=en 304 3ms',
   timestamp: '2024-10-18T18:19:29.567Z'
+=======
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"29-w89SXXqzP1Ws/hRUCc9t9ps9F0I"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/products/filtered?letters=undefined&lang=en',
+      query: { letters: 'undefined', lang: 'en' }
+    },
+    res: { statusCode: 304 },
+    responseTime: 138
+  },
+  level: 'info',
+  message: 'GET /api/v1/products/filtered?letters=undefined&lang=en 304 138ms',
+  timestamp: '2024-10-21T21:39:13.280Z'
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
 }
 {
   meta: {
     req: {
       url: '/api/v1/products?category=undefined&limit=100&max=undefined&min=undefined&page=undefined&size=undefined&sort=undefined&colors=undefined&subCategory=undefined&sale=undefined',
       headers: {
+<<<<<<< HEAD
         host: 'api.orca-wear.com',
         connection: 'upgrade',
         accept: 'application/json, text/plain, */*',
@@ -2439,6 +2574,27 @@
         'accept-encoding': 'gzip, deflate, br',
         'access-control-allow-origin': '*',
         'sec-fetch-dest': 'empty'
+=======
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyOTQ2MTM1NCwiZXhwIjoxNzI5NzIwNTU0fQ.5T4_SlFUut_xY-_GoiH9OjnRED2EO68esO1rxrSncPk',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"2ded-uDnyJMjRg3yxU6PPAL7tyWbOkKg"'
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
       },
       method: 'GET',
       httpVersion: '1.1',
@@ -2457,17 +2613,326 @@
       }
     },
     res: { statusCode: 304 },
+<<<<<<< HEAD
     responseTime: 18
   },
   level: 'info',
   message: 'GET /api/v1/products?category=undefined&limit=100&max=undefined&min=undefined&page=undefined&size=undefined&sort=undefined&colors=undefined&subCategory=undefined&sale=undefined 304 18ms',
   timestamp: '2024-10-18T18:19:29.600Z'
+=======
+    responseTime: 2419
+  },
+  level: 'info',
+  message: 'GET /api/v1/products?category=undefined&limit=100&max=undefined&min=undefined&page=undefined&size=undefined&sort=undefined&colors=undefined&subCategory=undefined&sale=undefined 304 2419ms',
+  timestamp: '2024-10-21T21:39:13.411Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/subCategories/filtered?letters=male%20jeans&category=66cca1dcd4e2b0f897ec3947&lang=en',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyOTQ2MTM1NCwiZXhwIjoxNzI5NzIwNTU0fQ.5T4_SlFUut_xY-_GoiH9OjnRED2EO68esO1rxrSncPk',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"29-w89SXXqzP1Ws/hRUCc9t9ps9F0I"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/subCategories/filtered?letters=male%20jeans&category=66cca1dcd4e2b0f897ec3947&lang=en',
+      query: {
+        letters: 'male jeans',
+        category: '66cca1dcd4e2b0f897ec3947',
+        lang: 'en'
+      }
+    },
+    res: { statusCode: 304 },
+    responseTime: 271
+  },
+  level: 'info',
+  message: 'GET /api/v1/subCategories/filtered?letters=male%20jeans&category=66cca1dcd4e2b0f897ec3947&lang=en 304 271ms',
+  timestamp: '2024-10-21T21:39:13.433Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/subCategories?category=66cca1dcd4e2b0f897ec3947',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyOTQ2MTM1NCwiZXhwIjoxNzI5NzIwNTU0fQ.5T4_SlFUut_xY-_GoiH9OjnRED2EO68esO1rxrSncPk',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"156-sfpsdj1lN50nlXkN83pbHTVkQmk"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/subCategories?category=66cca1dcd4e2b0f897ec3947',
+      query: { category: '66cca1dcd4e2b0f897ec3947' }
+    },
+    res: { statusCode: 304 },
+    responseTime: 990
+  },
+  level: 'info',
+  message: 'GET /api/v1/subCategories?category=66cca1dcd4e2b0f897ec3947 304 990ms',
+  timestamp: '2024-10-21T21:39:14.023Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/categories/id/66cca1dcd4e2b0f897ec3947',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyOTQ2MTM1NCwiZXhwIjoxNzI5NzIwNTU0fQ.5T4_SlFUut_xY-_GoiH9OjnRED2EO68esO1rxrSncPk',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"b2-0Wh/4ABtgTSQE0SZ9GwJeJ4a3tw"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/categories/id/66cca1dcd4e2b0f897ec3947',
+      query: {}
+    },
+    res: { statusCode: 304 },
+    responseTime: 275
+  },
+  level: 'info',
+  message: 'GET /api/v1/categories/id/66cca1dcd4e2b0f897ec3947 304 275ms',
+  timestamp: '2024-10-21T21:39:14.384Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/products/slug/test',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyOTQ2MTM1NCwiZXhwIjoxNzI5NzIwNTU0fQ.5T4_SlFUut_xY-_GoiH9OjnRED2EO68esO1rxrSncPk',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"34c-T6+ByJ7qAVL1y5WXE9RAGcRcbSk"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/products/slug/test',
+      query: {}
+    },
+    res: { statusCode: 304 },
+    responseTime: 266
+  },
+  level: 'info',
+  message: 'GET /api/v1/products/slug/test 304 266ms',
+  timestamp: '2024-10-21T21:39:14.394Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/products/slug/wide_legs',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyOTQ2MTM1NCwiZXhwIjoxNzI5NzIwNTU0fQ.5T4_SlFUut_xY-_GoiH9OjnRED2EO68esO1rxrSncPk',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"f60-RbmsXkrLOi5yPkBUgLidGLLL0FQ"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/products/slug/wide_legs',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 404
+  },
+  level: 'info',
+  message: 'GET /api/v1/products/slug/wide_legs 200 404ms',
+  timestamp: '2024-10-21T21:39:14.555Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/products/slug/new_pantsssss',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyOTQ2MTM1NCwiZXhwIjoxNzI5NzIwNTU0fQ.5T4_SlFUut_xY-_GoiH9OjnRED2EO68esO1rxrSncPk',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"5af-dBkjs/KrZA2gzPme3rLBNxreSso"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/products/slug/new_pantsssss',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 415
+  },
+  level: 'info',
+  message: 'GET /api/v1/products/slug/new_pantsssss 200 415ms',
+  timestamp: '2024-10-21T21:39:14.567Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/products/slug/www_test',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyOTQ2MTM1NCwiZXhwIjoxNzI5NzIwNTU0fQ.5T4_SlFUut_xY-_GoiH9OjnRED2EO68esO1rxrSncPk',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"267-7IzCEY3VCPJJBe0/R1jepXUUqwA"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/products/slug/www_test',
+      query: {}
+    },
+    res: { statusCode: 304 },
+    responseTime: 437
+  },
+  level: 'info',
+  message: 'GET /api/v1/products/slug/www_test 304 437ms',
+  timestamp: '2024-10-21T21:39:14.592Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/products/slug/new_test',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyOTQ2MTM1NCwiZXhwIjoxNzI5NzIwNTU0fQ.5T4_SlFUut_xY-_GoiH9OjnRED2EO68esO1rxrSncPk',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"34d-8K64bzXzB4fsRJkpN5EWJ0dDMPI"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/products/slug/new_test',
+      query: {}
+    },
+    res: { statusCode: 304 },
+    responseTime: 1469
+  },
+  level: 'info',
+  message: 'GET /api/v1/products/slug/new_test 304 1469ms',
+  timestamp: '2024-10-21T21:39:15.676Z'
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
 }
 {
   meta: {
     req: {
       url: '/api/v1/products/filtered?letters=undefined&lang=en',
       headers: {
+<<<<<<< HEAD
         host: 'api.orca-wear.com',
         connection: 'upgrade',
         accept: 'application/json, text/plain, */*',
@@ -2482,6 +2947,27 @@
         'accept-encoding': 'gzip, deflate, br',
         'access-control-allow-origin': '*',
         'sec-fetch-dest': 'empty'
+=======
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyOTQ2MTM1NCwiZXhwIjoxNzI5NzIwNTU0fQ.5T4_SlFUut_xY-_GoiH9OjnRED2EO68esO1rxrSncPk',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"29-w89SXXqzP1Ws/hRUCc9t9ps9F0I"'
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
       },
       method: 'GET',
       httpVersion: '1.1',
@@ -2489,15 +2975,24 @@
       query: { letters: 'undefined', lang: 'en' }
     },
     res: { statusCode: 304 },
+<<<<<<< HEAD
     responseTime: 2
   },
   level: 'info',
   message: 'GET /api/v1/products/filtered?letters=undefined&lang=en 304 2ms',
   timestamp: '2024-10-18T18:19:29.649Z'
+=======
+    responseTime: 332
+  },
+  level: 'info',
+  message: 'GET /api/v1/products/filtered?letters=undefined&lang=en 304 332ms',
+  timestamp: '2024-10-21T21:40:53.771Z'
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
 }
 {
   meta: {
     req: {
+<<<<<<< HEAD
       url: '/api/v1/subCategories/filtered?letters=male%20jeans&category=66ffdc5cb66475d6b7decddb&lang=en',
       headers: {
         host: 'api.orca-wear.com',
@@ -2754,10 +3249,45 @@
   level: 'info',
   message: 'GET /api/v1/products/slug/wideleg_dark_gray_jeans 200 3ms',
   timestamp: '2024-10-18T18:19:30.304Z'
+=======
+      url: '/api/v1/reviews/6701c9732e00902e680e2173/product?sort=&limit=3&page=1',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyOTQ2MTM1NCwiZXhwIjoxNzI5NzIwNTU0fQ.5T4_SlFUut_xY-_GoiH9OjnRED2EO68esO1rxrSncPk',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/reviews/6701c9732e00902e680e2173/product?sort=&limit=3&page=1',
+      query: { sort: '', limit: '3', page: '1' }
+    },
+    res: { statusCode: 200 },
+    responseTime: 188
+  },
+  level: 'info',
+  message: 'GET /api/v1/reviews/6701c9732e00902e680e2173/product?sort=&limit=3&page=1 200 188ms',
+  timestamp: '2024-10-21T21:40:53.807Z'
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
 }
 {
   meta: {
     req: {
+<<<<<<< HEAD
       url: '/api/v1/products/slug/wideleg_iced_blue_jeans',
       headers: {
         host: 'api.orca-wear.com',
@@ -2812,6 +3342,35 @@
       originalUrl: '/api/v1/products?category=66ffdc5cb66475d6b7decddb&limit=4&max=undefined&min=undefined&page=undefined&size=undefined&sort=undefined&colors=undefined&subCategory=66ffdd13b66475d6b7decdec&sale=undefined',
       query: {
         category: '66ffdc5cb66475d6b7decddb',
+=======
+      url: '/api/v1/products?category=66cca1dcd4e2b0f897ec3947&limit=4&max=undefined&min=undefined&page=undefined&size=undefined&sort=undefined&colors=undefined&subCategory=&sale=undefined',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyOTQ2MTM1NCwiZXhwIjoxNzI5NzIwNTU0fQ.5T4_SlFUut_xY-_GoiH9OjnRED2EO68esO1rxrSncPk',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"16a4-hJRS+enzDXJ5UaeSwpJAtir3kkQ"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/products?category=66cca1dcd4e2b0f897ec3947&limit=4&max=undefined&min=undefined&page=undefined&size=undefined&sort=undefined&colors=undefined&subCategory=&sale=undefined',
+      query: {
+        category: '66cca1dcd4e2b0f897ec3947',
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
         limit: '4',
         max: 'undefined',
         min: 'undefined',
@@ -2819,20 +3378,33 @@
         size: 'undefined',
         sort: 'undefined',
         colors: 'undefined',
+<<<<<<< HEAD
         subCategory: '66ffdd13b66475d6b7decdec',
+=======
+        subCategory: '',
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
         sale: 'undefined'
       }
     },
     res: { statusCode: 304 },
+<<<<<<< HEAD
     responseTime: 11
   },
   level: 'info',
   message: 'GET /api/v1/products?category=66ffdc5cb66475d6b7decddb&limit=4&max=undefined&min=undefined&page=undefined&size=undefined&sort=undefined&colors=undefined&subCategory=66ffdd13b66475d6b7decdec&sale=undefined 304 11ms',
   timestamp: '2024-10-18T18:19:32.856Z'
+=======
+    responseTime: 490
+  },
+  level: 'info',
+  message: 'GET /api/v1/products?category=66cca1dcd4e2b0f897ec3947&limit=4&max=undefined&min=undefined&page=undefined&size=undefined&sort=undefined&colors=undefined&subCategory=&sale=undefined 304 490ms',
+  timestamp: '2024-10-21T21:40:54.182Z'
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
 }
 {
   meta: {
     req: {
+<<<<<<< HEAD
       url: '/api/v1/reviews/6708825cb5b476e015451bb3/product?sort=&limit=3&page=1',
       headers: {
         host: 'api.orca-wear.com',
@@ -2855,16 +3427,789 @@
       originalUrl: '/api/v1/reviews/6708825cb5b476e015451bb3/product?sort=&limit=3&page=1',
       query: { sort: '', limit: '3', page: '1' }
     },
-    res: { statusCode: 304 },
-    responseTime: 6
+=======
+      url: '/api/v1/reviews/6700021baaf4494eec424fc5/product?sort=&limit=3&page=1',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyOTQ2MTM1NCwiZXhwIjoxNzI5NzIwNTU0fQ.5T4_SlFUut_xY-_GoiH9OjnRED2EO68esO1rxrSncPk',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/reviews/6700021baaf4494eec424fc5/product?sort=&limit=3&page=1',
+      query: { sort: '', limit: '3', page: '1' }
+    },
+    res: { statusCode: 200 },
+    responseTime: 154
   },
   level: 'info',
-  message: 'GET /api/v1/reviews/6708825cb5b476e015451bb3/product?sort=&limit=3&page=1 304 6ms',
-  timestamp: '2024-10-18T18:19:32.868Z'
+  message: 'GET /api/v1/reviews/6700021baaf4494eec424fc5/product?sort=&limit=3&page=1 200 154ms',
+  timestamp: '2024-10-21T21:41:05.522Z'
 }
 {
   meta: {
     req: {
+      url: '/api/v1/subCategories/66fffa69aaf4494eec424e40',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyOTQ2MTM1NCwiZXhwIjoxNzI5NzIwNTU0fQ.5T4_SlFUut_xY-_GoiH9OjnRED2EO68esO1rxrSncPk',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"149-byzNWWNPjVoHZI6PgUA1yYhDbtg"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/subCategories/66fffa69aaf4494eec424e40',
+      query: {}
+    },
+    res: { statusCode: 304 },
+    responseTime: 368
+  },
+  level: 'info',
+  message: 'GET /api/v1/subCategories/66fffa69aaf4494eec424e40 304 368ms',
+  timestamp: '2024-10-21T21:41:05.542Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/reviews/66cca6d76547ce09e5f82590/product?sort=&limit=3&page=1',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyOTQ2MTM1NCwiZXhwIjoxNzI5NzIwNTU0fQ.5T4_SlFUut_xY-_GoiH9OjnRED2EO68esO1rxrSncPk',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"36-RYqclTcYYEaunVSWVpfSMxa17og"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/reviews/66cca6d76547ce09e5f82590/product?sort=&limit=3&page=1',
+      query: { sort: '', limit: '3', page: '1' }
+    },
+    res: { statusCode: 304 },
+    responseTime: 279
+  },
+  level: 'info',
+  message: 'GET /api/v1/reviews/66cca6d76547ce09e5f82590/product?sort=&limit=3&page=1 304 279ms',
+  timestamp: '2024-10-21T21:41:07.191Z'
+}
+{
+  message: 'User Authenticated Successfully',
+  level: 'info',
+  timestamp: '2024-10-21T21:41:45.000Z'
+}
+{
+  userId: new ObjectId('66bf67d0f792c1d16898ca6c'),
+  url: '/api/v1/payment/checkout',
+  level: 'info',
+  message: 'User Authorized to access the route ',
+  timestamp: '2024-10-21T21:41:45.005Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/payment/checkout',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'content-length': '1480',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyOTQ2MTM1NCwiZXhwIjoxNzI5NzIwNTU0fQ.5T4_SlFUut_xY-_GoiH9OjnRED2EO68esO1rxrSncPk',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        'content-type': 'application/json',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/payment/checkout',
+      query: {}
+    },
+    res: { statusCode: 400 },
+    responseTime: 464
+  },
+  level: 'info',
+  message: 'POST /api/v1/payment/checkout 400 464ms',
+  timestamp: '2024-10-21T21:41:45.333Z'
+}
+{
+  message: 'User Authenticated Successfully',
+  level: 'info',
+  timestamp: '2024-10-21T21:41:53.360Z'
+}
+{
+  userId: new ObjectId('66bf67d0f792c1d16898ca6c'),
+  url: '/api/v1/payment/checkout',
+  level: 'info',
+  message: 'User Authorized to access the route ',
+  timestamp: '2024-10-21T21:41:53.360Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/payment/checkout',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'content-length': '1480',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyOTQ2MTM1NCwiZXhwIjoxNzI5NzIwNTU0fQ.5T4_SlFUut_xY-_GoiH9OjnRED2EO68esO1rxrSncPk',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        'content-type': 'application/json',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/payment/checkout',
+      query: {}
+    },
+    res: { statusCode: 400 },
+    responseTime: 463
+  },
+  level: 'info',
+  message: 'POST /api/v1/payment/checkout 400 463ms',
+  timestamp: '2024-10-21T21:41:53.692Z'
+}
+{
+  message: 'User Authenticated Successfully',
+  level: 'info',
+  timestamp: '2024-10-21T21:41:54.970Z'
+}
+{
+  userId: new ObjectId('66bf67d0f792c1d16898ca6c'),
+  url: '/api/v1/payment/checkout',
+  level: 'info',
+  message: 'User Authorized to access the route ',
+  timestamp: '2024-10-21T21:41:54.971Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/payment/checkout',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'content-length': '1480',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyOTQ2MTM1NCwiZXhwIjoxNzI5NzIwNTU0fQ.5T4_SlFUut_xY-_GoiH9OjnRED2EO68esO1rxrSncPk',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        'content-type': 'application/json',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/payment/checkout',
+      query: {}
+    },
+    res: { statusCode: 400 },
+    responseTime: 550
+  },
+  level: 'info',
+  message: 'POST /api/v1/payment/checkout 400 550ms',
+  timestamp: '2024-10-21T21:41:55.294Z'
+}
+{
+  message: 'Database Connection Successfully',
+  level: 'info',
+  timestamp: '2024-10-21T21:45:46.917Z'
+}
+{
+  message: 'Server Listening on PORT 8000',
+  level: 'info',
+  timestamp: '2024-10-21T21:45:46.921Z'
+}
+{
+  message: 'User Authenticated Successfully',
+  level: 'info',
+  timestamp: '2024-10-21T21:45:51.182Z'
+}
+{
+  userId: new ObjectId('66bf67d0f792c1d16898ca6c'),
+  url: '/api/v1/payment/checkout',
+  level: 'info',
+  message: 'User Authorized to access the route ',
+  timestamp: '2024-10-21T21:45:51.188Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/payment/checkout',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'content-length': '1480',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyOTQ2MTM1NCwiZXhwIjoxNzI5NzIwNTU0fQ.5T4_SlFUut_xY-_GoiH9OjnRED2EO68esO1rxrSncPk',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        'content-type': 'application/json',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/payment/checkout',
+      query: {}
+    },
+    res: { statusCode: 400 },
+    responseTime: 1299
+  },
+  level: 'info',
+  message: 'POST /api/v1/payment/checkout 400 1299ms',
+  timestamp: '2024-10-21T21:45:52.563Z'
+}
+{
+  message: 'Database Connection Successfully',
+  level: 'info',
+  timestamp: '2024-10-21T21:46:27.795Z'
+}
+{
+  message: 'Server Listening on PORT 8000',
+  level: 'info',
+  timestamp: '2024-10-21T21:46:27.805Z'
+}
+{
+  message: 'User Authenticated Successfully',
+  level: 'info',
+  timestamp: '2024-10-21T21:46:31.098Z'
+}
+{
+  userId: new ObjectId('66bf67d0f792c1d16898ca6c'),
+  url: '/api/v1/payment/checkout',
+  level: 'info',
+  message: 'User Authorized to access the route ',
+  timestamp: '2024-10-21T21:46:31.100Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/payment/checkout',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'content-length': '1480',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyOTQ2MTM1NCwiZXhwIjoxNzI5NzIwNTU0fQ.5T4_SlFUut_xY-_GoiH9OjnRED2EO68esO1rxrSncPk',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        'content-type': 'application/json',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/payment/checkout',
+      query: {}
+    },
+    res: { statusCode: 400 },
+    responseTime: 722
+  },
+  level: 'info',
+  message: 'POST /api/v1/payment/checkout 400 722ms',
+  timestamp: '2024-10-21T21:46:31.544Z'
+}
+{
+  message: 'Database Connection Successfully',
+  level: 'info',
+  timestamp: '2024-10-21T21:49:13.776Z'
+}
+{
+  message: 'Server Listening on PORT 8000',
+  level: 'info',
+  timestamp: '2024-10-21T21:49:13.782Z'
+}
+{
+  message: 'User Authenticated Successfully',
+  level: 'info',
+  timestamp: '2024-10-21T21:49:17.870Z'
+}
+{
+  userId: new ObjectId('66bf67d0f792c1d16898ca6c'),
+  url: '/api/v1/payment/checkout',
+  level: 'info',
+  message: 'User Authorized to access the route ',
+  timestamp: '2024-10-21T21:49:17.871Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/payment/checkout',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'content-length': '1480',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyOTQ2MTM1NCwiZXhwIjoxNzI5NzIwNTU0fQ.5T4_SlFUut_xY-_GoiH9OjnRED2EO68esO1rxrSncPk',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        'content-type': 'application/json',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/payment/checkout',
+      query: {}
+    },
+    res: { statusCode: 400 },
+    responseTime: 610
+  },
+  level: 'info',
+  message: 'POST /api/v1/payment/checkout 400 610ms',
+  timestamp: '2024-10-21T21:49:18.320Z'
+}
+{
+  message: 'Database Connection Successfully',
+  level: 'info',
+  timestamp: '2024-10-21T21:56:01.346Z'
+}
+{
+  message: 'Server Listening on PORT 8000',
+  level: 'info',
+  timestamp: '2024-10-21T21:56:01.354Z'
+}
+{
+  message: 'User Authenticated Successfully',
+  level: 'info',
+  timestamp: '2024-10-21T21:56:05.281Z'
+}
+{
+  userId: new ObjectId('66bf67d0f792c1d16898ca6c'),
+  url: '/api/v1/payment/checkout',
+  level: 'info',
+  message: 'User Authorized to access the route ',
+  timestamp: '2024-10-21T21:56:05.284Z'
+}
+{
+  error: {
+    statusCode: 500,
+    status: 'error',
+    message: "Cannot read properties of undefined (reading 'length')"
+  },
+  stack: undefined,
+  level: 'error',
+  message: 'Something went wrong',
+  timestamp: '2024-10-21T21:56:05.290Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/payment/checkout',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'content-length': '1480',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyOTQ2MTM1NCwiZXhwIjoxNzI5NzIwNTU0fQ.5T4_SlFUut_xY-_GoiH9OjnRED2EO68esO1rxrSncPk',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        'content-type': 'application/json',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/payment/checkout',
+      query: {}
+    },
+    res: { statusCode: 500 },
+    responseTime: 176
+  },
+  level: 'info',
+  message: 'POST /api/v1/payment/checkout 500 176ms',
+  timestamp: '2024-10-21T21:56:05.294Z'
+}
+{
+  message: 'Database Connection Successfully',
+  level: 'info',
+  timestamp: '2024-10-21T21:56:53.312Z'
+}
+{
+  message: 'Server Listening on PORT 8000',
+  level: 'info',
+  timestamp: '2024-10-21T21:56:53.321Z'
+}
+{
+  message: 'User Authenticated Successfully',
+  level: 'info',
+  timestamp: '2024-10-21T21:56:56.008Z'
+}
+{
+  userId: new ObjectId('66bf67d0f792c1d16898ca6c'),
+  url: '/api/v1/payment/checkout',
+  level: 'info',
+  message: 'User Authorized to access the route ',
+  timestamp: '2024-10-21T21:56:56.009Z'
+}
+{
+  error: { statusCode: 500, status: 'error', message: 'item is not defined' },
+  stack: undefined,
+  level: 'error',
+  message: 'Something went wrong',
+  timestamp: '2024-10-21T21:56:56.011Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/payment/checkout',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'content-length': '1480',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyOTQ2MTM1NCwiZXhwIjoxNzI5NzIwNTU0fQ.5T4_SlFUut_xY-_GoiH9OjnRED2EO68esO1rxrSncPk',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        'content-type': 'application/json',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/payment/checkout',
+      query: {}
+    },
+    res: { statusCode: 500 },
+    responseTime: 173
+  },
+  level: 'info',
+  message: 'POST /api/v1/payment/checkout 500 173ms',
+  timestamp: '2024-10-21T21:56:56.420Z'
+}
+{
+  message: 'Database Connection Successfully',
+  level: 'info',
+  timestamp: '2024-10-21T21:57:30.055Z'
+}
+{
+  message: 'Server Listening on PORT 8000',
+  level: 'info',
+  timestamp: '2024-10-21T21:57:30.060Z'
+}
+{
+  message: 'User Authenticated Successfully',
+  level: 'info',
+  timestamp: '2024-10-21T21:57:32.676Z'
+}
+{
+  userId: new ObjectId('66bf67d0f792c1d16898ca6c'),
+  url: '/api/v1/payment/checkout',
+  level: 'info',
+  message: 'User Authorized to access the route ',
+  timestamp: '2024-10-21T21:57:32.677Z'
+}
+{
+  message: ' deleting cartItems from cart 66bf67d1f792c1d16898ca6f before creating new cartItems\n' +
+    '      for the order',
+  level: 'info',
+  timestamp: '2024-10-21T21:57:33.135Z'
+}
+{
+  message: 'Created new Payment for user 66bf67d0f792c1d16898ca6c , Create Intention for the payment',
+  level: 'info',
+  timestamp: '2024-10-21T21:57:35.026Z'
+}
+{
+  message: 'Created Payment Link for Multiple Method',
+  level: 'info',
+  timestamp: '2024-10-21T21:57:35.132Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/payment/checkout',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'content-length': '1480',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyOTQ2MTM1NCwiZXhwIjoxNzI5NzIwNTU0fQ.5T4_SlFUut_xY-_GoiH9OjnRED2EO68esO1rxrSncPk',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        'content-type': 'application/json',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/payment/checkout',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 2573
+  },
+  level: 'info',
+  message: 'POST /api/v1/payment/checkout 200 2573ms',
+  timestamp: '2024-10-21T21:57:35.137Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/categories',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyOTQ2MTM1NCwiZXhwIjoxNzI5NzIwNTU0fQ.5T4_SlFUut_xY-_GoiH9OjnRED2EO68esO1rxrSncPk',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"bf-2xKbhXh3Ij0v1dfsZWEC2a9RIJk"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/categories',
+      query: {}
+    },
+    res: { statusCode: 304 },
+    responseTime: 175
+  },
+  level: 'info',
+  message: 'GET /api/v1/categories 304 175ms',
+  timestamp: '2024-10-21T21:57:45.279Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/products/slug/wide_legs',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyOTQ2MTM1NCwiZXhwIjoxNzI5NzIwNTU0fQ.5T4_SlFUut_xY-_GoiH9OjnRED2EO68esO1rxrSncPk',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"f60-3SGx9xFiWcpVX43//lQ4E7XBX8Y"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/products/slug/wide_legs',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 165
+  },
+  level: 'info',
+  message: 'GET /api/v1/products/slug/wide_legs 200 165ms',
+  timestamp: '2024-10-21T21:57:45.284Z'
+}
+{
+  message: 'Database Connection Successfully',
+  level: 'info',
+  timestamp: '2024-10-21T21:58:44.017Z'
+}
+{
+  message: 'Server Listening on PORT 8000',
+  level: 'info',
+  timestamp: '2024-10-21T21:58:44.024Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/products/filtered?letters=&lang=en',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyOTQ2MTM1NCwiZXhwIjoxNzI5NzIwNTU0fQ.5T4_SlFUut_xY-_GoiH9OjnRED2EO68esO1rxrSncPk',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"29-w89SXXqzP1Ws/hRUCc9t9ps9F0I"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/products/filtered?letters=&lang=en',
+      query: { letters: '', lang: 'en' }
+    },
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
+    res: { statusCode: 304 },
+    responseTime: 6
+  },
+  level: 'info',
+<<<<<<< HEAD
+  message: 'GET /api/v1/reviews/6708825cb5b476e015451bb3/product?sort=&limit=3&page=1 304 6ms',
+  timestamp: '2024-10-18T18:19:32.868Z'
+=======
+  message: 'GET /api/v1/products/filtered?letters=&lang=en 304 6ms',
+  timestamp: '2024-10-21T21:58:46.888Z'
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
+}
+{
+  meta: {
+    req: {
+<<<<<<< HEAD
       url: '/api/v1/subCategories/66ffdd13b66475d6b7decdec',
       headers: {
         host: 'api.orca-wear.com',
@@ -2925,12 +4270,654 @@
   level: 'info',
   message: 'GET /api/v1/reviews/67017775b66475d6b7deeb3a/product?sort=&limit=3&page=1 304 3ms',
   timestamp: '2024-10-18T18:19:36.132Z'
+=======
+      url: '/api/v1/reviews/6701c9732e00902e680e2173/product?sort=&limit=3&page=1',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyOTQ2MTM1NCwiZXhwIjoxNzI5NzIwNTU0fQ.5T4_SlFUut_xY-_GoiH9OjnRED2EO68esO1rxrSncPk',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"36-RYqclTcYYEaunVSWVpfSMxa17og"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/reviews/6701c9732e00902e680e2173/product?sort=&limit=3&page=1',
+      query: { sort: '', limit: '3', page: '1' }
+    },
+    res: { statusCode: 304 },
+    responseTime: 127
+  },
+  level: 'info',
+  message: 'GET /api/v1/reviews/6701c9732e00902e680e2173/product?sort=&limit=3&page=1 304 127ms',
+  timestamp: '2024-10-21T21:58:46.997Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/categories/id/66cca1dcd4e2b0f897ec3947',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyOTQ2MTM1NCwiZXhwIjoxNzI5NzIwNTU0fQ.5T4_SlFUut_xY-_GoiH9OjnRED2EO68esO1rxrSncPk',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"b2-0Wh/4ABtgTSQE0SZ9GwJeJ4a3tw"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/categories/id/66cca1dcd4e2b0f897ec3947',
+      query: {}
+    },
+    res: { statusCode: 304 },
+    responseTime: 162
+  },
+  level: 'info',
+  message: 'GET /api/v1/categories/id/66cca1dcd4e2b0f897ec3947 304 162ms',
+  timestamp: '2024-10-21T21:58:47.033Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/products/filtered?letters=undefined&lang=en',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyOTQ2MTM1NCwiZXhwIjoxNzI5NzIwNTU0fQ.5T4_SlFUut_xY-_GoiH9OjnRED2EO68esO1rxrSncPk',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"29-w89SXXqzP1Ws/hRUCc9t9ps9F0I"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/products/filtered?letters=undefined&lang=en',
+      query: { letters: 'undefined', lang: 'en' }
+    },
+    res: { statusCode: 304 },
+    responseTime: 186
+  },
+  level: 'info',
+  message: 'GET /api/v1/products/filtered?letters=undefined&lang=en 304 186ms',
+  timestamp: '2024-10-21T21:58:47.045Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/subCategories?category=66cca1dcd4e2b0f897ec3947',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyOTQ2MTM1NCwiZXhwIjoxNzI5NzIwNTU0fQ.5T4_SlFUut_xY-_GoiH9OjnRED2EO68esO1rxrSncPk',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"156-sfpsdj1lN50nlXkN83pbHTVkQmk"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/subCategories?category=66cca1dcd4e2b0f897ec3947',
+      query: { category: '66cca1dcd4e2b0f897ec3947' }
+    },
+    res: { statusCode: 304 },
+    responseTime: 1298
+  },
+  level: 'info',
+  message: 'GET /api/v1/subCategories?category=66cca1dcd4e2b0f897ec3947 304 1298ms',
+  timestamp: '2024-10-21T21:58:48.384Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/products?category=66cca1dcd4e2b0f897ec3947&limit=4&max=undefined&min=undefined&page=undefined&size=undefined&sort=undefined&colors=undefined&subCategory=&sale=undefined',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyOTQ2MTM1NCwiZXhwIjoxNzI5NzIwNTU0fQ.5T4_SlFUut_xY-_GoiH9OjnRED2EO68esO1rxrSncPk',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"16a4-hJRS+enzDXJ5UaeSwpJAtir3kkQ"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/products?category=66cca1dcd4e2b0f897ec3947&limit=4&max=undefined&min=undefined&page=undefined&size=undefined&sort=undefined&colors=undefined&subCategory=&sale=undefined',
+      query: {
+        category: '66cca1dcd4e2b0f897ec3947',
+        limit: '4',
+        max: 'undefined',
+        min: 'undefined',
+        page: 'undefined',
+        size: 'undefined',
+        sort: 'undefined',
+        colors: 'undefined',
+        subCategory: '',
+        sale: 'undefined'
+      }
+    },
+    res: { statusCode: 304 },
+    responseTime: 1614
+  },
+  level: 'info',
+  message: 'GET /api/v1/products?category=66cca1dcd4e2b0f897ec3947&limit=4&max=undefined&min=undefined&page=undefined&size=undefined&sort=undefined&colors=undefined&subCategory=&sale=undefined 304 1614ms',
+  timestamp: '2024-10-21T21:58:48.519Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/products/slug/test',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyOTQ2MTM1NCwiZXhwIjoxNzI5NzIwNTU0fQ.5T4_SlFUut_xY-_GoiH9OjnRED2EO68esO1rxrSncPk',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"34c-T6+ByJ7qAVL1y5WXE9RAGcRcbSk"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/products/slug/test',
+      query: {}
+    },
+    res: { statusCode: 304 },
+    responseTime: 122
+  },
+  level: 'info',
+  message: 'GET /api/v1/products/slug/test 304 122ms',
+  timestamp: '2024-10-21T21:58:48.780Z'
+}
+{
+  message: 'User Authenticated Successfully',
+  level: 'info',
+  timestamp: '2024-10-21T21:59:09.310Z'
+}
+{
+  userId: new ObjectId('66bf67d0f792c1d16898ca6c'),
+  url: '/api/v1/payment/checkout',
+  level: 'info',
+  message: 'User Authorized to access the route ',
+  timestamp: '2024-10-21T21:59:09.429Z'
+}
+{
+  message: 'Database Connection Successfully',
+  level: 'info',
+  timestamp: '2024-10-21T22:05:39.866Z'
+}
+{
+  message: 'Server Listening on PORT 8000',
+  level: 'info',
+  timestamp: '2024-10-21T22:05:39.872Z'
+}
+{
+  message: 'User Authenticated Successfully',
+  level: 'info',
+  timestamp: '2024-10-21T22:05:46.214Z'
+}
+{
+  userId: new ObjectId('66bf67d0f792c1d16898ca6c'),
+  url: '/api/v1/payment/checkout',
+  level: 'info',
+  message: 'User Authorized to access the route ',
+  timestamp: '2024-10-21T22:05:46.215Z'
+}
+{
+  error: {
+    statusCode: 500,
+    status: 'error',
+    message: "Cannot read properties of undefined (reading 'quantity')"
+  },
+  stack: undefined,
+  level: 'error',
+  message: 'Something went wrong',
+  timestamp: '2024-10-21T22:05:46.384Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/payment/checkout',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'content-length': '1480',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyOTQ2MTM1NCwiZXhwIjoxNzI5NzIwNTU0fQ.5T4_SlFUut_xY-_GoiH9OjnRED2EO68esO1rxrSncPk',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        'content-type': 'application/json',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/payment/checkout',
+      query: {}
+    },
+    res: { statusCode: 500 },
+    responseTime: 417
+  },
+  level: 'info',
+  message: 'POST /api/v1/payment/checkout 500 417ms',
+  timestamp: '2024-10-21T22:05:46.406Z'
+}
+{
+  message: 'Database Connection Successfully',
+  level: 'info',
+  timestamp: '2024-10-21T22:06:23.015Z'
+}
+{
+  message: 'Server Listening on PORT 8000',
+  level: 'info',
+  timestamp: '2024-10-21T22:06:23.019Z'
+}
+{
+  message: 'User Authenticated Successfully',
+  level: 'info',
+  timestamp: '2024-10-21T22:06:28.151Z'
+}
+{
+  userId: new ObjectId('66bf67d0f792c1d16898ca6c'),
+  url: '/api/v1/payment/checkout',
+  level: 'info',
+  message: 'User Authorized to access the route ',
+  timestamp: '2024-10-21T22:06:28.152Z'
+}
+{
+  message: 'Database Connection Successfully',
+  level: 'info',
+  timestamp: '2024-10-21T22:07:42.718Z'
+}
+{
+  message: 'Server Listening on PORT 8000',
+  level: 'info',
+  timestamp: '2024-10-21T22:07:42.725Z'
+}
+{
+  message: 'User Authenticated Successfully',
+  level: 'info',
+  timestamp: '2024-10-21T22:07:47.914Z'
+}
+{
+  userId: new ObjectId('66bf67d0f792c1d16898ca6c'),
+  url: '/api/v1/payment/checkout',
+  level: 'info',
+  message: 'User Authorized to access the route ',
+  timestamp: '2024-10-21T22:07:47.915Z'
+}
+{
+  message: 'Database Connection Successfully',
+  level: 'info',
+  timestamp: '2024-10-21T22:10:57.966Z'
+}
+{
+  message: 'Server Listening on PORT 8000',
+  level: 'info',
+  timestamp: '2024-10-21T22:10:57.972Z'
+}
+{
+  message: 'User Authenticated Successfully',
+  level: 'info',
+  timestamp: '2024-10-21T22:11:06.827Z'
+}
+{
+  userId: new ObjectId('66bf67d0f792c1d16898ca6c'),
+  url: '/api/v1/payment/checkout',
+  level: 'info',
+  message: 'User Authorized to access the route ',
+  timestamp: '2024-10-21T22:11:06.827Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/categories',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyOTQ2MTM1NCwiZXhwIjoxNzI5NzIwNTU0fQ.5T4_SlFUut_xY-_GoiH9OjnRED2EO68esO1rxrSncPk',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"bf-2xKbhXh3Ij0v1dfsZWEC2a9RIJk"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/categories',
+      query: {}
+    },
+    res: { statusCode: 304 },
+    responseTime: 273
+  },
+  level: 'info',
+  message: 'GET /api/v1/categories 304 273ms',
+  timestamp: '2024-10-21T22:11:53.529Z'
+}
+{
+  message: 'Database Connection Successfully',
+  level: 'info',
+  timestamp: '2024-10-21T22:12:07.409Z'
+}
+{
+  message: 'Server Listening on PORT 8000',
+  level: 'info',
+  timestamp: '2024-10-21T22:12:07.439Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/products/filtered?letters=&lang=en',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyOTQ2MTM1NCwiZXhwIjoxNzI5NzIwNTU0fQ.5T4_SlFUut_xY-_GoiH9OjnRED2EO68esO1rxrSncPk',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"29-w89SXXqzP1Ws/hRUCc9t9ps9F0I"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/products/filtered?letters=&lang=en',
+      query: { letters: '', lang: 'en' }
+    },
+    res: { statusCode: 304 },
+    responseTime: 22
+  },
+  level: 'info',
+  message: 'GET /api/v1/products/filtered?letters=&lang=en 304 22ms',
+  timestamp: '2024-10-21T22:12:21.756Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/products/filtered?letters=undefined&lang=en',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyOTQ2MTM1NCwiZXhwIjoxNzI5NzIwNTU0fQ.5T4_SlFUut_xY-_GoiH9OjnRED2EO68esO1rxrSncPk',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"29-w89SXXqzP1Ws/hRUCc9t9ps9F0I"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/products/filtered?letters=undefined&lang=en',
+      query: { letters: 'undefined', lang: 'en' }
+    },
+    res: { statusCode: 304 },
+    responseTime: 111
+  },
+  level: 'info',
+  message: 'GET /api/v1/products/filtered?letters=undefined&lang=en 304 111ms',
+  timestamp: '2024-10-21T22:12:21.877Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/subCategories?category=66cca1dcd4e2b0f897ec3947',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyOTQ2MTM1NCwiZXhwIjoxNzI5NzIwNTU0fQ.5T4_SlFUut_xY-_GoiH9OjnRED2EO68esO1rxrSncPk',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"156-sfpsdj1lN50nlXkN83pbHTVkQmk"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/subCategories?category=66cca1dcd4e2b0f897ec3947',
+      query: { category: '66cca1dcd4e2b0f897ec3947' }
+    },
+    res: { statusCode: 304 },
+    responseTime: 427
+  },
+  level: 'info',
+  message: 'GET /api/v1/subCategories?category=66cca1dcd4e2b0f897ec3947 304 427ms',
+  timestamp: '2024-10-21T22:12:22.050Z'
+}
+{
+  message: 'User Authenticated Successfully',
+  level: 'info',
+  timestamp: '2024-10-21T22:13:06.812Z'
+}
+{
+  userId: new ObjectId('66bf67d0f792c1d16898ca6c'),
+  url: '/api/v1/payment/checkout',
+  level: 'info',
+  message: 'User Authorized to access the route ',
+  timestamp: '2024-10-21T22:13:06.831Z'
+}
+{
+  message: ' deleting cartItems from cart 66bf67d1f792c1d16898ca6f before creating new cartItems\n' +
+    '      for the order',
+  level: 'info',
+  timestamp: '2024-10-21T22:13:07.377Z'
+}
+{
+  message: 'Created new Payment for user 66bf67d0f792c1d16898ca6c , Create Intention for the payment',
+  level: 'info',
+  timestamp: '2024-10-21T22:13:09.650Z'
+}
+{
+  message: 'Created Payment Link for Multiple Method',
+  level: 'info',
+  timestamp: '2024-10-21T22:13:09.753Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/payment/checkout',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'content-length': '1480',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyOTQ2MTM1NCwiZXhwIjoxNzI5NzIwNTU0fQ.5T4_SlFUut_xY-_GoiH9OjnRED2EO68esO1rxrSncPk',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        'content-type': 'application/json',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/payment/checkout',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 3764
+  },
+  level: 'info',
+  message: 'POST /api/v1/payment/checkout 200 3764ms',
+  timestamp: '2024-10-21T22:13:09.755Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/categories',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyOTQ2MTM1NCwiZXhwIjoxNzI5NzIwNTU0fQ.5T4_SlFUut_xY-_GoiH9OjnRED2EO68esO1rxrSncPk',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"bf-2xKbhXh3Ij0v1dfsZWEC2a9RIJk"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/categories',
+      query: {}
+    },
+    res: { statusCode: 304 },
+    responseTime: 143
+  },
+  level: 'info',
+  message: 'GET /api/v1/categories 304 143ms',
+  timestamp: '2024-10-21T22:14:20.027Z'
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
 }
 {
   meta: {
     req: {
       url: '/api/v1/categories/filtered?letters=pants&lang=en',
       headers: {
+<<<<<<< HEAD
         host: 'api.orca-wear.com',
         connection: 'upgrade',
         accept: 'application/json, text/plain, */*',
@@ -2945,6 +4932,27 @@
         'accept-encoding': 'gzip, deflate, br',
         'access-control-allow-origin': '*',
         'sec-fetch-dest': 'empty'
+=======
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyOTQ2MTM1NCwiZXhwIjoxNzI5NzIwNTU0fQ.5T4_SlFUut_xY-_GoiH9OjnRED2EO68esO1rxrSncPk',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"bf-2xKbhXh3Ij0v1dfsZWEC2a9RIJk"'
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
       },
       method: 'GET',
       httpVersion: '1.1',
@@ -2952,17 +4960,104 @@
       query: { letters: 'pants', lang: 'en' }
     },
     res: { statusCode: 304 },
+<<<<<<< HEAD
     responseTime: 5
   },
   level: 'info',
   message: 'GET /api/v1/categories/filtered?letters=pants&lang=en 304 5ms',
   timestamp: '2024-10-18T18:44:26.614Z'
+=======
+    responseTime: 225
+  },
+  level: 'info',
+  message: 'GET /api/v1/categories/filtered?letters=pants&lang=en 304 225ms',
+  timestamp: '2024-10-21T22:14:20.065Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/subCategories/filtered?letters=male%20jeans&category=66cca1dcd4e2b0f897ec3947&lang=en',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyOTQ2MTM1NCwiZXhwIjoxNzI5NzIwNTU0fQ.5T4_SlFUut_xY-_GoiH9OjnRED2EO68esO1rxrSncPk',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"29-w89SXXqzP1Ws/hRUCc9t9ps9F0I"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/subCategories/filtered?letters=male%20jeans&category=66cca1dcd4e2b0f897ec3947&lang=en',
+      query: {
+        letters: 'male jeans',
+        category: '66cca1dcd4e2b0f897ec3947',
+        lang: 'en'
+      }
+    },
+    res: { statusCode: 304 },
+    responseTime: 101
+  },
+  level: 'info',
+  message: 'GET /api/v1/subCategories/filtered?letters=male%20jeans&category=66cca1dcd4e2b0f897ec3947&lang=en 304 101ms',
+  timestamp: '2024-10-21T22:14:20.317Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/products/filtered?letters=undefined&lang=en',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyOTQ2MTM1NCwiZXhwIjoxNzI5NzIwNTU0fQ.5T4_SlFUut_xY-_GoiH9OjnRED2EO68esO1rxrSncPk',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"29-w89SXXqzP1Ws/hRUCc9t9ps9F0I"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/products/filtered?letters=undefined&lang=en',
+      query: { letters: 'undefined', lang: 'en' }
+    },
+    res: { statusCode: 304 },
+    responseTime: 140
+  },
+  level: 'info',
+  message: 'GET /api/v1/products/filtered?letters=undefined&lang=en 304 140ms',
+  timestamp: '2024-10-21T22:14:20.343Z'
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
 }
 {
   meta: {
     req: {
       url: '/api/v1/products?category=undefined&limit=100&max=undefined&min=undefined&page=undefined&size=undefined&sort=undefined&colors=undefined&subCategory=undefined&sale=undefined',
       headers: {
+<<<<<<< HEAD
         host: 'api.orca-wear.com',
         connection: 'upgrade',
         accept: 'application/json, text/plain, */*',
@@ -2977,6 +5072,27 @@
         'accept-encoding': 'gzip, deflate, br',
         'access-control-allow-origin': '*',
         'sec-fetch-dest': 'empty'
+=======
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyOTQ2MTM1NCwiZXhwIjoxNzI5NzIwNTU0fQ.5T4_SlFUut_xY-_GoiH9OjnRED2EO68esO1rxrSncPk',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"2ded-uDnyJMjRg3yxU6PPAL7tyWbOkKg"'
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
       },
       method: 'GET',
       httpVersion: '1.1',
@@ -2995,15 +5111,24 @@
       }
     },
     res: { statusCode: 304 },
+<<<<<<< HEAD
     responseTime: 15
   },
   level: 'info',
   message: 'GET /api/v1/products?category=undefined&limit=100&max=undefined&min=undefined&page=undefined&size=undefined&sort=undefined&colors=undefined&subCategory=undefined&sale=undefined 304 15ms',
   timestamp: '2024-10-18T18:44:26.621Z'
+=======
+    responseTime: 548
+  },
+  level: 'info',
+  message: 'GET /api/v1/products?category=undefined&limit=100&max=undefined&min=undefined&page=undefined&size=undefined&sort=undefined&colors=undefined&subCategory=undefined&sale=undefined 304 548ms',
+  timestamp: '2024-10-21T22:14:20.394Z'
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
 }
 {
   meta: {
     req: {
+<<<<<<< HEAD
       url: '/api/v1/categories',
       headers: {
         host: 'api.orca-wear.com',
@@ -3032,10 +5157,83 @@
   level: 'info',
   message: 'GET /api/v1/categories 304 4ms',
   timestamp: '2024-10-18T18:44:26.631Z'
+=======
+      url: '/api/v1/subCategories?category=66cca1dcd4e2b0f897ec3947',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyOTQ2MTM1NCwiZXhwIjoxNzI5NzIwNTU0fQ.5T4_SlFUut_xY-_GoiH9OjnRED2EO68esO1rxrSncPk',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"156-sfpsdj1lN50nlXkN83pbHTVkQmk"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/subCategories?category=66cca1dcd4e2b0f897ec3947',
+      query: { category: '66cca1dcd4e2b0f897ec3947' }
+    },
+    res: { statusCode: 304 },
+    responseTime: 266
+  },
+  level: 'info',
+  message: 'GET /api/v1/subCategories?category=66cca1dcd4e2b0f897ec3947 304 266ms',
+  timestamp: '2024-10-21T22:14:20.455Z'
 }
 {
   meta: {
     req: {
+      url: '/api/v1/products/slug/test',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyOTQ2MTM1NCwiZXhwIjoxNzI5NzIwNTU0fQ.5T4_SlFUut_xY-_GoiH9OjnRED2EO68esO1rxrSncPk',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"34c-T6+ByJ7qAVL1y5WXE9RAGcRcbSk"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/products/slug/test',
+      query: {}
+    },
+    res: { statusCode: 304 },
+    responseTime: 113
+  },
+  level: 'info',
+  message: 'GET /api/v1/products/slug/test 304 113ms',
+  timestamp: '2024-10-21T22:14:20.968Z'
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
+}
+{
+  meta: {
+    req: {
+<<<<<<< HEAD
       url: '/api/v1/products/filtered?letters=undefined&lang=en',
       headers: {
         host: 'api.orca-wear.com',
@@ -3064,10 +5262,46 @@
   level: 'info',
   message: 'GET /api/v1/products/filtered?letters=undefined&lang=en 304 2ms',
   timestamp: '2024-10-18T18:44:26.976Z'
+=======
+      url: '/api/v1/categories/id/66cca1dcd4e2b0f897ec3947',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyOTQ2MTM1NCwiZXhwIjoxNzI5NzIwNTU0fQ.5T4_SlFUut_xY-_GoiH9OjnRED2EO68esO1rxrSncPk',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"b2-0Wh/4ABtgTSQE0SZ9GwJeJ4a3tw"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/categories/id/66cca1dcd4e2b0f897ec3947',
+      query: {}
+    },
+    res: { statusCode: 304 },
+    responseTime: 113
+  },
+  level: 'info',
+  message: 'GET /api/v1/categories/id/66cca1dcd4e2b0f897ec3947 304 113ms',
+  timestamp: '2024-10-21T22:14:20.978Z'
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
 }
 {
   meta: {
     req: {
+<<<<<<< HEAD
       url: '/api/v1/subCategories/filtered?letters=male%20jeans&category=66ffdc5cb66475d6b7decddb&lang=en',
       headers: {
         host: 'api.orca-wear.com',
@@ -3164,10 +5398,46 @@
   level: 'info',
   message: 'GET /api/v1/products/slug/wideleg_medium_blue_jeans 200 4ms',
   timestamp: '2024-10-18T18:44:27.179Z'
+=======
+      url: '/api/v1/products/slug/new_pantsssss',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyOTQ2MTM1NCwiZXhwIjoxNzI5NzIwNTU0fQ.5T4_SlFUut_xY-_GoiH9OjnRED2EO68esO1rxrSncPk',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"5af-wouHJ8VbaUVSrDAEnm+3qm81UTs"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/products/slug/new_pantsssss',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 156
+  },
+  level: 'info',
+  message: 'GET /api/v1/products/slug/new_pantsssss 200 156ms',
+  timestamp: '2024-10-21T22:14:20.984Z'
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
 }
 {
   meta: {
     req: {
+<<<<<<< HEAD
       url: '/api/v1/products/slug/test_test',
       headers: {
         host: 'api.orca-wear.com',
@@ -3324,12 +5594,48 @@
   level: 'info',
   message: 'GET /api/v1/products/slug/wideleg_dark_gray_jeans 200 5ms',
   timestamp: '2024-10-18T18:44:27.406Z'
+=======
+      url: '/api/v1/products/slug/wide_legs',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyOTQ2MTM1NCwiZXhwIjoxNzI5NzIwNTU0fQ.5T4_SlFUut_xY-_GoiH9OjnRED2EO68esO1rxrSncPk',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"f60-Unvit7abzy1FRkF3vsYKSnecCPo"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/products/slug/wide_legs',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 129
+  },
+  level: 'info',
+  message: 'GET /api/v1/products/slug/wide_legs 200 129ms',
+  timestamp: '2024-10-21T22:14:20.990Z'
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
 }
 {
   meta: {
     req: {
       url: '/api/v1/products/filtered?letters=&lang=en',
       headers: {
+<<<<<<< HEAD
         host: 'api.orca-wear.com',
         connection: 'upgrade',
         accept: 'application/json, text/plain, */*',
@@ -3344,6 +5650,27 @@
         'accept-encoding': 'gzip, deflate, br',
         'access-control-allow-origin': '*',
         'sec-fetch-dest': 'empty'
+=======
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyOTQ2MTM1NCwiZXhwIjoxNzI5NzIwNTU0fQ.5T4_SlFUut_xY-_GoiH9OjnRED2EO68esO1rxrSncPk',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"29-w89SXXqzP1Ws/hRUCc9t9ps9F0I"'
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
       },
       method: 'GET',
       httpVersion: '1.1',
@@ -3355,11 +5682,16 @@
   },
   level: 'info',
   message: 'GET /api/v1/products/filtered?letters=&lang=en 304 0ms',
+<<<<<<< HEAD
   timestamp: '2024-10-18T18:44:27.453Z'
+=======
+  timestamp: '2024-10-21T22:14:20.999Z'
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
 }
 {
   meta: {
     req: {
+<<<<<<< HEAD
       url: '/api/v1/products?category=66ffdc5cb66475d6b7decddb&limit=4&max=undefined&min=undefined&page=undefined&size=undefined&sort=undefined&colors=undefined&subCategory=66ffdd13b66475d6b7decdec&sale=undefined',
       headers: {
         host: 'api.orca-wear.com',
@@ -3431,10 +5763,46 @@
   level: 'info',
   message: 'GET /api/v1/subCategories/66ffdd13b66475d6b7decdec 304 4ms',
   timestamp: '2024-10-18T18:44:30.961Z'
+=======
+      url: '/api/v1/products/slug/www_test',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyOTQ2MTM1NCwiZXhwIjoxNzI5NzIwNTU0fQ.5T4_SlFUut_xY-_GoiH9OjnRED2EO68esO1rxrSncPk',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"267-7IzCEY3VCPJJBe0/R1jepXUUqwA"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/products/slug/www_test',
+      query: {}
+    },
+    res: { statusCode: 304 },
+    responseTime: 102
+  },
+  level: 'info',
+  message: 'GET /api/v1/products/slug/www_test 304 102ms',
+  timestamp: '2024-10-21T22:14:21.010Z'
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
 }
 {
   meta: {
     req: {
+<<<<<<< HEAD
       url: '/api/v1/reviews/670177b6b66475d6b7deeb70/product?sort=&limit=3&page=1',
       headers: {
         host: 'api.orca-wear.com',
@@ -3542,12 +5910,48 @@
   level: 'info',
   message: 'GET /api/v1/products?category=undefined&limit=100&max=undefined&min=undefined&page=undefined&size=undefined&sort=undefined&colors=undefined&subCategory=undefined&sale=undefined 200 29ms',
   timestamp: '2024-10-18T20:13:01.908Z'
+=======
+      url: '/api/v1/products/slug/new_test',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyOTQ2MTM1NCwiZXhwIjoxNzI5NzIwNTU0fQ.5T4_SlFUut_xY-_GoiH9OjnRED2EO68esO1rxrSncPk',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"34d-8K64bzXzB4fsRJkpN5EWJ0dDMPI"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/products/slug/new_test',
+      query: {}
+    },
+    res: { statusCode: 304 },
+    responseTime: 754
+  },
+  level: 'info',
+  message: 'GET /api/v1/products/slug/new_test 304 754ms',
+  timestamp: '2024-10-21T22:14:21.667Z'
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
 }
 {
   meta: {
     req: {
       url: '/api/v1/categories',
       headers: {
+<<<<<<< HEAD
         host: 'api.orca-wear.com',
         connection: 'upgrade',
         'sec-ch-ua-platform': '"Windows"',
@@ -3564,6 +5968,25 @@
         'sec-fetch-dest': 'empty',
         'accept-encoding': 'gzip, deflate, br, zstd',
         'accept-language': 'en-US,en;q=0.9'
+=======
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en'
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
       },
       method: 'GET',
       httpVersion: '1.1',
@@ -3571,15 +5994,24 @@
       query: {}
     },
     res: { statusCode: 200 },
+<<<<<<< HEAD
     responseTime: 8
   },
   level: 'info',
   message: 'GET /api/v1/categories 200 8ms',
   timestamp: '2024-10-18T20:13:01.912Z'
+=======
+    responseTime: 118
+  },
+  level: 'info',
+  message: 'GET /api/v1/categories 200 118ms',
+  timestamp: '2024-10-21T22:15:08.068Z'
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
 }
 {
   meta: {
     req: {
+<<<<<<< HEAD
       url: '/api/v1/subCategories/filtered?letters=male%20jeans&category=66ffdc5cb66475d6b7decddb&lang=en',
       headers: {
         host: 'api.orca-wear.com',
@@ -3886,12 +6318,46 @@
   level: 'info',
   message: 'GET /api/v1/products/slug/wideleg_light_blue_jeans 200 18ms',
   timestamp: '2024-10-18T20:13:02.388Z'
+=======
+      url: '/api/v1/categories/filtered?letters=pants&lang=en',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/categories/filtered?letters=pants&lang=en',
+      query: { letters: 'pants', lang: 'en' }
+    },
+    res: { statusCode: 200 },
+    responseTime: 99
+  },
+  level: 'info',
+  message: 'GET /api/v1/categories/filtered?letters=pants&lang=en 200 99ms',
+  timestamp: '2024-10-21T22:15:08.070Z'
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
 }
 {
   meta: {
     req: {
       url: '/api/v1/products/filtered?letters=&lang=en',
       headers: {
+<<<<<<< HEAD
         host: 'api.orca-wear.com',
         connection: 'upgrade',
         'sec-ch-ua-platform': '"Windows"',
@@ -3908,6 +6374,25 @@
         'sec-fetch-dest': 'empty',
         'accept-encoding': 'gzip, deflate, br, zstd',
         'accept-language': 'en-US,en;q=0.9'
+=======
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en'
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
       },
       method: 'GET',
       httpVersion: '1.1',
@@ -3919,6 +6404,7 @@
   },
   level: 'info',
   message: 'GET /api/v1/products/filtered?letters=&lang=en 200 2ms',
+<<<<<<< HEAD
   timestamp: '2024-10-18T20:13:02.657Z'
 }
 {
@@ -4188,12 +6674,16 @@
   level: 'info',
   message: 'GET /api/v1/subCategories?category=66ffdc5cb66475d6b7decddb 304 6ms',
   timestamp: '2024-10-18T20:14:50.508Z'
+=======
+  timestamp: '2024-10-21T22:15:08.817Z'
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
 }
 {
   meta: {
     req: {
       url: '/api/v1/products/filtered?letters=undefined&lang=en',
       headers: {
+<<<<<<< HEAD
         host: 'api.orca-wear.com',
         connection: 'upgrade',
         'sec-ch-ua-platform': '"Android"',
@@ -8418,6 +10908,25 @@
         'sec-fetch-dest': 'empty',
         'accept-encoding': 'gzip, deflate, br, zstd',
         'accept-language': 'ko'
+=======
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en'
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
       },
       method: 'GET',
       httpVersion: '1.1',
@@ -8425,15 +10934,24 @@
       query: { letters: 'undefined', lang: 'en' }
     },
     res: { statusCode: 200 },
+<<<<<<< HEAD
     responseTime: 1
   },
   level: 'info',
   message: 'GET /api/v1/products/filtered?letters=undefined&lang=en 200 1ms',
   timestamp: '2024-10-19T05:05:17.894Z'
+=======
+    responseTime: 107
+  },
+  level: 'info',
+  message: 'GET /api/v1/products/filtered?letters=undefined&lang=en 200 107ms',
+  timestamp: '2024-10-21T22:15:08.886Z'
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
 }
 {
   meta: {
     req: {
+<<<<<<< HEAD
       url: '/api/v1/categories/id/66ffdc5cb66475d6b7decddb',
       headers: {
         host: 'api.orca-wear.com',
@@ -8697,10 +11215,39 @@
       query: {
         letters: 'male jeans',
         category: '66ffdc5cb66475d6b7decddb',
+=======
+      url: '/api/v1/subCategories/filtered?letters=male%20jeans&category=66cca1dcd4e2b0f897ec3947&lang=en',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/subCategories/filtered?letters=male%20jeans&category=66cca1dcd4e2b0f897ec3947&lang=en',
+      query: {
+        letters: 'male jeans',
+        category: '66cca1dcd4e2b0f897ec3947',
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
         lang: 'en'
       }
     },
     res: { statusCode: 200 },
+<<<<<<< HEAD
     responseTime: 7
   },
   level: 'info',
@@ -8832,12 +11379,20 @@
   level: 'info',
   message: 'GET /api/v1/categories/filtered?letters=pants&lang=en 200 4ms',
   timestamp: '2024-10-19T05:48:51.273Z'
+=======
+    responseTime: 226
+  },
+  level: 'info',
+  message: 'GET /api/v1/subCategories/filtered?letters=male%20jeans&category=66cca1dcd4e2b0f897ec3947&lang=en 200 226ms',
+  timestamp: '2024-10-21T22:15:09.027Z'
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
 }
 {
   meta: {
     req: {
       url: '/api/v1/products?category=undefined&limit=100&max=undefined&min=undefined&page=undefined&size=undefined&sort=undefined&colors=undefined&subCategory=undefined&sale=undefined',
       headers: {
+<<<<<<< HEAD
         host: 'api.orca-wear.com',
         connection: 'upgrade',
         'accept-language': 'en-US',
@@ -8849,6 +11404,25 @@
         from: 'googlebot(at)googlebot.com',
         'user-agent': 'Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.6668.89 Mobile Safari/537.36 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)',
         'accept-encoding': 'gzip, deflate, br'
+=======
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en'
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
       },
       method: 'GET',
       httpVersion: '1.1',
@@ -8867,15 +11441,24 @@
       }
     },
     res: { statusCode: 200 },
+<<<<<<< HEAD
     responseTime: 15
   },
   level: 'info',
   message: 'GET /api/v1/products?category=undefined&limit=100&max=undefined&min=undefined&page=undefined&size=undefined&sort=undefined&colors=undefined&subCategory=undefined&sale=undefined 200 15ms',
   timestamp: '2024-10-19T05:48:51.738Z'
+=======
+    responseTime: 1087
+  },
+  level: 'info',
+  message: 'GET /api/v1/products?category=undefined&limit=100&max=undefined&min=undefined&page=undefined&size=undefined&sort=undefined&colors=undefined&subCategory=undefined&sale=undefined 200 1087ms',
+  timestamp: '2024-10-21T22:15:09.061Z'
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
 }
 {
   meta: {
     req: {
+<<<<<<< HEAD
       url: '/api/v1/subCategories/filtered?letters=male%20jeans&category=66ffdc5cb66475d6b7decddb&lang=en',
       headers: {
         host: 'api.orca-wear.com',
@@ -9113,10 +11696,44 @@
   level: 'info',
   message: 'GET /api/v1/categories/filtered?letters=pants&lang=en 200 5ms',
   timestamp: '2024-10-19T06:32:12.655Z'
+=======
+      url: '/api/v1/subCategories?category=66cca1dcd4e2b0f897ec3947',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/subCategories?category=66cca1dcd4e2b0f897ec3947',
+      query: { category: '66cca1dcd4e2b0f897ec3947' }
+    },
+    res: { statusCode: 200 },
+    responseTime: 473
+  },
+  level: 'info',
+  message: 'GET /api/v1/subCategories?category=66cca1dcd4e2b0f897ec3947 200 473ms',
+  timestamp: '2024-10-21T22:15:09.066Z'
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
 }
 {
   meta: {
     req: {
+<<<<<<< HEAD
       url: '/api/v1/categories',
       headers: {
         host: 'api.orca-wear.com',
@@ -9147,10 +11764,44 @@
   level: 'info',
   message: 'GET /api/v1/categories 200 11ms',
   timestamp: '2024-10-19T06:32:12.662Z'
+=======
+      url: '/api/v1/categories/id/66cca1dcd4e2b0f897ec3947',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/categories/id/66cca1dcd4e2b0f897ec3947',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 95
+  },
+  level: 'info',
+  message: 'GET /api/v1/categories/id/66cca1dcd4e2b0f897ec3947 200 95ms',
+  timestamp: '2024-10-21T22:15:09.261Z'
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
 }
 {
   meta: {
     req: {
+<<<<<<< HEAD
       url: '/api/v1/products?category=undefined&limit=100&max=undefined&min=undefined&page=undefined&size=undefined&sort=undefined&colors=undefined&subCategory=undefined&sale=undefined',
       headers: {
         host: 'api.orca-wear.com',
@@ -9192,10 +11843,44 @@
   level: 'info',
   message: 'GET /api/v1/products?category=undefined&limit=100&max=undefined&min=undefined&page=undefined&size=undefined&sort=undefined&colors=undefined&subCategory=undefined&sale=undefined 200 28ms',
   timestamp: '2024-10-19T06:32:12.670Z'
+=======
+      url: '/api/v1/products/slug/test',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/products/slug/test',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 131
+  },
+  level: 'info',
+  message: 'GET /api/v1/products/slug/test 200 131ms',
+  timestamp: '2024-10-21T22:15:09.318Z'
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
 }
 {
   meta: {
     req: {
+<<<<<<< HEAD
       url: '/api/v1/products/filtered?letters=undefined&lang=en',
       headers: {
         host: 'api.orca-wear.com',
@@ -12003,10 +14688,44 @@
   level: 'info',
   message: 'GET /api/v1/products?category=undefined&limit=100&max=undefined&min=undefined&page=undefined&size=undefined&sort=undefined&colors=undefined&subCategory=undefined&sale=undefined 200 132ms',
   timestamp: '2024-10-19T13:37:42.770Z'
+=======
+      url: '/api/v1/products/slug/www_test',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/products/slug/www_test',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 132
+  },
+  level: 'info',
+  message: 'GET /api/v1/products/slug/www_test 200 132ms',
+  timestamp: '2024-10-21T22:15:09.323Z'
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
 }
 {
   meta: {
     req: {
+<<<<<<< HEAD
       url: '/api/v1/products/filtered?letters=undefined&lang=en',
       headers: {
         host: 'api.orca-wear.com',
@@ -16461,6 +19180,13 @@
         connection: 'upgrade',
         'sec-ch-ua-platform': '"macOS"',
         authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2Y2MwMWIwMDU4YjFkYzM5ZGEwY2ZmMyIsImlhdCI6MTcyOTIzNDM1NSwiZXhwIjoxNzI5ODM5MTU1fQ.cZEa4gRzYV9nDJ1vt4_9bPmobaWALyW_K09OwVJ3NJA',
+=======
+      url: '/api/v1/products/slug/new_test',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
         'cache-control': 'max-age=31536000',
         'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
         'sec-ch-ua-mobile': '?0',
@@ -16468,6 +19194,7 @@
         contenttype: 'application/json',
         'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
         accept: 'application/json, text/plain, */*',
+<<<<<<< HEAD
         origin: 'https://orca-wear.com',
         'sec-fetch-site': 'same-site',
         'sec-fetch-mode': 'cors',
@@ -16487,16 +19214,45 @@
   level: 'info',
   message: 'GET /api/v1/categories 304 108ms',
   timestamp: '2024-10-20T13:07:41.772Z'
+=======
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/products/slug/new_test',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 133
+  },
+  level: 'info',
+  message: 'GET /api/v1/products/slug/new_test 200 133ms',
+  timestamp: '2024-10-21T22:15:09.328Z'
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
 }
 {
   meta: {
     req: {
+<<<<<<< HEAD
       url: '/api/v1/subCategories?category=66ffdc5cb66475d6b7decddb',
       headers: {
         host: 'api.orca-wear.com',
         connection: 'upgrade',
         'sec-ch-ua-platform': '"macOS"',
         authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2Y2MwMWIwMDU4YjFkYzM5ZGEwY2ZmMyIsImlhdCI6MTcyOTIzNDM1NSwiZXhwIjoxNzI5ODM5MTU1fQ.cZEa4gRzYV9nDJ1vt4_9bPmobaWALyW_K09OwVJ3NJA',
+=======
+      url: '/api/v1/products/slug/new_pantsssss',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
         'cache-control': 'max-age=31536000',
         'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
         'sec-ch-ua-mobile': '?0',
@@ -16504,6 +19260,7 @@
         contenttype: 'application/json',
         'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
         accept: 'application/json, text/plain, */*',
+<<<<<<< HEAD
         origin: 'https://orca-wear.com',
         'sec-fetch-site': 'same-site',
         'sec-fetch-mode': 'cors',
@@ -16523,16 +19280,45 @@
   level: 'info',
   message: 'GET /api/v1/subCategories?category=66ffdc5cb66475d6b7decddb 304 59ms',
   timestamp: '2024-10-20T13:07:42.092Z'
+=======
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/products/slug/new_pantsssss',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 146
+  },
+  level: 'info',
+  message: 'GET /api/v1/products/slug/new_pantsssss 200 146ms',
+  timestamp: '2024-10-21T22:15:09.335Z'
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
 }
 {
   meta: {
     req: {
+<<<<<<< HEAD
       url: '/api/v1/products/filtered?letters=undefined&lang=ar',
       headers: {
         host: 'api.orca-wear.com',
         connection: 'upgrade',
         'sec-ch-ua-platform': '"macOS"',
         authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2Y2MwMWIwMDU4YjFkYzM5ZGEwY2ZmMyIsImlhdCI6MTcyOTIzNDM1NSwiZXhwIjoxNzI5ODM5MTU1fQ.cZEa4gRzYV9nDJ1vt4_9bPmobaWALyW_K09OwVJ3NJA',
+=======
+      url: '/api/v1/products/slug/wide_legs',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
         'cache-control': 'max-age=31536000',
         'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
         'sec-ch-ua-mobile': '?0',
@@ -16540,6 +19326,7 @@
         contenttype: 'application/json',
         'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
         accept: 'application/json, text/plain, */*',
+<<<<<<< HEAD
         origin: 'https://orca-wear.com',
         'sec-fetch-site': 'same-site',
         'sec-fetch-mode': 'cors',
@@ -17778,17 +20565,47 @@
 {
   userId: new ObjectId('66cc01b0058b1dc39da0cff3'),
   email: 'admin@orca-wear.com',
+=======
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/products/slug/wide_legs',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 175
+  },
+  level: 'info',
+  message: 'GET /api/v1/products/slug/wide_legs 200 175ms',
+  timestamp: '2024-10-21T22:15:09.341Z'
+}
+{
+  userId: new ObjectId('66819a7da656501549f7e1b3'),
+  email: 'admin@gmail.com',
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
   name: 'admin',
   isActive: true,
   level: 'info',
   message: 'User Authenticated Success',
+<<<<<<< HEAD
   timestamp: '2024-10-20T15:38:26.606Z'
+=======
+  timestamp: '2024-10-21T22:15:48.682Z'
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
 }
 {
   meta: {
     req: {
       url: '/api/v1/auth/login',
       headers: {
+<<<<<<< HEAD
         host: 'api.orca-wear.com',
         connection: 'upgrade',
         'content-length': '56',
@@ -19245,6 +22062,11 @@
         host: 'api.orca-wear.com',
         connection: 'upgrade',
         'content-length': '56',
+=======
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'content-length': '52',
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
         'sec-ch-ua-platform': '"macOS"',
         'cache-control': 'max-age=31536000',
         'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
@@ -19254,10 +22076,18 @@
         'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
         accept: 'application/json, text/plain, */*',
         'content-type': 'application/json',
+<<<<<<< HEAD
         origin: 'https://orca-wear.com',
         'sec-fetch-site': 'same-site',
         'sec-fetch-mode': 'cors',
         'sec-fetch-dest': 'empty',
+=======
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
         'accept-encoding': 'gzip, deflate, br, zstd',
         'accept-language': 'en'
       },
@@ -19267,6 +22097,7 @@
       query: {}
     },
     res: { statusCode: 200 },
+<<<<<<< HEAD
     responseTime: 65
   },
   level: 'info',
@@ -19672,10 +22503,18 @@
   level: 'info',
   message: 'GET /api/v1/products/filtered?letters=&lang=en 200 1ms',
   timestamp: '2024-10-20T15:49:53.760Z'
+=======
+    responseTime: 954
+  },
+  level: 'info',
+  message: 'POST /api/v1/auth/login 200 954ms',
+  timestamp: '2024-10-21T22:15:48.689Z'
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
 }
 {
   message: 'User Authenticated Successfully',
   level: 'info',
+<<<<<<< HEAD
   timestamp: '2024-10-20T15:50:02.509Z'
 }
 {
@@ -19684,21 +22523,42 @@
   level: 'info',
   message: 'User Authorized to access the route ',
   timestamp: '2024-10-20T15:50:02.510Z'
+=======
+  timestamp: '2024-10-21T22:17:08.761Z'
+}
+{
+  userId: new ObjectId('66819a7da656501549f7e1b3'),
+  url: '/api/v1/analytics',
+  level: 'info',
+  message: 'User Authorized to access the route ',
+  timestamp: '2024-10-21T22:17:08.765Z'
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
 }
 {
   message: 'Fetched 5 Orders',
   level: 'info',
+<<<<<<< HEAD
   timestamp: '2024-10-20T15:50:02.534Z'
+=======
+  timestamp: '2024-10-21T22:17:08.935Z'
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
 }
 {
   meta: {
     req: {
       url: '/api/v1/orders?0=o&1=r&2=d&3=e&4=r&5=s',
       headers: {
+<<<<<<< HEAD
         host: 'api.orca-wear.com',
         connection: 'upgrade',
         'sec-ch-ua-platform': '"macOS"',
         authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2Y2MwMWIwMDU4YjFkYzM5ZGEwY2ZmMyIsImlhdCI6MTcyOTQzOTM4NywiZXhwIjoxNzMwMDQ0MTg3fQ._3sGxZi5ztSLjLUYlAy0g-fZw5yhcMWdO8fwxVq92XI',
+=======
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ODE5YTdkYTY1NjUwMTU0OWY3ZTFiMyIsImlhdCI6MTcyOTU0ODk0OCwiZXhwIjoxNzI5ODA4MTQ4fQ.2evKQorLbpO_gWcTn2kRt7ksTKcEC1Kg8G3QUGlI3u8',
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
         'cache-control': 'max-age=31536000',
         'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
         'sec-ch-ua-mobile': '?0',
@@ -19706,10 +22566,18 @@
         contenttype: 'application/json',
         'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
         accept: 'application/json, text/plain, */*',
+<<<<<<< HEAD
         origin: 'https://orca-wear.com',
         'sec-fetch-site': 'same-site',
         'sec-fetch-mode': 'cors',
         'sec-fetch-dest': 'empty',
+=======
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
         'accept-encoding': 'gzip, deflate, br, zstd',
         'accept-language': 'en'
       },
@@ -19719,21 +22587,36 @@
       query: { '0': 'o', '1': 'r', '2': 'd', '3': 'e', '4': 'r', '5': 's' }
     },
     res: { statusCode: 200 },
+<<<<<<< HEAD
     responseTime: 77
   },
   level: 'info',
   message: 'GET /api/v1/orders?0=o&1=r&2=d&3=e&4=r&5=s 200 77ms',
   timestamp: '2024-10-20T15:50:02.545Z'
+=======
+    responseTime: 1372
+  },
+  level: 'info',
+  message: 'GET /api/v1/orders?0=o&1=r&2=d&3=e&4=r&5=s 200 1372ms',
+  timestamp: '2024-10-21T22:17:08.974Z'
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
 }
 {
   meta: {
     req: {
       url: '/api/v1/analytics',
       headers: {
+<<<<<<< HEAD
         host: 'api.orca-wear.com',
         connection: 'upgrade',
         'sec-ch-ua-platform': '"macOS"',
         authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2Y2MwMWIwMDU4YjFkYzM5ZGEwY2ZmMyIsImlhdCI6MTcyOTQzOTM4NywiZXhwIjoxNzMwMDQ0MTg3fQ._3sGxZi5ztSLjLUYlAy0g-fZw5yhcMWdO8fwxVq92XI',
+=======
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ODE5YTdkYTY1NjUwMTU0OWY3ZTFiMyIsImlhdCI6MTcyOTU0ODk0OCwiZXhwIjoxNzI5ODA4MTQ4fQ.2evKQorLbpO_gWcTn2kRt7ksTKcEC1Kg8G3QUGlI3u8',
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
         'cache-control': 'max-age=31536000',
         'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
         'sec-ch-ua-mobile': '?0',
@@ -19741,10 +22624,18 @@
         contenttype: 'application/json',
         'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
         accept: 'application/json, text/plain, */*',
+<<<<<<< HEAD
         origin: 'https://orca-wear.com',
         'sec-fetch-site': 'same-site',
         'sec-fetch-mode': 'cors',
         'sec-fetch-dest': 'empty',
+=======
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
         'accept-encoding': 'gzip, deflate, br, zstd',
         'accept-language': 'en'
       },
@@ -19754,6 +22645,7 @@
       query: {}
     },
     res: { statusCode: 200 },
+<<<<<<< HEAD
     responseTime: 194
   },
   level: 'info',
@@ -22595,16 +25487,33 @@
   level: 'info',
   message: 'User Authenticated Success',
   timestamp: '2024-10-20T16:39:47.572Z'
+=======
+    responseTime: 2677
+  },
+  level: 'info',
+  message: 'GET /api/v1/analytics 200 2677ms',
+  timestamp: '2024-10-21T22:17:10.694Z'
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
 }
 {
   meta: {
     req: {
+<<<<<<< HEAD
       url: '/api/v1/auth/login',
       headers: {
         host: 'api.orca-wear.com',
         connection: 'upgrade',
         'content-length': '59',
         'sec-ch-ua-platform': '"macOS"',
+=======
+      url: '/api/v1/promoCodes',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'content-length': '59',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ODE5YTdkYTY1NjUwMTU0OWY3ZTFiMyIsImlhdCI6MTcyOTU0ODk0OCwiZXhwIjoxNzI5ODA4MTQ4fQ.2evKQorLbpO_gWcTn2kRt7ksTKcEC1Kg8G3QUGlI3u8',
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
         'cache-control': 'max-age=31536000',
         'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
         'sec-ch-ua-mobile': '?0',
@@ -22613,15 +25522,24 @@
         'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
         accept: 'application/json, text/plain, */*',
         'content-type': 'application/json',
+<<<<<<< HEAD
         origin: 'https://orca-wear.com',
         'sec-fetch-site': 'same-site',
         'sec-fetch-mode': 'cors',
         'sec-fetch-dest': 'empty',
+=======
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
         'accept-encoding': 'gzip, deflate, br, zstd',
         'accept-language': 'en'
       },
       method: 'POST',
       httpVersion: '1.1',
+<<<<<<< HEAD
       originalUrl: '/api/v1/auth/login',
       query: {}
     },
@@ -24522,15 +27440,33 @@
   level: 'info',
   message: 'POST /api/v1/cartItems 201 43ms',
   timestamp: '2024-10-20T16:58:08.654Z'
+=======
+      originalUrl: '/api/v1/promoCodes',
+      query: {}
+    },
+    res: { statusCode: 201 },
+    responseTime: 240
+  },
+  level: 'info',
+  message: 'POST /api/v1/promoCodes 201 240ms',
+  timestamp: '2024-10-21T22:18:11.860Z'
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
 }
 {
   meta: {
     req: {
       url: '/api/v1/categories',
       headers: {
+<<<<<<< HEAD
         host: 'api.orca-wear.com',
         connection: 'upgrade',
         'sec-ch-ua-platform': '"macOS"',
+=======
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyOTQ2MTM1NCwiZXhwIjoxNzI5NzIwNTU0fQ.5T4_SlFUut_xY-_GoiH9OjnRED2EO68esO1rxrSncPk',
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
         'cache-control': 'max-age=31536000',
         'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
         'sec-ch-ua-mobile': '?0',
@@ -24538,6 +27474,7 @@
         contenttype: 'application/json',
         'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
         accept: 'application/json, text/plain, */*',
+<<<<<<< HEAD
         origin: 'https://orca-wear.com',
         'sec-fetch-site': 'same-site',
         'sec-fetch-mode': 'cors',
@@ -24545,6 +27482,16 @@
         'accept-encoding': 'gzip, deflate, br, zstd',
         'accept-language': 'en',
         'if-none-match': 'W/"c6-a+iP+Cc9UKpoKEGTWoEqTzbbykA"'
+=======
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"bf-2xKbhXh3Ij0v1dfsZWEC2a9RIJk"'
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
       },
       method: 'GET',
       httpVersion: '1.1',
@@ -24552,6 +27499,7 @@
       query: {}
     },
     res: { statusCode: 304 },
+<<<<<<< HEAD
     responseTime: 4
   },
   level: 'info',
@@ -24848,15 +27796,29 @@
   level: 'info',
   message: 'GET /api/v1/products/slug/wideleg_medium_blue_jeans 304 3ms',
   timestamp: '2024-10-20T16:58:09.713Z'
+=======
+    responseTime: 263
+  },
+  level: 'info',
+  message: 'GET /api/v1/categories 304 263ms',
+  timestamp: '2024-10-21T22:18:44.143Z'
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
 }
 {
   meta: {
     req: {
       url: '/api/v1/products/filtered?letters=&lang=en',
       headers: {
+<<<<<<< HEAD
         host: 'api.orca-wear.com',
         connection: 'upgrade',
         'sec-ch-ua-platform': '"macOS"',
+=======
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyOTQ2MTM1NCwiZXhwIjoxNzI5NzIwNTU0fQ.5T4_SlFUut_xY-_GoiH9OjnRED2EO68esO1rxrSncPk',
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
         'cache-control': 'max-age=31536000',
         'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
         'sec-ch-ua-mobile': '?0',
@@ -24864,6 +27826,7 @@
         contenttype: 'application/json',
         'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
         accept: 'application/json, text/plain, */*',
+<<<<<<< HEAD
         origin: 'https://orca-wear.com',
         'sec-fetch-site': 'same-site',
         'sec-fetch-mode': 'cors',
@@ -25377,6 +28340,13 @@
         'sec-fetch-site': 'same-site',
         'sec-fetch-mode': 'cors',
         'sec-fetch-dest': 'empty',
+=======
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
         'accept-encoding': 'gzip, deflate, br, zstd',
         'accept-language': 'en,en-US;q=0.9',
         'if-none-match': 'W/"29-w89SXXqzP1Ws/hRUCc9t9ps9F0I"'
@@ -25387,6 +28357,7 @@
       query: { letters: '', lang: 'en' }
     },
     res: { statusCode: 304 },
+<<<<<<< HEAD
     responseTime: 0
   },
   level: 'info',
@@ -25426,10 +28397,18 @@
   level: 'error',
   message: 'Error:  Invalid ID, NaN is not a valid ID',
   timestamp: '2024-10-20T17:00:46.142Z'
+=======
+    responseTime: 1
+  },
+  level: 'info',
+  message: 'GET /api/v1/products/filtered?letters=&lang=en 304 1ms',
+  timestamp: '2024-10-21T22:18:44.970Z'
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
 }
 {
   meta: {
     req: {
+<<<<<<< HEAD
       url: '/api/v1/payment/checkout',
       headers: {
         host: 'api.orca-wear.com',
@@ -25437,6 +28416,14 @@
         'content-length': '764',
         'sec-ch-ua-platform': '"macOS"',
         authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2Y2ExZmRlMDQ5NTczODliOTE3MTllZCIsImlhdCI6MTcyOTQ0MzQ1NCwiZXhwIjoxNzMwMDQ4MjU0fQ.VxVdSRUlfiRErvi21cpmyZacxELjv7sgtj564sCWhCo',
+=======
+      url: '/api/v1/products/filtered?letters=undefined&lang=en',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyOTQ2MTM1NCwiZXhwIjoxNzI5NzIwNTU0fQ.5T4_SlFUut_xY-_GoiH9OjnRED2EO68esO1rxrSncPk',
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
         'cache-control': 'max-age=31536000',
         'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
         'sec-ch-ua-mobile': '?0',
@@ -25444,6 +28431,7 @@
         contenttype: 'application/json',
         'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
         accept: 'application/json, text/plain, */*',
+<<<<<<< HEAD
         'content-type': 'application/json',
         origin: 'https://orca-wear.com',
         'sec-fetch-site': 'same-site',
@@ -25570,16 +28558,47 @@
   level: 'info',
   message: 'GET /api/v1/categories 304 2ms',
   timestamp: '2024-10-20T17:03:28.235Z'
+=======
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"29-w89SXXqzP1Ws/hRUCc9t9ps9F0I"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/products/filtered?letters=undefined&lang=en',
+      query: { letters: 'undefined', lang: 'en' }
+    },
+    res: { statusCode: 304 },
+    responseTime: 154
+  },
+  level: 'info',
+  message: 'GET /api/v1/products/filtered?letters=undefined&lang=en 304 154ms',
+  timestamp: '2024-10-21T22:18:45.061Z'
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
 }
 {
   meta: {
     req: {
+<<<<<<< HEAD
       url: '/api/v1/products/allProductsAdmin?page=1&limit=10',
       headers: {
         host: 'api.orca-wear.com',
         connection: 'upgrade',
         'sec-ch-ua-platform': '"macOS"',
         authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2Y2MwMWIwMDU4YjFkYzM5ZGEwY2ZmMyIsImlhdCI6MTcyOTQ0MzQ5NywiZXhwIjoxNzMwMDQ4Mjk3fQ.YlTFIHcl6uHuDgED5HPSftI_TPgwozHS4FtPZET9cGc',
+=======
+      url: '/api/v1/subCategories?category=66cca1dcd4e2b0f897ec3947',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyOTQ2MTM1NCwiZXhwIjoxNzI5NzIwNTU0fQ.5T4_SlFUut_xY-_GoiH9OjnRED2EO68esO1rxrSncPk',
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
         'cache-control': 'max-age=31536000',
         'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
         'sec-ch-ua-mobile': '?0',
@@ -25587,6 +28606,7 @@
         contenttype: 'application/json',
         'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
         accept: 'application/json, text/plain, */*',
+<<<<<<< HEAD
         origin: 'https://orca-wear.com',
         'sec-fetch-site': 'same-site',
         'sec-fetch-mode': 'cors',
@@ -25605,16 +28625,47 @@
   level: 'info',
   message: 'GET /api/v1/products/allProductsAdmin?page=1&limit=10 200 6ms',
   timestamp: '2024-10-20T17:03:46.466Z'
+=======
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9',
+        'if-none-match': 'W/"156-sfpsdj1lN50nlXkN83pbHTVkQmk"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/subCategories?category=66cca1dcd4e2b0f897ec3947',
+      query: { category: '66cca1dcd4e2b0f897ec3947' }
+    },
+    res: { statusCode: 304 },
+    responseTime: 263
+  },
+  level: 'info',
+  message: 'GET /api/v1/subCategories?category=66cca1dcd4e2b0f897ec3947 304 263ms',
+  timestamp: '2024-10-21T22:18:45.127Z'
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
 }
 {
   meta: {
     req: {
+<<<<<<< HEAD
       url: '/api/v1/products/id/670c4a7413b5537d6db88a1b',
       headers: {
         host: 'api.orca-wear.com',
         connection: 'upgrade',
         'sec-ch-ua-platform': '"macOS"',
         authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2Y2MwMWIwMDU4YjFkYzM5ZGEwY2ZmMyIsImlhdCI6MTcyOTQ0MzQ5NywiZXhwIjoxNzMwMDQ4Mjk3fQ.YlTFIHcl6uHuDgED5HPSftI_TPgwozHS4FtPZET9cGc',
+=======
+      url: '/api/v1/promoCodes/filter/ORCA-xnxx',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyOTQ2MTM1NCwiZXhwIjoxNzI5NzIwNTU0fQ.5T4_SlFUut_xY-_GoiH9OjnRED2EO68esO1rxrSncPk',
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
         'cache-control': 'max-age=31536000',
         'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
         'sec-ch-ua-mobile': '?0',
@@ -25622,6 +28673,7 @@
         contenttype: 'application/json',
         'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
         accept: 'application/json, text/plain, */*',
+<<<<<<< HEAD
         origin: 'https://orca-wear.com',
         'sec-fetch-site': 'same-site',
         'sec-fetch-mode': 'cors',
@@ -25675,10 +28727,32 @@
   level: 'info',
   message: 'GET /api/v1/categories/filtered?letters=[object%20Object]&lang=en 200 3ms',
   timestamp: '2024-10-20T17:03:51.073Z'
+=======
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/promoCodes/filter/ORCA-xnxx',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 372
+  },
+  level: 'info',
+  message: 'GET /api/v1/promoCodes/filter/ORCA-xnxx 200 372ms',
+  timestamp: '2024-10-21T22:18:59.466Z'
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
 }
 {
   message: 'User Authenticated Successfully',
   level: 'info',
+<<<<<<< HEAD
   timestamp: '2024-10-20T17:05:00.071Z'
 }
 {
@@ -25694,10 +28768,33 @@
       'unix error: No such file or directory',
     statusCode: 500,
     status: 'error'
+=======
+  timestamp: '2024-10-21T22:19:05.161Z'
+}
+{
+  userId: new ObjectId('66bf67d0f792c1d16898ca6c'),
+  url: '/api/v1/payment/checkout',
+  level: 'info',
+  message: 'User Authorized to access the route ',
+  timestamp: '2024-10-21T22:19:05.161Z'
+}
+{
+  message: ' deleting cartItems from cart 66bf67d1f792c1d16898ca6f before creating new cartItems\n' +
+    '      for the order',
+  level: 'info',
+  timestamp: '2024-10-21T22:19:05.590Z'
+}
+{
+  error: {
+    statusCode: 500,
+    status: 'error',
+    message: "Cannot read properties of undefined (reading 'data')"
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
   },
   stack: undefined,
   level: 'error',
   message: 'Something went wrong',
+<<<<<<< HEAD
   timestamp: '2024-10-20T17:05:00.246Z'
 }
 {
@@ -44684,22 +47781,34 @@
   level: 'error',
   message: 'Error:  Invalid ID, NaN is not a valid ID',
   timestamp: '2024-10-21T14:24:49.925Z'
+=======
+  timestamp: '2024-10-21T22:19:08.886Z'
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
 }
 {
   meta: {
     req: {
       url: '/api/v1/payment/checkout',
       headers: {
+<<<<<<< HEAD
         host: 'api.orca-wear.com',
         connection: 'upgrade',
         'content-length': '630',
         'sec-ch-ua-platform': '"Windows"',
         authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MTY2M2IxOWZiNTZlNGM1NGY4YmIyOCIsImlhdCI6MTcyOTUyMDYzNCwiZXhwIjoxNzMwMTI1NDM0fQ.yRkY1GvW6wF6g2XGugE_5WV5MiLXqdgIvQ3YA05wppY',
+=======
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'content-length': '1504',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyOTQ2MTM1NCwiZXhwIjoxNzI5NzIwNTU0fQ.5T4_SlFUut_xY-_GoiH9OjnRED2EO68esO1rxrSncPk',
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
         'cache-control': 'max-age=31536000',
         'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
         'sec-ch-ua-mobile': '?0',
         'access-control-allow-origin': '*',
         contenttype: 'application/json',
+<<<<<<< HEAD
         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
         accept: 'application/json, text/plain, */*',
         'content-type': 'application/json',
@@ -44709,16 +47818,171 @@
         'sec-fetch-dest': 'empty',
         'accept-encoding': 'gzip, deflate, br, zstd',
         'accept-language': 'en-US,en;q=0.9'
+=======
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        'content-type': 'application/json',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9'
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
       },
       method: 'POST',
       httpVersion: '1.1',
       originalUrl: '/api/v1/payment/checkout',
       query: {}
     },
+<<<<<<< HEAD
     res: { statusCode: 404 },
     responseTime: 56
   },
   level: 'info',
   message: 'POST /api/v1/payment/checkout 404 56ms',
   timestamp: '2024-10-21T14:24:49.926Z'
+=======
+    res: { statusCode: 500 },
+    responseTime: 4040
+  },
+  level: 'info',
+  message: 'POST /api/v1/payment/checkout 500 4040ms',
+  timestamp: '2024-10-21T22:19:09.008Z'
+}
+{
+  message: 'User Authenticated Successfully',
+  level: 'info',
+  timestamp: '2024-10-21T22:20:56.029Z'
+}
+{
+  userId: new ObjectId('66bf67d0f792c1d16898ca6c'),
+  url: '/api/v1/payment/checkout',
+  level: 'info',
+  message: 'User Authorized to access the route ',
+  timestamp: '2024-10-21T22:20:56.032Z'
+}
+{
+  message: ' deleting cartItems from cart 66bf67d1f792c1d16898ca6f before creating new cartItems\n' +
+    '      for the order',
+  level: 'info',
+  timestamp: '2024-10-21T22:20:56.468Z'
+}
+{
+  error: {
+    statusCode: 500,
+    status: 'error',
+    message: "Cannot read properties of undefined (reading 'data')"
+  },
+  stack: undefined,
+  level: 'error',
+  message: 'Something went wrong',
+  timestamp: '2024-10-21T22:20:58.350Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/payment/checkout',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'content-length': '1504',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyOTQ2MTM1NCwiZXhwIjoxNzI5NzIwNTU0fQ.5T4_SlFUut_xY-_GoiH9OjnRED2EO68esO1rxrSncPk',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        'content-type': 'application/json',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/payment/checkout',
+      query: {}
+    },
+    res: { statusCode: 500 },
+    responseTime: 2602
+  },
+  level: 'info',
+  message: 'POST /api/v1/payment/checkout 500 2602ms',
+  timestamp: '2024-10-21T22:20:58.354Z'
+}
+{
+  message: 'User Authenticated Successfully',
+  level: 'info',
+  timestamp: '2024-10-21T22:21:01.250Z'
+}
+{
+  userId: new ObjectId('66bf67d0f792c1d16898ca6c'),
+  url: '/api/v1/payment/checkout',
+  level: 'info',
+  message: 'User Authorized to access the route ',
+  timestamp: '2024-10-21T22:21:01.278Z'
+}
+{
+  message: ' deleting cartItems from cart 66bf67d1f792c1d16898ca6f before creating new cartItems\n' +
+    '      for the order',
+  level: 'info',
+  timestamp: '2024-10-21T22:21:01.892Z'
+}
+{
+  error: {
+    statusCode: 500,
+    status: 'error',
+    message: "Cannot read properties of undefined (reading 'data')"
+  },
+  stack: undefined,
+  level: 'error',
+  message: 'Something went wrong',
+  timestamp: '2024-10-21T22:21:03.713Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/v1/payment/checkout',
+      headers: {
+        host: 'localhost:8000',
+        connection: 'keep-alive',
+        'content-length': '1504',
+        'sec-ch-ua-platform': '"macOS"',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmY2N2QwZjc5MmMxZDE2ODk4Y2E2YyIsImlhdCI6MTcyOTQ2MTM1NCwiZXhwIjoxNzI5NzIwNTU0fQ.5T4_SlFUut_xY-_GoiH9OjnRED2EO68esO1rxrSncPk',
+        'cache-control': 'max-age=31536000',
+        'sec-ch-ua': '"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',
+        'sec-ch-ua-mobile': '?0',
+        'access-control-allow-origin': '*',
+        contenttype: 'application/json',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
+        accept: 'application/json, text/plain, */*',
+        'content-type': 'application/json',
+        origin: 'http://localhost:3000',
+        'sec-fetch-site': 'same-site',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        referer: 'http://localhost:3000/',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en,en-US;q=0.9'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/api/v1/payment/checkout',
+      query: {}
+    },
+    res: { statusCode: 500 },
+    responseTime: 2632
+  },
+  level: 'info',
+  message: 'POST /api/v1/payment/checkout 500 2632ms',
+  timestamp: '2024-10-21T22:21:03.716Z'
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
 }

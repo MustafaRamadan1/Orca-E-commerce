@@ -163,21 +163,18 @@ router.post(
     }
 
 
-    
-
     const promoCodeDocument = await PromoCode.findOne({code:promoCode});
 
     const promoCodeDiscount = promoCodeDocument? promoCodeDocument.discount / 100: 0;
-    const cartItemsTotalPrice = countCartTotalPrice(cart.items) ;
-    const totalPrice = cartItemsTotalPrice - (cartItemsTotalPrice * promoCodeDiscount);
-
+    const cartItemsTotalPrice = countCartTotalPrice(cart.items, promoCodeDiscount) ;
+    
     console.log(`PromoCodeDocument`, promoCodeDocument);
     console.log(`PromoCodeDiscount`, promoCodeDiscount);
     console.log(`CartItemsTotalPrice`, cartItemsTotalPrice);
-    console.log(`TotalPrice`, totalPrice);
+ 
     const updatedCart = await Cart.findByIdAndUpdate(
       cart._id,
-      { totalPrice },
+      { totalPrice:cartItemsTotalPrice},
       { new: true, runValidators: true }
     )
       .populate({
@@ -188,7 +185,8 @@ router.post(
     console.log("updatedCart", updatedCart);
     const formattedItems = formatItemsForPayment(
       updatedCart.items,
-      req.body.locale
+      req.body.locale,
+      promoCodeDiscount
     );
     console.log("formattedItems", formattedItems);
 

@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   email: 'admin@gmail.com',
   level: 'error',
   message: 'Invalid Email or Password for user in login',
@@ -249,10 +250,17 @@
       'unix error: No such file or directory',
     statusCode: 500,
     status: 'error'
+=======
+  error: {
+    statusCode: 500,
+    status: 'error',
+    message: "Cannot read properties of undefined (reading 'length')"
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
   },
   stack: undefined,
   level: 'error',
   message: 'Something went wrong',
+<<<<<<< HEAD
   timestamp: '2024-10-20T17:05:00.246Z'
 }
 {
@@ -261,10 +269,27 @@
       'unix error: No such file or directory',
     statusCode: 500,
     status: 'error'
+=======
+  timestamp: '2024-10-21T21:56:05.290Z'
+}
+{
+  error: { statusCode: 500, status: 'error', message: 'item is not defined' },
+  stack: undefined,
+  level: 'error',
+  message: 'Something went wrong',
+  timestamp: '2024-10-21T21:56:56.011Z'
+}
+{
+  error: {
+    statusCode: 500,
+    status: 'error',
+    message: "Cannot read properties of undefined (reading 'quantity')"
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
   },
   stack: undefined,
   level: 'error',
   message: 'Something went wrong',
+<<<<<<< HEAD
   timestamp: '2024-10-20T17:06:05.546Z'
 }
 {
@@ -348,4 +373,40 @@
   level: 'error',
   message: 'Error:  Invalid ID, NaN is not a valid ID',
   timestamp: '2024-10-21T14:24:49.925Z'
+=======
+  timestamp: '2024-10-21T22:05:46.384Z'
+}
+{
+  error: {
+    statusCode: 500,
+    status: 'error',
+    message: "Cannot read properties of undefined (reading 'data')"
+  },
+  stack: undefined,
+  level: 'error',
+  message: 'Something went wrong',
+  timestamp: '2024-10-21T22:19:08.886Z'
+}
+{
+  error: {
+    statusCode: 500,
+    status: 'error',
+    message: "Cannot read properties of undefined (reading 'data')"
+  },
+  stack: undefined,
+  level: 'error',
+  message: 'Something went wrong',
+  timestamp: '2024-10-21T22:20:58.350Z'
+}
+{
+  error: {
+    statusCode: 500,
+    status: 'error',
+    message: "Cannot read properties of undefined (reading 'data')"
+  },
+  stack: undefined,
+  level: 'error',
+  message: 'Something went wrong',
+  timestamp: '2024-10-21T22:21:03.713Z'
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
 }
