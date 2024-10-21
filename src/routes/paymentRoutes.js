@@ -165,7 +165,7 @@ router.post(
 
     const promoCodeDocument = await PromoCode.findOne({code:promoCode});
 
-    const promoCodeDiscount = promoCodeDocument? promoCodeDocument.discount / 100: 0;
+    const promoCodeDiscount = promoCodeDocument? promoCodeDocument.discount / 100: 1;
     const cartItemsTotalPrice = countCartTotalPrice(cart.items, promoCodeDiscount) ;
     
     console.log(`PromoCodeDocument`, promoCodeDocument);
