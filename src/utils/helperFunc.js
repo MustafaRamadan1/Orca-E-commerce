@@ -54,37 +54,77 @@ export const compileTemplate = (templatePath, data) => {
   return html;
 };
 
+// export const validateCartItemsQuantity = async (cartItems) => {
+//   const productNExist = [];
+//   console.log("cartItems", cartItems);
+//   for (let item of cartItems) {
+//     const product = await Product.findById(item.product);
+//     console.log("product", product);
+//     if (!product) {
+//       productNExist.push({ name: item.name });
+//     } else {
+//       // cartItems colors [c1, c2, c3]
+//       const colors = cartItems.map((c) => c.colorId);
+
+//       const productColors = product.colors.map((c) => c.id);
+//       console.log("productColors", productColors);
+//       console.log("colors", colors);
+//       for (let color of colors) {
+//         console.log("color", color);
+//         if (productColors.includes(color)) {
+//           console.log("1.");
+//           const productColor = product.colors.find((c) => c.id === color);
+//           console.log("productColor", productColor);
+//           if (!(productColor.quantity >= item.quantity)) {
+//             console.log("2.");
+//             productNExist.push({
+//               name: item.name,
+//               quantity: product.quantity,
+//             });
+//           }
+//         } else {
+//           console.log("200. ELSEE");
+//           productNExist.push({ name: item.name });
+//         }
+//       }
+//     }
+//   }
+//   return productNExist;
+// };
+
 export const validateCartItemsQuantity = async (cartItems) => {
+  /**
+   * 1 - cartItems [cp1, cp2, cp3] =>
+   * cp1 is exists in the system ->
+   * cp1 {id, colors,} ->
+   * cp1.color(blue) p1.colors(blue, red)
+   */
+
   const productNExist = [];
-  console.log("cartItems", cartItems);
-  for (let item of cartItems) {
-    const product = await Product.findById(item.product);
-    console.log("product", product);
+
+  for (let cartItem of cartItems) {
+    const product = await Product.findById(cartItem.product);
     if (!product) {
-      productNExist.push({ name: item.name });
-    } else {
-      const colors = cartItems.map((c) => c.colorId);
-      const productColors = product.colors.map((c) => c.id);
-      console.log("colors", colors);
-      for (let color of colors) {
-        console.log("color", color);
-        if (productColors.includes(color)) {
-          console.log("1.");
-          const productColor = product.colors.find((c) => c.id === color);
-          console.log("productColor", productColor);
-          if (!(productColor.quantity >= item.quantity)) {
-            console.log("2.");
-            productNExist.push({
-              name: item.name,
-              quantity: product.quantity,
-            });
-          }
-        } else {
-          productNExist.push({ name: item.name });
-        }
+      productNExist.push({ name: cartItem.name });
+    }
+    const productColors = product.colors.map((c) => c.id);
+    if (productColors.includes(cartItem.colorId)) {
+      const cartItemProductColor = product.colors.find(
+        (productColor) => productColor.id === cartItem.colorId
+      );
+      if (cartItemProductColor.quantity >= cartItem.quantity) {
+        //
+      } else {
+        productNExist.push({
+          name: cartItem.name,
+          quantity: cartItem.quantity,
+        });
       }
+    } else {
+      productNExist.push({ name: cartItem.name, quantity: cartItem.quantity });
     }
   }
+
   return productNExist;
 };
 

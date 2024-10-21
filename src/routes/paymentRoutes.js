@@ -89,7 +89,6 @@ router.post(
     const productNExist = await validateCartItemsQuantity(cartItems);
 
     console.log("productNExist", productNExist);
-
     if (productNExist.length > 0) {
       return res.status(400).json({
         status: "fail",
