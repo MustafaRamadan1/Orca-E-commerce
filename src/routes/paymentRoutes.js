@@ -1,6 +1,7 @@
 import crypto from "crypto";
 import { Router } from "express";
 import mongoose, { Mongoose } from "mongoose";
+import {Types} from 'mongoose';
 import { catchAsync } from "../utils/catchAsync.js";
 import Cart from "../Db/models/cart.model.js";
 import AppError from "../utils/AppError.js";
@@ -21,6 +22,8 @@ import CookieCart from "../Db/models/cookieCart.model.js";
 import PromoCode from "../Db/models/promoCode.model.js";
 import logger from "../utils/logger.js";
 import { validateCartItemsQuantity } from "../utils/helperFunc.js";
+
+const objectId = Types.ObjectId;
 const router = Router();
 
 router.post("/pay", async (req, res, next) => {
@@ -162,19 +165,23 @@ router.post(
       }
     }
 
+    const promoCodeDocument = await PromoCode.findOne({ code: promoCode });
 
-    const promoCodeDocument = await PromoCode.findOne({code:promoCode});
+    const promoCodeDiscount = promoCodeDocument
+      ? promoCodeDocument.discount / 100
+      : 1;
+    const cartItemsTotalPrice = countCartTotalPrice(
+      cart.items,
+      promoCodeDiscount
+    );
 
-    const promoCodeDiscount = promoCodeDocument? promoCodeDocument.discount / 100: 1;
-    const cartItemsTotalPrice = countCartTotalPrice(cart.items, promoCodeDiscount) ;
-    
     console.log(`PromoCodeDocument`, promoCodeDocument);
     console.log(`PromoCodeDiscount`, promoCodeDiscount);
     console.log(`CartItemsTotalPrice`, cartItemsTotalPrice);
- 
+
     const updatedCart = await Cart.findByIdAndUpdate(
       cart._id,
-      { totalPrice:cartItemsTotalPrice},
+      { totalPrice: cartItemsTotalPrice },
       { new: true, runValidators: true }
     )
       .populate({
@@ -209,6 +216,7 @@ router.post(
       user: updatedCart.user._id,
       cartItems: updatedCart.items.map((item) => item._id),
       billingData: req.body.billing_data,
+
       promocodeDiscount:promoCodeDocument? promoCodeDocument.discount : 1
     });
 
@@ -421,6 +429,7 @@ router.post(
       });
     }
 
+  
     const formattedCartItems = cartItems.map((item) => {
       return {
         cart: item.cart,
@@ -459,6 +468,8 @@ router.post(
     }
 
     for (let item of cart.items) {
+
+     
       for (let color of item.product.colors) {
         if (color.id === item.color) {
           if (color.quantity < item.quantity) {
@@ -476,14 +487,13 @@ router.post(
     }
 
     const promoCodeDocument = await PromoCode.findOne({ code: promoCode });
-    const promoCodeDiscount = promoCodeDocument?.discount / 100 ?? 0;
-    const cartItemsTotalPrice = countCartTotalPrice(cart.items);
-    const totalPrice =
-      cartItemsTotalPrice - cartItemsTotalPrice * promoCodeDiscount;
+    const promoCodeDiscount = promoCodeDocument?.discount / 100 ?? 1;
+   
+    const cartItemsTotalPrice = countCartTotalPrice(cart.items, promoCodeDiscount);
 
     const updatedCart = await Cart.findByIdAndUpdate(
       cart._id,
-      { totalPrice },
+      { totalPrice:cartItemsTotalPrice },
       { new: true, runValidators: true }
     )
       .populate({
@@ -524,7 +534,7 @@ router.post(
       }),
       billingData: req.body.billing_data,
       paymentOrderId: (new Date().getTime() + 1).toString(),
-      promocodeDiscount: promoCodeDocument.discount,
+      promocodeDiscount: promoCodeDocument?.discount / 100 ?? 1,
     });
 
     console.log("after new order", newOrder);
@@ -540,7 +550,6 @@ router.post(
       orderId: newOrder._id,
     });
 
-    console.log(updatedCart.items);
     console.log("3.");
     for (let item of updatedCart.items) {
       const product = await Product.findById(item.product._id);

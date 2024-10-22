@@ -27,7 +27,9 @@ export const filterObject = (object, ...allowedFields) => {
 
 export const countCartTotalPrice = (cartItemsArray , promocodeDiscount) => {
   return cartItemsArray.reduce(
-    (total, item) => total + ((item.quantity * item.product.saleProduct) * promocodeDiscount),
+    (total, item) => {
+      return total + ((item.quantity * item.product.saleProduct) * promocodeDiscount)
+    },
     0
   );
 };
