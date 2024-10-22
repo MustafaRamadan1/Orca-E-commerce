@@ -1,12 +1,275 @@
 {
+<<<<<<< HEAD
+  email: 'admin@gmail.com',
+  level: 'error',
+  message: 'Invalid Email or Password for user in login',
+  timestamp: '2024-10-18T16:48:06.718Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Invalid email or password',
+  timestamp: '2024-10-18T16:48:06.719Z'
+}
+{
+  message: 'Accessing Not Found Route , /robots.txt',
+  level: 'error',
+  timestamp: '2024-10-19T05:48:49.358Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Not Found Page , No route with your /robots.txt URL',
+  timestamp: '2024-10-19T05:48:49.359Z'
+}
+{
+  message: 'Accessing Not Found Route , /robots.txt',
+  level: 'error',
+  timestamp: '2024-10-19T18:01:59.233Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Not Found Page , No route with your /robots.txt URL',
+  timestamp: '2024-10-19T18:01:59.263Z'
+}
+{
+  message: 'Accessing Not Found Route , /robots.txt',
+  level: 'error',
+  timestamp: '2024-10-19T20:06:45.400Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Not Found Page , No route with your /robots.txt URL',
+  timestamp: '2024-10-19T20:06:45.407Z'
+}
+{
+  message: 'Accessing Not Found Route , /robots.txt',
+  level: 'error',
+  timestamp: '2024-10-19T22:01:59.117Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Not Found Page , No route with your /robots.txt URL',
+  timestamp: '2024-10-19T22:01:59.124Z'
+}
+{
+  message: 'Accessing Not Found Route , /robots.txt',
+  level: 'error',
+  timestamp: '2024-10-20T10:37:44.099Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Not Found Page , No route with your /robots.txt URL',
+  timestamp: '2024-10-20T10:37:44.133Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: No promo found ',
+  timestamp: '2024-10-20T13:07:51.338Z'
+}
+{
+  email: 'admin@orca-wear.com',
+  level: 'error',
+  message: 'Invalid Email or Password for user in login',
+  timestamp: '2024-10-20T15:38:10.470Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Invalid email or password',
+  timestamp: '2024-10-20T15:38:10.473Z'
+}
+{
+  email: 'admin@orca-wear.com',
+  level: 'error',
+  message: 'Invalid Email or Password for user in login',
+  timestamp: '2024-10-20T15:38:22.076Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Invalid email or password',
+  timestamp: '2024-10-20T15:38:22.077Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: No promo found ',
+  timestamp: '2024-10-20T15:38:35.376Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: No promo found ',
+  timestamp: '2024-10-20T15:38:50.490Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: No promo found ',
+  timestamp: '2024-10-20T15:50:04.976Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: No promo found ',
+  timestamp: '2024-10-20T15:50:14.102Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: No promo found with this code',
+  timestamp: '2024-10-20T16:44:41.264Z'
+}
+{
+  stack: 'Error:  Invalid ID, NaN is not a valid ID\n' +
+    '    at castId (file:///root/Orca-E-commerce/src/middlewares/globalerrorHandler.js:5:10)\n' +
+    '    at globalErrorHandler (file:///root/Orca-E-commerce/src/middlewares/globalerrorHandler.js:67:43)\n' +
+    '    at Layer.handle_error (/root/Orca-E-commerce/node_modules/.pnpm/express@4.19.2/node_modules/express/lib/router/layer.js:71:5)\n' +
+    '    at trim_prefix (/root/Orca-E-commerce/node_modules/.pnpm/express@4.19.2/node_modules/express/lib/router/index.js:326:13)\n' +
+    '    at /root/Orca-E-commerce/node_modules/.pnpm/express@4.19.2/node_modules/express/lib/router/index.js:286:9\n' +
+    '    at Function.process_params (/root/Orca-E-commerce/node_modules/.pnpm/express@4.19.2/node_modules/express/lib/router/index.js:346:12)\n' +
+    '    at next (/root/Orca-E-commerce/node_modules/.pnpm/express@4.19.2/node_modules/express/lib/router/index.js:280:10)\n' +
+    '    at /root/Orca-E-commerce/node_modules/.pnpm/express@4.19.2/node_modules/express/lib/router/index.js:646:15\n' +
+    '    at next (/root/Orca-E-commerce/node_modules/.pnpm/express@4.19.2/node_modules/express/lib/router/index.js:265:14)\n' +
+    '    at next (/root/Orca-E-commerce/node_modules/.pnpm/express@4.19.2/node_modules/express/lib/router/route.js:141:14)',
+  level: 'error',
+  message: 'Error:  Invalid ID, NaN is not a valid ID',
+  timestamp: '2024-10-20T16:44:57.699Z'
+}
+{
+  stack: 'Error:  Invalid ID, NaN is not a valid ID\n' +
+    '    at castId (file:///root/Orca-E-commerce/src/middlewares/globalerrorHandler.js:5:10)\n' +
+    '    at globalErrorHandler (file:///root/Orca-E-commerce/src/middlewares/globalerrorHandler.js:67:43)\n' +
+    '    at Layer.handle_error (/root/Orca-E-commerce/node_modules/.pnpm/express@4.19.2/node_modules/express/lib/router/layer.js:71:5)\n' +
+    '    at trim_prefix (/root/Orca-E-commerce/node_modules/.pnpm/express@4.19.2/node_modules/express/lib/router/index.js:326:13)\n' +
+    '    at /root/Orca-E-commerce/node_modules/.pnpm/express@4.19.2/node_modules/express/lib/router/index.js:286:9\n' +
+    '    at Function.process_params (/root/Orca-E-commerce/node_modules/.pnpm/express@4.19.2/node_modules/express/lib/router/index.js:346:12)\n' +
+    '    at next (/root/Orca-E-commerce/node_modules/.pnpm/express@4.19.2/node_modules/express/lib/router/index.js:280:10)\n' +
+    '    at /root/Orca-E-commerce/node_modules/.pnpm/express@4.19.2/node_modules/express/lib/router/index.js:646:15\n' +
+    '    at next (/root/Orca-E-commerce/node_modules/.pnpm/express@4.19.2/node_modules/express/lib/router/index.js:265:14)\n' +
+    '    at next (/root/Orca-E-commerce/node_modules/.pnpm/express@4.19.2/node_modules/express/lib/router/route.js:141:14)',
+  level: 'error',
+  message: 'Error:  Invalid ID, NaN is not a valid ID',
+  timestamp: '2024-10-20T16:45:06.663Z'
+}
+{
+  stack: 'Error:  Invalid ID, NaN is not a valid ID\n' +
+    '    at castId (file:///root/Orca-E-commerce/src/middlewares/globalerrorHandler.js:5:10)\n' +
+    '    at globalErrorHandler (file:///root/Orca-E-commerce/src/middlewares/globalerrorHandler.js:67:43)\n' +
+    '    at Layer.handle_error (/root/Orca-E-commerce/node_modules/.pnpm/express@4.19.2/node_modules/express/lib/router/layer.js:71:5)\n' +
+    '    at trim_prefix (/root/Orca-E-commerce/node_modules/.pnpm/express@4.19.2/node_modules/express/lib/router/index.js:326:13)\n' +
+    '    at /root/Orca-E-commerce/node_modules/.pnpm/express@4.19.2/node_modules/express/lib/router/index.js:286:9\n' +
+    '    at Function.process_params (/root/Orca-E-commerce/node_modules/.pnpm/express@4.19.2/node_modules/express/lib/router/index.js:346:12)\n' +
+    '    at next (/root/Orca-E-commerce/node_modules/.pnpm/express@4.19.2/node_modules/express/lib/router/index.js:280:10)\n' +
+    '    at /root/Orca-E-commerce/node_modules/.pnpm/express@4.19.2/node_modules/express/lib/router/index.js:646:15\n' +
+    '    at next (/root/Orca-E-commerce/node_modules/.pnpm/express@4.19.2/node_modules/express/lib/router/index.js:265:14)\n' +
+    '    at next (/root/Orca-E-commerce/node_modules/.pnpm/express@4.19.2/node_modules/express/lib/router/route.js:141:14)',
+  level: 'error',
+  message: 'Error:  Invalid ID, NaN is not a valid ID',
+  timestamp: '2024-10-20T16:45:07.426Z'
+}
+{
+  stack: 'Error:  Invalid ID, NaN is not a valid ID\n' +
+    '    at castId (file:///root/Orca-E-commerce/src/middlewares/globalerrorHandler.js:5:10)\n' +
+    '    at globalErrorHandler (file:///root/Orca-E-commerce/src/middlewares/globalerrorHandler.js:67:43)\n' +
+    '    at Layer.handle_error (/root/Orca-E-commerce/node_modules/.pnpm/express@4.19.2/node_modules/express/lib/router/layer.js:71:5)\n' +
+    '    at trim_prefix (/root/Orca-E-commerce/node_modules/.pnpm/express@4.19.2/node_modules/express/lib/router/index.js:326:13)\n' +
+    '    at /root/Orca-E-commerce/node_modules/.pnpm/express@4.19.2/node_modules/express/lib/router/index.js:286:9\n' +
+    '    at Function.process_params (/root/Orca-E-commerce/node_modules/.pnpm/express@4.19.2/node_modules/express/lib/router/index.js:346:12)\n' +
+    '    at next (/root/Orca-E-commerce/node_modules/.pnpm/express@4.19.2/node_modules/express/lib/router/index.js:280:10)\n' +
+    '    at /root/Orca-E-commerce/node_modules/.pnpm/express@4.19.2/node_modules/express/lib/router/index.js:646:15\n' +
+    '    at next (/root/Orca-E-commerce/node_modules/.pnpm/express@4.19.2/node_modules/express/lib/router/index.js:265:14)\n' +
+    '    at next (/root/Orca-E-commerce/node_modules/.pnpm/express@4.19.2/node_modules/express/lib/router/route.js:141:14)',
+  level: 'error',
+  message: 'Error:  Invalid ID, NaN is not a valid ID',
+  timestamp: '2024-10-20T16:45:08.120Z'
+}
+{
+  stack: 'Error:  Invalid ID, NaN is not a valid ID\n' +
+    '    at castId (file:///root/Orca-E-commerce/src/middlewares/globalerrorHandler.js:5:10)\n' +
+    '    at globalErrorHandler (file:///root/Orca-E-commerce/src/middlewares/globalerrorHandler.js:67:43)\n' +
+    '    at Layer.handle_error (/root/Orca-E-commerce/node_modules/.pnpm/express@4.19.2/node_modules/express/lib/router/layer.js:71:5)\n' +
+    '    at trim_prefix (/root/Orca-E-commerce/node_modules/.pnpm/express@4.19.2/node_modules/express/lib/router/index.js:326:13)\n' +
+    '    at /root/Orca-E-commerce/node_modules/.pnpm/express@4.19.2/node_modules/express/lib/router/index.js:286:9\n' +
+    '    at Function.process_params (/root/Orca-E-commerce/node_modules/.pnpm/express@4.19.2/node_modules/express/lib/router/index.js:346:12)\n' +
+    '    at next (/root/Orca-E-commerce/node_modules/.pnpm/express@4.19.2/node_modules/express/lib/router/index.js:280:10)\n' +
+    '    at /root/Orca-E-commerce/node_modules/.pnpm/express@4.19.2/node_modules/express/lib/router/index.js:646:15\n' +
+    '    at next (/root/Orca-E-commerce/node_modules/.pnpm/express@4.19.2/node_modules/express/lib/router/index.js:265:14)\n' +
+    '    at next (/root/Orca-E-commerce/node_modules/.pnpm/express@4.19.2/node_modules/express/lib/router/route.js:141:14)',
+  level: 'error',
+  message: 'Error:  Invalid ID, NaN is not a valid ID',
+  timestamp: '2024-10-20T16:45:08.701Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: No promo found with this code',
+  timestamp: '2024-10-20T16:57:50.323Z'
+}
+{
+  stack: 'Error:  Invalid ID, NaN is not a valid ID\n' +
+    '    at castId (file:///root/Orca-E-commerce/src/middlewares/globalerrorHandler.js:5:10)\n' +
+    '    at globalErrorHandler (file:///root/Orca-E-commerce/src/middlewares/globalerrorHandler.js:67:43)\n' +
+    '    at Layer.handle_error (/root/Orca-E-commerce/node_modules/.pnpm/express@4.19.2/node_modules/express/lib/router/layer.js:71:5)\n' +
+    '    at trim_prefix (/root/Orca-E-commerce/node_modules/.pnpm/express@4.19.2/node_modules/express/lib/router/index.js:326:13)\n' +
+    '    at /root/Orca-E-commerce/node_modules/.pnpm/express@4.19.2/node_modules/express/lib/router/index.js:286:9\n' +
+    '    at Function.process_params (/root/Orca-E-commerce/node_modules/.pnpm/express@4.19.2/node_modules/express/lib/router/index.js:346:12)\n' +
+    '    at next (/root/Orca-E-commerce/node_modules/.pnpm/express@4.19.2/node_modules/express/lib/router/index.js:280:10)\n' +
+    '    at /root/Orca-E-commerce/node_modules/.pnpm/express@4.19.2/node_modules/express/lib/router/index.js:646:15\n' +
+    '    at next (/root/Orca-E-commerce/node_modules/.pnpm/express@4.19.2/node_modules/express/lib/router/index.js:265:14)\n' +
+    '    at next (/root/Orca-E-commerce/node_modules/.pnpm/express@4.19.2/node_modules/express/lib/router/route.js:141:14)',
+  level: 'error',
+  message: 'Error:  Invalid ID, NaN is not a valid ID',
+  timestamp: '2024-10-20T17:00:46.142Z'
+}
+{
+  stack: 'Error:  Invalid ID, NaN is not a valid ID\n' +
+    '    at castId (file:///root/Orca-E-commerce/src/middlewares/globalerrorHandler.js:5:10)\n' +
+    '    at globalErrorHandler (file:///root/Orca-E-commerce/src/middlewares/globalerrorHandler.js:67:43)\n' +
+    '    at Layer.handle_error (/root/Orca-E-commerce/node_modules/.pnpm/express@4.19.2/node_modules/express/lib/router/layer.js:71:5)\n' +
+    '    at trim_prefix (/root/Orca-E-commerce/node_modules/.pnpm/express@4.19.2/node_modules/express/lib/router/index.js:326:13)\n' +
+    '    at /root/Orca-E-commerce/node_modules/.pnpm/express@4.19.2/node_modules/express/lib/router/index.js:286:9\n' +
+    '    at Function.process_params (/root/Orca-E-commerce/node_modules/.pnpm/express@4.19.2/node_modules/express/lib/router/index.js:346:12)\n' +
+    '    at next (/root/Orca-E-commerce/node_modules/.pnpm/express@4.19.2/node_modules/express/lib/router/index.js:280:10)\n' +
+    '    at /root/Orca-E-commerce/node_modules/.pnpm/express@4.19.2/node_modules/express/lib/router/index.js:646:15\n' +
+    '    at next (/root/Orca-E-commerce/node_modules/.pnpm/express@4.19.2/node_modules/express/lib/router/index.js:265:14)\n' +
+    '    at next (/root/Orca-E-commerce/node_modules/.pnpm/express@4.19.2/node_modules/express/lib/router/route.js:141:14)',
+  level: 'error',
+  message: 'Error:  Invalid ID, NaN is not a valid ID',
+  timestamp: '2024-10-20T17:00:54.641Z'
+}
+{
+  error: {
+    message: '/root/Orca-E-commerce/src/utils/../uploads/products/a0852745-4f42-4db1-97a9-b3f4a910a777.jpg: unable to open for write\n' +
+      'unix error: No such file or directory',
+    statusCode: 500,
+    status: 'error'
+=======
   error: {
     statusCode: 500,
     status: 'error',
     message: "Cannot read properties of undefined (reading 'length')"
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
   },
   stack: undefined,
   level: 'error',
   message: 'Something went wrong',
+<<<<<<< HEAD
+  timestamp: '2024-10-20T17:05:00.246Z'
+}
+{
+  error: {
+    message: '/root/Orca-E-commerce/src/utils/../uploads/products/8a8aa54e-e0e4-439c-a312-ffa3068bee18.jpg: unable to open for write\n' +
+      'unix error: No such file or directory',
+    statusCode: 500,
+    status: 'error'
+=======
   timestamp: '2024-10-21T21:56:05.290Z'
 }
 {
@@ -21,10 +284,96 @@
     statusCode: 500,
     status: 'error',
     message: "Cannot read properties of undefined (reading 'quantity')"
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
   },
   stack: undefined,
   level: 'error',
   message: 'Something went wrong',
+<<<<<<< HEAD
+  timestamp: '2024-10-20T17:06:05.546Z'
+}
+{
+  message: 'Accessing Not Found Route , /api/v1/payment/webHook',
+  level: 'error',
+  timestamp: '2024-10-20T21:38:36.554Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Not Found Page , No route with your /api/v1/payment/webHook URL',
+  timestamp: '2024-10-20T21:38:36.556Z'
+}
+{
+  message: 'Accessing Not Found Route , /favicon.ico',
+  level: 'error',
+  timestamp: '2024-10-20T21:38:36.850Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Not Found Page , No route with your /favicon.ico URL',
+  timestamp: '2024-10-20T21:38:36.850Z'
+}
+{
+  message: 'Accessing Not Found Route , /api/v1/payment/webHook',
+  level: 'error',
+  timestamp: '2024-10-20T21:39:41.506Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Not Found Page , No route with your /api/v1/payment/webHook URL',
+  timestamp: '2024-10-20T21:39:41.507Z'
+}
+{
+  message: 'Accessing Not Found Route , /api/v1/payment/webHook',
+  level: 'error',
+  timestamp: '2024-10-20T21:40:13.934Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Not Found Page , No route with your /api/v1/payment/webHook URL',
+  timestamp: '2024-10-20T21:40:13.934Z'
+}
+{
+  message: 'Accessing Not Found Route , /robots.txt',
+  level: 'error',
+  timestamp: '2024-10-21T05:12:15.872Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Not Found Page , No route with your /robots.txt URL',
+  timestamp: '2024-10-21T05:12:15.879Z'
+}
+{
+  message: 'Accessing Not Found Route , /robots.txt',
+  level: 'error',
+  timestamp: '2024-10-21T11:48:57.863Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Not Found Page , No route with your /robots.txt URL',
+  timestamp: '2024-10-21T11:48:57.864Z'
+}
+{
+  stack: 'Error:  Invalid ID, NaN is not a valid ID\n' +
+    '    at castId (file:///root/Orca-E-commerce/src/middlewares/globalerrorHandler.js:5:10)\n' +
+    '    at globalErrorHandler (file:///root/Orca-E-commerce/src/middlewares/globalerrorHandler.js:67:43)\n' +
+    '    at Layer.handle_error (/root/Orca-E-commerce/node_modules/.pnpm/express@4.19.2/node_modules/express/lib/router/layer.js:71:5)\n' +
+    '    at trim_prefix (/root/Orca-E-commerce/node_modules/.pnpm/express@4.19.2/node_modules/express/lib/router/index.js:326:13)\n' +
+    '    at /root/Orca-E-commerce/node_modules/.pnpm/express@4.19.2/node_modules/express/lib/router/index.js:286:9\n' +
+    '    at Function.process_params (/root/Orca-E-commerce/node_modules/.pnpm/express@4.19.2/node_modules/express/lib/router/index.js:346:12)\n' +
+    '    at next (/root/Orca-E-commerce/node_modules/.pnpm/express@4.19.2/node_modules/express/lib/router/index.js:280:10)\n' +
+    '    at /root/Orca-E-commerce/node_modules/.pnpm/express@4.19.2/node_modules/express/lib/router/index.js:646:15\n' +
+    '    at next (/root/Orca-E-commerce/node_modules/.pnpm/express@4.19.2/node_modules/express/lib/router/index.js:265:14)\n' +
+    '    at next (/root/Orca-E-commerce/node_modules/.pnpm/express@4.19.2/node_modules/express/lib/router/route.js:141:14)',
+  level: 'error',
+  message: 'Error:  Invalid ID, NaN is not a valid ID',
+  timestamp: '2024-10-21T14:24:49.925Z'
+=======
   timestamp: '2024-10-21T22:05:46.384Z'
 }
 {
@@ -59,4 +408,5 @@
   level: 'error',
   message: 'Something went wrong',
   timestamp: '2024-10-21T22:21:03.713Z'
+>>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
 }
