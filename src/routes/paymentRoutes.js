@@ -165,7 +165,7 @@ router.post(
 
     const promoCodeDocument = await PromoCode.findOne({code:promoCode});
 
-    const promoCodeDiscount = promoCodeDocument? promoCodeDocument.discount / 100: 0;
+    const promoCodeDiscount = promoCodeDocument? promoCodeDocument.discount / 100: 1;
     const cartItemsTotalPrice = countCartTotalPrice(cart.items, promoCodeDiscount) ;
     
     console.log(`PromoCodeDocument`, promoCodeDocument);
@@ -216,7 +216,7 @@ router.post(
       user: updatedCart.user._id,
       cartItems: updatedCart.items.map((item) => item._id),
       billingData: req.body.billing_data,
-      promocodeDiscount:promoCodeDocument? promoCodeDocument.discount : 0
+      promocodeDiscount:promoCodeDocument? promoCodeDocument.discount : 1
     });
 
     logger.info(

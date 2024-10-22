@@ -410,3 +410,62 @@
   timestamp: '2024-10-21T22:21:03.713Z'
 >>>>>>> d65c1c6d08f0108b959e545c3e3026ace527cbb8
 }
+{
+  error: {
+    statusCode: 500,
+    status: 'error',
+    message: "Cannot read properties of undefined (reading 'data')"
+  },
+  stack: undefined,
+  level: 'error',
+  message: 'Something went wrong',
+  timestamp: '2024-10-21T23:20:37.595Z'
+}
+{
+  error: {
+    statusCode: 500,
+    status: 'error',
+    message: "Cannot read properties of undefined (reading 'data')"
+  },
+  stack: undefined,
+  level: 'error',
+  message: 'Something went wrong',
+  timestamp: '2024-10-21T23:21:07.645Z'
+}
+{
+  error: {
+    statusCode: 500,
+    status: 'error',
+    message: "Cannot read properties of undefined (reading 'data')"
+  },
+  stack: undefined,
+  level: 'error',
+  message: 'Something went wrong',
+  timestamp: '2024-10-21T23:22:18.085Z'
+}
+{
+  message: 'Accessing Not Found Route , /favicon.ico',
+  level: 'error',
+  timestamp: '2024-10-22T05:46:09.846Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Not Found Page , No route with your /favicon.ico URL',
+  timestamp: '2024-10-22T05:46:09.891Z'
+}
+{
+  userId: new ObjectId('67178c3d6bce9127c7ef11a1'),
+  email: 'test@test.com',
+  name: 'Seif',
+  isActive: false,
+  level: 'error',
+  message: 'Not Activated User , should Activate his account',
+  timestamp: '2024-10-22T11:28:16.176Z'
+}
+{
+  stack: undefined,
+  level: 'error',
+  message: 'Error: Please Active your account',
+  timestamp: '2024-10-22T11:28:16.178Z'
+}
