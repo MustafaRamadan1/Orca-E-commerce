@@ -136,7 +136,7 @@ export const getAllUsers = catchAsync(async (req, res, next) => {
 
 export const forgetPassword = catchAsync(async (req, res, next) => {
   const { email, locale } = req.body;
- 
+  
 
   const user = await User.findOne({ email });
   if (!user) {
@@ -151,9 +151,10 @@ export const forgetPassword = catchAsync(async (req, res, next) => {
 resetPasswordURL */
   await user.save();
 
+  
   const html = compileTemplate(`${__dirname}/../views/forgetPassword.pug`, {
     firstName: user.name,
-    resetPasswordLink: `${process.env.FRONTEND_URL}/${locale}/auth/resetPassword/${token}`
+    resetPasswordLink: `${process.env.FRONTEND_URL}/${locale}/user/resetPassword/${token}`
   });
 
   await sendEmail({
