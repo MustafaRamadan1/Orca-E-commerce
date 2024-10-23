@@ -216,7 +216,8 @@ router.post(
       user: updatedCart.user._id,
       cartItems: updatedCart.items.map((item) => item._id),
       billingData: req.body.billing_data,
-      promocodeDiscount: promoCodeDocument ? promoCodeDocument.discount : 1,
+
+      promocodeDiscount:promoCodeDocument? promoCodeDocument.discount : 1
     });
 
     logger.info(
