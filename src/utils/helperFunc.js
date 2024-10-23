@@ -105,10 +105,13 @@ export const validateCartItemsQuantity = async (cartItems) => {
   const productNExist = [];
 
   for (let cartItem of cartItems) {
+    console.log(cartItem)
     const product = await Product.findById(cartItem.product);
     if (!product) {
       productNExist.push({ name: cartItem.name });
+      continue;
     }
+    
     const productColors = product.colors.map((c) => c.id);
     if (productColors.includes(cartItem.colorId)) {
       const cartItemProductColor = product.colors.find(

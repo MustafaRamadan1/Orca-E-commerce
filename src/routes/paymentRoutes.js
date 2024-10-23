@@ -486,10 +486,11 @@ router.post(
     }
 
     const promoCodeDocument = await PromoCode.findOne({ code: promoCode });
-    const promoCodeDiscount = promoCodeDocument?.discount / 100 ?? 1;
+    
+    const promoCodeDiscount = promoCodeDocument? promoCode.discount / 100 : 1;
    
     const cartItemsTotalPrice = countCartTotalPrice(cart.items, promoCodeDiscount);
-
+    
     const updatedCart = await Cart.findByIdAndUpdate(
       cart._id,
       { totalPrice:cartItemsTotalPrice },
@@ -515,7 +516,7 @@ router.post(
       transaction_id: new Date().getTime().toString(),
       user: updatedCart.user._id,
       paymentMethod: "cash",
-      orderPrice: totalPrice,
+      orderPrice: cartItemsTotalPrice,
       items: updatedCart.items.map((item) => {
         return {
           product: {
@@ -533,7 +534,7 @@ router.post(
       }),
       billingData: req.body.billing_data,
       paymentOrderId: (new Date().getTime() + 1).toString(),
-      promocodeDiscount: promoCodeDocument?.discount / 100 ?? 1,
+      promocodeDiscount: promoCodeDocument? promoCode.discount / 100 : 1,
     });
 
     console.log("after new order", newOrder);
